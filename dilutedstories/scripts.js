@@ -43,7 +43,7 @@
     document.getElementById('ttsToggle')?.addEventListener('click', () => A11Y.toggle());
   });
 
-  /* UTIL: Unsplash normalizer */
+  /* UTIL: Unsplash normaliser */
   window.normalizeUnsplash = function(u){
     if (!u) return u;
     const m = u.match(/unsplash\.com\/photos\/(?:[\w-]*-)?([A-Za-z0-9_-]+)/i);
@@ -101,14 +101,25 @@
     function openPreview(d){
       $('#articleTitle').textContent = d.title;
       $('#articleContent .article-meta').textContent = d.meta;
+      
       const img = $('#articleContent .article-hero');
-      img.alt = d.imgAlt; img.src = normalizeUnsplash(d.imgSrc);
-      $('#articleContent .article-body').innerHTML = (d.body || []).join('');
-      scale = 1; $('#articleContent .article-body').style.fontSize = '1rem';
+      img.alt = d.imgAlt; 
+      img.src = normalizeUnsplash(d.imgSrc);
 
-      const modal = $('#articleModal'); modal.hidden = false;
+      // Filter logic: Hide any placeholder strings like [Image of...]
+      const filteredBody = (d.body || []).filter(item => {
+        return !(typeof item === 'string' && item.startsWith('[') && item.endsWith(']'));
+      });
+
+      $('#articleContent .article-body').innerHTML = filteredBody.join('');
+      scale = 1; 
+      $('#articleContent .article-body').style.fontSize = '1rem';
+
+      const modal = $('#articleModal'); 
+      modal.hidden = false;
       document.body.classList.add('modal-open');
-      const panel = modal.querySelector('.ds-modal__panel'); panel.focus({ preventScroll:true });
+      const panel = modal.querySelector('.ds-modal__panel'); 
+      panel.focus({ preventScroll:true });
       prevFocus = document.activeElement;
 
       document.getElementById('btnRead')?.addEventListener('click', () => A11Y.toggle());
