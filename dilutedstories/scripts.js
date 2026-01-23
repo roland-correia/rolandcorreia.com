@@ -1,7 +1,7 @@
 /* scripts.js
    - Theme toggle, text size, TTS
    - ArticleStore -> loads articles.json (single source of truth)
-   - Unsplash URL normalizer
+   - Unsplash URL normaliser
    - In-page preview modal
    - Contact form (Formspree, no uploads)
 */
@@ -103,8 +103,7 @@
       $('#articleContent .article-meta').textContent = d.meta;
       
       const img = $('#articleContent .article-hero');
-      img.alt = d.imgAlt; 
-      img.src = normalizeUnsplash(d.imgSrc);
+      img.style.display = 'none';
 
       // Filter logic: Hide any placeholder strings like [Image of...]
       const filteredBody = (d.body || []).filter(item => {
