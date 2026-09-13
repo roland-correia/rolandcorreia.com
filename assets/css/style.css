@@ -154,6 +154,14 @@ a:focus-visible, button:focus-visible {
   text-align: center;
 }
 
+/* Turns .hero .wrap into a query container, so descendants can size
+   themselves off its *actual rendered width* (cqw units) instead of
+   guessing from the viewport — the viewport and this container are not
+   the same width once max-width/percentage rules are involved. */
+.hero .wrap {
+  container-type: inline-size;
+}
+
 .eyebrow {
   color: var(--muted);
   font-size: 0.85rem;
@@ -163,10 +171,23 @@ a:focus-visible, button:focus-visible {
 }
 
 .hero h1 {
-  font-size: clamp(1.9rem, 5vw, 3.2rem);
   font-weight: 600;
-  max-width: 800px;
   margin-inline: auto;
+  /* 5cqw is calibrated (measured against this exact heading's text) to
+     stay just under the container's real width at any size, so the
+     line never overflows once nowrap applies below. The 1.9rem floor
+     is what actually governs on phones — at narrow container widths
+     5cqw is smaller than 1.9rem, so the floor wins and the heading
+     wraps onto 2 lines at full readable size instead of shrinking. */
+  font-size: clamp(1.9rem, 5cqw, 3.2rem);
+}
+
+/* From tablet width up, the container is wide enough that 5cqw no
+   longer hits the 1.9rem floor — so it's safe to also forbid wrapping. */
+@media (min-width: 700px) {
+  .hero h1 {
+    white-space: nowrap;
+  }
 }
 
 .hero-lede {
