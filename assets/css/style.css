@@ -220,12 +220,38 @@ section + section { border-top: 1px solid var(--border); }
 /* ==========================================================================
    ABOUT
    ========================================================================== */
-/* Capped for readability, not left this narrow by accident — an
-   uncapped line on a wide monitor gets hard to track back to the start
-   of. 720px still sits inside the ~60-80 characters/line readable
-   range, just with less dead space next to full-width elements like
-   the skills row and Experience section. */
-.about p { max-width: 720px; color: var(--muted); margin-bottom: var(--space-3); }
+/* Two-column on wider screens, same "spread across the width" rhythm
+   as the Projects grid and Experience section below it — previously
+   About was the one section still stacked in a single narrow strip
+   while everything else used the full wrap width. The bio column's
+   ~600-650px rendered width at typical desktop sizes also happens to
+   land inside the readable 60-80 characters/line range, so a separate
+   max-width hack on the paragraphs isn't needed any more — the grid
+   column governs it naturally instead. */
+.about-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 800px) {
+  .about-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+}
+
+.about-bio p { color: var(--muted); margin-bottom: var(--space-3); }
+.about-bio p:last-child { margin-bottom: 0; }
+
+.about-skills-heading {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: var(--space-2);
+}
 
 .skills-list {
   display: flex;
@@ -243,13 +269,13 @@ section + section { border-top: 1px solid var(--border); }
 .skills-list-secondary {
   margin-top: var(--space-1);
 }
-.skills-list-secondary li {
-  /* Visually distinct from the core dev skills above: platform/CMS work
-     (WordPress, Wix, Weebly) is real and worth listing, but it's a
-     different skill to hand-coded HTML/CSS/JS and shouldn't blur into it. */
-  background: transparent;
-  color: var(--muted);
-}
+/* Previously styled with a transparent/muted background to separate
+   platform skills (WordPress/Wix/Weebly) from hand-coded ones visually —
+   dropped per Roland: it read as inconsistent chip styling rather than
+   an intentional grouping. Both lists now share the same .skills-list li
+   style above; the grouping is still there in the markup (two <ul>s,
+   separate aria-labels) for anyone using a screen reader, just not
+   colour-coded any more. */
 
 /* ==========================================================================
    EXPERIENCE
