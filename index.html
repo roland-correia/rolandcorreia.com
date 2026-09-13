@@ -2,77 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>"<roland />"</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name= "description" content="Roland Correia· UI/UX Designer & Front-End Developer."/>
-  <link rel="stylesheet" href="main.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Roland Correia — UI/UX Designer &amp; Front-End Developer</title>
+  <meta name="description" content="Roland Correia. Computer science background, building toward UI/UX design and front-end development. Self-directed projects and case studies." />
+
+  <!-- Open Graph: controls how this page looks when shared on LinkedIn/Twitter/Slack -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Roland Correia — UI/UX Designer & Front-End Developer" />
+  <meta property="og:description" content="Computer science background, building toward UI/UX design and front-end development." />
+  <meta property="og:url" content="https://rolandcorreia.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
-<header class="nav">
-  <div class="container nav-inner">
-    <div class="logo">"<roland />"</div>
-    <a href="mailto:rolandjoycorreia@gmail.com">free consultation</a>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="container hero-inner reveal">
-    <h1>UI/UX Designer & Front-End Developer </h1>
-    <p>storytelling one page at a time</p>
-  </div>
-</section>
+  <!-- Skip link: first focusable element, only visible on keyboard focus.
+       Lets keyboard/screen-reader users bypass the nav. WCAG 2.4.1. -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<section class="stack">
-  <div class="container stack-inner">
-    <span class="chip">HTML5</span>
-    <span class="chip">CSS3</span>
-    <span class="chip">Google Analytics</span>
-    <span class="chip">SEO</span>
-    <span class="chip">Prototypes</span>
-    <span class="chip">Digital Training</span>
-  </div>
-</section>
-
-<section id="projects" class="projects">
-  <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-
-    <div class="project-grid">
-
-         <div class="project-card reveal">
-        <h3>Diluted Stories</h3>
-        <p>Editorial-style mini publication with article previews.</p>
-        <div class="meta">HTML · CSS · JavaScript</div>
-        <a href="/dilutedstories/">Open Project →</a>
-      </div>
-      
-      <div class="project-card reveal">
-        <h3>Right to Repair</h3>
-        <p>Dissertation as part of EPQ project</p>
-        <div class="meta">JSTOR · Google Scholar · Project Management</div>
-       <a href="Extended Right to Repair legislation.pdf" target="_blank">Read Dissertation →</a>
-      </div>
-
-      <div class="project-card reveal">
-        <h3>COMING SOON- Market Insight Tool</h3>
-        <p>Small interface concept consuming real market APIs.</p>
-        <div class="meta">JavaScript · APIs · UI Design</div>
-        <a href="https://github.com/roland-correia" target="_blank">View Code →</a>
-      </div>
-
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="logo" href="/">Roland Correia</a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer class="footer">
-  <div class="container footer-inner">
-    <span>© <span id="year"></span> Roland Correia</span>
-    <span id="live-clock"></span></p>
-  </div>
-</footer>
+  <main id="main">
 
-<script src="main.js"></script>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Computer Science background</p>
+        <h1>UI/UX Designer &amp; Front-End Developer</h1>
+        <p class="hero-lede">
+          I design and build interfaces, then document the thinking behind them.
+          Currently developing self-directed projects into a portfolio worth showing.
+        </p>
+        <a class="btn btn-primary" href="#projects">See my work</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap">
+        <h2 class="section-title">About</h2>
+        <p>
+          <!-- TODO(Roland): replace with your real bio — course/year, what draws you to
+               UX/UI + front-end, and what kind of role you're aiming for in the UK. -->
+          Write 2–3 sentences here in your own voice: your CS background, why UI/UX and
+          front-end specifically, and what you're working toward.
+        </p>
+        <ul class="skills-list" aria-label="Skills">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Accessibility (WCAG)</li>
+          <li>Responsive Design</li>
+          <li>Figma / Prototyping</li>
+          <li>Git &amp; GitHub</li>
+          <li>SEO Fundamentals</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="wrap">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lede">Self-directed work, documented as case studies — not just finished demos.</p>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div class="project-card-body">
+              <span class="status-chip status-building">In development</span>
+              <h3>Diluted Stories</h3>
+              <p>An editorial mini-publication of original, cited long-form articles on tech, finance and fashion — built on a JSON-driven content store with an in-page reading modal.</p>
+              <div class="meta">HTML · CSS · JavaScript · Accessibility</div>
+              <a href="projects/diluted-stories/">Open project →</a>
+            </div>
+          </article>
+
+          <article class="project-card project-card-placeholder">
+            <div class="project-card-body">
+              <span class="status-chip status-planned">Planned</span>
+              <h3>Next case study</h3>
+              <p>Reserved for the next hobby-turned-project. Each one gets a problem, a process, and a written outcome — not just a screenshot.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="writing" class="writing">
+      <div class="wrap">
+        <h2 class="section-title">Research &amp; Writing</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card-body">
+              <h3>Should the UK Extend the Right to Repair?</h3>
+              <p>Extended Project Qualification dissertation examining UK Right to Repair legislation and the circular economy.</p>
+              <div class="meta">Independent Research · JSTOR · Google Scholar</div>
+              <a href="assets/docs/right-to-repair-dissertation.pdf" target="_blank" rel="noopener">Read the dissertation (PDF) →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2 class="section-title">Get in touch</h2>
+        <p>Open to front-end / UI-UX roles in the UK.</p>
+        <a class="btn btn-primary" href="mailto:rolandjoycorreia@gmail.com">Email me</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <span>© <span id="year"></span> Roland Correia</span>
+      <a href="https://github.com/roland-correia" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
