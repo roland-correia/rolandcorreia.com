@@ -23,6 +23,7 @@
   --space-5: 4rem;
 
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --max-width: 1100px;
 }
 
@@ -378,6 +379,79 @@ section + section { border-top: 1px solid var(--border); }
 }
 .status-building { background: rgba(75, 141, 248, 0.15); color: #7fb0ff; }
 .status-planned { background: rgba(255, 255, 255, 0.08); color: var(--muted); }
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+.connect-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: var(--space-2);
+}
+
+.connect-grid {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .connect-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+.connect-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s ease-out;
+}
+.connect-card:hover,
+.connect-card:focus-visible {
+  border-color: var(--muted);
+}
+
+.connect-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--muted);
+}
+.connect-icon svg { width: 18px; height: 18px; }
+
+.connect-text { min-width: 0; }
+.connect-name { display: block; font-weight: 500; font-size: 0.95rem; }
+.connect-value {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.availability-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+.availability-card p:last-child { color: var(--muted); margin: 0; }
 
 /* ==========================================================================
    FOOTER
