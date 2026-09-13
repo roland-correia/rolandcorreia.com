@@ -220,7 +220,12 @@ section + section { border-top: 1px solid var(--border); }
 /* ==========================================================================
    ABOUT
    ========================================================================== */
-.about p { max-width: 640px; color: var(--muted); margin-bottom: var(--space-3); }
+/* Capped for readability, not left this narrow by accident — an
+   uncapped line on a wide monitor gets hard to track back to the start
+   of. 720px still sits inside the ~60-80 characters/line readable
+   range, just with less dead space next to full-width elements like
+   the skills row and Experience section. */
+.about p { max-width: 720px; color: var(--muted); margin-bottom: var(--space-3); }
 
 .skills-list {
   display: flex;
@@ -289,7 +294,7 @@ section + section { border-top: 1px solid var(--border); }
 
 .experience-item p {
   color: var(--muted);
-  max-width: 640px;
+  max-width: 720px;
 }
 
 /* ==========================================================================
