@@ -122,21 +122,36 @@ a:focus-visible, button:focus-visible {
 }
 
 .header-row {
+  /* Mobile-first: logo stacked above nav. 4 nav items plus the logo
+     don't fit on one row below ~560px without either overlapping or
+     shrinking illegibly, so they get their own row instead. */
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 1.1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding-block: 1rem;
+}
+
+@media (min-width: 560px) {
+  .header-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.1rem;
+  }
 }
 
 .logo {
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .site-header nav {
   display: flex;
-  gap: var(--space-3);
+  flex-wrap: wrap;
+  gap: 0.6rem var(--space-3);
 }
 
 .site-header nav a {
@@ -197,6 +212,63 @@ section + section { border-top: 1px solid var(--border); }
   font-size: 0.8rem;
   border: 1px solid var(--border);
   background: var(--bg-raised);
+}
+
+.skills-list-secondary {
+  margin-top: var(--space-1);
+}
+.skills-list-secondary li {
+  /* Visually distinct from the core dev skills above: platform/CMS work
+     (WordPress, Wix, Weebly) is real and worth listing, but it's a
+     different skill to hand-coded HTML/CSS/JS and shouldn't blur into it. */
+  background: transparent;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   EXPERIENCE
+   ========================================================================== */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.experience-item {
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+.experience-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.experience-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience-head h3 { font-size: 1.05rem; }
+
+.experience-dates {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.experience-org {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.experience-item p {
+  color: var(--muted);
+  max-width: 640px;
 }
 
 /* ==========================================================================
