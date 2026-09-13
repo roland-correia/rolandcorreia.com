@@ -253,11 +253,23 @@ section + section { border-top: 1px solid var(--border); }
   margin-bottom: var(--space-2);
 }
 
-.skills-list {
+/* .skills-list and .skills-list-secondary are two separate <ul>s for
+   screen readers (distinct aria-labels: "Skills" vs "Platform skills"),
+   but visually they should read as one continuous, wrapping row of
+   chips — not two independently-wrapping rows with a forced break
+   between them even when there's room to continue on the same line.
+   display:contents removes each <ul>'s own box from layout so its <li>
+   children become direct flex items of .skills-flow instead; the wrap
+   container has just one flex-wrap context for both lists combined. */
+.skills-flow {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
+.skills-flow > ul {
+  display: contents;
+}
+
 .skills-list li {
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
@@ -265,17 +277,6 @@ section + section { border-top: 1px solid var(--border); }
   border: 1px solid var(--border);
   background: var(--bg-raised);
 }
-
-.skills-list-secondary {
-  margin-top: var(--space-1);
-}
-/* Previously styled with a transparent/muted background to separate
-   platform skills (WordPress/Wix/Weebly) from hand-coded ones visually —
-   dropped per Roland: it read as inconsistent chip styling rather than
-   an intentional grouping. Both lists now share the same .skills-list li
-   style above; the grouping is still there in the markup (two <ul>s,
-   separate aria-labels) for anyone using a screen reader, just not
-   colour-coded any more. */
 
 /* ==========================================================================
    EXPERIENCE
