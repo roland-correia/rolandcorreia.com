@@ -29,7 +29,12 @@ const articles = defineCollection({
         duration: z.string().regex(/^\d+:\d{2}$/, 'Use m:ss, for example 0:58'),
       })
       .optional(),
-    paperMinutes: z.number().int().positive(), // how long the paper takes to read
+    // Optional: about how long the source takes to read (roughly 200 words a minute).
+    // Only add it once you have checked. Without it, the minutes bar is left out.
+    paperMinutes: z.number().int().positive().optional(),
+
+    // Optional line shown at the top of the story, e.g. a correction or "sample story".
+    notice: z.string().optional(),
 
     // Card 2, "The story": the Markdown body of the file, under this heading.
     storyHeading: z.string(),

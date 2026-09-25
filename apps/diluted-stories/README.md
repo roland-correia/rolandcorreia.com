@@ -38,11 +38,12 @@ Every story needs these fields, and the build **fails with a clear message** if 
 | `title`, `pillar` | The headline, and `tech`, `money` or `style`. |
 | `finding` | Card 1. One sentence, 20 to 180 characters. |
 | `posterCaption` | The big words on the video poster. |
-| `paperMinutes` | How long the paper takes to read. The page's own reading time is worked out for you. |
+| `paperMinutes` | Optional. About how long the source takes to read. Only add it once you have checked; without it the minutes bar is left out. The page's own reading time is worked out for you. |
 | `storyHeading` | The heading above card 2. The story itself is the text below the front matter. |
 | `caveat` | Card 3. A `headline` and a `detail`: what the research does not show. |
 | `sources` | Card 4. At least one, with title, authors, publisher, year, url and `access`. |
 | `video` | Optional. `url` and `duration` (`0:58`). Adds the "Watch" link on the poster. |
+| `notice` | Optional. A line at the top of the story, such as a correction or "sample story". |
 | `publishedAt`, `draft` | The date, and whether it is still a draft. |
 
 ## How it is put together

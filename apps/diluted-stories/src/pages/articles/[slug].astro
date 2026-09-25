@@ -34,7 +34,8 @@ const published = story.publishedAt.toLocaleDateString('en-GB', {
   type="article"
   back={{ href: href(`/topics/${story.pillar}/`), label: 'Back' }}
 >
-  {story.draft && <p class="draft-note">Draft. This story is not published yet.</p>}
+  {story.draft && <p class="notice">Draft. This story is not published yet.</p>}
+  {story.notice && <p class="notice">{story.notice}</p>}
 
   <article data-story>
     <div data-progress hidden>
@@ -47,7 +48,7 @@ const published = story.publishedAt.toLocaleDateString('en-GB', {
       <h1 tabindex="-1">{story.title}</h1>
       <Poster caption={story.posterCaption} chip={chip} href={story.video?.url} square />
       <p class="finding">{story.finding}</p>
-      <Scale page={minutes} paper={story.paperMinutes} />
+      {story.paperMinutes && <Scale page={minutes} paper={story.paperMinutes} />}
     </section>
 
     <section class="scard" id="the-story" data-card data-title="The story">

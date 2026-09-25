@@ -14,8 +14,8 @@ const minutes = (n: number) => `${n} minute${n === 1 ? '' : 's'}`;
 ---
 
 <div>
-  <div class="ticks" role="img" aria-label={`This page takes ${minutes(page)}. The paper takes ${minutes(paper)}.`}>
+  <div class="ticks" role="img" aria-label={`This page takes ${minutes(page)}. The paper takes about ${minutes(paper)}.`}>
     {Array.from({ length: total }, (_, i) => <span class:list={['tick', { on: i < filled }]} />)}
   </div>
-  <p class="meta" style="margin-top: 0.5rem">This page: {page} min. The paper: {paper} min.</p>
+  <p class="meta" style="margin-top: 0.5rem">This page: {page} min. The paper: about {paper} min.</p>
 </div>

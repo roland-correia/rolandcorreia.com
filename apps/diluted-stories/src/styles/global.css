@@ -223,7 +223,7 @@ a.tile:hover { border-color: var(--dye); }
 .prose ul, .prose ol { padding-left: 1.25rem; }
 .prose a { text-underline-offset: 4px; }
 
-.draft-note {
+.notice {
   padding: 0.75rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;
   background: var(--caveat-bg); color: var(--caveat-ink); border: 2px solid var(--caveat-line);
 }
