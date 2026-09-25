@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Poster from '../components/Poster.astro';
+import { getArticles, readMinutes } from '../lib/articles';
+import { href } from '../lib/paths';
+
+// Home is one story and one button. Everything else is a tap away.
+const [latest] = await getArticles();
+---
+
+<Base title="Diluted Stories" path="/">
+  <h1>Research,<br /><span>diluted.</span></h1>
+  <p class="lead">Short videos and one-page stories on tech and money research.</p>
+
+  {
+    latest ? (
+      <article class="card">
+        <Poster
+          caption={latest.data.posterCaption}
+          chip={latest.data.video ? `Watch, ${latest.data.video.duration}` : undefined}
+        />
+        <h2>{latest.data.title}</h2>
+        <p class="meta">
+          {readMinutes(latest)} min read, from a {latest.data.paperMinutes} min paper
+        </p>
+        <a class="btn block" href={href(`/articles/${latest.id}/`)}>Open story</a>
+      </article>
+    ) : (
+      <div class="card empty">
+        <h2>The first stories are on the way</h2>
+        <p class="meta">Tech and money research, explained one card at a time.</p>
+      </div>
+    )
+  }
+
+  <a class="textbtn" href={href('/topics/')}>Explore topics</a>
+  <p class="credit">by <a href="https://rolandcorreia.com">Roland Correia</a></p>
+</Base>

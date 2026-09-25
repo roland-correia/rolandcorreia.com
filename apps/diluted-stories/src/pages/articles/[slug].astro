@@ -1,0 +1,104 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Poster from '../../components/Poster.astro';
+import Scale from '../../components/Scale.astro';
+import { getArticles, readMinutes, type Article } from '../../lib/articles';
+import { pillars } from '../../lib/site';
+import { href } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props as { entry: Article };
+const { Content } = await render(entry);
+const story = entry.data;
+const topic = pillars[story.pillar];
+const minutes = readMinutes(entry);
+const chip = story.video ? `Watch, ${story.video.duration}` : undefined;
+const hostname = (url: string) => new URL(url).hostname.replace(/^www\./, '');
+const published = story.publishedAt.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base
+  title={story.title}
+  description={story.finding}
+  path={`/articles/${entry.id}/`}
+  type="article"
+  back={{ href: href(`/topics/${story.pillar}/`), label: 'Back' }}
+>
+  {story.draft && <p class="draft-note">Draft. This story is not published yet.</p>}
+
+  <article data-story>
+    <div data-progress hidden>
+      <div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <p class="count" data-count aria-live="polite"></p>
+    </div>
+
+    <section class="scard" id="the-finding" data-card data-title="The finding">
+      <p class="kicker">The finding</p>
+      <h1 tabindex="-1">{story.title}</h1>
+      <Poster caption={story.posterCaption} chip={chip} href={story.video?.url} square />
+      <p class="finding">{story.finding}</p>
+      <Scale page={minutes} paper={story.paperMinutes} />
+    </section>
+
+    <section class="scard" id="the-story" data-card data-title="The story">
+      <p class="kicker">The story</p>
+      <h2 tabindex="-1">{story.storyHeading}</h2>
+      <div class="prose"><Content /></div>
+    </section>
+
+    <section class="scard" id="the-catch" data-card data-title="The catch">
+      <p class="kicker">The catch</p>
+      <h2 tabindex="-1">What this doesn't show</h2>
+      <div class="caveat">
+        <b>{story.caveat.headline}</b>
+        <span>{story.caveat.detail}</span>
+      </div>
+    </section>
+
+    <section class="scard" id="the-source" data-card data-title="The source">
+      <p class="kicker">The source</p>
+      <h2 tabindex="-1">Where this comes from</h2>
+      {
+        story.sources.map((source) => (
+          <div class="src">
+            <b>{source.title}</b>
+            <span>{source.authors}</span>
+            <span>
+              {source.publisher}, {source.year}
+            </span>
+            <small>{source.access === 'open' ? 'Free to read' : 'Behind a paywall'}</small>
+            {source.doi && <span class="mono">DOI: {source.doi}</span>}
+            <a class="btn" href={source.url} target="_blank" rel="noopener">Open the source</a>
+            <span class="mono">{hostname(source.url)}</span>
+          </div>
+        ))
+      }
+      {
+        story.pillar === 'money' && (
+          <p class="fine">Not financial advice. This explains published research and does not recommend investments.</p>
+        )
+      }
+      <p class="fine">By Roland Correia. Published {published}.</p>
+      <a class="textbtn" href={href(`/topics/${story.pillar}/`)}>More in {topic.name}</a>
+    </section>
+
+    <div class="stepper" data-stepper hidden>
+      <button class="btn ghost" type="button" data-prev hidden>Previous</button>
+      <button class="btn" type="button" data-next>Next: The story</button>
+    </div>
+  </article>
+
+  <script>
+    import '../../scripts/article-cards.ts';
+  </script>
+</Base>
