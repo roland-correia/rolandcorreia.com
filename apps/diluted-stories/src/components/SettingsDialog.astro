@@ -1,0 +1,48 @@
+---
+// Reading settings, opened by the "Aa" button. It uses the browser's own
+// <dialog>, which traps keyboard focus and closes on Escape without extra code.
+// The choices are saved in this browser only (see src/scripts/settings.ts).
+---
+
+<dialog class="settings" id="settings" aria-labelledby="settings-title">
+  <form method="dialog">
+    <h2 id="settings-title">Reading settings</h2>
+
+    <fieldset>
+      <legend>Text size</legend>
+      <div class="seg">
+        <label><input type="radio" name="size" value="sm" /><span>Smaller</span></label>
+        <label><input type="radio" name="size" value="md" checked /><span>Default</span></label>
+        <label><input type="radio" name="size" value="lg" /><span>Larger</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Spacing</legend>
+      <div class="seg">
+        <label><input type="radio" name="space" value="normal" checked /><span>Default</span></label>
+        <label><input type="radio" name="space" value="roomy" /><span>Roomy</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Background</legend>
+      <div class="seg">
+        <label><input type="radio" name="bg" value="auto" checked /><span>Auto</span></label>
+        <label><input type="radio" name="bg" value="soft" /><span>Soft</span></label>
+        <label><input type="radio" name="bg" value="cream" /><span>Cream</span></label>
+        <label><input type="radio" name="bg" value="dark" /><span>Dark</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Stories</legend>
+      <div class="seg">
+        <label><input type="radio" name="flow" value="cards" checked /><span>One card at a time</span></label>
+        <label><input type="radio" name="flow" value="page" /><span>Whole page</span></label>
+      </div>
+    </fieldset>
+
+    <button class="btn block" value="done">Done</button>
+  </form>
+</dialog>

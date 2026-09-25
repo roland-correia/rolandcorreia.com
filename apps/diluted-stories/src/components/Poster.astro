@@ -1,0 +1,27 @@
+---
+// The video poster. It is also the design used for share images, so one look
+// covers the site, TikTok, Instagram and link previews.
+// With an `href` it links out to the video; there is no embedded player, so no
+// third-party scripts load on the page.
+interface Props {
+  caption: string;
+  chip?: string;
+  href?: string;
+  square?: boolean;
+}
+
+const { caption, chip, href, square = false } = Astro.props;
+const Tag = href ? 'a' : 'div';
+const label = href ? `Watch the video${chip ? ` (${chip})` : ''}: ${caption}` : undefined;
+---
+
+<Tag
+  class:list={['poster', { sq: square }]}
+  href={href}
+  target={href ? '_blank' : undefined}
+  rel={href ? 'noopener' : undefined}
+  aria-label={label}
+>
+  {chip && <span class="chip">{chip}</span>}
+  <p class="cap">{caption}</p>
+</Tag>

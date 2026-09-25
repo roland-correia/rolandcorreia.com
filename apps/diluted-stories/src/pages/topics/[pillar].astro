@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getArticles, readMinutes } from '../../lib/articles';
+import { pillars, type Pillar } from '../../lib/site';
+import { upcoming } from '../../data/upcoming';
+import { href } from '../../lib/paths';
+
+// One page per live topic. "Style" has no page until it opens.
+export function getStaticPaths() {
+  return (Object.keys(pillars) as Pillar[])
+    .filter((key) => pillars[key].live)
+    .map((pillar) => ({ params: { pillar } }));
+}
+
+const key = Astro.params.pillar as Pillar;
+const topic = pillars[key];
+const stories = (await getArticles()).filter((article) => article.data.pillar === key);
+const planned = upcoming.filter((item) => item.pillar === key);
+---
+
+<Base
+  title={topic.name}
+  description={`${topic.name}: ${topic.blurb.toLowerCase()}.`}
+  path={`/topics/${key}/`}
+  back={{ href: href('/topics/'), label: 'Back' }}
+>
+  <h1>{topic.name}</h1>
+  <p class="lead">{topic.blurb}.</p>
+
+  {
+    stories.map((article) => (
+      <a class="tile" href={href(`/articles/${article.id}/`)}>
+        <b>{article.data.title}</b>
+        <small>{readMinutes(article)} min read</small>
+      </a>
+    ))
+  }
+  {
+    planned.map((item) => (
+      <div class="tile off">
+        <b>{item.title}</b>
+        <small>{item.note}</small>
+      </div>
+    ))
+  }
+  {stories.length === 0 && planned.length === 0 && <p class="meta">Nothing here yet.</p>}
+</Base>

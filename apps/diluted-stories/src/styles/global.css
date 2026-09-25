@@ -1,0 +1,257 @@
+/* ==========================================================================
+   TOKENS
+   Colours change with the reader's "Background" setting (html[data-bg]).
+   Text size and spacing change with html[data-size] and html[data-space].
+   Everything else is sized in rem, so it scales with those settings.
+   ========================================================================== */
+:root {
+  --ground: #f0f2f7;
+  --surface: #ffffff;
+  --ink: #0e1330;
+  --muted: #444b6d;
+  --line: #cbd1e4;
+  --dye: #2438ff;
+  --dye-ink: #ffffff;
+  --caveat-bg: #fff1d6;
+  --caveat-ink: #6b3f00;
+  --caveat-line: #e4c87f;
+
+  --sans: 'Lexend Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --fs: 112.5%; /* 18px: a comfortable reading size, not the browser's 16px */
+  --lh: 1.7;
+  --ls: 0.01em;
+  --ws: 0em;
+  --column: 34rem;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-bg='auto'] {
+    --ground: #0b0f24;
+    --surface: #141a3d;
+    --ink: #edf0ff;
+    --muted: #b4bce0;
+    --line: #2c3466;
+    --dye: #7b8bff;
+    --dye-ink: #0b0f24;
+    --caveat-bg: #2a2110;
+    --caveat-ink: #f3c77a;
+    --caveat-line: #57431c;
+    color-scheme: dark;
+  }
+}
+
+html[data-bg='cream'] {
+  --ground: #f7f0df;
+  --surface: #fffbf0;
+  --ink: #1d1b16;
+  --muted: #4a4636;
+  --line: #dbd1b5;
+  --caveat-bg: #fbe6b8;
+  --caveat-ink: #5e3700;
+  --caveat-line: #ddbc72;
+}
+
+html[data-bg='dark'] {
+  --ground: #0b0f24;
+  --surface: #141a3d;
+  --ink: #edf0ff;
+  --muted: #b4bce0;
+  --line: #2c3466;
+  --dye: #7b8bff;
+  --dye-ink: #0b0f24;
+  --caveat-bg: #2a2110;
+  --caveat-ink: #f3c77a;
+  --caveat-line: #57431c;
+  color-scheme: dark;
+}
+
+html[data-size='sm'] { --fs: 100%; }
+html[data-size='lg'] { --fs: 131.25%; }
+html[data-space='roomy'] { --lh: 2; --ls: 0.05em; --ws: 0.14em; }
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+[hidden] { display: none !important; }
+
+html { font-size: var(--fs); -webkit-text-size-adjust: 100%; }
+
+body {
+  --dye-soft: color-mix(in srgb, var(--dye) 12%, var(--ground));
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: var(--lh);
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+
+:focus-visible { outline: 3px solid var(--dye); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 10;
+  background: var(--ink); color: var(--ground);
+  padding: 0.75rem 1rem; border-radius: 10px; font-weight: 600;
+}
+.skip-link:focus { top: 1rem; }
+
+.shell { max-width: var(--column); margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+main { display: flex; flex-direction: column; gap: 1.4rem; min-height: 70vh; }
+
+h1 { font-size: 2.2rem; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
+h1 span { font-weight: 400; }
+h2 { font-size: 1.5rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+
+.lead, .meta { color: var(--muted); }
+.kicker { font-weight: 600; color: var(--dye); font-size: 0.85rem; }
+.mono { font-family: var(--mono); font-size: 0.78rem; overflow-wrap: anywhere; color: var(--muted); letter-spacing: 0; }
+
+/* ==========================================================================
+   TOP BAR AND WORDMARK
+   ========================================================================== */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 4.5rem; }
+
+.wm { font-size: 1.45rem; letter-spacing: -0.01em; line-height: 1; text-decoration: none; }
+.wm span { font-weight: var(--w); }
+
+.iconbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 3rem; min-height: 3rem; padding: 0 0.9rem;
+  border: 2px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; text-decoration: none;
+}
+.iconbtn:hover { border-color: var(--dye); }
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  min-height: 3.4rem; padding: 0 1.4rem; border-radius: 10px;
+  border: 2px solid var(--dye); background: var(--dye); color: var(--dye-ink);
+  font-weight: 700; cursor: pointer; text-decoration: none;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.block { width: 100%; }
+
+.textbtn {
+  display: inline-flex; align-items: center; align-self: flex-start;
+  min-height: 3rem; font-weight: 600; text-decoration: underline; text-underline-offset: 5px;
+}
+
+/* ==========================================================================
+   CARDS, POSTER, TILES
+   ========================================================================== */
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem;
+}
+
+.poster {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
+  background: var(--dye); color: var(--dye-ink); border-radius: 10px; padding: 1rem;
+  aspect-ratio: 4 / 3; text-decoration: none;
+}
+.poster.sq { aspect-ratio: 1; }
+.chip {
+  align-self: flex-start; border: 2px solid currentColor; border-radius: 999px;
+  padding: 0.1rem 0.75rem; font-weight: 600; font-size: 0.8rem; line-height: 1.6;
+}
+.cap { margin-top: auto; font-size: 1.45rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+a.poster:hover { filter: brightness(1.08); }
+
+.tile {
+  display: flex; flex-direction: column; gap: 0.1rem; width: 100%; min-height: 5.5rem;
+  padding: 1rem 1.1rem; background: var(--surface); border: 2px solid var(--line); border-radius: 14px;
+  text-decoration: none; text-align: left;
+}
+a.tile:hover { border-color: var(--dye); }
+.tile b { font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+.tile small { color: var(--muted); font-size: 0.85rem; }
+.tile.off { border-style: dashed; }
+.tile.off b, .tile.off small { opacity: 0.85; }
+
+.empty h2 { font-size: 1.3rem; }
+
+/* ==========================================================================
+   STORY: FOUR CARDS
+   ========================================================================== */
+.progress { display: flex; gap: 0.4rem; }
+.progress i { flex: 1; height: 0.5rem; border-radius: 4px; background: var(--line); }
+.progress i.done { background: var(--dye); }
+.count { font-weight: 600; font-size: 0.85rem; margin-top: 0.5rem; color: var(--muted); }
+
+.scard { display: flex; flex-direction: column; gap: 1rem; }
+.scard + .scard { border-top: 1px solid var(--line); padding-top: 1.5rem; margin-top: 0.5rem; }
+.scard h1:focus, .scard h2:focus { outline: none; }
+.js-cards .scard + .scard { border-top: 0; padding-top: 0; margin-top: 0; }
+
+.finding { font-size: 1.2rem; font-weight: 600; line-height: 1.4; }
+.ticks { display: flex; gap: 2px; align-items: flex-end; height: 1.4rem; }
+.tick { flex: 1; height: 0.6rem; background: var(--line); }
+.tick.on { height: 1.4rem; background: var(--dye); }
+
+.caveat {
+  display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem;
+  background: var(--caveat-bg); color: var(--caveat-ink);
+  border: 2px solid var(--caveat-line); border-radius: 12px;
+}
+.caveat b { font-weight: 700; }
+
+.src { display: flex; flex-direction: column; gap: 0.25rem; }
+.src + .src { border-top: 1px solid var(--line); padding-top: 1rem; }
+.src small { color: var(--muted); }
+.fine { color: var(--muted); font-size: 0.85rem; }
+
+.stepper { display: flex; gap: 0.6rem; margin-top: 0.25rem; }
+.stepper .btn { flex: 1; }
+
+[data-story] { display: flex; flex-direction: column; gap: 1.4rem; }
+.prose { display: flex; flex-direction: column; gap: 1rem; }
+.prose ul, .prose ol { padding-left: 1.25rem; }
+.prose a { text-underline-offset: 4px; }
+
+.notice {
+  padding: 0.75rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;
+  background: var(--caveat-bg); color: var(--caveat-ink); border: 2px solid var(--caveat-line);
+}
+
+.credit { margin-top: 2rem; color: var(--muted); font-size: 0.85rem; }
+
+/* ==========================================================================
+   READING SETTINGS (the Aa dialog)
+   ========================================================================== */
+dialog.settings {
+  width: calc(100% - 2rem); max-width: 26rem; padding: 0;
+  background: var(--ground); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 18px;
+}
+dialog.settings::backdrop { background: rgb(14 19 48 / 0.55); }
+dialog.settings form { display: flex; flex-direction: column; gap: 1.4rem; padding: 1.4rem 1.25rem; }
+dialog.settings h2 { font-size: 1.3rem; }
+
+fieldset { border: 0; padding: 0; min-width: 0; }
+legend { font-weight: 700; padding: 0; margin-bottom: 0.6rem; }
+.seg { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.seg label { flex: 1 1 auto; position: relative; }
+.seg input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.seg span {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  min-height: 3rem; padding: 0 0.75rem; border: 2px solid var(--line); border-radius: 10px;
+  background: var(--surface); font-size: 0.85rem; line-height: 1.3;
+}
+.seg input:checked + span { border-color: var(--dye); background: var(--dye-soft); font-weight: 700; }
+.seg input:checked + span::before { content: '\2713\00a0'; }
+.seg input:focus-visible + span { outline: 3px solid var(--dye); outline-offset: 2px; }

@@ -1,0 +1,10 @@
+---
+// The wordmark: each letter of "Diluted" is a lighter weight than the last,
+// so the name itself shows something concentrated being diluted.
+const weights = [900, 830, 750, 670, 580, 480, 380];
+const letters = 'Diluted'.split('');
+---
+
+<span class="wm" role="img" aria-label="Diluted Stories">
+  {letters.map((letter, i) => <span aria-hidden="true" style={`--w:${weights[i]}`}>{letter}</span>)}
+</span>

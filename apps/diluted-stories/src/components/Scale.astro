@@ -1,0 +1,21 @@
+---
+// One tick per minute of the paper, with the minutes this page takes filled in.
+// Numbers in plain words underneath: no ratios to decode.
+interface Props {
+  page: number;
+  paper: number;
+}
+
+const { page, paper } = Astro.props;
+const MAX_TICKS = 60;
+const total = Math.min(paper, MAX_TICKS);
+const filled = Math.max(1, Math.round((page / paper) * total));
+const minutes = (n: number) => `${n} minute${n === 1 ? '' : 's'}`;
+---
+
+<div>
+  <div class="ticks" role="img" aria-label={`This page takes ${minutes(page)}. The paper takes about ${minutes(paper)}.`}>
+    {Array.from({ length: total }, (_, i) => <span class:list={['tick', { on: i < filled }]} />)}
+  </div>
+  <p class="meta" style="margin-top: 0.5rem">This page: {page} min. The paper: about {paper} min.</p>
+</div>

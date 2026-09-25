@@ -1,0 +1,77 @@
+---
+import '@fontsource-variable/lexend';
+import '@fontsource/jetbrains-mono/500.css';
+import '../styles/global.css';
+import Wordmark from '../components/Wordmark.astro';
+import SettingsDialog from '../components/SettingsDialog.astro';
+import { SITE_NAME, DESCRIPTION } from '../lib/site';
+import { href, absolute } from '../lib/paths';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** The page's own path, e.g. '/topics/', used for the canonical and share URLs. */
+  path: string;
+  /** Leave out on the home page, which shows the wordmark instead of a Back button. */
+  back?: { href: string; label: string };
+  type?: 'website' | 'article';
+}
+
+const { title, description = DESCRIPTION, path, back, type = 'website' } = Astro.props;
+const pageTitle = path === '/' ? `${SITE_NAME}: research, diluted` : `${title} | ${SITE_NAME}`;
+const canonical = absolute(path);
+---
+
+<!doctype html>
+<html lang="en-GB" data-size="md" data-space="normal" data-bg="auto" data-flow="cards">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absolute('/og-default.png')} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Runs before the page paints, so saved reading settings never flash the default look. -->
+    <script is:inline>
+      try {
+        var saved = JSON.parse(localStorage.getItem('ds-settings') || '{}');
+        var allowed = {
+          size: ['sm', 'md', 'lg'],
+          space: ['normal', 'roomy'],
+          bg: ['auto', 'soft', 'cream', 'dark'],
+          flow: ['cards', 'page'],
+        };
+        for (var key in allowed) {
+          if (allowed[key].indexOf(saved[key]) > -1) {
+            document.documentElement.setAttribute('data-' + key, saved[key]);
+          }
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="shell">
+      <header class="bar">
+        {back ? <a class="iconbtn" href={back.href}>{back.label}</a> : <Wordmark />}
+        <button type="button" class="iconbtn" data-open-settings aria-haspopup="dialog" aria-label="Reading settings">Aa</button>
+      </header>
+      <main id="main">
+        <slot />
+      </main>
+    </div>
+    <SettingsDialog />
+    <script>
+      import '../scripts/settings.ts';
+    </script>
+  </body>
+</html>
