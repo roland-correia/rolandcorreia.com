@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 1
+title: Left on read
+topic: Waiting for a reply
+draft: false
+
+situation: |
+  You have fancied Amira for a while. Two days ago you texted her: "Fancy getting a coffee this weekend?"
+
+  The message shows as read. She has not replied, and she has been posting on her story since.
+
+question: What is the best call?
+
+options:
+  - text: Send a few more messages. "Hello??" and "Did you see my text?"
+    call: risky
+    why: >-
+      She saw it. More messages do not give her new information, only more pressure. Each one makes it
+      harder for her to reply at all, and turns a simple invitation into something she has to manage.
+
+  - text: Leave it. She has your message, and she knows where you are if she wants to say yes.
+    call: best
+    why: >-
+      One clear invitation is enough. Not replying is an answer for now, even if it is not the one you hoped
+      for. Leaving space keeps things comfortable between you, whatever she decides.
+
+  - text: Wait a few more days, send one light follow-up, and drop it if she still does not reply.
+    call: okay
+    why: >-
+      A single, relaxed follow-up is reasonable. Messages do get forgotten. What matters is the second half:
+      if there is still no reply, that is your answer, and you stop there.
+
+  - text: Message her best friend to ask why Amira is ignoring you.
+    call: risky
+    why: >-
+      Now Amira is being asked through someone else, and her friend is stuck in the middle. It tells her
+      that not replying to you has consequences, which is the opposite of making it easy to say no.
+
+principle: >-
+  Nobody owes you a reply. Ask once, clearly, and treat silence as "not now". Chasing an answer turns an
+  invitation into pressure.

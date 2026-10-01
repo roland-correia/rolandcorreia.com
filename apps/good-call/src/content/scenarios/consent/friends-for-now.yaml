@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 4
+title: Friends for now
+topic: Mixed signals
+draft: false
+
+situation: |
+  A month ago you told Liam how you felt. He said: "I like you, but I just want to be friends for now." You agreed, and you still text most days.
+
+  Tonight the chat is warm and jokey, and it is getting late. You want to send something flirty, like "Wish you were here."
+
+question: What is the best call?
+
+options:
+  - text: Send the flirty message and see how he reacts.
+    call: risky
+    why: >-
+      Liam told you where he stands. A flirty message tests whether he meant it, and leaves him to either
+      play along or turn you down a second time. A warm chat between friends is not a change of mind.
+
+  - text: Keep it friendly tonight. If you need to know, ask him plainly another day whether anything has changed.
+    call: best
+    why: >-
+      You have respected what he said and left room for an honest update. One open question, such as "Are
+      you still happy with just friends? Either answer is fine", lets him tell you without being put on the spot.
+
+  - text: Reply, "You'll change your mind about me eventually."
+    call: risky
+    why: >-
+      Said as a joke, it still tells Liam you are waiting for him to give in. "Friends for now" was not a
+      promise about later. He may start to pull back from the friendship to avoid leading you on.
+
+  - text: Stay friendly, say nothing, and keep hoping he comes round.
+    call: okay
+    why: >-
+      You are not crossing his line, and that matters. But be honest with yourself. If you are only friends
+      with him in the hope of more, it will wear you down, and it is not quite the friendship he agreed to.
+
+principle: >-
+  "Friends for now" means friends. Take people at their word, and if you want to know whether something has
+  changed, ask once, openly, with room for either answer.
