@@ -1,0 +1,43 @@
+set: adult-content
+category: children
+order: 1
+title: Shown at school
+topic: A child who has seen it
+draft: false
+
+situation: |
+  Your son Leo is eleven. He has been quiet all evening. At bedtime he tells you that an older boy showed him a video on his phone at school. From what Leo says, it was porn.
+
+  He looks worried and asks, "Am I in trouble?"
+
+question: What is the best call?
+
+options:
+  - text: Take his tablet away and ban screens for a month.
+    call: risky
+    why: >-
+      Leo did the right thing by telling you, and this punishes him for it. He did not go looking. What he
+      learns is that telling a parent costs him his tablet, so next time he will keep it to himself.
+
+  - text: Say, "No, you're not in trouble. Thank you for telling me." Then explain, simply, that it is made for adults and is not what real relationships are like.
+    call: best
+    why: >-
+      Staying calm keeps the door open, and Leo is far from alone. In a survey for the Children's
+      Commissioner for England, one in ten of the young people who had seen porn had first seen it by the age
+      of nine. He needs to know it was not his fault, that it is acting, and that he can always ask you.
+
+  - text: Tell him not to worry about it, and quietly turn on the parental controls.
+    call: okay
+    why: >-
+      Filters are worth having, and reassurance is kind. But controls at home do nothing about another
+      child's phone at school. What protects him there is knowing he can talk to you, which takes a conversation.
+
+  - text: Say, "Boys will be boys," and leave it there.
+    call: risky
+    why: >-
+      It brushes off something that clearly upset him, and tells him it is normal and not worth discussing.
+      Leo is left to make sense of what he saw on his own, or with the boy who showed him.
+
+principle: >-
+  When a child tells you they have seen porn, how you react decides whether they tell you next time. Stay
+  calm, thank them, explain that it is not real life, and let the school know if another child is showing it.

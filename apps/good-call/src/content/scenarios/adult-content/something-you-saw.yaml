@@ -1,0 +1,42 @@
+set: adult-content
+category: relationships
+order: 1
+title: Something you saw
+topic: Trying things
+draft: false
+
+situation: |
+  You have seen something in porn that you would like to try with your partner, Marcus. It is rougher than anything the two of you have done. You have never talked about it.
+
+  Tonight things are heading towards sex.
+
+question: What is the best call?
+
+options:
+  - text: Just do it in the moment. It is in so many videos that it must be normal.
+    call: risky
+    why: >-
+      Being common on screen does not mean Marcus has agreed to it. He said yes to the kind of sex you
+      usually have, not to this. Springing something rough on someone can frighten or hurt them, and it is not consent.
+
+  - text: Bring it up another time, with your clothes on. Say what you saw and ask what he thinks. Take a no as a no.
+    call: best
+    why: >-
+      Away from the moment, Marcus can think, ask questions and say no without spoiling anything. If he is
+      interested, you can agree how to try it and how either of you stops it. If he is not, you have lost nothing.
+
+  - text: Ask him in the middle of things, "Can I try something?"
+    call: okay
+    why: >-
+      Asking is far better than not asking. But in the moment it is hard to say no, and he does not know
+      what he is agreeing to. A vague yes under pressure is weak consent. Say what it is, ahead of time.
+
+  - text: Ask, and when he says he would rather not, bring it up again every few weeks.
+    call: risky
+    why: >-
+      Asking once was right. Coming back to it again and again tells him his answer was only temporary. He
+      may give in to end the asking, which is not the same as wanting to.
+
+principle: >-
+  Seeing something in porn is not the same as your partner agreeing to it. Talk about new things before, not
+  during. Be specific, and make no an easy answer.

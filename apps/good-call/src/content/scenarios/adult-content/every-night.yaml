@@ -1,0 +1,42 @@
+set: adult-content
+category: yourself
+order: 1
+title: Every night
+topic: A habit that has grown
+draft: false
+
+situation: |
+  You have noticed that you now watch porn most nights. It started as now and then. Lately you stay up later than you mean to, you are tired at work, and you have turned down seeing friends to stay in.
+
+  Afterwards you usually feel flat, and a bit ashamed. You have not told anyone.
+
+question: What is the best call for you?
+
+options:
+  - text: Tell yourself everyone does it, and stop thinking about it.
+    call: risky
+    why: >-
+      Plenty of adults watch porn without it causing problems. But you have just listed three: sleep, work
+      and friends. Whether it is common is not the question. Whether it is costing you something is, and it is.
+
+  - text: Swear you will never watch it again, starting tonight, and tell nobody.
+    call: okay
+    why: >-
+      Wanting to change is the right instinct. But willpower alone, in secret, with no plan for the moments
+      you usually watch, tends to end in a slip and then more shame. Changing what is around you works better than a vow.
+
+  - text: Look at the pattern without beating yourself up. Change the setup, such as charging your phone outside the bedroom, and tell someone you trust or your GP if it does not shift.
+    call: best
+    why: >-
+      Habits depend on time, place and mood, so changing those is what works. Shame feeds the cycle, because
+      feeling bad is often what sets it off. If you cannot cut back alone, that is a recognised problem, and help exists.
+
+  - text: Carry on, but feel worse about it each time as a way of making yourself stop.
+    call: risky
+    why: >-
+      Guilt feels like doing something, but it is not a plan. For many people, feeling low is exactly what
+      sends them back. You end up with the habit and the misery, and no step towards changing either.
+
+principle: >-
+  The test is not how often, but what it costs you: sleep, focus, money, time with people. If it is costing
+  you, change the setup and tell someone. Shame keeps a habit going.

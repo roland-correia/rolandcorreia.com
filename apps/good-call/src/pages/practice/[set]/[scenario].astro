@@ -95,7 +95,7 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
     </div>
   </article>
 
-  {scenario.set === 'consent' && <Support />}
+  <Support set={scenario.set} />
 
   <script>
     import '../../../scripts/scenario.ts';
