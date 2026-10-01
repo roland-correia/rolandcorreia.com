@@ -36,6 +36,7 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 | Field | What it is |
 | --- | --- |
 | `set`, `order` | Which set it belongs to (`consent`, `administrator`) and its position in it. |
+| `category` | Consent only: which section of the page it sits under. `order` then sorts within that section. |
 | `title`, `topic` | The heading, and the skill or theme shown as a small label. |
 | `situation` | What is happening. Leave a blank line between paragraphs. |
 | `question` | Optional. Defaults to "What is the best call?". |
@@ -46,6 +47,10 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 `call` is the verdict: `best` (Good call), `okay` (Could be better) or `risky` (Not the best call).
 `why` is the feedback, and every option must have one, including the best. Vary which position the
 best answer sits in.
+
+The consent categories (`touch`, `privacy`, `pressure`, `nights`, `intimacy`) are listed in
+`categories` in `src/lib/site.ts`. Their order there is the order on the page. To add one, add a
+line there and use its name in a scenario. A set with no categories is shown as one list.
 
 ## Add a role
 
@@ -59,10 +64,10 @@ best answer sits in.
 ```
 src/content.config.ts    the rules every scenario must follow (the schema)
 src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
-src/lib/site.ts          the sets (consent and each work role) and the three verdicts
+src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
 src/pages/               home, the role picker, a set, one scenario, about
 src/layouts/Base.astro   the page shell, share tags and reading settings
-src/components/          the wordmark, settings dialog and support links
+src/components/          the wordmark, scenario tile, settings dialog and support links
 src/scripts/             scenario.ts (check an answer), set-progress.ts, progress.ts, settings.ts
 src/styles/global.css    colours, type and layout, all in one place
 ```
