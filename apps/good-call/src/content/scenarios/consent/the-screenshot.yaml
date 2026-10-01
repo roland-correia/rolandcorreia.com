@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 6
+title: The screenshot
+topic: Private messages
+draft: false
+
+situation: |
+  Daniel, a friend from work, sends you a long, nervous message. He says he has liked you for ages, that he has never told anyone, and that he understands if you do not feel the same. You do not.
+
+  Your group chat is active, and you know your friends would love to see it.
+
+question: What is the best call?
+
+options:
+  - text: Screenshot it and post it in the group chat. It is quite sweet, and a bit funny.
+    call: risky
+    why: >-
+      Daniel wrote that for one person. He has not agreed to an audience, and screenshots travel. If it ever
+      gets back to him, he learns that being honest with you ends up as entertainment.
+
+  - text: Keep it to yourself and reply to him kindly and clearly.
+    call: best
+    why: >-
+      He took a risk and trusted you with it. Keeping it private costs you nothing, and a kind, clear reply
+      lets him move on with his dignity intact. That matters even more when the answer is no.
+
+  - text: Tell your best friend what happened, without showing the message.
+    call: okay
+    why: >-
+      Wanting to talk it through with one trusted person is human, and far better than sharing his words.
+      Still, he said he had told nobody. The fewer people who know, the easier work will be for him.
+
+  - text: Do not reply to Daniel, but show the message to a couple of colleagues to ask what they think.
+    call: risky
+    why: >-
+      This is the worst of both. Daniel is left waiting with no answer, while the people he works with read
+      something he found hard to write. Colleagues are the last people who should see it.
+
+principle: >-
+  A private message is for the person it was sent to. Being trusted with someone's feelings is not consent to
+  pass them on, even when you do not share those feelings.

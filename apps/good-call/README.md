@@ -48,7 +48,7 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 `why` is the feedback, and every option must have one, including the best. Vary which position the
 best answer sits in.
 
-The consent categories (`touch`, `privacy`, `pressure`, `nights`, `intimacy`) are listed in
+The consent categories (`touch`, `privacy`, `texting`, `pressure`, `nights`, `intimacy`) are listed in
 `categories` in `src/lib/site.ts`. Their order there is the order on the page. To add one, add a
 line there and use its name in a scenario. A set with no categories is shown as one list.
 

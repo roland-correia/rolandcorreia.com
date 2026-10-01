@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 5
+title: Goodnight x
+topic: Your own boundaries
+draft: false
+
+situation: |
+  A few weeks ago you told your friend Chloe that you only see her as a friend. She said she understood.
+
+  Since then she has texted "goodnight x" every night, sends heart emojis, and jokes in messages about the two of you being "basically a couple". You like her as a friend. The messages are making you uncomfortable.
+
+question: What is the best call for you?
+
+options:
+  - text: Play along with the jokes so you do not hurt her.
+    call: risky
+    why: >-
+      It is kindly meant, but it tells Chloe the flirting is welcome, so there will be more of it. You end
+      up more uncomfortable, and she ends up more hopeful. Neither of you is better off.
+
+  - text: Reply less and less, and hope she gets the message.
+    call: okay
+    why: >-
+      Pulling back is a fair way to protect yourself. But hints are easy to miss, and Chloe may just think
+      you are busy. If you can say it, saying it works faster and is kinder to you both.
+
+  - text: Tell her plainly. "I value you as a friend. The couple jokes and goodnight texts make me uncomfortable. Can we stop those?"
+    call: best
+    why: >-
+      You have named exactly what needs to change and what you want to keep. You already gave your answer
+      once, so repeating it is not harsh. If she is a good friend, she will adjust.
+
+  - text: Mute the chat without saying anything.
+    call: okay
+    why: >-
+      You are entitled to do this, and if she ignores a clear request it is the right next step. As a first
+      move, though, it ends the friendship without giving her the chance to put things right.
+
+principle: >-
+  A boundary can be crossed by anyone, in small and friendly-looking ways. You are allowed to say it a
+  second time, and you do not have to manage the other person's feelings by going along with it.

@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 8
+title: The 1am text
+topic: Alcohol and messages
+draft: false
+
+situation: |
+  You have liked Jake for months. Last week he told you he was not sure how he felt and wanted to stay friends for now.
+
+  At 1am your phone buzzes. It is Jake, with typos everywhere: "im so drunk... ive been thinking abut you. come over??"
+
+question: What is the best call?
+
+options:
+  - text: Go over. He has finally said what he really feels.
+    call: risky
+    why: >-
+      A week ago, sober, Jake said he was unsure. Tonight, drunk, he says something else. The sober answer is
+      the one to trust. Someone that drunk cannot properly choose, and acting on it could hurt you both.
+
+  - text: Reply, "Get some water and some sleep. Text me tomorrow if you still want to talk."
+    call: best
+    why: >-
+      You have been kind, checked he is all right, and moved the real conversation to a time when he can
+      mean what he says. If he feels the same tomorrow, you have lost nothing by waiting.
+
+  - text: Reply with something flirty to keep him talking, but do not go over.
+    call: okay
+    why: >-
+      Staying put is right. But flirting back builds on something he may not remember or mean, and makes
+      tomorrow more awkward for him. Keep tonight's messages simple and friendly.
+
+  - text: Screenshot it and send it to him in the morning, saying "So you do like me."
+    call: risky
+    why: >-
+      This uses something he said when he was not himself to hold him to it. He may feel embarrassed and
+      cornered. If you want to know how he feels, ask him fresh, without the evidence.
+
+principle: >-
+  A drunk message is not a sober decision. If someone told you one thing sober and another thing drunk, wait
+  and ask again when they can choose.

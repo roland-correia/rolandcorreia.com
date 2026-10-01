@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 2
+title: The reply you did not want
+topic: Taking a no
+draft: false
+
+situation: |
+  You finally texted Megan, a friend you have liked for months, to ask her out for dinner.
+
+  She replies: "Aw, that's really kind, but I don't see you that way. I hope we can still be friends."
+
+question: What is the best call?
+
+options:
+  - text: Reply, "Why not? Just give me one date to change your mind."
+    call: risky
+    why: >-
+      Megan has answered. Asking her to explain or to try anyway treats her no as an opening offer. It also
+      makes her less likely to be honest with the next person, because being honest got her an argument.
+
+  - text: Reply, "No worries, thanks for being straight with me." Then give it a bit of space.
+    call: best
+    why: >-
+      It stings, and you can still be gracious. You have made it safe for her to be honest, and kept the
+      friendship possible. Taking some space afterwards is fine. You do not have to pretend it did not hurt.
+
+  - text: Reply, "Wow, OK. I wasn't that bothered anyway."
+    call: risky
+    why: >-
+      This is hurt talking, and it punishes her for a kind, clear answer. It is the reply most people regret
+      by the morning, and the one most likely to end the friendship.
+
+  - text: Do not reply at all.
+    call: okay
+    why: >-
+      You have not pushed, which is the main thing, and it is fine to need time. But she said something hard
+      to say, and silence may leave her worrying. A short, gracious line now makes things easier for both of you.
+
+principle: >-
+  A no is an answer, not the start of a negotiation. How you take it decides whether people feel safe being
+  honest with you.

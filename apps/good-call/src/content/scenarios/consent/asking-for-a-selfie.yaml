@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 7
+title: Maybe another time
+topic: Asking for photos
+draft: false
+
+situation: |
+  You and Sophie have been texting for a few weeks, and it has turned flirty. Tonight you ask: "Send me a pic?"
+
+  She replies: "Haha, maybe another time."
+
+question: What is the best call?
+
+options:
+  - text: Reply, "Go on, just one. I won't show anyone."
+    call: risky
+    why: >-
+      "Maybe another time" is a polite no for tonight. Asking again makes her repeat it less politely or
+      give in. A photo sent to stop the asking is not one she wanted to send.
+
+  - text: Send her a photo of yourself first, so it feels fair for her to send one back.
+    call: risky
+    why: >-
+      This turns your request into a debt. Sophie did not ask for a photo, and now she may feel she owes
+      you one. Consent that comes from feeling obliged is not freely given.
+
+  - text: Reply, "No worries" and carry on with the chat.
+    call: best
+    why: >-
+      You asked, she answered, and you took it lightly. That is all it needed. If she wants to send one
+      another day, she will, and she will know it was her own idea.
+
+  - text: Reply "OK" and stop messaging for the night.
+    call: okay
+    why: >-
+      You did not push, which is right. But going cold straight after a no can feel like a punishment, and
+      she may think she has upset you. Staying warm shows the no cost her nothing.
+
+principle: >-
+  A soft no is still a no. "Maybe later", "haha" and a change of subject all mean not now. Ask once, and let
+  the next move be theirs.

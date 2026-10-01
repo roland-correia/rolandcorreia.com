@@ -1,0 +1,42 @@
+set: consent
+category: texting
+order: 3
+title: Turning him down
+topic: Giving a no
+draft: false
+
+situation: |
+  Ryan, a friendly guy from your evening class, texts: "I've really enjoyed chatting. Would you like to go for a drink sometime, just us?"
+
+  He seems nice. You are not interested in him that way.
+
+question: What is the best call for you?
+
+options:
+  - text: Reply, "I'm really busy this month, maybe another time."
+    call: okay
+    why: >-
+      It feels kinder, and if you ever feel unsafe a soft excuse is a fair choice. But "another time" sounds
+      like a maybe, so Ryan may ask again. A clear no now saves you both a second awkward message.
+
+  - text: Say yes so you do not hurt his feelings, and plan to cancel nearer the time.
+    call: risky
+    why: >-
+      This puts his feelings ahead of your own answer, and it only delays the no. He will be more hurt by a
+      late cancellation than by an honest reply today. You are allowed to not want to.
+
+  - text: Reply, "Thanks for asking. I don't feel that way, but I've enjoyed chatting in class."
+    call: best
+    why: >-
+      Clear and kind. You do not owe a reason, and you have not left a door half open. A decent person will
+      take it well, and if he does not, that tells you your answer was right.
+
+  - text: Leave him on read and avoid him in class.
+    call: okay
+    why: >-
+      You do not owe anyone a reply, and if he had been pushy, silence or blocking would be fine. Here he
+      asked politely, once. One clear line is easier for you than weeks of avoiding him.
+
+principle: >-
+  You are allowed to say no without a reason, an excuse or an apology. A clear no is kinder than a maybe you
+  do not mean.
