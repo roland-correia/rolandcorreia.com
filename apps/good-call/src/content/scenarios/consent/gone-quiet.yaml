@@ -1,0 +1,41 @@
+set: consent
+order: 6
+title: Gone quiet
+topic: Checking in
+draft: false
+
+situation: |
+  You are at Leila's place. You have been seeing each other for a few weeks, and tonight you are kissing. It has been mutual.
+
+  As things move on, you notice Leila has gone still and quiet. She has stopped kissing you back. She has not said stop.
+
+question: What is the best call?
+
+options:
+  - text: Stop, give her some space and ask, "You OK? Want to slow down, or stop?"
+    call: best
+    why: >-
+      You noticed the change and made both answers easy to give. Then the important part: whatever she says,
+      you go with it, without sulking or asking her to explain.
+
+  - text: Carry on. She would say something if there was a problem.
+    call: risky
+    why: >-
+      Many people cannot speak in that moment. Freezing is a common, automatic reaction, not a choice. Silence
+      and stillness are not a yes, and Leila has stopped showing you one.
+
+  - text: Carry on, but more slowly, and see how she reacts.
+    call: risky
+    why: >-
+      This is testing instead of asking. You are still deciding for her while she is giving you nothing back.
+      If you have noticed enough to slow down, you have noticed enough to stop and ask.
+
+  - text: Pull away and say, in a hurt voice, "What's wrong? What did I do?"
+    call: okay
+    why: >-
+      Stopping is exactly right. But making it about your feelings can push Leila into reassuring you instead
+      of saying what she wants. A calm, open question works better.
+
+principle: >-
+  Consent can be taken back at any point, and not always in words. Look for someone actively joining in, not
+  just for the absence of a no.

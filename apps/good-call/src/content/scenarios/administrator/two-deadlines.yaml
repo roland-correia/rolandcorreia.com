@@ -1,0 +1,41 @@
+set: administrator
+order: 2
+title: Two things by three o'clock
+topic: Prioritising
+draft: false
+
+situation: |
+  At 11am Helen, a manager, asks you to prepare a set of meeting packs for 3pm. It will take about three hours.
+
+  At 11.30am David, another manager, asks you to fix and send out a rota, also by 3pm. That will take about two hours. You cannot finish both in time.
+
+question: What is the best call?
+
+options:
+  - text: Do David's rota first because it is quicker, then get as far as you can with Helen's packs.
+    call: risky
+    why: >-
+      You have chosen for them, using a reason neither of them gave you. Quicker is not the same as more
+      important. Helen will find out at 3pm, when it is too late to do anything about it.
+
+  - text: Tell both managers now that you cannot do both by 3pm, say how long each will take, and ask which comes first.
+    call: best
+    why: >-
+      They know what matters more to the organisation. You do not. Telling them at 11.30am gives them hours to
+      move a deadline or find help. This is not complaining. It is the information they need.
+
+  - text: Skip lunch and try to get both done without telling anyone.
+    call: okay
+    why: >-
+      The effort is real and it might just work. But if it does not, both jobs are late and nobody was warned.
+      It also hides a workload problem that will come back next week.
+
+  - text: Do Helen's first, because she asked first, and tell David at 3pm that his is not ready.
+    call: risky
+    why: >-
+      First come, first served is a fair rule for a queue, but David does not know he is in one. A late
+      warning is the part people remember. The same news at 11.30am would have been fine.
+
+principle: >-
+  When you cannot do everything, say so early and let the people who set the deadlines choose. An early
+  warning is nearly always welcome. A late surprise never is.

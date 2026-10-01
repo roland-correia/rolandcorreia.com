@@ -1,0 +1,41 @@
+set: consent
+order: 7
+title: You changed your mind
+topic: Your own boundaries
+draft: false
+
+situation: |
+  After a third date you invited Chris back to yours, and you said you were up for things going further.
+
+  Now you are there, you realise you do not want to. Chris seems keen. You feel bad, as if you have led Chris on.
+
+question: What is the best call for you?
+
+options:
+  - text: Go along with it. You did say yes earlier.
+    call: risky
+    why: >-
+      An earlier yes is not a contract. You are allowed to change your mind at any point, for any reason or
+      none. Going along with something you do not want protects Chris's evening at your expense.
+
+  - text: Say nothing and hope Chris notices you have gone quiet.
+    call: okay
+    why: >-
+      Chris should notice, and should check. But you cannot count on it. If you are able to say it, saying it
+      is the surest way. If you freeze and cannot speak, that is not your fault, and it is not consent.
+
+  - text: Say "I've changed my mind. I'd rather not tonight."
+    call: best
+    why: >-
+      Clear, and enough. You do not owe a reason or an apology. Someone worth seeing again will accept it. How
+      Chris reacts will tell you a lot.
+
+  - text: Make an excuse. Say you suddenly feel ill.
+    call: okay
+    why: >-
+      It gets you out, and if you ever feel unsafe, use whatever gets you out. But you did not need an excuse
+      here. "I've changed my mind" is a complete reason.
+
+principle: >-
+  Consent works for you too. You can change your mind at any point, even after saying yes, and respecting
+  that is the other person's responsibility.

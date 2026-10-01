@@ -1,0 +1,41 @@
+set: consent
+order: 2
+title: The group photo
+topic: Photos and sharing
+draft: false
+
+situation: |
+  After a night out you have a great group photo. Everyone wants you to post it.
+
+  Earlier in the evening Priya mentioned that she is keeping off social media at the moment. She is in the middle of the photo.
+
+question: What is the best call?
+
+options:
+  - text: Message Priya first. "OK if I post this one? I can crop you out or pick another."
+    call: best
+    why: >-
+      Asking takes ten seconds. Offering other options makes it easy for Priya to say no without feeling she is
+      spoiling it for everyone. A yes only means something when no is easy.
+
+  - text: Post it, but do not tag Priya.
+    call: risky
+    why: >-
+      Leaving off the tag does not take Priya out of the photo. Your shared friends will still see her. She told
+      you what she wanted, and this works around it instead of respecting it.
+
+  - text: Post it, and take it down if she complains.
+    call: risky
+    why: >-
+      This makes Priya do the work, after people have already seen the photo and maybe saved it. Asking for
+      forgiveness instead of permission is not consent.
+
+  - text: Do not post anything from the night.
+    call: okay
+    why: >-
+      This fully respects Priya, and it is never wrong to hold back. It is more than you needed to do, though.
+      One question would probably have let everyone get what they wanted.
+
+principle: >-
+  A person's image is theirs. "They did not say no" is not the same as "they said yes". When it is someone
+  else's face, ask before you post.

@@ -1,0 +1,41 @@
+set: consent
+order: 3
+title: Told in confidence
+topic: Private information
+draft: false
+
+situation: |
+  Your friend Kai tells you, in confidence, that they are being assessed for ADHD. They have not told anyone else yet.
+
+  A week later a mutual friend, Mo, says: "Kai's been a bit off lately. Do you know what's going on?" Mo is asking because he cares.
+
+question: What is the best call?
+
+options:
+  - text: Tell Mo. He is a good friend and he only wants to help.
+    call: risky
+    why: >-
+      Mo's good intentions do not make it your news to share. Kai chose who to tell, and chose you. Once it is
+      passed on, Kai has lost control of who knows and when.
+
+  - text: Say "I can't say, but it's a health thing."
+    call: risky
+    why: >-
+      A hint is still a leak. Mo now knows there is a secret, knows what kind, and is likely to guess or ask
+      around. Kai did not agree to any of that.
+
+  - text: Say "That's one to ask Kai about. I'm sure they'd appreciate you checking in."
+    call: best
+    why: >-
+      You have not lied and you have not shared. You have pointed Mo towards the one person who can decide
+      what to tell him, and Kai gets a friend checking in.
+
+  - text: Say "No idea, they seem fine to me."
+    call: okay
+    why: >-
+      Kai's information stays private, which is the main thing. But it shuts Mo down, so Kai may miss out on
+      support, and you have told a lie you might have to keep up.
+
+principle: >-
+  Consent covers information as well as bodies. When someone tells you something private, they have agreed to
+  you knowing. They have not agreed to anyone else knowing.

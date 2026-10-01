@@ -1,7 +1,7 @@
 name: Build and deploy
 
-# Every pull request builds the site (so a broken story or type error shows up
-# before merging). Only a push to main also deploys it to GitHub Pages.
+# Every pull request builds the site (so a broken story, scenario or type error
+# shows up before merging). Only a push to main also deploys it to GitHub Pages.
 on:
   push:
     branches: [main]
@@ -27,31 +27,32 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: apps/diluted-stories/package-lock.json
+          cache-dependency-path: apps/*/package-lock.json
 
-      - name: Install dependencies
-        working-directory: apps/diluted-stories
-        run: npm ci
-
-      - name: Type-check
-        working-directory: apps/diluted-stories
-        run: npm run check
-
-      - name: Build Diluted Stories
-        working-directory: apps/diluted-stories
-        run: npm run build
+      # Each folder in apps/ is its own Astro project, built the same way.
+      - name: Install, type-check and build each app
+        run: |
+          for app in diluted-stories good-call; do
+            echo "::group::$app"
+            npm --prefix "apps/$app" ci
+            npm --prefix "apps/$app" run check
+            npm --prefix "apps/$app" run build
+            echo "::endgroup::"
+          done
 
       # The portfolio at the repo root is plain HTML, so it is copied as it is.
-      # The built Diluted Stories site goes under /projects/diluted-stories/.
+      # Each built app goes under /projects/<its name>/.
       - name: Assemble the site
         run: |
           mkdir _site
           rsync -a \
-            --exclude='.git' --exclude='.github' --exclude='apps' \
+            --exclude='.git' --exclude='.github' --exclude='.claude' --exclude='apps' \
             --exclude='node_modules' --exclude='_site' \
             ./ _site/
-          mkdir -p _site/projects/diluted-stories
-          cp -R apps/diluted-stories/dist/. _site/projects/diluted-stories/
+          for app in diluted-stories good-call; do
+            mkdir -p "_site/projects/$app"
+            cp -R "apps/$app/dist/." "_site/projects/$app/"
+          done
 
       - uses: actions/upload-pages-artifact@v3
         with:

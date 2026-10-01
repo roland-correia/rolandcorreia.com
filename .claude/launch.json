@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "good-call",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "apps/good-call", "run", "dev", "--", "--port", "4322"],
+      "port": 4322
+    }
+  ]
+}

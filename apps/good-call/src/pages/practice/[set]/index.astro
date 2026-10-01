@@ -1,0 +1,65 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Support from '../../../components/Support.astro';
+import { getLiveSets, pathOf, type Scenario } from '../../../lib/scenarios';
+import { sets, type SetId } from '../../../lib/site';
+import { href } from '../../../lib/paths';
+
+export async function getStaticPaths() {
+  const liveSets = await getLiveSets();
+  return liveSets.map(({ id, scenarios }) => ({ params: { set: id }, props: { id, scenarios } }));
+}
+
+const { id, scenarios } = Astro.props as { id: SetId; scenarios: Scenario[] };
+const set = sets[id];
+const isWork = set.group === 'work';
+// Only live sets get a page, and every live set has these.
+const { intro, note, rules } = set as Extract<typeof set, { live: true }>;
+---
+
+<Base
+  title={set.name}
+  description={intro}
+  path={`/practice/${id}/`}
+  back={{ href: href(isWork ? '/work/' : '/'), label: 'Back' }}
+>
+  <div class="group" data-set={id}>
+    <p class="kicker">{isWork ? 'At work' : 'Everyday life'}</p>
+    <h1>{set.name}</h1>
+    <p class="lead">{intro}</p>
+    <p class="notice">{note}</p>
+
+    <a class="btn block" href={href(pathOf(scenarios[0]))} data-start>Start</a>
+    <p class="meta" data-summary aria-live="polite" hidden></p>
+
+    <ol class="tiles">
+      {
+        scenarios.map((scenario) => (
+          <li>
+            <a class="tile" href={href(pathOf(scenario))} data-scenario-link data-id={scenario.id}>
+              <b>{scenario.data.title}</b>
+              <small>{scenario.data.topic}</small>
+              <small class="status" data-status hidden />
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+
+    <button type="button" class="textbtn" data-reset hidden>Clear my answers for this set</button>
+  </div>
+
+  <section class="card" aria-labelledby="rules-title">
+    <h2 id="rules-title">{isWork ? 'The unwritten rules' : 'The ideas behind these'}</h2>
+    {isWork && <p class="meta">What these questions are usually looking for, said out loud:</p>}
+    <ul class="ticks">
+      {rules.map((rule) => <li>{rule}</li>)}
+    </ul>
+  </section>
+
+  {id === 'consent' && <Support />}
+
+  <script>
+    import '../../../scripts/set-progress.ts';
+  </script>
+</Base>

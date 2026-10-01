@@ -1,0 +1,101 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Support from '../../../components/Support.astro';
+import { getLiveSets, pathOf, slugOf, type Scenario } from '../../../lib/scenarios';
+import { sets, calls } from '../../../lib/site';
+import { href } from '../../../lib/paths';
+
+export async function getStaticPaths() {
+  const liveSets = await getLiveSets();
+  return liveSets.flatMap(({ id, scenarios }) =>
+    scenarios.map((entry, index) => ({
+      params: { set: id, scenario: slugOf(entry) },
+      props: { entry, number: index + 1, total: scenarios.length, next: scenarios[index + 1] },
+    })),
+  );
+}
+
+const { entry, number, total, next } = Astro.props as {
+  entry: Scenario;
+  number: number;
+  total: number;
+  next?: Scenario;
+};
+const scenario = entry.data;
+const set = sets[scenario.set];
+const setPath = href(`/practice/${scenario.set}/`);
+const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
+---
+
+<Base
+  title={scenario.title}
+  description={`${set.name} scenario: ${scenario.topic}. Choose what you would do and see why.`}
+  path={pathOf(entry)}
+  back={{ href: setPath, label: 'Back' }}
+>
+  {scenario.draft && <p class="notice">Draft. This scenario is not published yet.</p>}
+
+  <article data-scenario data-id={entry.id}>
+    <header class="group">
+      <p class="kicker">{set.name}. Scenario {number} of {total}. {scenario.topic}</p>
+      <h1>{scenario.title}</h1>
+    </header>
+
+    <div class="prose situation">
+      {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+
+    <form data-quiz>
+      <fieldset>
+        <legend>{scenario.question}</legend>
+        {
+          scenario.options.map((option, index) => (
+            <div class="opt" data-option data-call={option.call}>
+              <label>
+                <input type="radio" name="answer" value={index} />
+                <span>{option.text}</span>
+              </label>
+              <div class="why" data-why data-call={option.call} tabindex="-1">
+                <b>
+                  <span aria-hidden="true">{calls[option.call].mark}</span> {calls[option.call].label}
+                </b>
+                <p>{option.why}</p>
+              </div>
+            </div>
+          ))
+        }
+      </fieldset>
+
+      <p class="hint" data-hint role="alert" hidden>Choose an answer first. There is no time limit.</p>
+      <button class="btn block" data-check hidden>Check my answer</button>
+      <button type="button" class="btn ghost block" data-show-all hidden>Show the reasons for every answer</button>
+    </form>
+
+    <div data-after>
+      <section class="principle">
+        <h2>The principle</h2>
+        <p>{scenario.principle}</p>
+      </section>
+
+      <nav class="stepper" aria-label="Scenarios">
+        {
+          next ? (
+            <a class="btn block" href={href(pathOf(next))}>
+              Next: {next.data.title}
+            </a>
+          ) : (
+            <a class="btn block" href={setPath}>
+              Finish: back to {set.name}
+            </a>
+          )
+        }
+      </nav>
+    </div>
+  </article>
+
+  {scenario.set === 'consent' && <Support />}
+
+  <script>
+    import '../../../scripts/scenario.ts';
+  </script>
+</Base>

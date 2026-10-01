@@ -1,0 +1,41 @@
+set: administrator
+order: 1
+title: The urgent caller
+topic: Confidentiality
+draft: false
+
+situation: |
+  You are covering the office phone. A caller says he is the brother of your colleague Farah and needs to reach her urgently. Her mobile is going straight to voicemail.
+
+  He asks you for her personal mobile number or her home address. Farah is on leave today. You have her details on the staff system.
+
+question: What is the best call?
+
+options:
+  - text: Give him the number. It is urgent, and he is family.
+    call: risky
+    why: >-
+      You cannot check who he is, and "urgent" is exactly what someone would say to get past you. Farah's
+      number and address are hers. If the caller is not who he says, the harm could be serious.
+
+  - text: Say you cannot give out staff details, take his name and number, and pass the message to Farah straight away.
+    call: best
+    why: >-
+      Farah's details stay private and the message still gets through. If he really is her brother, she can
+      ring him back in minutes. You have been helpful and safe at the same time.
+
+  - text: Tell him Farah is on leave today and to try again next week.
+    call: risky
+    why: >-
+      You kept the number back, but "on leave" tells a stranger that Farah is away from work and for how long.
+      And if the call is real, an urgent message has gone nowhere.
+
+  - text: Put him on hold and ask your manager what to do.
+    call: okay
+    why: >-
+      Asking is never wrong, and your manager will back you. But this is a rule you can apply yourself: do not
+      give out personal details, do take a message. Take his details first so the call is not lost.
+
+principle: >-
+  Personal details are not yours to give out, however genuine or urgent the request sounds. You can nearly
+  always help another way: take a message and pass it on.
