@@ -1,0 +1,42 @@
+set: adult-content
+category: yourself
+order: 2
+title: Not like the videos
+topic: Expectations
+draft: false
+
+situation: |
+  You have been with your partner, Erin, for six months, and you care about each other. Lately you have caught yourself feeling disappointed after sex. It is slower and more awkward than what you watch, and neither of you looks or sounds like the people on screen.
+
+  You have started wondering whether something is wrong with the relationship.
+
+question: What is the best call?
+
+options:
+  - text: Decide the two of you are just not compatible.
+    call: risky
+    why: >-
+      You are comparing a real person with a product. Porn is cast, lit, edited and acted, with the awkward
+      parts cut out. Nobody's sex life looks like that, including the performers'. The comparison is the problem, not Erin.
+
+  - text: Ask Erin to act more like what you have seen.
+    call: risky
+    why: >-
+      This asks Erin to perform for you instead of enjoying herself, and tells her she is being measured
+      against a screen. That is a reliable way to make someone self-conscious, which makes sex worse for you both.
+
+  - text: Recognise where the expectation came from. Talk with Erin about what each of you actually enjoys, and consider a break from porn.
+    call: best
+    why: >-
+      Naming the source takes away much of its power. Real sex is a conversation between two particular
+      people, awkward bits included. Many people find that watching less makes the real thing feel like enough again.
+
+  - text: Say nothing and hope the feeling passes.
+    call: okay
+    why: >-
+      You are not putting anything on Erin, and feelings do shift. But if the comparison is being topped up
+      several times a week, it is unlikely to fade on its own. It also leaves her wondering why you seem distant.
+
+principle: >-
+  Porn is made to be watched, not copied. Real bodies, real pauses and real awkwardness are not signs that
+  something is wrong. If the screen has become your measure, change the measure.

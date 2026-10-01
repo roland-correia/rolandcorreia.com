@@ -1,0 +1,40 @@
+set: adult-content
+category: children
+order: 3
+title: Is that what it's like?
+topic: An honest question
+draft: false
+
+situation: |
+  Your brother Jamie is sixteen. You are in your twenties, and he trusts you. While you are driving him home he asks, looking out of the window: "Do girls actually like being choked? It's in pretty much everything I've seen."
+
+question: What is the best call?
+
+options:
+  - text: Laugh and say, "You're too young to be watching that stuff."
+    call: risky
+    why: >-
+      He asked a serious question, and it took nerve. A laugh shuts it down. He will not stop wondering. He
+      will go back to the videos for the answer, or try it and find out the hard way.
+
+  - text: Say, "Some do. You'll figure it out."
+    call: risky
+    why: >-
+      This sends him off to try something dangerous without asking first. Pressure on the neck can cause
+      serious harm in seconds, and doctors warn there is no safe way to do it. "Figuring it out" would be on another person.
+
+  - text: Answer him straight. Porn is acted for the camera and is not a guide. You find out what someone likes by asking them. Choking is dangerous whatever the videos show.
+    call: best
+    why: >-
+      He gets the three things he needs: porn is a performance, real partners are asked and not assumed, and
+      this particular act can seriously hurt someone. Because you did not flinch, he will ask you the next question too.
+
+  - text: Tell him it is a question for a teacher or the internet.
+    call: okay
+    why: >-
+      A good source, such as Brook, would help him, and it is fine not to have every answer. But he chose to
+      ask you. Sending him elsewhere may sound like the topic is off limits. Answer what you can first.
+
+principle: >-
+  Porn teaches by repetition: if something is in every video, it starts to look normal. An honest answer from
+  someone they trust is what puts it back in proportion.

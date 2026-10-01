@@ -1,0 +1,42 @@
+set: adult-content
+category: relationships
+order: 2
+title: What you found out
+topic: A partner's viewing
+draft: false
+
+situation: |
+  You borrow your partner Priyanka's tablet to look something up, and a porn site is open in a tab. You have been together for three years and have never talked about it.
+
+  You feel hurt, and you are not sure why. You close the tab.
+
+question: What is the best call?
+
+options:
+  - text: Go through the rest of her history to see how much she watches.
+    call: risky
+    why: >-
+      You came across one tab by accident. Searching her history is a choice, and it breaks her privacy.
+      Whatever you find, the conversation will then be about you snooping instead of how you feel.
+
+  - text: Tell her that evening that it has to stop, or the relationship is over.
+    call: risky
+    why: >-
+      You are entitled to your feelings, and to limits of your own. But an ultimatum, given while you are
+      still hurt and before you have heard her side, usually produces secrecy instead of change. Talk first.
+
+  - text: Tell her what you saw and how it made you feel, and ask how she sees it. Work out together what you are both comfortable with.
+    call: best
+    why: >-
+      Couples differ on this, and there is no single right rule. What matters is that it is talked about and
+      agreed, not assumed. Starting with how you feel, without accusing her, gives her room to be honest.
+
+  - text: Say nothing and try to forget about it.
+    call: okay
+    why: >-
+      It is not an emergency, and you do not have to raise it today. But you were hurt, and unspoken hurt
+      tends to come out sideways. It is better raised calmly now than in the middle of some other argument.
+
+principle: >-
+  Couples have different comfort levels with porn. The only way to know where the line is in your
+  relationship is to talk about it, without snooping and without ultimatums.

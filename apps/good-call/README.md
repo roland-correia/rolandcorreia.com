@@ -24,8 +24,9 @@ Stop it with `Ctrl+C`. `npm run dev` also shows **draft** scenarios.
 
 ## Add a scenario
 
-1. Copy a file in `src/content/scenarios/consent/` or `administrator/` and rename it. The file name
-   becomes the URL (`my-scenario.yaml` is `/practice/consent/my-scenario/`).
+1. Copy a file in a folder under `src/content/scenarios/` (`consent/`, `adult-content/`,
+   `administrator/`) and rename it. The file name becomes the URL (`my-scenario.yaml` is
+   `/practice/consent/my-scenario/`).
 2. Fill in the fields and leave `draft: true` while you work on it.
 3. Run `npm run dev` and answer it the way a visitor will. Check every option, not just the best one.
 4. Check any fact or law it mentions against the source. Then change `draft` to `false`.
@@ -35,8 +36,8 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 
 | Field | What it is |
 | --- | --- |
-| `set`, `order` | Which set it belongs to (`consent`, `administrator`) and its position in it. |
-| `category` | Consent only: which section of the page it sits under. `order` then sorts within that section. |
+| `set`, `order` | Which set it belongs to (`consent`, `adult-content`, `administrator`) and its position in it. |
+| `category` | For sets with sections (`consent`, `adult-content`): which section it sits under. `order` then sorts within that section. |
 | `title`, `topic` | The heading, and the skill or theme shown as a small label. |
 | `situation` | What is happening. Leave a blank line between paragraphs. |
 | `question` | Optional. Defaults to "What is the best call?". |
@@ -48,9 +49,9 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 `why` is the feedback, and every option must have one, including the best. Vary which position the
 best answer sits in.
 
-The consent categories (`touch`, `privacy`, `texting`, `pressure`, `nights`, `intimacy`) are listed in
-`categories` in `src/lib/site.ts`. Their order there is the order on the page. To add one, add a
-line there and use its name in a scenario. A set with no categories is shown as one list.
+The categories for each set are listed in `categories` in `src/lib/site.ts`. Their order there is
+the order on the page. To add one, add a line there and use its name in a scenario. A set with no
+categories is shown as one list.
 
 ## Add a role
 

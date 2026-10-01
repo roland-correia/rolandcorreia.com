@@ -1,48 +1,112 @@
 ---
-// Where to get help. Shown with the consent scenarios, because reading them can
-// bring things up. Links only: each service keeps its own contact details current.
-const services = [
-  {
-    name: 'Rape Crisis England & Wales',
-    detail: 'Free 24/7 support line and online chat for anyone aged 16 or over.',
-    url: 'https://247sexualabusesupport.org.uk/',
+// Where to get help. Shown with the sets that can bring things up for the reader.
+// Links only: each service keeps its own contact details current.
+// A set with no entry here shows nothing.
+import type { SetId } from '../lib/site';
+
+interface Props {
+  set: SetId;
+}
+
+interface Service {
+  name: string;
+  detail: string;
+  url: string;
+}
+
+const support: Partial<Record<SetId, { summary: string; lead: string; services: Service[] }>> = {
+  consent: {
+    summary: 'If this brings something up for you',
+    lead: 'You can stop at any time. These UK services are free and confidential. In an emergency, call 999.',
+    services: [
+      {
+        name: 'Rape Crisis England & Wales',
+        detail: 'Free 24/7 support line and online chat for anyone aged 16 or over.',
+        url: 'https://247sexualabusesupport.org.uk/',
+      },
+      {
+        name: 'SurvivorsUK',
+        detail: 'For men, boys and non-binary people who have experienced sexual violence.',
+        url: 'https://www.survivorsuk.org/',
+      },
+      {
+        name: 'Galop',
+        detail: 'For LGBT+ people who have experienced abuse or violence.',
+        url: 'https://galop.org.uk/',
+      },
+      {
+        name: 'Revenge Porn Helpline',
+        detail: 'For adults whose intimate images have been shared, or threatened to be.',
+        url: 'https://revengepornhelpline.org.uk/',
+      },
+      {
+        name: 'Samaritans',
+        detail: 'Someone to talk to, day or night, about anything.',
+        url: 'https://www.samaritans.org/',
+      },
+    ],
   },
-  {
-    name: 'SurvivorsUK',
-    detail: 'For men, boys and non-binary people who have experienced sexual violence.',
-    url: 'https://www.survivorsuk.org/',
+  'adult-content': {
+    summary: 'Where to get help and advice',
+    lead: 'These UK services are free to use. If a child is in immediate danger, call 999.',
+    services: [
+      {
+        name: 'Childline',
+        detail: 'For anyone under 19, about anything, including things they have seen online.',
+        url: 'https://www.childline.org.uk/',
+      },
+      {
+        name: 'NSPCC',
+        detail: 'Advice for parents and carers on talking to children about porn and online safety.',
+        url: 'https://www.nspcc.org.uk/',
+      },
+      {
+        name: 'Internet Matters',
+        detail: 'Step-by-step guides to parental controls on phones, consoles and broadband.',
+        url: 'https://www.internetmatters.org/',
+      },
+      {
+        name: 'Brook',
+        detail: 'Honest information about sex and relationships for young people.',
+        url: 'https://www.brook.org.uk/',
+      },
+      {
+        name: 'Internet Watch Foundation',
+        detail: 'Report sexual images or videos of anyone under 18. You can do it anonymously.',
+        url: 'https://www.iwf.org.uk/report/',
+      },
+      {
+        name: 'Revenge Porn Helpline',
+        detail: 'For adults whose intimate images have been shared, or threatened to be.',
+        url: 'https://revengepornhelpline.org.uk/',
+      },
+      {
+        name: 'Relate',
+        detail: 'Relationship and sex therapy, including when porn is causing problems.',
+        url: 'https://www.relate.org.uk/',
+      },
+    ],
   },
-  {
-    name: 'Galop',
-    detail: 'For LGBT+ people who have experienced abuse or violence.',
-    url: 'https://galop.org.uk/',
-  },
-  {
-    name: 'Revenge Porn Helpline',
-    detail: 'For adults whose intimate images have been shared, or threatened to be.',
-    url: 'https://revengepornhelpline.org.uk/',
-  },
-  {
-    name: 'Samaritans',
-    detail: 'Someone to talk to, day or night, about anything.',
-    url: 'https://www.samaritans.org/',
-  },
-];
+};
+
+const entry = support[Astro.props.set];
 ---
 
-<details class="support">
-  <summary>If this brings something up for you</summary>
-  <p>You can stop at any time. These UK services are free and confidential. In an emergency, call 999.</p>
-  <ul>
-    {
-      services.map((service) => (
-        <li>
-          <a href={service.url} target="_blank" rel="noopener">
-            {service.name}
-          </a>
-          <span>{service.detail}</span>
-        </li>
-      ))
-    }
-  </ul>
-</details>
+{
+  entry && (
+    <details class="support">
+      <summary>{entry.summary}</summary>
+      <p>{entry.lead}</p>
+      <ul>
+        {entry.services.map((service) => (
+          <li>
+            <a href={service.url} target="_blank" rel="noopener">
+              {service.name}
+            </a>
+            <span>{service.detail}</span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}

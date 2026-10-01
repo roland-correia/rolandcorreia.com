@@ -23,6 +23,22 @@ export const sets = {
     ],
     live: true,
   },
+  'adult-content': {
+    name: 'Porn and real life',
+    group: 'everyday',
+    blurb: 'Children seeing it early, habits, expectations and relationships',
+    intro:
+      'Most people will see porn, and many see it before they are ready. These scenarios are about what it can do to expectations, habits and relationships, and what helps.',
+    note: 'About pornography, including children coming across it. Nothing is described in detail. Written for adults.',
+    rules: [
+      'Porn is a performance made to be watched. It is not a guide to sex, bodies or what people enjoy.',
+      'Children often see it by accident or are shown it. A calm conversation protects them more than a punishment does.',
+      'Something you saw on a screen is not something your partner has agreed to. Ask first, and not in the moment.',
+      'If a habit is costing you sleep, focus or closeness, that is worth acting on. Shame makes it harder to change, not easier.',
+      'The people on screen have to have agreed too. If it looks secret, leaked or underage, do not watch it or share it. Report it.',
+    ],
+    live: true,
+  },
   administrator: {
     name: 'Administrator',
     group: 'work',
@@ -57,6 +73,11 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     pressure: { name: 'Pressure and power', blurb: 'When saying no is made hard' },
     nights: { name: 'Parties, clubs and nights out', blurb: 'Dancing, drinks, crowds, sleepovers and looking out for people' },
     intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
+  },
+  'adult-content': {
+    children: { name: 'Children and teenagers', blurb: 'When a young person has seen it, and what to say' },
+    yourself: { name: 'Your own viewing', blurb: 'Habits, expectations and what you choose to watch' },
+    relationships: { name: 'Relationships', blurb: 'What you bring from the screen to a partner' },
   },
 };
 

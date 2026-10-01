@@ -1,0 +1,42 @@
+set: adult-content
+category: yourself
+order: 3
+title: Who agreed to this?
+topic: The people on screen
+draft: false
+
+situation: |
+  A link turns up in a group chat with the caption "leaked 👀". You open it. It is a video that looks as if it was filmed without the woman knowing, in what seems to be her own bedroom.
+
+  A couple of people in the chat have already reacted.
+
+question: What is the best call?
+
+options:
+  - text: Watch it. It is already out there, so it makes no difference.
+    call: risky
+    why: >-
+      It makes a difference to her. Every view is another person seeing something she never agreed to share.
+      Videos like this stay up because people click on them. Sharing intimate images without consent is a crime.
+
+  - text: Close it, do not share it, and report it to the site or app it is hosted on. Tell the chat it is not OK.
+    call: best
+    why: >-
+      You have stopped being part of the audience and done the one thing that can get it taken down. Saying
+      so in the chat matters too, because it tells the person who posted it that people do not want this.
+
+  - text: Close it and say nothing.
+    call: okay
+    why: >-
+      You have not watched it or passed it on, and that counts. But the video is still up and the chat still
+      thinks it is fine. A report takes a minute and is usually anonymous.
+
+  - text: Forward it to a friend to ask whether they think it is real.
+    call: risky
+    why: >-
+      Whatever your reason, you have now shared it, and it has reached someone new. If she did not consent
+      to it being made or posted, it does not matter whether it is real, staged or faked. Do not pass it on.
+
+principle: >-
+  Consent applies to the people on screen. If something looks secret, leaked, faked or underage, do not
+  watch it or share it. Report it. Sexual images of anyone under 18 can be reported to the Internet Watch Foundation.

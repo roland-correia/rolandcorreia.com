@@ -1,0 +1,43 @@
+set: adult-content
+category: children
+order: 2
+title: The search history
+topic: A teenager who is curious
+draft: false
+
+situation: |
+  You are fixing the family laptop and see from the history that your fourteen-year-old daughter, Ruby, has been looking at porn sites over the last few weeks.
+
+  She does not know you have seen it.
+
+question: What is the best call?
+
+options:
+  - text: Confront her as soon as she gets home. "I know what you've been looking at. I'm disgusted."
+    call: risky
+    why: >-
+      Being curious about sex at fourteen is normal, for girls as much as boys. Shame does not stop the
+      curiosity. It only teaches Ruby that sex is something she cannot talk to you about, when she most needs to.
+
+  - text: Block the sites and say nothing.
+    call: okay
+    why: >-
+      Filters reduce what she comes across, and that is worth doing. But she has a phone, and friends with
+      phones. On its own a block leaves porn as her main source of information, with nobody to tell her what it gets wrong.
+
+  - text: Pick a calm moment and tell her what you saw, without anger. Say that being curious is normal, and talk about what porn leaves out.
+    call: best
+    why: >-
+      She hears that curiosity is not shameful and that porn is a performance: it usually skips consent,
+      contraception, ordinary bodies and what people actually enjoy. Pointing her to a reliable source, such
+      as Brook, gives her somewhere better to look.
+
+  - text: Leave it. Everyone her age does it, and it would only embarrass you both.
+    call: risky
+    why: >-
+      It is common, but that does not make it harmless. Much of what young people come across is rough or
+      degrading, and with no adult saying otherwise it starts to look like what sex is. One awkward talk is a small price.
+
+principle: >-
+  You cannot keep a teenager from ever seeing porn. You can make sure it is not their only source. Curiosity
+  is normal; what matters is that someone tells them what porn leaves out.

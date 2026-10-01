@@ -86,7 +86,7 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
     </ul>
   </section>
 
-  {id === 'consent' && <Support />}
+  <Support set={id} />
 
   <script>
     import '../../../scripts/set-progress.ts';
