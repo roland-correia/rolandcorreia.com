@@ -10,7 +10,7 @@ export const sets = {
   consent: {
     name: 'Consent',
     group: 'everyday',
-    blurb: 'Touch, photos, pressure, alcohol and changing your mind',
+    blurb: 'Touch, photos, privacy, staying over, pressure and changing your mind',
     intro:
       'Consent is for everyone. Anyone can misread a moment, and anyone can have their own boundary ignored. These scenarios put you on both sides.',
     note: 'Some scenarios are about dating, sex and alcohol. Nothing is described in detail. Written for adults.',

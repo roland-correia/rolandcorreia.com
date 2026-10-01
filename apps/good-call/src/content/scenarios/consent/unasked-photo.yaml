@@ -1,0 +1,41 @@
+set: consent
+order: 17
+title: The photo nobody asked for
+topic: Messages and images
+draft: false
+
+situation: |
+  You matched with Ellis on a dating app a week ago. The chat has been getting flirty, and tonight it is going really well.
+
+  You are thinking about sending a nude photo of yourself to move things along. Ellis has not asked for one.
+
+question: What is the best call?
+
+options:
+  - text: Send it. The chat is flirty, so it will be a nice surprise.
+    call: risky
+    why: >-
+      Flirting is not a request for a nude. Ellis could open it on a bus or at work, and cannot unsee it.
+      Sending a sexual photo that nobody asked for can also be a criminal offence, often called cyberflashing.
+
+  - text: Send it as a "view once" photo so it is not a big deal.
+    call: risky
+    why: >-
+      A photo that disappears is still a photo Ellis did not agree to see. The issue is not how long it
+      lasts. It is that the choice was taken away.
+
+  - text: Ask first. "Would you want to swap photos, or would you rather keep it to chat?"
+    call: best
+    why: >-
+      Asking gives Ellis a real choice and an easy way to say no. If the answer is yes, you both know it is
+      wanted. It also gives you a moment to decide whether you are happy for this person to have that photo.
+
+  - text: Do not send anything, and keep the chat as it is.
+    call: okay
+    why: >-
+      Nothing has gone wrong, and waiting is never a mistake. If you would like things to move on, though,
+      you are allowed to ask. Asking is not pushy when you are ready to hear no.
+
+principle: >-
+  Consent applies on screens too. Ask before you send anything sexual, and remember that a yes to chatting
+  is not a yes to pictures.

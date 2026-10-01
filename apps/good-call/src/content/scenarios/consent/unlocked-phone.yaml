@@ -1,0 +1,41 @@
+set: consent
+order: 7
+title: The unlocked phone
+topic: Privacy
+draft: false
+
+situation: |
+  Your partner Jess is in the shower. Her phone is on the sofa next to you, unlocked, and it buzzes with a message from a name you do not recognise.
+
+  You have been feeling a bit insecure about the relationship lately.
+
+question: What is the best call?
+
+options:
+  - text: Read the message. If she has nothing to hide, it does not matter.
+    call: risky
+    why: >-
+      Privacy is not the same as hiding something. Jess has not agreed to you reading her messages, and
+      whatever you find, you got it by going behind her back. That damages trust even if the message is nothing.
+
+  - text: Leave the phone alone and, later, tell Jess you have been feeling insecure.
+    call: best
+    why: >-
+      The phone was never the real problem. The worry is. Saying it out loud gives Jess the chance to
+      reassure you, or to be honest, and it keeps you someone she can trust.
+
+  - text: Leave the phone alone and say nothing about how you feel.
+    call: okay
+    why: >-
+      You respected her privacy, which is right. But the insecurity is still there, and the next buzz will be
+      just as tempting. Worries that are not talked about tend to grow.
+
+  - text: Do not open it, but ask as soon as she comes out, "Who's messaging you?"
+    call: okay
+    why: >-
+      Asking is far better than looking. But as an opening line it sounds like an accusation, and she may
+      get defensive. Starting with how you feel leads to a better conversation.
+
+principle: >-
+  Being close to someone does not give you a right to everything of theirs. Phones, diaries, messages and
+  bags are private unless you are invited in.

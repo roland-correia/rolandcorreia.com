@@ -1,0 +1,42 @@
+set: consent
+order: 14
+title: Still asleep
+topic: Sleep
+draft: false
+
+situation: |
+  You and your partner Rowan have lived together for two years. You wake up early on a Sunday, feeling affectionate and in the mood for sex.
+
+  Rowan is fast asleep next to you.
+
+question: What is the best call?
+
+options:
+  - text: Start touching Rowan sexually. You are a couple, and it would be a nice way to wake up.
+    call: risky
+    why: >-
+      A person who is asleep cannot agree to anything. The law in England and Wales presumes that someone
+      who is asleep is not consenting, and being a couple does not change that. What feels romantic to you
+      is happening to someone who has no say.
+
+  - text: Wait until Rowan is awake, then say what you are in the mood for.
+    call: best
+    why: >-
+      Rowan gets to answer as a person who is awake and able to choose. If it is a yes, it is a real one. If
+      it is "let me have a coffee first", you have lost nothing.
+
+  - text: Shake Rowan awake to ask.
+    call: okay
+    why: >-
+      You are asking, which is the important part. But someone woken suddenly is groggy and may agree
+      without really deciding. Let Rowan wake up properly, and take a sleepy "mm" as a maybe, not a yes.
+
+  - text: Go ahead, because Rowan did not mind the last time it happened.
+    call: risky
+    why: >-
+      Not objecting afterwards is not the same as agreeing beforehand. If this is something Rowan might
+      like, the way to find out is a conversation when you are both awake, not a guess while they sleep.
+
+principle: >-
+  Someone who is asleep cannot consent. That is true on a first night and after twenty years. Wait until
+  they are awake, and ask.

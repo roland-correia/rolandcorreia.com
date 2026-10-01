@@ -1,0 +1,41 @@
+set: consent
+order: 5
+title: Give your uncle a hug
+topic: Children and affection
+draft: false
+
+situation: |
+  A family visit is ending. Your uncle opens his arms to your six-year-old daughter, Maya, for a goodbye hug. He loves her and means it kindly.
+
+  Maya shakes her head and steps behind your legs. Your uncle looks a little hurt. The whole family is watching.
+
+question: What is the best call?
+
+options:
+  - text: Say, "Don't be rude, Maya. Go and give him a hug."
+    call: risky
+    why: >-
+      Maya learns that her no gives way when an adult is disappointed, and that being polite means letting
+      people touch her. That is the opposite of what you want her to believe when she is older.
+
+  - text: Say, "You can choose, Maya. A hug, a high five or a wave?"
+    call: best
+    why: >-
+      Maya still says a proper goodbye, so nobody is ignored, and she picks how. She learns that her body is
+      hers and that there is more than one way to be kind. Most relatives are happy with a high five.
+
+  - text: Pick Maya up and hold her out to him so it is over quickly.
+    call: risky
+    why: >-
+      Now the hug happens to her instead of with her. Being quick does not change that she said no and was
+      overruled by the person she went to for backup.
+
+  - text: Say "She's just tired" and steer everyone towards the door.
+    call: okay
+    why: >-
+      Maya is not made to hug, which matters most. But the excuse suggests her no needed a reason. Giving
+      her a choice of goodbyes does the same job and teaches her something.
+
+principle: >-
+  Children learn consent from how adults treat their no. Affection that is chosen means more than affection
+  that is demanded, for the child and for the relative.

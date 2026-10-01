@@ -81,9 +81,9 @@ Choices worth knowing about:
 ## Before this is promoted
 
 The scenarios are first versions. The About page says so. They have not been reviewed by a consent
-educator, a lawyer or a recruiter. The legal points (capacity to consent, sharing intimate images,
-reporting a data breach) describe the law in England and Wales and should be re-checked before each
-is relied on.
+educator, a lawyer or a recruiter. The legal points (capacity to consent, sleep, agreed conditions,
+sending and sharing intimate images, reporting a data breach) describe the law in England and Wales
+and should be re-checked before each is relied on.
 
 ## How it deploys
 

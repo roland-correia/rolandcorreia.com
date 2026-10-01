@@ -1,0 +1,41 @@
+set: consent
+order: 16
+title: What you agreed
+topic: Conditions
+draft: false
+
+situation: |
+  You and Sasha have been seeing each other for a month. Sasha has been clear from the start: sex only with a condom. You agreed.
+
+  Tonight things are heading that way, and you realise you have run out.
+
+question: What is the best call?
+
+options:
+  - text: Carry on without one and do not mention it. It is probably fine.
+    call: risky
+    why: >-
+      Sasha agreed to sex with a condom, not to sex without one. Going ahead in a way they have not agreed
+      to means they have not consented to what is happening. Courts in England and Wales have treated this as rape.
+
+  - text: Stop and tell Sasha. Then do something else together, or go and buy some.
+    call: best
+    why: >-
+      Sasha set a condition and you kept to it, even though it was inconvenient. That is what makes it safe
+      for someone to say yes to you. The evening is not ruined. It has just changed.
+
+  - text: Tell Sasha, then say, "It'll be fine just this once, won't it?"
+    call: risky
+    why: >-
+      Telling them was right. Pushing was not. In the middle of the moment it is hard to hold a line you set
+      calmly beforehand, and you would be relying on that. A condition someone has to defend is being worn down.
+
+  - text: Stop, say you are tired and call it a night.
+    call: okay
+    why: >-
+      You kept to what was agreed, which is the main thing. But Sasha may wonder what went wrong. The truth
+      is simple and reflects well on you, so there is no need to hide it.
+
+principle: >-
+  Consent can come with conditions, and the conditions are part of it. If you change what was agreed without
+  the other person knowing, they have not agreed.

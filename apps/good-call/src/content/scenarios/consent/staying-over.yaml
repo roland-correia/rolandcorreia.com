@@ -1,0 +1,41 @@
+set: consent
+order: 10
+title: Staying over
+topic: Sleepovers
+draft: false
+
+situation: |
+  You have been on three dates with Nadia and you really like her. Tonight you cooked at yours, the evening went well, and she has missed her last train.
+
+  You offer to let her stay, and she says yes. You have one double bed and a sofa.
+
+question: What is the best call?
+
+options:
+  - text: Assume she will share the bed. She chose to stay, so she must be interested in more.
+    call: risky
+    why: >-
+      Nadia said yes to a place to sleep. That is all. Staying over, like coming in for a coffee or accepting
+      a lift, is not agreement to anything else. Treating it as a signal puts her in a difficult spot at midnight.
+
+  - text: Say, "You take the bed, I'll have the sofa. Or we can share, whatever you're comfortable with."
+    call: best
+    why: >-
+      You have said out loud that nothing is expected, and made the easy option the one with most space for
+      her. If she would like to share, she can say so, and you will both know it was her choice.
+
+  - text: Say the sofa is really uncomfortable, so sharing the bed is the only sensible option.
+    call: risky
+    why: >-
+      This takes away her choice while sounding practical. She is in your home, late at night, with no way to
+      leave. That is exactly when a person needs more options, not fewer.
+
+  - text: Share the bed without discussing it, and keep to your side.
+    call: okay
+    why: >-
+      Nothing unwanted happens, and that matters. But Nadia has had to guess what you expect, and may lie
+      awake wondering. Thirty seconds of talking would let her relax.
+
+principle: >-
+  Agreeing to stay the night is agreeing to stay the night. Say what the sleeping arrangements are, make it
+  clear nothing is expected, and let the guest choose.
