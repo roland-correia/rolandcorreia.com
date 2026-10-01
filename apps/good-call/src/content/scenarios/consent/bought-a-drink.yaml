@@ -1,0 +1,42 @@
+set: consent
+category: nights
+order: 2
+title: You bought the drink
+topic: Bars and expectations
+draft: false
+
+situation: |
+  At a bar you get talking to Imogen and offer to buy her a drink. She says yes, and you chat for twenty minutes. You think it is going well.
+
+  She finishes her drink, smiles and says: "Thanks for that. I'm going to head back to my friends."
+
+question: What is the best call?
+
+options:
+  - text: Say, "I bought you a drink. The least you can do is stay a bit longer."
+    call: risky
+    why: >-
+      A drink is a gift, not a deposit. Imogen agreed to a drink and a chat, and she has had both. Telling
+      her she owes you turns a friendly gesture into a bill, and it is the kind of line people warn their friends about.
+
+  - text: Say, "Nice talking to you. Have a good night."
+    call: best
+    why: >-
+      She told you she was leaving and you let her go, warmly. You have lost nothing but the price of a
+      drink. If she wants to carry on talking later, she knows you are easy to walk away from, which helps.
+
+  - text: Ask, "Could I get your number before you go?" and accept whatever she says.
+    call: okay
+    why: >-
+      Asking once is fine, as long as you really are ready for a no. Bear in mind she has just ended the
+      conversation, so she may give a number only to get away. "No worries" has to be your answer either way.
+
+  - text: Wait a few minutes, then go over and join her and her friends.
+    call: risky
+    why: >-
+      She went back to her friends to end the conversation. Following her there takes that choice away, in
+      front of an audience. From her side it stops looking keen and starts looking like being followed.
+
+principle: >-
+  Buying someone a drink, a meal or a taxi buys nothing else. Nobody owes you time, a number or anything
+  more because you were generous.

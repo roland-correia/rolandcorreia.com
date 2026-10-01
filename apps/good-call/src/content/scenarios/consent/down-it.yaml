@@ -1,0 +1,42 @@
+set: consent
+category: nights
+order: 3
+title: Down it
+topic: Drinking pressure
+draft: false
+
+situation: |
+  You are at a house party, in the middle of a drinking game. Hari has already said twice that he has had enough and has work in the morning.
+
+  He loses the next round. Someone pours him a large shot, and the room starts chanting: "Down it! Down it!"
+
+question: What is the best call?
+
+options:
+  - text: Join in the chant. It is his turn, and those are the rules.
+    call: risky
+    why: >-
+      Hari has said no twice. The rules of a game do not outrank that. A room full of people chanting is very
+      hard to refuse, and what goes into someone's body is their decision, not the group's.
+
+  - text: Say, "He said he's done. I'll take it," or "Skip him, next round."
+    call: best
+    why: >-
+      You have backed up his no without making him argue for it, and the game carries on. It usually only
+      takes one person to say it. Most of the room will follow, and Hari will remember who did.
+
+  - text: Stay quiet and do not chant.
+    call: okay
+    why: >-
+      You are not adding to the pressure, which counts for something. But a chant does not stop on its own,
+      and Hari is one person against a room. He needs somebody to say it out loud.
+
+  - text: Quietly swap his shot for water so he can pretend.
+    call: okay
+    why: >-
+      Kind, and it gets him out of this round. But it leaves the idea standing that he has to drink when the
+      room says so, and he will face the same thing next round. Backing his no openly settles it.
+
+principle: >-
+  Consent covers what people drink as well. "I've had enough" is a no. Pressure from a group is still
+  pressure, and one voice is often enough to stop it.

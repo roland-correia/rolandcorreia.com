@@ -1,0 +1,43 @@
+set: consent
+category: nights
+order: 4
+title: Make it a double
+topic: Drinks and spiking
+draft: false
+
+situation: |
+  You are hosting a house party and making the drinks. Ffion asks for a lemonade. She says she is not drinking tonight.
+
+  Your mate Gareth, standing next to you, says quietly: "Stick a vodka in it. She won't taste it, and she needs to loosen up."
+
+question: What is the best call?
+
+options:
+  - text: Add the vodka. It is only one, and she will have a better night.
+    call: risky
+    why: >-
+      Ffion decided not to drink, and you would be overruling that in secret. Adding alcohol or drugs to
+      someone's drink without them knowing is spiking, and it can be a crime. You do not know her reasons:
+      medication, driving, pregnancy, recovery.
+
+  - text: Make the lemonade and tell Gareth, "No. She asked for lemonade."
+    call: best
+    why: >-
+      Ffion gets exactly what she asked for, and Gareth hears that this is not a joke to you. As the host,
+      you set what is normal in the room. A short, flat no does that without a scene.
+
+  - text: Make the lemonade and say nothing to Gareth.
+    call: okay
+    why: >-
+      Ffion's drink is safe, which is the main thing. But Gareth has just suggested spiking a guest and
+      heard no objection. He may try it himself later, with her drink or someone else's.
+
+  - text: Add a small splash, and tell her afterwards so it is not really a secret.
+    call: risky
+    why: >-
+      Telling her afterwards is not asking. By then it is already in her body and the choice has gone. A
+      small amount is still a decision that was hers to make.
+
+principle: >-
+  People decide what goes into their own bodies. Pour what they asked for, and never add anything to a drink
+  that the person does not know about.

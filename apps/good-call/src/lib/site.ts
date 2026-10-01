@@ -10,7 +10,7 @@ export const sets = {
   consent: {
     name: 'Consent',
     group: 'everyday',
-    blurb: 'Touch, texting, photos, privacy, staying over, pressure and changing your mind',
+    blurb: 'Touch, texting, photos, privacy, parties, pressure and changing your mind',
     intro:
       'Consent is for everyone. Anyone can misread a moment, and anyone can have their own boundary ignored. These scenarios put you on both sides.',
     note: 'Some scenarios are about dating, sex and alcohol. Nothing is described in detail. Written for adults.',
@@ -55,7 +55,7 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     privacy: { name: 'Privacy, photos and messages', blurb: 'What is yours to see, share or send' },
     texting: { name: 'Texting and crushes', blurb: 'Asking, waiting, mixed signals and friends for now' },
     pressure: { name: 'Pressure and power', blurb: 'When saying no is made hard' },
-    nights: { name: 'Nights out and staying over', blurb: 'Alcohol, parties and sleepovers' },
+    nights: { name: 'Parties, clubs and nights out', blurb: 'Dancing, drinks, crowds, sleepovers and looking out for people' },
     intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
   },
 };
