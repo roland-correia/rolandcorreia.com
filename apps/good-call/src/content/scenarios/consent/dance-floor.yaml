@@ -1,0 +1,42 @@
+set: consent
+category: nights
+order: 1
+title: On the dance floor
+topic: Clubs and dancing
+draft: false
+
+situation: |
+  You are in a club with friends. Theo, who you have been catching eyes with all night, is dancing a few steps away with his back to you. The music is too loud to talk.
+
+  You would like to dance with him.
+
+question: What is the best call?
+
+options:
+  - text: Come up behind him and put your hands on his waist.
+    call: risky
+    why: >-
+      He cannot see you coming, so he gets no chance to choose. Being grabbed from behind in a crowd is a
+      shock even when the person turns out to be welcome. A dance floor does not make everyone on it fair game.
+
+  - text: Move round so he can see you, dance nearby, and see whether he turns towards you.
+    call: best
+    why: >-
+      Now he knows you are there and can answer without a word: turning to face you and moving closer is a
+      yes, turning away is a no. On a loud dance floor, this is what asking looks like.
+
+  - text: Dance up close against him and back off if he pulls away.
+    call: risky
+    why: >-
+      This makes the touch first and asks second. He has to push you off to say no, which many people will
+      not do in a crowd. If he had to pull away, you had already gone too far.
+
+  - text: Ask his friend whether he is single and interested.
+    call: okay
+    why: >-
+      Nothing wrong with it, and it avoids overstepping. But his friend cannot answer for him. Sooner or
+      later the only person who can tell you whether Theo wants to dance with you is Theo.
+
+principle: >-
+  A club is not consent. Let people see you coming, give them room to turn towards you or away, and treat
+  turning away as a no.

@@ -1,0 +1,42 @@
+set: consent
+category: nights
+order: 6
+title: Your mate
+topic: Calling out a friend
+draft: false
+
+situation: |
+  It is the end of a night out. Your mate Connor has spent the last hour with a woman he met in the club. She is very drunk: unsteady, slurring, holding on to him to stay upright. Her friends have gone.
+
+  Connor grins at you and says, "She's well up for it. I'm taking her back to mine."
+
+question: What is the best call?
+
+options:
+  - text: Say, "Nice one," and leave him to it. It is his business.
+    call: risky
+    why: >-
+      She cannot stand up on her own, so she is in no state to choose. If Connor goes ahead, he may seriously
+      harm her and commit a serious crime. You are one of the few people who can stop that tonight.
+
+  - text: Tell him straight. "Mate, she's wasted. Not tonight. Let's get her home safe and you can get her number."
+    call: best
+    why: >-
+      You have said the thing he needs to hear, and given him a way to do the right thing without losing
+      face. Friends listen to friends. This is looking out for her and for him.
+
+  - text: Say nothing to Connor, but tell the door staff you are worried about her.
+    call: okay
+    why: >-
+      Getting someone involved is good, and it is the right move if Connor will not listen. But you have more
+      influence over him than a stranger does. A word from you is quicker and more likely to work.
+
+  - text: Have a go at him in front of everyone and call him a creep.
+    call: okay
+    why: >-
+      You are right about the risk. But shaming him in public tends to make people dig in, and he may leave
+      with her anyway. Calm and direct, with a clear alternative, is more likely to change what he does.
+
+principle: >-
+  The hardest person to challenge is a friend, and the one most likely to listen to you. If someone is too
+  drunk to choose, say so plainly and help them both get home separately.

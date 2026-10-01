@@ -1,0 +1,42 @@
+set: consent
+category: nights
+order: 7
+title: Someone else walks in
+topic: More people, new question
+draft: false
+
+situation: |
+  At a house party, you and Mia have gone to a quiet bedroom. You have been kissing, and it is clearly mutual.
+
+  The door opens and your friend Kyle comes in with a drink. He sits on the end of the bed, grinning. "Don't mind me. Room for one more?" Mia goes quiet and pulls her top straight.
+
+question: What is the best call?
+
+options:
+  - text: Laugh and let Kyle stay. Mia has not said no.
+    call: risky
+    why: >-
+      Mia agreed to be alone with you. She did not agree to Kyle. Going quiet and covering up is her answer.
+      With two of you in the room and the door shut, saying no out loud has just become much harder for her.
+
+  - text: Say, "Kyle, out. Now." Then ask Mia if she is OK and what she would like to do.
+    call: best
+    why: >-
+      You have dealt with it, so she does not have to. Once he has gone, checking in matters: the mood may
+      have changed, and she may want to go back to the party. Whatever she says, go with it.
+
+  - text: Ask Mia, in front of Kyle, whether she minds if he stays.
+    call: risky
+    why: >-
+      It looks like asking, but she now has to refuse two people to their faces, in a closed room. An answer
+      given under those conditions tells you very little. The time to ask is when the pressure is gone.
+
+  - text: Say nothing, take Mia's hand and leave the room with her.
+    call: okay
+    why: >-
+      It gets her out of the situation, which is what matters most. But Kyle has not been told that what he
+      did was not on. He needs to hear it, tonight or tomorrow, so he does not do it to someone else.
+
+principle: >-
+  Consent is for the people it was given to. A yes to one person is never a yes to anyone else who turns up,
+  and every new person is a new question, asked without an audience.

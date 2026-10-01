@@ -1,0 +1,42 @@
+set: consent
+category: nights
+order: 5
+title: The work do
+topic: Social events
+draft: false
+
+situation: |
+  It is the work Christmas party. Diane, a senior manager who has had a few drinks, keeps putting her hand on the knee of Aaron, a junior colleague. He moves his leg each time, laughs awkwardly and looks around the table.
+
+  Someone says, "Lucky lad!" and people laugh. You are sitting opposite.
+
+question: What is the best call?
+
+options:
+  - text: Laugh along. He is a grown man, and he would say something if he minded.
+    call: risky
+    why: >-
+      Aaron is saying something: he keeps moving away and looking for help. Diane is senior to him, so
+      speaking up carries a risk for him. Men are often expected to be flattered by unwanted touch, which makes it harder to object.
+
+  - text: Give Aaron a way out. "Aaron, give me a hand at the bar?" Then ask him quietly whether he is OK.
+    call: best
+    why: >-
+      You have got him out of reach without forcing a confrontation he did not choose. Checking in afterwards
+      lets him decide what happens next, including whether to report it, and shows him that someone noticed.
+
+  - text: Say loudly across the table, "Diane, get your hands off him."
+    call: okay
+    why: >-
+      It would stop the touching, and you are right that it is not acceptable. But it puts Aaron at the
+      centre of a scene with a senior manager, which he may not want. Getting him out first leaves the choice with him.
+
+  - text: Do nothing tonight, and tell HR about it on Monday without speaking to Aaron.
+    call: okay
+    why: >-
+      Taking it seriously is right, and HR may well need to know. But it leaves Aaron stuck for the rest of
+      the evening, and reporting it without asking him takes another decision out of his hands. Talk to him first.
+
+principle: >-
+  Unwanted touch is not a compliment, whoever it is from and whoever it happens to. If someone keeps moving
+  away, they have answered. Offer them a way out, then ask what they want.
