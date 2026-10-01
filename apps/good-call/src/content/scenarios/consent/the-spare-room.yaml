@@ -1,0 +1,41 @@
+set: consent
+order: 12
+title: Heading for the spare room
+topic: Looking out for others
+draft: false
+
+situation: |
+  It is 2am at a house party, and several people are staying over. You see Callum, someone you know a little, with his arm around a woman who can barely stand. Her eyes keep closing.
+
+  He is walking her towards the spare room. You do not know her, and you cannot see her friends.
+
+question: What is the best call?
+
+options:
+  - text: Stay out of it. They might be a couple, and it is not your business.
+    call: risky
+    why: >-
+      They might be. But she cannot look after herself right now, and nobody else is watching. If you are
+      wrong, a check costs one awkward moment. If you are right and do nothing, the cost to her is far higher.
+
+  - text: Go over and speak to her. "Hey, are you OK? Let's find your friends." Then get the host or her friends involved.
+    call: best
+    why: >-
+      You have interrupted without accusing anyone. If Callum is only helping, he will be glad of a hand. You
+      have also made sure people who know her are with her, which is what she needs most.
+
+  - text: Tell the host what you saw and leave it with them.
+    call: okay
+    why: >-
+      Getting someone else involved is good, and a fine choice if you do not feel safe stepping in. But it
+      takes time, and by then the door may be shut. If you can, interrupt first and fetch the host second.
+
+  - text: Grab Callum and loudly accuse him in front of everyone.
+    call: risky
+    why: >-
+      You may be right to worry, but you do not know what is happening yet. A confrontation can turn into a
+      fight, and she ends up forgotten in the middle of it. Her safety comes first. Blame can wait.
+
+principle: >-
+  Someone who can barely stand cannot consent, and cannot look after themselves. You do not need to be sure
+  something is wrong to check in. Interrupt, ask them directly, and find their people.

@@ -1,0 +1,39 @@
+set: consent
+order: 4
+title: A helping hand
+topic: Help and touch
+draft: false
+
+situation: |
+  At the station you see a woman in a wheelchair working her way up a steep ramp. It looks like hard going. You are right behind her and could easily push.
+
+question: What is the best call?
+
+options:
+  - text: Take the handles and push. She clearly needs it.
+    call: risky
+    why: >-
+      A wheelchair is part of someone's personal space, and being moved without warning can be frightening or
+      even unsafe. She may be managing fine. Deciding she needs help is not the same as her asking for it.
+
+  - text: Ask, "Would you like a hand?" and go with her answer.
+    call: best
+    why: >-
+      One question lets her choose. If she says yes, she can tell you how to help. If she says no, you have
+      lost nothing, and she has been treated as the person in charge of her own movement.
+
+  - text: Walk past quickly so you do not make it awkward.
+    call: okay
+    why: >-
+      You have not overstepped, and often no help is needed. But offering is not rude. If she did want a
+      hand, a short question would have got her up the ramp.
+
+  - text: Ask if she wants help and, when she says "No thanks", stay close behind just in case.
+    call: risky
+    why: >-
+      Asking was right. Hovering after a no tells her you did not believe the answer. A no to help deserves
+      the same respect as any other no.
+
+principle: >-
+  Wanting to help does not replace asking. Offer, then accept the answer. This goes for touching someone,
+  their wheelchair, their cane or their assistance dog.

@@ -1,0 +1,41 @@
+set: consent
+order: 8
+title: The dare
+topic: Group pressure
+draft: false
+
+situation: |
+  You are at a house party, playing truth or dare with about ten people. Someone dares Olu to kiss Hannah. The group starts chanting.
+
+  Olu laughs along, but he is looking at the floor. Hannah has gone quiet. You are sitting next to them.
+
+question: What is the best call?
+
+options:
+  - text: Join in with the chanting. It is only a game, and they can always say no.
+    call: risky
+    why: >-
+      Saying no to ten chanting people is much harder than saying no to one. A kiss that happens because
+      refusing would be embarrassing is not a free choice, for Olu or for Hannah.
+
+  - text: Say nothing and wait to see what they do.
+    call: okay
+    why: >-
+      You are not adding to the pressure. But you have noticed that two people look uncomfortable, and the
+      noise of a group only stops when somebody interrupts it. That could be you.
+
+  - text: Say, "Nah, pick another one. Olu, truth or a different dare?"
+    call: best
+    why: >-
+      You have given both of them a way out without making anyone say "I don't want to" in front of the
+      group. It keeps the game going, and most people are relieved when someone does this.
+
+  - text: Stop the game and tell everyone off for pressuring people.
+    call: okay
+    why: >-
+      Your instinct is right, and it does end the pressure. But it puts a spotlight on Olu and Hannah, which
+      they may not want. A light redirect usually works with less embarrassment for them.
+
+principle: >-
+  A crowd can take away someone's freedom to say no. If you can see that someone is being pushed, an easy
+  way out, offered casually, is one of the kindest things you can give.

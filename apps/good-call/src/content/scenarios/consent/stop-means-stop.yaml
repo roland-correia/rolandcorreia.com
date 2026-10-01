@@ -1,0 +1,41 @@
+set: consent
+order: 2
+title: Only messing about
+topic: Play and "stop"
+draft: false
+
+situation: |
+  You and your flatmate Ben are play-fighting on the sofa, and you start tickling him. He is laughing so hard he can hardly breathe.
+
+  Between laughs he gasps: "Stop, stop!"
+
+question: What is the best call?
+
+options:
+  - text: Stop straight away and sit back.
+    call: best
+    why: >-
+      He said stop, so you stopped. If he wants more, he can say so, and now he knows the word works with
+      you. That is what makes messing about feel safe for both of you.
+
+  - text: Carry on. He is laughing, so he must be enjoying it.
+    call: risky
+    why: >-
+      Laughing when tickled is a reflex, not a sign of enjoyment. Lots of people laugh while hating it. When
+      the words and the laughter disagree, believe the words.
+
+  - text: Carry on for a few more seconds, then stop.
+    call: risky
+    why: >-
+      Those seconds teach Ben that "stop" is something you will get round to when you are ready. A word that
+      only works some of the time is not much use to him when it matters.
+
+  - text: Stop, then tease him for not being able to take it.
+    call: okay
+    why: >-
+      Stopping was right. The teasing takes some of it back, because it makes saying stop a little
+      embarrassing. People who are teased for a boundary are slower to use one next time.
+
+principle: >-
+  Stop means stop, even when it is said through laughter and even when it is only a game. If "stop" might be
+  part of the game, agree a different word first.
