@@ -46,6 +46,19 @@ export const sets = {
 
 export type SetId = keyof typeof sets;
 
+// Categories split a long set into sections on its page, in the order written here.
+// A set with no entry is shown as one list. Every scenario in a set that has
+// categories must name one of them (checked in src/content.config.ts).
+export const categories: Partial<Record<SetId, Record<string, { name: string; blurb: string }>>> = {
+  consent: {
+    touch: { name: 'Everyday touch', blurb: 'Hugs, play, offering help and children' },
+    privacy: { name: 'Privacy, photos and messages', blurb: 'What is yours to see, share or send' },
+    pressure: { name: 'Pressure and power', blurb: 'When saying no is made hard' },
+    nights: { name: 'Nights out and staying over', blurb: 'Alcohol, parties and sleepovers' },
+    intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
+  },
+};
+
 // How an answer is judged. Real situations are rarely just right or wrong,
 // so there is a middle step, and every answer comes with its reason.
 // The mark is shown next to the label so the verdict never depends on colour alone.

@@ -24,6 +24,8 @@ const { entry, number, total, next } = Astro.props as {
 const scenario = entry.data;
 const set = sets[scenario.set];
 const setPath = href(`/practice/${scenario.set}/`);
+// Back lands on the scenario's own section of the set page, when the set has sections.
+const backPath = scenario.category ? `${setPath}#${scenario.category}` : setPath;
 const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
 ---
 
@@ -31,7 +33,7 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
   title={scenario.title}
   description={`${set.name} scenario: ${scenario.topic}. Choose what you would do and see why.`}
   path={pathOf(entry)}
-  back={{ href: setPath, label: 'Back' }}
+  back={{ href: backPath, label: 'Back' }}
 >
   {scenario.draft && <p class="notice">Draft. This scenario is not published yet.</p>}
 

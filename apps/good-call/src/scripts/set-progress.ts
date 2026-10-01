@@ -11,6 +11,8 @@ if (root) {
   const summary = root.querySelector<HTMLElement>('[data-summary]')!;
   const reset = root.querySelector<HTMLButtonElement>('[data-reset]')!;
   const start = root.querySelector<HTMLAnchorElement>('[data-start]')!;
+  // Present only when the set is split into categories.
+  const sections = Array.from(root.querySelectorAll<HTMLElement>('[data-section]'));
 
   function render() {
     const progress = readProgress();
@@ -32,6 +34,14 @@ if (root) {
 
     summary.hidden = reset.hidden = done === 0;
     summary.textContent = `${done} of ${links.length} done`;
+
+    for (const section of sections) {
+      const total = section.querySelectorAll('[data-scenario-link]').length;
+      const doneHere = section.querySelectorAll('[data-scenario-link].done').length;
+      const label = `${total} ${total === 1 ? 'scenario' : 'scenarios'}`;
+      section.querySelector<HTMLElement>('[data-section-count]')!.textContent =
+        doneHere > 0 ? `${doneHere} of ${total} done` : label;
+    }
 
     if (done > 0 && next) {
       start.textContent = 'Carry on';

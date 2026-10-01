@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { sets, type SetId } from './site';
+import { sets, categories, type SetId } from './site';
 
 export type Scenario = CollectionEntry<'scenarios'>;
 
@@ -9,7 +9,25 @@ const showDrafts = import.meta.env.DEV || import.meta.env.PUBLIC_SHOW_DRAFTS ===
 
 export async function getScenarios(set: SetId): Promise<Scenario[]> {
   const all = await getCollection('scenarios', ({ data }) => data.set === set && (showDrafts || !data.draft));
-  return all.sort((a, b) => a.data.order - b.data.order);
+  // Category first, in the order the categories are written, then `order` within it.
+  const categoryIds = Object.keys(categories[set] ?? {});
+  const rank = (scenario: Scenario) => categoryIds.indexOf(scenario.data.category ?? '');
+  return all.sort((a, b) => rank(a) - rank(b) || a.data.order - b.data.order);
+}
+
+export interface Section {
+  id: string;
+  name: string;
+  blurb: string;
+  scenarios: Scenario[];
+}
+
+// The set's scenarios split into its categories, leaving out any that are empty.
+// Returns an empty list for a set without categories, which is shown as one list.
+export function sectionsOf(set: SetId, scenarios: Scenario[]): Section[] {
+  return Object.entries(categories[set] ?? {})
+    .map(([id, category]) => ({ id, ...category, scenarios: scenarios.filter((s) => s.data.category === id) }))
+    .filter((section) => section.scenarios.length > 0);
 }
 
 // The sets that have a page: marked live and with at least one scenario to show.
