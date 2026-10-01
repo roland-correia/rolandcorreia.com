@@ -1,0 +1,41 @@
+set: administrator
+order: 6
+title: Tidy up the client list
+topic: Asking for clarity
+draft: false
+
+situation: |
+  On Monday your manager stops at your desk on her way to a meeting. "Can you tidy up the client list before Friday? Thanks." Then she is gone.
+
+  The list has 2,000 rows. "Tidy up" could mean removing duplicates, fixing the formatting, checking every contact is still current, or all three. Those are very different amounts of work.
+
+question: What is the best call?
+
+options:
+  - text: Do all three to be safe, even if it takes most of the week.
+    call: okay
+    why: >-
+      Nobody could say you did too little. But you may spend four days on something she wanted to take an
+      hour, and your other work will slip. Being thorough is only a strength when it is aimed at the right thing.
+
+  - text: Pick the meaning that seems most likely and get started.
+    call: risky
+    why: >-
+      A guess might be right. If it is wrong, you find out on Friday with no time left. One question now
+      costs a minute, and guessing could cost the week.
+
+  - text: Send her a short message today. "For the client list, do you want duplicates removed, formatting fixed, contacts checked, or all three? And roughly how long should I spend on it?"
+    call: best
+    why: >-
+      Offering options makes it quick for her to answer, and asking how long tells you how deep to go. Asking
+      a clear question about an unclear instruction is a sign of competence, not a weakness.
+
+  - text: Ask a colleague what they think she meant.
+    call: okay
+    why: >-
+      A colleague may know how she usually works, which is useful. But it is still a guess, now made by two
+      people. The only person who knows what she meant is your manager.
+
+principle: >-
+  An unclear instruction is not a test you are meant to pass by guessing. Ask a specific question, with
+  options, before you start.

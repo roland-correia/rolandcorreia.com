@@ -1,0 +1,41 @@
+set: administrator
+order: 5
+title: The cancelled appointment
+topic: Staying calm
+draft: false
+
+situation: |
+  You are on the front desk. A visitor arrives for a 2pm appointment and you find it was cancelled yesterday. Nobody told her.
+
+  She has taken the afternoon off work to be here. She raises her voice: "This is ridiculous. Does anyone here know what they're doing?"
+
+question: What is the best call?
+
+options:
+  - text: Tell her she needs to calm down or you will not be able to help her.
+    call: risky
+    why: >-
+      "Calm down" almost never calms anyone. She has a real reason to be upset, and this tells her that her
+      tone matters more to you than her wasted afternoon. It usually makes things louder.
+
+  - text: Explain that cancellations are handled by another team, so it was not your mistake.
+    call: risky
+    why: >-
+      It may be true, but she did not ask whose fault it was. To her, you are the organisation. Defending
+      yourself leaves her problem exactly where it was.
+
+  - text: Let her finish, say you are sorry she was not told, then tell her what you can do now, such as finding the next appointment.
+    call: best
+    why: >-
+      Being heard is what brings most people down. Saying sorry that she was not told is not admitting you did
+      it. It is recognising what happened to her. Then you move to the thing she actually needs.
+
+  - text: Go and fetch your manager straight away.
+    call: okay
+    why: >-
+      If you ever feel unsafe, getting help is the right call. Here she is upset, not threatening. Leaving her
+      at the desk unheard may make it worse. Listen first, and bring in your manager if you cannot fix it.
+
+principle: >-
+  With an upset person: listen first, recognise what went wrong for them, then say what you can do. It is
+  not about who was to blame.

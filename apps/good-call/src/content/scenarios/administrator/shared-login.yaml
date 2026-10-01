@@ -1,0 +1,41 @@
+set: administrator
+order: 4
+title: Can I borrow your login?
+topic: Security and saying no
+draft: false
+
+situation: |
+  Marcus, a senior colleague, stops you on your way to lunch. His access to the finance system has expired, and he needs to send one invoice before a 1pm deadline.
+
+  "Just give me your password," he says. "It'll take two minutes, and you can change it afterwards."
+
+question: What is the best call?
+
+options:
+  - text: Give him the password and change it as soon as you are back.
+    call: risky
+    why: >-
+      Whatever is done with your login is recorded as done by you. Sharing a password almost always breaks IT
+      policy, and "he is senior" will not be an excuse. Marcus being in a hurry does not make it your risk to take.
+
+  - text: Say you cannot share your password, and offer to send the invoice yourself now, before lunch.
+    call: best
+    why: >-
+      You have said no to the method and yes to the problem. Marcus gets his invoice sent on time, the record
+      shows who really did it, and lunch is ten minutes late. Refusing and helping is stronger than refusing alone.
+
+  - text: Say you need to think about it, and keep out of his way until after one o'clock.
+    call: risky
+    why: >-
+      Avoiding the conversation feels easier than saying no, but Marcus is left without an answer and misses
+      his deadline. A clear, polite no with another way forward is kinder than silence.
+
+  - text: Log in yourself and let Marcus use your screen while you go to lunch.
+    call: okay
+    why: >-
+      Better than handing over the password, but everything he does is still under your name and you are not
+      there to see it. If you are going to log in anyway, stay and send it yourself.
+
+principle: >-
+  You can say no to a senior person when the request breaks a rule that protects you both. Say no to the
+  method, and offer another way to solve their problem.

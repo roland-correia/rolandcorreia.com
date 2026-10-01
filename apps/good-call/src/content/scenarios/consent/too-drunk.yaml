@@ -1,0 +1,42 @@
+set: consent
+order: 5
+title: Last one standing
+topic: Alcohol and capacity
+draft: false
+
+situation: |
+  At a house party you have been getting on well with Alex all night. The flirting has gone both ways.
+
+  By midnight Alex is slurring, unsteady on their feet and losing track of the conversation. Alex leans on you and says: "Let's go upstairs."
+
+question: What is the best call?
+
+options:
+  - text: Go upstairs. Alex was the one who suggested it.
+    call: risky
+    why: >-
+      The words sound like a yes, but someone this drunk cannot weigh up a decision, so you cannot rely on
+      them. In the law of England and Wales, consent needs the capacity to choose. Who suggested it does not
+      change that.
+
+  - text: Go upstairs, but decide you will only kiss.
+    call: risky
+    why: >-
+      The problem is not how far things go. Alex is not able to choose any of it right now. Being alone with
+      you also takes Alex away from the people who would look out for them.
+
+  - text: Say "Not tonight, but I'd love your number." Then help Alex find their friends or get home safely.
+    call: best
+    why: >-
+      You have kept the connection without taking advantage of the moment. If the interest is real it will
+      still be there tomorrow, when Alex can actually choose. And Alex ends the night safe.
+
+  - text: Leave Alex on the sofa and head home.
+    call: okay
+    why: >-
+      You have made sure no harm comes from you, and that matters. But Alex is vulnerable and you were the
+      person with them. Telling the host or their friends before you go takes one minute.
+
+principle: >-
+  Someone has to be able to choose before their yes counts. If they are too drunk to make a decision, wait.
+  Being drunk yourself does not remove your responsibility for what you do.

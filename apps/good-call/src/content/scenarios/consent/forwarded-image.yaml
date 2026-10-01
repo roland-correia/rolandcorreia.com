@@ -1,0 +1,41 @@
+set: consent
+order: 8
+title: The group chat
+topic: Intimate images
+draft: false
+
+situation: |
+  Dev, one of your mates, posts a photo in your group chat. It is a nude that his ex sent him privately while they were together.
+
+  People are replying with laughing emojis.
+
+question: What is the best call?
+
+options:
+  - text: Add an emoji and say nothing more. You were not the one who shared it.
+    call: risky
+    why: >-
+      Reacting tells Dev the group approves, and makes the next share more likely. You did not post it, but
+      you have joined the audience she never agreed to.
+
+  - text: Quietly leave the group chat.
+    call: okay
+    why: >-
+      You are no longer part of it, which is something. But the photo is still there and nobody has objected.
+      If speaking up in the group feels like too much, a private message to Dev does the same job.
+
+  - text: Forward it to another friend who knows her.
+    call: risky
+    why: >-
+      Now you have shared it too. Sharing someone's intimate image without their consent is a criminal
+      offence, and "someone sent it to me first" is not a defence.
+
+  - text: Reply, "Not OK, mate. She sent that to you, not to us. Delete it." Do not save it or pass it on.
+    call: best
+    why: >-
+      You have named the problem in one line and said what should happen next. One person objecting is often
+      all it takes for others to agree. It also tells Dev, as a friend, that he is putting himself at risk.
+
+principle: >-
+  Consent is specific. A photo sent to one person is for that person only. It is not consent for anyone else
+  to see it, then or later.

@@ -1,0 +1,41 @@
+set: consent
+order: 1
+title: The hug hello
+topic: Touch
+draft: false
+
+situation: |
+  You are meeting Sam, a friend of a friend, for the second time. You are a hugger, and you go in for a hug.
+
+  Sam takes a small step back and holds out a hand instead.
+
+question: What is the best call?
+
+options:
+  - text: Laugh, say "Come on, I'm a hugger!" and hug Sam anyway.
+    call: risky
+    why: >-
+      Sam has already answered, with a step back and a hand. Meaning well does not change that you would be
+      overriding it. Many people find it hard to say no out loud, so the step back is the no.
+
+  - text: Shake Sam's hand, smile and carry on as normal.
+    call: best
+    why: >-
+      Sam showed you what feels comfortable, and you matched it without making it a big moment. That tells Sam
+      a boundary is safe with you, which is how trust starts.
+
+  - text: Stop, apologise several times and ask whether you have upset them.
+    call: okay
+    why: >-
+      Stopping is right. But a long apology hands Sam a new job: reassuring you. A quick, warm switch to the
+      handshake is kinder than making Sam manage your feelings.
+
+  - text: Shake hands, then joke to the group that Sam is "a bit cold".
+    call: risky
+    why: >-
+      A joke that punishes a boundary teaches everyone listening that having one costs something. Next time
+      Sam, or someone watching, may put up with a hug they did not want.
+
+principle: >-
+  Consent is not only about sex. Body language is an answer too. If you are not sure, ask before you move:
+  "Hug or handshake?"

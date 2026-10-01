@@ -1,0 +1,41 @@
+set: consent
+order: 9
+title: A drink with the boss
+topic: Power
+draft: false
+
+situation: |
+  You manage a small team. Tasha joined three months ago and reports to you. You are attracted to her, and you think she might feel the same.
+
+  Her probation review is next month, and you will be the one writing it. You would like to ask her out for a drink, just the two of you.
+
+question: What is the best call?
+
+options:
+  - text: Ask her privately. She can always say no.
+    call: risky
+    why: >-
+      Can she? You decide whether she keeps her job. You may know you would never hold a no against her, but
+      she cannot know that. A yes given because no feels unsafe is not a free choice.
+
+  - text: Ask in a jokey way, so either of you can laugh it off.
+    call: risky
+    why: >-
+      The joke protects you, not her. Tasha now has to work out whether you meant it and how to answer, with
+      her probation in your hands. Being unclear moves the awkwardness onto the person with less power.
+
+  - text: Wait until her probation review is done, then ask.
+    call: okay
+    why: >-
+      This removes the most obvious pressure, and shows you have seen the problem. But you would still be her
+      manager, with a say over her workload, pay and references. The power does not end with probation.
+
+  - text: Do not ask while you manage her. If the feeling lasts, check your employer's policy and talk to HR or your own manager first.
+    call: best
+    why: >-
+      You have put her freedom to choose ahead of what you want. Many employers have a way to handle this,
+      such as changing who she reports to. Then, if you do ask, her answer can be a real one.
+
+principle: >-
+  Consent needs the freedom to say no. When you hold power over someone, as a manager, teacher, carer or
+  landlord, it is your job to notice that and not put them on the spot.

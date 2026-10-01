@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getLiveSets } from '../../lib/scenarios';
+import { sets, type SetId } from '../../lib/site';
+import { href } from '../../lib/paths';
+
+// The role picker. A role with scenarios links to its set; the rest show as "coming later".
+const liveSets = await getLiveSets();
+const scenarioCount = new Map(liveSets.map(({ id, scenarios }) => [id, scenarios.length]));
+const roles = (Object.keys(sets) as SetId[]).filter((id) => sets[id].group === 'work');
+---
+
+<Base
+  title="Choose your role"
+  description="Practice situational judgement questions for the job you are applying for. Untimed, with the reason for every answer."
+  path="/work/"
+  back={{ href: href('/'), label: 'Back' }}
+>
+  <p class="kicker">At work</p>
+  <h1>Choose your role</h1>
+  <p class="lead">
+    Many employers use situational judgement tests: a situation at work, a few possible actions, and you pick the best
+    one. They are usually timed, and they rarely tell you why an answer was wrong.
+  </p>
+  <p class="lead">Here you can practise with no clock, and see the reasoning behind every answer.</p>
+
+  <ul class="tiles">
+    {
+      roles.map((id) => {
+        const n = scenarioCount.get(id);
+        return (
+          <li>
+            {n ? (
+              <a class="tile" href={href(`/practice/${id}/`)}>
+                <b>{sets[id].name}</b>
+                <small>{sets[id].blurb}</small>
+                <small>
+                  {n} {n === 1 ? 'scenario' : 'scenarios'}
+                </small>
+              </a>
+            ) : (
+              <div class="tile off">
+                <b>{sets[id].name}</b>
+                <small>Coming later</small>
+              </div>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</Base>

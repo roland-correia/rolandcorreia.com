@@ -1,0 +1,48 @@
+---
+// Where to get help. Shown with the consent scenarios, because reading them can
+// bring things up. Links only: each service keeps its own contact details current.
+const services = [
+  {
+    name: 'Rape Crisis England & Wales',
+    detail: 'Free 24/7 support line and online chat for anyone aged 16 or over.',
+    url: 'https://247sexualabusesupport.org.uk/',
+  },
+  {
+    name: 'SurvivorsUK',
+    detail: 'For men, boys and non-binary people who have experienced sexual violence.',
+    url: 'https://www.survivorsuk.org/',
+  },
+  {
+    name: 'Galop',
+    detail: 'For LGBT+ people who have experienced abuse or violence.',
+    url: 'https://galop.org.uk/',
+  },
+  {
+    name: 'Revenge Porn Helpline',
+    detail: 'For adults whose intimate images have been shared, or threatened to be.',
+    url: 'https://revengepornhelpline.org.uk/',
+  },
+  {
+    name: 'Samaritans',
+    detail: 'Someone to talk to, day or night, about anything.',
+    url: 'https://www.samaritans.org/',
+  },
+];
+---
+
+<details class="support">
+  <summary>If this brings something up for you</summary>
+  <p>You can stop at any time. These UK services are free and confidential. In an emergency, call 999.</p>
+  <ul>
+    {
+      services.map((service) => (
+        <li>
+          <a href={service.url} target="_blank" rel="noopener">
+            {service.name}
+          </a>
+          <span>{service.detail}</span>
+        </li>
+      ))
+    }
+  </ul>
+</details>

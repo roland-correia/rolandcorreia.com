@@ -1,0 +1,41 @@
+set: consent
+order: 4
+title: Not tonight
+topic: Pressure
+draft: false
+
+situation: |
+  You and your partner Jordan have been together for a year. Tonight you would like to have sex.
+
+  Jordan says: "Not tonight, I'm shattered."
+
+question: What is the best call?
+
+options:
+  - text: Ask again a couple of times later in the evening, in case Jordan has changed their mind.
+    call: risky
+    why: >-
+      Jordan gave a clear answer. A yes you get by asking until someone gives in is not a free choice. It is
+      tiredness. Asking again and again is pressure, even when every ask is gentle.
+
+  - text: Go quiet and stay distant for the rest of the evening, so Jordan knows you are disappointed.
+    call: risky
+    why: >-
+      Feeling disappointed is fine. Using it to make Jordan feel guilty is pressure in another form. It teaches
+      Jordan that saying no has a price, which makes the next yes less free.
+
+  - text: Say "No problem" and suggest something else, like watching something together.
+    call: best
+    why: >-
+      You took the no as a complete answer and stayed warm. That is what makes it safe for Jordan to be honest
+      with you, including on the nights the answer is yes.
+
+  - text: Say "OK, fine", then ask why Jordan never seems to be in the mood lately.
+    call: okay
+    why: >-
+      Wanting to talk about how things are between you is fair. The timing is the problem. Straight after a
+      no, it sounds as if the no has to be defended. Raise it another day, when neither of you is tired.
+
+principle: >-
+  Being in a relationship is not a standing yes. A no does not need a reason, and consent has to be given
+  freely, not handed over to end the asking.

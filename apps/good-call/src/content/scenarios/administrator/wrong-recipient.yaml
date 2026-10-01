@@ -1,0 +1,42 @@
+set: administrator
+order: 3
+title: The wrong John
+topic: Owning a mistake
+draft: false
+
+situation: |
+  You email a spreadsheet of staff names and home addresses to John in payroll. A minute later you see that the address filled itself in as a different John, at a supplier outside your organisation.
+
+  Nobody else has noticed.
+
+question: What is the best call?
+
+options:
+  - text: Tell your manager straight away, and follow your organisation's process for a data breach.
+    call: best
+    why: >-
+      This is a personal data breach, and time matters. Under UK data protection law some breaches must be
+      reported to the regulator within 72 hours. Your manager can only act if they know. Speed is what you
+      will be judged on, not the slip.
+
+  - text: Email the other John, ask him to delete it, and leave it there.
+    call: okay
+    why: >-
+      Asking him to delete it is a useful step, and it may well be part of the official process. But it is
+      not the whole process, and you cannot be sure he did it. Your organisation still needs to know.
+
+  - text: Try to recall the email and wait to see whether it worked before saying anything.
+    call: risky
+    why: >-
+      Recalling an email rarely works outside your own organisation, and waiting uses up the time that
+      matters. If it comes out later, the delay will look worse than the mistake.
+
+  - text: Say nothing. It was an honest mistake and nobody has noticed.
+    call: risky
+    why: >-
+      The people on that list have had their home addresses sent to a stranger, whether anyone noticed or not.
+      Almost everyone sends a wrong email at some point. Hiding one is what turns a slip into a serious matter.
+
+principle: >-
+  Everyone makes mistakes. What employers look for is what you do next: tell the right person quickly, say
+  what happened, and help put it right.

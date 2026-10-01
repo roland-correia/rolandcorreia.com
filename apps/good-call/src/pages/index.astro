@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLiveSets } from '../lib/scenarios';
+import { sets } from '../lib/site';
+import { href } from '../lib/paths';
+
+// Home lists the everyday sets, then one door into the work roles.
+const liveSets = await getLiveSets();
+const everyday = liveSets.filter(({ id }) => sets[id].group === 'everyday');
+const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
+---
+
+<Base title="Good Call" path="/">
+  <h1>What's the<br /><span>good call?</span></h1>
+  <p class="lead">
+    Short, realistic scenarios. Choose what you would do, then see why each choice helps or harms.
+  </p>
+
+  <section class="group" aria-labelledby="everyday-title">
+    <h2 id="everyday-title">Everyday life</h2>
+    {
+      everyday.map(({ id, scenarios }) => (
+        <a class="tile" href={href(`/practice/${id}/`)}>
+          <b>{sets[id].name}</b>
+          <small>{sets[id].blurb}</small>
+          <small>{count(scenarios.length)}</small>
+        </a>
+      ))
+    }
+  </section>
+
+  <section class="group" aria-labelledby="work-title">
+    <h2 id="work-title">At work</h2>
+    <a class="tile" href={href('/work/')}>
+      <b>Choose your role</b>
+      <small>Practice for the judgement questions in job applications and training</small>
+    </a>
+  </section>
+
+  <section class="card" aria-labelledby="how-title">
+    <h2 id="how-title">How it works</h2>
+    <ul class="ticks">
+      <li>No timer. Take as long as you need.</li>
+      <li>Every answer comes with its reason, the good ones too.</li>
+      <li>Try again as often as you like.</li>
+      <li>No account. Your answers stay in this browser.</li>
+    </ul>
+  </section>
+
+  <a class="textbtn" href={href('/about/')}>About Good Call</a>
+  <p class="credit">by <a href="https://rolandcorreia.com">Roland Correia</a></p>
+</Base>

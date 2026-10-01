@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import { calls } from '../lib/site';
+import { href } from '../lib/paths';
+---
+
+<Base
+  title="About"
+  description="What Good Call is, who it is for, how answers are judged and what it cannot do."
+  path="/about/"
+  back={{ href: href('/'), label: 'Back' }}
+>
+  <h1>About Good Call</h1>
+
+  <div class="prose">
+    <p>
+      Good Call is practice for judgement. Each scenario is a moment where the right thing to do is not obvious, or is
+      obvious and still hard. You choose, and then you see the reasoning.
+    </p>
+    <p>
+      It starts with consent, because that is where a bad call does the most harm, and because it is for everyone.
+      Anyone can misjudge a situation. Anyone can have their own boundary ignored.
+    </p>
+    <p>
+      The work scenarios are for people preparing for job applications and training, especially anyone who does not get
+      the extra time or support to prepare. That includes many neurodivergent applicants. Timed tests reward people who
+      already know the unwritten rules. Good Call writes the rules down.
+    </p>
+  </div>
+
+  <section class="card" aria-labelledby="judged-title">
+    <h2 id="judged-title">How answers are judged</h2>
+    <p>Real situations are rarely just right or wrong, so there are three verdicts:</p>
+    <ul class="ticks">
+      <li><span><b>{calls.best.label}.</b> The choice that respects everyone involved and solves the problem.</span></li>
+      <li><span><b>{calls.okay.label}.</b> It avoids the worst outcome but leaves something undone.</span></li>
+      <li><span><b>{calls.risky.label}.</b> It is likely to hurt someone, or you.</span></li>
+    </ul>
+    <p>Every answer has its reason. The reason is the point, not the score.</p>
+  </section>
+
+  <section class="card" aria-labelledby="limits-title">
+    <h2 id="limits-title">What this is not</h2>
+    <ul class="ticks">
+      <li>Not legal advice. Where a law is mentioned, it is the law in England and Wales unless it says otherwise.</li>
+      <li>Not a qualification. Finishing a set does not certify anything.</li>
+      <li>Not a mark scheme. Employers score their own tests in their own way.</li>
+      <li>
+        Not yet reviewed. These scenarios are first versions. They have not been checked by a consent educator, a
+        lawyer or a recruiter.
+      </li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Your answers</h2>
+    <p>
+      Your answers and reading settings are saved in this browser only. Nothing is sent anywhere, there is no account
+      and no tracking. Use "Clear my answers" on a set's page to remove them.
+    </p>
+  </section>
+
+  <p class="credit">by <a href="https://rolandcorreia.com">Roland Correia</a></p>
+</Base>
