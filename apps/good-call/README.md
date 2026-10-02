@@ -67,7 +67,7 @@ src/content.config.ts    the rules every scenario must follow (the schema)
 src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
 src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
 src/pages/               home, the role picker, a set, one scenario, about
-src/layouts/Base.astro   the page shell, share tags, reading settings and the footer (summary, disclaimer, credit)
+src/layouts/Base.astro   the page shell, share tags, reading settings and the footer (summary, disclaimer, copyright)
 src/components/          the wordmark, scenario tile, progress bar, settings dialog and support links
 src/scripts/             scenario.ts (lock in an answer), progress.ts (saved answers), progress-bar.ts,
                          set-progress.ts, settings.ts

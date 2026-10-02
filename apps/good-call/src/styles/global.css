@@ -245,7 +245,7 @@ a.tile:hover { border-color: var(--accent); }
 .support a { font-weight: 600; text-underline-offset: 4px; }
 .support span { color: var(--muted); font-size: 0.85rem; }
 
-/* The footer on every page: a summary of Good Call, the short disclaimer and the credit. */
+/* The footer on every page: a summary of Good Call, the short disclaimer and the copyright line. */
 .foot {
   display: flex; flex-direction: column; gap: 0.75rem;
   margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line);

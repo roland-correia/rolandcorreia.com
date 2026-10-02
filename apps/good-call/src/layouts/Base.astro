@@ -63,7 +63,7 @@ const canonical = absolute(path);
       <main id="main">
         <slot />
       </main>
-      <!-- On every page: what Good Call is, the short disclaimer and the credit. The detail is on the About page. -->
+      <!-- On every page: what Good Call is, the short disclaimer and the copyright line. The detail is on the About page. -->
       <footer class="foot">
         <p>
           <b>Good Call</b> is practice for judgement. Short, realistic scenarios about everyday life and work: you
@@ -75,7 +75,10 @@ const canonical = absolute(path);
           anyone's behaviour. Your answers stay in your browser and are not used to build a profile of you.{' '}
           <a href={href('/about/#disclaimer')}>Read the full disclaimer</a>
         </p>
-        <p>by <a href="https://rolandcorreia.com">Roland Correia</a></p>
+        <p>
+          © 2026 Good Call, a subsidiary of{' '}
+          <a href="https://rolandcorreia.com/projects/diluted-stories/">Diluted Stories</a>.
+        </p>
       </footer>
     </div>
     <SettingsDialog />
