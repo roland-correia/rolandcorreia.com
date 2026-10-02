@@ -1,4 +1,5 @@
-// On a set's page: marks the scenarios already done, counts them, and offers a reset.
+// On a set's page: marks the scenarios already answered, counts them in each section,
+// and offers a reset. The overall bar is drawn by progress-bar.ts.
 // Without JavaScript the list is simply a list of links.
 
 import { readProgress, clearSet, callLabels } from './progress';
@@ -8,7 +9,6 @@ const root = document.querySelector<HTMLElement>('[data-set]');
 if (root) {
   const set = root.dataset.set!;
   const links = Array.from(root.querySelectorAll<HTMLElement>('[data-scenario-link]'));
-  const summary = root.querySelector<HTMLElement>('[data-summary]')!;
   const reset = root.querySelector<HTMLButtonElement>('[data-reset]')!;
   const start = root.querySelector<HTMLAnchorElement>('[data-start]')!;
   // Present only when the set is split into categories.
@@ -21,19 +21,18 @@ if (root) {
 
     for (const link of links) {
       const status = link.querySelector<HTMLElement>('[data-status]')!;
-      const first = progress[link.dataset.id!];
-      link.classList.toggle('done', Boolean(first));
-      status.hidden = !first;
-      if (first) {
+      const answer = progress[link.dataset.id!];
+      link.classList.toggle('done', Boolean(answer));
+      status.hidden = !answer;
+      if (answer) {
         done += 1;
-        status.textContent = `Done. Your first answer: ${callLabels[first]}`;
+        status.textContent = `Done. Your answer: ${callLabels[answer.call]}`;
       } else {
         next ??= link;
       }
     }
 
-    summary.hidden = reset.hidden = done === 0;
-    summary.textContent = `${done} of ${links.length} done`;
+    reset.hidden = done === 0;
 
     for (const section of sections) {
       const total = section.querySelectorAll('[data-scenario-link]').length;
@@ -47,7 +46,7 @@ if (root) {
       start.textContent = 'Carry on';
       start.href = next.getAttribute('href')!;
     } else if (done > 0) {
-      start.textContent = 'Go through them again';
+      start.textContent = 'Review your answers';
       start.href = links[0].getAttribute('href')!;
     } else {
       start.textContent = 'Start';
