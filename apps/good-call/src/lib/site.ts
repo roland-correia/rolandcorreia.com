@@ -23,6 +23,23 @@ export const sets = {
     ],
     live: true,
   },
+  racism: {
+    name: 'Racism',
+    group: 'everyday',
+    blurb: 'Remarks, jokes, skin colour, and what to do when you see it',
+    intro:
+      'Racism is not only shouting in the street. It is also the joke in the group chat, the comment about skin tone and the CV put to one side. These scenarios put you in three positions: the person who sees it, the person who did it, and the person it happens to.',
+    note: 'Describes racist remarks and behaviour, online and in person. No slurs are repeated. Written for adults.',
+    rules: [
+      'Impact matters more than intent. "I didn\'t mean it" does not undo how it landed.',
+      'Silence looks like agreement. You do not need a speech. "That\'s not OK" is enough.',
+      'Look after the person targeted first. Standing with them matters more than winning an argument.',
+      'No skin tone is better than another. Praise for being lighter is the same prejudice as an insult for being darker.',
+      'If you get it wrong, listen, apologise without excuses and change it. Being corrected is not an attack.',
+      'Racist abuse and threats can be crimes, online as well as in person, and can be reported.',
+    ],
+    live: true,
+  },
   'adult-content': {
     name: 'Porn and real life',
     group: 'everyday',
@@ -117,6 +134,12 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     priorities: { name: 'Priorities and instructions', blurb: 'Deadlines, clashes and unclear requests' },
     people: { name: 'Working with people', blurb: 'Upset visitors, gossip and feedback' },
     asking: { name: 'Asking for what you need', blurb: 'Help, workload and adjustments' },
+  },
+  racism: {
+    online: { name: 'Social media and group chats', blurb: 'Memes, comments, old posts and abuse in your inbox' },
+    everyday: { name: 'Out and about', blurb: 'What you see, and what you say, in public' },
+    family: { name: 'Family and home', blurb: 'Relatives, children and comments about skin colour' },
+    work: { name: 'At work', blurb: 'Customers, colleagues, names and who gets a chance' },
   },
   'adult-content': {
     children: { name: 'Children and teenagers', blurb: 'First phones, what they see, and what to say' },

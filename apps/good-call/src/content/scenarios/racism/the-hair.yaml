@@ -1,0 +1,40 @@
+set: racism
+category: everyday
+order: 3
+title: Can I touch it?
+topic: Bodies and curiosity
+draft: false
+
+situation: |
+  At a friend's barbecue you meet Abena, a friend of a friend. She has long braids, and you think they look amazing. Without really thinking, you start to reach out to touch them.
+
+question: What is the best call?
+
+options:
+  - text: Touch it. It is a compliment.
+    call: risky
+    why: >-
+      Touching someone's hair without asking is touching their body without asking. Many Black women have
+      this happen constantly, from strangers too. It treats her as something to examine, however kind the intention.
+
+  - text: Stop, and ask, "Can I touch your hair?"
+    call: okay
+    why: >-
+      Asking is far better than not asking. But it is awkward to say no to someone you have just met, and
+      she may be tired of the question. A compliment that does not need her to do anything is better.
+
+  - text: Keep your hands to yourself and say, "Your hair looks great."
+    call: best
+    why: >-
+      She gets the compliment with nothing asked of her. It is how you would speak to anyone about their
+      hair. If she wants to tell you more about it, she will.
+
+  - text: Ask her a string of questions. "Is it real? How long did it take? How do you wash it?"
+    call: okay
+    why: >-
+      Interest is not unkind, and a close friend might enjoy the conversation. But from someone she has just
+      met, it can feel like being an exhibit, and "is it real?" is rude about anyone's hair. One compliment, then follow her lead.
+
+principle: >-
+  Other people's bodies, including their hair, are not there to satisfy your curiosity. Compliment the way
+  you would compliment anyone, and keep your hands to yourself.

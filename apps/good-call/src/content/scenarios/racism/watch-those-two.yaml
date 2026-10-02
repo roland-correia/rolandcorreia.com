@@ -1,0 +1,42 @@
+set: racism
+category: work
+order: 1
+title: Keep an eye on those two
+topic: Assumptions
+draft: false
+
+situation: |
+  You work in a clothes shop. Two Black teenage boys come in and start looking at jackets. Your colleague Dean nudges you. "Watch those two," he says. "They look dodgy."
+
+  They have done nothing except look at jackets. Dean said nothing about the white teenagers who came in five minutes ago.
+
+question: What is the best call?
+
+options:
+  - text: Follow them round the shop, to be on the safe side.
+    call: risky
+    why: >-
+      They would be followed because of how they look, not because of anything they did. Young Black people
+      notice this at once, because it happens to them all the time. It is discrimination, and it is poor service.
+
+  - text: Ask Dean, "What did they do?" Then treat them as you would any customer. "Hi, let me know if you need a size."
+    call: best
+    why: >-
+      The question makes Dean look at his own reason, and he may find he does not have one. Greeting them as
+      normal is good service for anyone. Friendly attention is also what actually deters theft.
+
+  - text: Ignore Dean, and ignore the boys.
+    call: okay
+    why: >-
+      You have not acted on his suspicion, which is good. But Dean's assumption stands, and he will act on
+      it next time. The boys also get no welcome at all, which is its own kind of message.
+
+  - text: Tell Dean loudly, in front of them, that he is being racist.
+    call: okay
+    why: >-
+      You have named it correctly. But saying it in front of the customers turns two boys buying jackets
+      into the centre of a scene. Ask the quiet question now, and raise it properly with Dean or a manager afterwards.
+
+principle: >-
+  Suspicion based on how someone looks is discrimination. Ask "what did they actually do?" and treat every
+  customer the same way.

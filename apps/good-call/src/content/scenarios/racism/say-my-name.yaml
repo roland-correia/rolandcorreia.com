@@ -1,0 +1,42 @@
+set: racism
+category: work
+order: 4
+title: We'll just call you Nikki
+topic: Names
+draft: false
+
+situation: |
+  A new colleague joins your team and introduces herself as Nkechi. You are not sure you caught it. Another colleague laughs and says, "That's a mouthful. We'll just call you Nikki."
+
+  Nkechi smiles politely and does not answer.
+
+question: What is the best call?
+
+options:
+  - text: Call her Nikki. She did not object, and it is easier for everyone.
+    call: risky
+    why: >-
+      On her first day, with a room laughing, she was never going to object. Renaming someone because their
+      name is unfamiliar tells them that fitting in means being less themselves. A polite smile is not agreement.
+
+  - text: Say, "Sorry, could you say it again? I want to get it right." Then use her name, and keep using it.
+    call: best
+    why: >-
+      Asking again is not rude. It shows you think her name is worth learning. It takes a minute of effort
+      and tells her, in front of the team, that she does not have to shrink to be here.
+
+  - text: Avoid using her name at all, in case you get it wrong.
+    call: okay
+    why: >-
+      You are trying not to offend, which is a kind impulse. But she will notice that she is the only one
+      never called by name. Getting it slightly wrong while trying is far better than avoiding her.
+
+  - text: Ask her privately later, "Do you have an English name we could use?"
+    call: risky
+    why: >-
+      It is more polite than announcing a nickname, but it asks for the same thing: that she change, so that
+      you do not have to learn. If she prefers a short form, she will offer it herself.
+
+principle: >-
+  A person's name is theirs. Ask how to say it, practise until you can, and use it. If they would rather be
+  called something shorter, that is for them to offer.

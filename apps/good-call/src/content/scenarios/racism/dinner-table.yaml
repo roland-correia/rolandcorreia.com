@@ -1,0 +1,42 @@
+set: racism
+category: family
+order: 1
+title: At the dinner table
+topic: Relatives
+draft: false
+
+situation: |
+  At a family meal your uncle starts talking about "immigrants" taking over the town, then makes a remark about the skin colour of his new neighbours. Your eight-year-old niece is at the table, listening.
+
+  Everyone else looks at their plates.
+
+question: What is the best call?
+
+options:
+  - text: Say nothing. He is from a different generation, and it would spoil the meal.
+    call: risky
+    why: >-
+      His age explains where the view came from. It does not make it harmless, and your niece is learning
+      right now what the adults in her family will let pass. The meal is already spoiled for anyone the remark was about.
+
+  - text: Say calmly, "I don't agree with that, and I'd rather we didn't talk about people that way." Then change the subject.
+    call: best
+    why: >-
+      You have not tried to win a debate, which rarely works at a dinner table. You have simply put on
+      record, in front of your niece, that not everyone thinks this. One calm sentence is enough.
+
+  - text: Have a full argument with him, with facts and figures.
+    call: okay
+    why: >-
+      You are right to push back, and the facts may well be on your side. But an argument at the table
+      usually ends with him digging in and everyone else upset. Say the short thing now, and have the longer talk another time.
+
+  - text: Wait until later and tell your niece privately that he was wrong.
+    call: okay
+    why: >-
+      Talking to her is a good thing to do. But she also needs to see that it can be said out loud, to his
+      face, without the sky falling in. Do both if you can.
+
+principle: >-
+  You do not have to change a relative's mind to make a difference. Saying "I don't agree" once, calmly,
+  shows everyone else at the table, especially the children, that the remark is not the family's view.

@@ -24,7 +24,7 @@ Stop it with `Ctrl+C`. `npm run dev` also shows **draft** scenarios.
 
 ## Add a scenario
 
-1. Copy a file in a folder under `src/content/scenarios/` (`consent/`, `adult-content/`,
+1. Copy a file in a folder under `src/content/scenarios/` (`consent/`, `racism/`, `adult-content/`,
    `interview/`, `administrator/`, `customer-service/`) and rename it. The file name becomes the URL (`my-scenario.yaml` is
    `/practice/consent/my-scenario/`).
 2. Fill in the fields and leave `draft: true` while you work on it.

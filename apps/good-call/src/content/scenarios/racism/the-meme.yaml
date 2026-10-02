@@ -1,0 +1,42 @@
+set: racism
+category: online
+order: 1
+title: The meme
+topic: Group chats
+draft: false
+
+situation: |
+  Your friend Jack posts a meme in a group chat of eight people. It is a joke built on a racist stereotype about Black people. Three people reply with laughing emojis.
+
+  Kwame, who is Black, is in the chat. He has read it and has not replied.
+
+question: What is the best call?
+
+options:
+  - text: Add a laughing emoji. It is only a joke, and you do not want to make it awkward.
+    call: risky
+    why: >-
+      Each emoji tells Kwame that one more person in the chat finds a joke about people like him funny. It
+      is already awkward for him. Joining in is not staying neutral.
+
+  - text: Say nothing in the chat.
+    call: okay
+    why: >-
+      You have not added to it, which counts for something. But from where Kwame sits, silence and laughter
+      look much the same. He is the one being joked about, and nobody has objected.
+
+  - text: Reply in the chat. "Not funny, Jack. That's a racist stereotype." Then message Kwame to check in.
+    call: best
+    why: >-
+      One short line is enough to change the room, and others often agree once someone has said it. A
+      private message to Kwame tells him he was not alone in there. Ask how he is, not what you should do.
+
+  - text: Message Kwame privately to say you thought it was out of order, but say nothing in the group.
+    call: okay
+    why: >-
+      Kwame will be glad to hear it. But the group still thinks the joke went down well, and Jack will post
+      another. Kwame should not be the only one who knows you disagreed.
+
+principle: >-
+  A racist joke in a group chat is a test of everyone in it. Saying "not funny" out loud, once, does more
+  than any amount of private sympathy.

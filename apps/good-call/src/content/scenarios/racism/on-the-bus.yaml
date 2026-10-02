@@ -1,0 +1,42 @@
+set: racism
+category: everyday
+order: 1
+title: On the bus
+topic: Seeing it happen
+draft: false
+
+situation: |
+  You are on a bus in the evening. A man starts shouting at a South Asian woman sitting on her own, telling her to "go home" and commenting on her skin colour. She is looking at the floor. Other passengers are staring at their phones.
+
+  He seems angry, and possibly drunk.
+
+question: What is the best call?
+
+options:
+  - text: Stand up and shout back at him.
+    call: okay
+    why: >-
+      Your instinct to defend her is right. But facing down an angry, possibly drunk man can make things
+      worse, for her as well as you. There are ways to help that do not involve him at all.
+
+  - text: Go and sit next to her and talk to her. "Hi, are you OK? Mind if I sit here?" Ignore him. Tell the driver if it carries on.
+    call: best
+    why: >-
+      You have put the attention on her, not him, which takes away what he wants. She is no longer alone,
+      and you have not escalated. Afterwards, ask whether she would like you to report it or stay with her until her stop.
+
+  - text: Film it on your phone, and post it online later.
+    call: okay
+    why: >-
+      A recording can be useful evidence, so filming has value. But she is still alone while you film, and
+      posting it puts her face online on one of her worst days. Offer the video to her or to the police. Let her decide.
+
+  - text: Look at your phone like everyone else. It is not safe to get involved.
+    call: risky
+    why: >-
+      Your safety matters, and nobody should be a hero at any cost. But there are safe options: sitting
+      near her, speaking to the driver, calling the police. A bus full of people looking away tells her she is on her own.
+
+principle: >-
+  When you see someone being racially abused, go to the person, not the abuser. Speak to them, sit with them,
+  get help, and afterwards ask what they would like you to do.

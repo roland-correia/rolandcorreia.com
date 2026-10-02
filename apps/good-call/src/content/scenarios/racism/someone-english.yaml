@@ -1,0 +1,42 @@
+set: racism
+category: work
+order: 3
+title: I want someone English
+topic: Customers
+draft: false
+
+situation: |
+  You are a shift supervisor in a pharmacy. A customer comes to the counter, where your colleague Farid is serving. She looks past him and says to you, "I'd rather be served by someone English."
+
+  Farid was born in Bradford. He goes very still.
+
+question: What is the best call?
+
+options:
+  - text: Step in and serve her yourself, to keep things calm.
+    call: risky
+    why: >-
+      It is the quickest way to end the moment, and it tells Farid that the shop will go along with a
+      customer's prejudice. You have made her demand work. He is left standing there, replaced.
+
+  - text: Say calmly, "Farid is the person serving at this counter, and he will be happy to help you." If she refuses, she can choose to leave.
+    call: best
+    why: >-
+      You have backed your colleague, in front of him, without a row. She still has a choice. It simply
+      does not include picking staff by race. Afterwards, check in with Farid and record what happened.
+
+  - text: Ask Farid whether he would mind swapping with you.
+    call: risky
+    why: >-
+      It puts the decision, and the discomfort, on the person who was just insulted. In front of the
+      customer, he is unlikely to feel he can say no. He should not have to step aside for this.
+
+  - text: Tell her she is a racist and order her out of the shop.
+    call: okay
+    why: >-
+      You are standing up for Farid, and she has earned a firm answer. But shouting it across a pharmacy
+      can turn him into a spectacle. A calm refusal does the same job, and leaves her to decide whether to stay.
+
+principle: >-
+  A customer does not get to choose staff by race, and an employer should not help them do it. Back your
+  colleague openly and calmly, then ask them how they are.

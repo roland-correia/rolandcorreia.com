@@ -1,0 +1,42 @@
+set: racism
+category: family
+order: 2
+title: Stay out of the sun
+topic: Skin colour
+draft: false
+
+situation: |
+  Your daughter Anika is nine. She comes in from the garden, and her great-aunt says, "Don't play in the sun so much, you'll get too dark. You're such a pretty girl when you're fair." She means it kindly.
+
+  Anika looks at her arms. She says nothing.
+
+question: What is the best call?
+
+options:
+  - text: Let it go. Auntie means well, and every family says things like this.
+    call: risky
+    why: >-
+      It is common, and that is how it lasts. Anika has just been told that her skin gets worse as it gets
+      darker. Children remember these remarks for years, and nobody has told her it is not true.
+
+  - text: Say, in front of Anika, "Her skin is lovely exactly as it is, Auntie. She can play outside as much as she likes."
+    call: best
+    why: >-
+      Anika hears, from her parent and straight away, that there is nothing wrong with her skin. It is warm,
+      it does not shame her great-aunt, and it does not let the remark stand. You can talk to Auntie properly later.
+
+  - text: Say nothing at the time, and tell Anika later that she is beautiful.
+    call: okay
+    why: >-
+      She needs to hear that, and it will help. But in the moment she saw the remark go unanswered. If you
+      can, say something then as well, so that she does not carry it until bedtime.
+
+  - text: Tell Auntie sharply that she is being racist and should be ashamed.
+    call: okay
+    why: >-
+      Colourism, treating lighter skin as better, is a form of prejudice, so you are not wrong. But a sharp
+      telling-off in front of Anika makes the scene about the row. Affirm Anika now, and explain to Auntie in private.
+
+principle: >-
+  Praising lighter skin teaches a child that darker skin is worse. It is prejudice even when it comes from
+  love, and from inside your own family. Say, there and then, that their skin is right as it is.
