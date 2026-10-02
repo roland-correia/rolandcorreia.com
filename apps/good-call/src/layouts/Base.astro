@@ -63,6 +63,13 @@ const canonical = absolute(path);
       <main id="main">
         <slot />
       </main>
+      <!-- The short disclaimer is on every page. The full one is on the About page. -->
+      <footer class="foot">
+        <p>
+          Good Call is for education only. It is not legal or professional advice, and it cannot be used to excuse or
+          defend anyone's behaviour. <a href={href('/about/#disclaimer')}>Read the full disclaimer</a>.
+        </p>
+      </footer>
     </div>
     <SettingsDialog />
     <script>
