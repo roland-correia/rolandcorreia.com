@@ -1,0 +1,40 @@
+set: administrator
+category: asking
+order: 1
+title: The system you were not shown
+topic: Asking for help
+draft: false
+
+situation: |
+  It is your second week. Your manager asks you to raise three purchase orders on the finance system by the end of the day. Everyone seems to assume you were trained on it during your induction. You were not, and you have never used it.
+
+question: What is the best call?
+
+options:
+  - text: Have a go and work it out by trial and error.
+    call: risky
+    why: >-
+      On a finance system, a wrong guess can order the wrong thing or pay the wrong supplier, and undoing it
+      takes other people's time. Trying things out is fine on a spreadsheet. It is not fine with real money.
+
+  - text: Tell your manager now. "I wasn't shown the finance system in my induction. Could someone take me through the first one?"
+    call: best
+    why: >-
+      Nobody expects a new starter to know a system they were never shown. Saying so early is ordinary, and
+      it gets the orders done properly today. It also flags a gap in the induction that will help the next person.
+
+  - text: Quietly ask the colleague next to you to do them for you.
+    call: okay
+    why: >-
+      The orders get done, and asking a colleague is reasonable. But you still cannot do it yourself, and
+      your manager still thinks you can. Ask them to show you, and let your manager know about the gap.
+
+  - text: Leave them until tomorrow and hope someone offers to help.
+    call: risky
+    why: >-
+      The deadline is today, and nobody knows you are stuck. People cannot help with a problem they have not
+      been told about. Waiting turns a five-minute question into a missed deadline.
+
+principle: >-
+  Not knowing something you were never taught is not a failing. Say so early, ask to be shown, and take notes
+  so you can do it alone next time.

@@ -1,0 +1,41 @@
+set: customer-service
+order: 2
+title: You do not know the answer
+topic: Honesty with customers
+draft: false
+
+situation: |
+  You are answering calls for a broadband company. A customer asks whether his new router will work with the alarm system in his house. You have no idea. Nothing in your notes covers it.
+
+  There are six calls waiting.
+
+question: What is the best call?
+
+options:
+  - text: Say, "Yes, it should be fine," so you can move on to the next call.
+    call: risky
+    why: >-
+      If you are wrong, his alarm stops working and he was told it would be fine. A confident guess is worse
+      than no answer, because he will act on it. The queue is not a reason to guess.
+
+  - text: Say, "I don't know. You'd have to ask the alarm company."
+    call: okay
+    why: >-
+      It is honest, and the alarm company may indeed know. But it leaves him to start again somewhere else.
+      Check first whether someone on your side knows, so that he only has to ask once.
+
+  - text: Say, "I don't want to guess on that. Let me check with our technical team." Then find out, or arrange a call back with a time.
+    call: best
+    why: >-
+      Customers trust "let me find out" far more than a vague yes. Giving a time for the call back, and
+      keeping to it, is what makes this a good answer and not just a delay.
+
+  - text: Put him on hold and search the internet until you find something.
+    call: okay
+    why: >-
+      You are trying to get him a real answer, which is right. But he is waiting with no idea how long, and
+      a forum post is not reliable. Tell him you are checking, and use a source your company trusts.
+
+principle: >-
+  Never guess for a customer. "I don't know, but I will find out by this time" is a strong answer, as long
+  as you then do it.

@@ -1,5 +1,6 @@
 set: administrator
-order: 5
+category: people
+order: 1
 title: The cancelled appointment
 topic: Staying calm
 draft: false

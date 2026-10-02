@@ -1,0 +1,42 @@
+set: interview
+category: tricky
+order: 1
+title: Your mind goes blank
+topic: Buying time
+draft: false
+
+situation: |
+  Halfway through the interview you are asked a long question with two parts. By the time the interviewer stops talking, you have lost the first part, and your mind has gone blank.
+
+  Three people are looking at you.
+
+question: What is the best call?
+
+options:
+  - text: Start talking straight away and hope you find an answer as you go.
+    call: risky
+    why: >-
+      Rushing to fill the silence usually produces a long answer to a question they did not ask. A pause
+      feels enormous to you and is barely noticed by them. Buying a moment is better than guessing.
+
+  - text: Say, "Could you repeat the question, please? I'd like to take it one part at a time."
+    call: best
+    why: >-
+      This is completely normal and interviewers expect it. It gives you the question again and a few
+      seconds to think. Asking for clarity reads as careful, not as weak. You can also say, "Let me think about that for a moment."
+
+  - text: Apologise several times and explain that you are very nervous.
+    call: okay
+    why: >-
+      Saying once that you are nervous is fine, and most interviewers are kind about it. But repeated
+      apologies use up your time and your confidence. One request to hear the question again does the job.
+
+  - text: Say, "I don't know," and wait for the next question.
+    call: risky
+    why: >-
+      You have given up a question you could probably answer with ten seconds to think. If, after hearing it
+      again, you really do not know, say what you would do to find out. That is still an answer.
+
+principle: >-
+  You are allowed to pause, to ask for a question again, to take it one part at a time and to look at your
+  notes. Interviewers see it as care, not weakness.

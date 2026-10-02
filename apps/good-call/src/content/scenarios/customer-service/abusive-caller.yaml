@@ -1,0 +1,41 @@
+set: customer-service
+order: 3
+title: When it turns personal
+topic: Abuse and limits
+draft: false
+
+situation: |
+  A caller is angry about a late delivery. You apologise and start checking the order. He begins swearing at you, calls you useless and makes a comment about your accent.
+
+  Your company has a policy on abusive calls: one warning, then you may end the call.
+
+question: What is the best call?
+
+options:
+  - text: Stay on the line and take it. The customer is always right.
+    call: risky
+    why: >-
+      Customers are entitled to be angry about a problem. They are not entitled to abuse you. Your employer
+      has a policy because nobody is expected to absorb this, and putting up with it helps neither of you.
+
+  - text: Say calmly, "I want to help with your delivery, but I can't continue if you speak to me like that." If it carries on, end the call as the policy says, and log it.
+    call: best
+    why: >-
+      You have separated the problem, which you will help with, from the behaviour, which you will not
+      accept. One clear warning gives him the chance to stop. Following the policy and logging it protects you.
+
+  - text: Hang up straight away without saying anything.
+    call: okay
+    why: >-
+      You do not have to listen to abuse, and nobody would blame you. But the policy asks for a warning
+      first, and without one the call may be judged as you cutting off a customer. The warning is your protection.
+
+  - text: Tell him exactly what you think of him.
+    call: risky
+    why: >-
+      It would be understandable, and it would be the part of the call that gets quoted in the complaint.
+      Staying professional keeps the record clear about who behaved badly.
+
+principle: >-
+  Anger about a problem is part of the job. Abuse aimed at you is not. Give one calm warning, follow your
+  employer's policy, and record what happened.

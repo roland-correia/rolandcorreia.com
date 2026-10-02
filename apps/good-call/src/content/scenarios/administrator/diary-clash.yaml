@@ -1,0 +1,42 @@
+set: administrator
+category: priorities
+order: 3
+title: Double-booked
+topic: Diary management
+draft: false
+
+situation: |
+  You manage the diary for your director, Anita. This morning you notice that she is booked into two meetings at 2pm tomorrow: a budget review with the finance team, and a call with an important client. You made both bookings.
+
+  Anita is in meetings all day today.
+
+question: What is the best call?
+
+options:
+  - text: Cancel the finance meeting yourself. The client must matter more.
+    call: risky
+    why: >-
+      You may be right, but it is Anita's decision, not yours. The budget review might have a deadline you
+      do not know about. Deciding for her could create a bigger problem than the clash.
+
+  - text: Send Anita a short message now with the clash, the options and your suggestion, and ask which she would like moved.
+    call: best
+    why: >-
+      She can answer in ten seconds between meetings. You have owned the mistake, done the thinking for her,
+      and left the decision where it belongs. Finding out today leaves time to rearrange things politely.
+
+  - text: Wait until she is free tomorrow morning and ask her then.
+    call: okay
+    why: >-
+      Asking her is right. But by tomorrow morning the people in whichever meeting moves will have only a
+      few hours' notice. A short message today gives everyone a full day.
+
+  - text: Say nothing and hope one of the meetings gets cancelled.
+    call: risky
+    why: >-
+      If neither is cancelled, Anita finds out at 2pm with two groups waiting for her. A clash you spotted
+      and raised is a small thing. One you spotted and hid is not.
+
+principle: >-
+  When you find a problem in something you manage for someone else, bring it to them early with the options
+  and a suggestion. The decision is theirs. The early warning is yours to give.

@@ -1,4 +1,5 @@
 set: administrator
+category: trust
 order: 1
 title: The urgent caller
 topic: Confidentiality

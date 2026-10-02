@@ -1,0 +1,40 @@
+set: interview
+category: opening
+order: 1
+title: Tell me about yourself
+topic: The opening question
+draft: false
+
+situation: |
+  You are being interviewed for an office administrator job. After saying hello, the interviewer smiles and says: "So, tell me a bit about yourself."
+
+question: Which answer works best?
+
+options:
+  - text: Start from the beginning. Where you grew up, your school, each job in order, up to today.
+    call: risky
+    why: >-
+      This is the most common trap. The question sounds personal, but it is not asking for your life story.
+      After three minutes the interviewer has lost the thread and still does not know why you fit this job.
+
+  - text: Give a one-minute summary. What you do now, one or two things you are good at that this job needs, and why you applied.
+    call: best
+    why: >-
+      This is what the question is really asking: who are you, in relation to this job? Present, strengths,
+      reason for applying. About a minute is right. It also gives the interviewer things to ask about next.
+
+  - text: Say, "What would you like to know?"
+    call: okay
+    why: >-
+      It is a fair thing to wonder, because the question really is vague. But it hands the work back to the
+      interviewer and can sound unprepared. Almost every interview opens this way, so have your minute ready.
+
+  - text: Talk about your hobbies, your family and your pets, so they get to know the real you.
+    call: okay
+    why: >-
+      A little of this is friendly, and one line about an interest at the end is fine. But the interviewer
+      is asking about you as a possible colleague. Lead with work, and keep the personal part short.
+
+principle: >-
+  "Tell me about yourself" means "tell me why you fit this job". Prepare one minute: what you do now, what
+  you are good at, and why you want this role.

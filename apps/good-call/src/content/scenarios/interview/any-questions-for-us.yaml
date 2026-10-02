@@ -1,0 +1,42 @@
+set: interview
+category: tricky
+order: 4
+title: Any questions for us?
+topic: The last question
+draft: false
+
+situation: |
+  The interview is nearly over. The interviewer says: "That's everything from us. Do you have any questions?"
+
+  You are tired and would like to leave.
+
+question: Which answer works best?
+
+options:
+  - text: Say, "No, I think you've covered everything."
+    call: okay
+    why: >-
+      It is polite, and it will not lose you the job. But this is part of the interview, not the end of it.
+      Having nothing to ask can look like low interest. Bring two questions written down, so you do not have to think of one.
+
+  - text: Ask one or two questions about the work. "What does a typical day look like?" or "What would you want me to have learned in the first three months?"
+    call: best
+    why: >-
+      Questions like these show you are picturing yourself doing the job, and the answers are useful to you.
+      It is fine to read them from your notes. That looks prepared.
+
+  - text: Ask straight away about pay, holiday and how soon you can work from home.
+    call: okay
+    why: >-
+      These are fair things to want to know, and you should know them before accepting. But asked first,
+      they suggest you care about the terms more than the work. Ask about the job first, and the practical points after.
+
+  - text: Ask, "So, did I get it?"
+    call: risky
+    why: >-
+      They almost never decide in the room, so it puts them in an awkward spot. Ask instead, "What are the
+      next steps, and when might I hear?" That gets you the information you actually want.
+
+principle: >-
+  "Any questions?" is still part of the interview. Bring two questions about the work, written down, and end
+  by asking what happens next.

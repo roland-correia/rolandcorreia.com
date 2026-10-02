@@ -1,0 +1,43 @@
+set: administrator
+category: asking
+order: 3
+title: The open-plan office
+topic: Reasonable adjustments
+draft: false
+
+situation: |
+  You started a month ago and you like the job. But you sit in the middle of a busy open-plan office, next to the printer and the kitchen door. You have ADHD, and the noise and movement mean accurate work takes you twice as long. You have started staying late to catch up.
+
+  You have not told anyone at work about your ADHD.
+
+question: What is the best call for you?
+
+options:
+  - text: Keep staying late. You do not want to be seen as a problem in your first few months.
+    call: risky
+    why: >-
+      This costs you your evenings and will wear you out, and your manager sees slower work without knowing
+      why. The cause is fixable. Extra hours hide the problem. They do not solve it.
+
+  - text: Ask your manager for a specific change. "I work much more accurately somewhere quieter. Could I move desk, or use headphones for focused tasks?"
+    call: best
+    why: >-
+      A specific, practical request is easy to agree to. You can explain the reason as much or as little as
+      you like. ADHD can count as a disability in law, and employers have to make reasonable adjustments for
+      disabled staff.
+
+  - text: Wear headphones without asking, and hope nobody minds.
+    call: okay
+    why: >-
+      It may help, and it is a sensible thing to try. But if someone does mind, you are explaining after the
+      fact. Asking first turns it into an agreed arrangement, and opens the door to a better desk.
+
+  - text: Start looking for another job in a quieter office.
+    call: okay
+    why: >-
+      You are entitled to, and some workplaces really are a poor fit. But you like this job, and you have
+      not yet asked for anything. Most employers will move a desk. Give them the chance first.
+
+principle: >-
+  If the way you work best is different from the default, ask for the specific change that would help.
+  Reasonable adjustments are a right, and a clear request usually gets a yes.

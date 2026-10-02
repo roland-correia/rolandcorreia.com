@@ -1,0 +1,41 @@
+set: customer-service
+order: 6
+title: You gave the wrong price
+topic: Owning a mistake
+draft: false
+
+situation: |
+  You work in a phone shop. Ten minutes ago you told a customer that a contract was £25 a month, and she went to fetch her ID. While she is gone you realise you read the wrong line. It is £35.
+
+  She comes back smiling, ready to sign.
+
+question: What is the best call?
+
+options:
+  - text: Let her sign. The correct price is on the contract, so it is up to her to read it.
+    call: risky
+    why: >-
+      She is signing because of what you told her. When the first bill arrives she will feel misled, and she
+      will be right. That becomes a complaint and a cancelled contract, where it could have been a short apology.
+
+  - text: Tell her before she signs. "I'm sorry, I gave you the wrong price. It's £35, not £25. Let me show you what there is at £25."
+    call: best
+    why: >-
+      Thirty awkward seconds now, and she makes her decision on true information. Offering an alternative
+      shows you are still trying to help. Customers forgive a mistake that is owned quickly.
+
+  - text: Give her the contract at £25 and make up the difference with a discount code you are not supposed to use.
+    call: risky
+    why: >-
+      You are trying to keep your word, which is a good instinct. But using a discount you are not
+      authorised to give swaps one problem for a worse one. If honouring the price is right, a manager can approve it.
+
+  - text: Tell her the price has just changed.
+    call: risky
+    why: >-
+      It gets you out of the moment by replacing a mistake with a lie. If she checks, or asks a colleague,
+      you have lost her trust entirely. The truth here is not even embarrassing: you misread a line.
+
+principle: >-
+  When you have told a customer something wrong, correct it before they act on it. Say what you got wrong,
+  apologise once, and offer what you can do now.

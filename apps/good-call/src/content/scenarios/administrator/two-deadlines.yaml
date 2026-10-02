@@ -1,5 +1,6 @@
 set: administrator
-order: 2
+category: priorities
+order: 1
 title: Two things by three o'clock
 topic: Prioritising
 draft: false

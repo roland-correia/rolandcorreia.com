@@ -1,0 +1,42 @@
+set: administrator
+category: people
+order: 2
+title: Did you hear about Priya?
+topic: Gossip and confidentiality
+draft: false
+
+situation: |
+  You process the sickness absence forms, so you know that your colleague Priya is off with stress.
+
+  In the kitchen, two colleagues are guessing why she is away. One turns to you: "You do the forms. What's really going on with her?"
+
+question: What is the best call?
+
+options:
+  - text: Tell them, but ask them to keep it to themselves.
+    call: risky
+    why: >-
+      Health information is some of the most sensitive there is, and you only know it because of your job.
+      Asking people to keep a secret you have just broken does not work. Priya would find out who it came from.
+
+  - text: Say, "I can't talk about what's on anyone's forms. If you're worried about her, why not send her a message?"
+    call: best
+    why: >-
+      You have held the line without being cold, and pointed them to something kind they can do. It also
+      tells them their own details would be safe with you, which is what makes people trust an administrator.
+
+  - text: Say, "It's nothing serious," to stop the guessing.
+    call: risky
+    why: >-
+      Any comment on her condition, even a reassuring one, shares what you know. It is also not true, and it
+      may come back to you. The safe answer says nothing about Priya at all.
+
+  - text: Leave the kitchen without answering.
+    call: okay
+    why: >-
+      You have not shared anything, which matters most. But walking out can look like a hint that there is
+      something to hide, and they will ask again. One clear sentence closes it for good.
+
+principle: >-
+  What you learn through your job stays in your job. You can refuse to discuss someone and still be warm: say
+  you cannot talk about it, and suggest they ask the person.
