@@ -1,0 +1,42 @@
+set: interview
+category: tricky
+order: 2
+title: The gap in your CV
+topic: Time out of work
+draft: false
+
+situation: |
+  You were out of work for fourteen months. Part of that time you were unwell, and part of it you were caring for a parent.
+
+  The interviewer looks at your CV and says: "I see there's a gap here. What were you doing during that time?"
+
+question: Which answer works best?
+
+options:
+  - text: Give a short, true answer and move forward. "I took time out for health and family reasons. That's resolved now, and I'm ready to get back to work."
+    call: best
+    why: >-
+      You have answered honestly without sharing more than you want to. You do not owe medical or family
+      details. Ending on being ready turns the answer towards the job, which is where they want to go too.
+
+  - text: Explain everything in detail, including the diagnosis and what treatment you had.
+    call: okay
+    why: >-
+      It is honest, and it is your choice to share it. But you are not required to, and a long medical
+      history can take over the interview. A brief answer protects your privacy and keeps the focus on your skills.
+
+  - text: Say you were freelancing, although you were not.
+    call: risky
+    why: >-
+      A made-up job invites follow-up questions you cannot answer, and a false statement can cost you the
+      job later if it comes out. The true answer, given briefly, is safer and perfectly acceptable.
+
+  - text: Say, "I'd rather not talk about that."
+    call: okay
+    why: >-
+      You are within your rights, and some questions do deserve that reply. But with nothing else offered,
+      the interviewer is left to guess. One calm sentence usually closes the subject faster than a refusal.
+
+principle: >-
+  A gap needs one honest sentence, not a full account. Say briefly what it was for, that you are ready now,
+  and move on. Your medical details are yours to keep.

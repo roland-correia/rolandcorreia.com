@@ -1,0 +1,40 @@
+set: interview
+category: opening
+order: 3
+title: What is your biggest weakness?
+topic: Self-awareness
+draft: false
+
+situation: |
+  The interview is going well. Then the interviewer asks: "What would you say is your biggest weakness?"
+
+question: Which answer works best?
+
+options:
+  - text: Say, "I'm a perfectionist. I just work too hard."
+    call: risky
+    why: >-
+      Interviewers have heard this one many times, and it reads as dodging the question. They are not
+      trying to catch you out. They want to see whether you know yourself and can take feedback.
+
+  - text: Say you do not really have any.
+    call: risky
+    why: >-
+      Everyone has something to work on, and they know it. This answer suggests either that you are not
+      being honest or that you have not thought about it. Neither helps you.
+
+  - text: Name a real, manageable weakness, and say what you do about it. For example, you can get absorbed in one task, so you set reminders to check your other work.
+    call: best
+    why: >-
+      A real weakness with a real fix shows the thing they are looking for: you notice problems and deal
+      with them. Choose one that is true and that is not the main skill the job needs.
+
+  - text: Be completely frank. Say you are often late and find it hard to get on with managers.
+    call: risky
+    why: >-
+      Honesty matters, but you do not have to offer the most damaging thing you can think of, with no sign
+      it is improving. Pick something true that you are actively managing, and say how.
+
+principle: >-
+  The weakness question is really "do you know yourself, and do you act on it?" Give one real weakness, then
+  the specific thing you do to manage it.

@@ -1,0 +1,42 @@
+set: interview
+category: examples
+order: 2
+title: A difficult person
+topic: Handling conflict
+draft: false
+
+situation: |
+  The interviewer asks: "Can you give me an example of a time you dealt with a difficult customer or colleague?"
+
+  You think of a customer who shouted at you about a late order, and a former colleague you really disliked.
+
+question: Which answer works best?
+
+options:
+  - text: Tell the story of the customer. What they were upset about, how you stayed calm and listened, what you did, and how it ended.
+    call: best
+    why: >-
+      A specific story with an ending is what this question is for. They want to hear that you listen,
+      stay polite under pressure and look for a fix. It does not need to have ended perfectly.
+
+  - text: Describe your old colleague, and everything that was wrong with them.
+    call: risky
+    why: >-
+      However fair the complaints, the interviewer only hears you criticising someone who is not there to
+      answer. They will wonder how you would describe them. Keep the focus on what you did.
+
+  - text: Say you get on with everyone, so it has never really come up.
+    call: risky
+    why: >-
+      It sounds pleasant but gives them nothing. Everyone has met a difficult moment at work. Without an
+      example, they cannot tell how you behave when it happens.
+
+  - text: Say what you would do in general. "I always stay calm and listen."
+    call: okay
+    why: >-
+      These are the right ideas, and it is better than no answer. But they asked for an example. A general
+      statement is a claim. A story is evidence. Add one real situation and it becomes a strong answer.
+
+principle: >-
+  "Give me an example" wants one true story: the situation, what you did, how it turned out. Describe the
+  problem, never the person's character.

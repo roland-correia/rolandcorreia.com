@@ -39,10 +39,27 @@ export const sets = {
     ],
     live: true,
   },
+  interview: {
+    name: 'Interview questions',
+    group: 'work',
+    blurb: 'For any role: the common questions, and what they are really asking',
+    intro:
+      'Interview questions often mean more than they say. Each of these gives you a common question and four ways to answer it, then explains what the interviewer is listening for.',
+    note: 'Practice only. Interviewers differ, so use the reasons as a guide and put the answers in your own words, with your own examples.',
+    rules: [
+      'Most questions are asking one thing: can we rely on you to do this job alongside other people?',
+      'For "tell me about a time" questions, give one real example: what the situation was, what you did, and how it turned out.',
+      'Say "I", not "we". They are hiring you, not your old team.',
+      'It is fine to pause, to ask for the question again, or to look at your notes. Taking a moment looks thoughtful.',
+      'Be honest. A small true example beats a grand vague one, and a real weakness you are working on beats a fake one.',
+      'You can ask for adjustments before the day, such as the questions in writing or extra time.',
+    ],
+    live: true,
+  },
   administrator: {
     name: 'Administrator',
     group: 'work',
-    blurb: 'Confidentiality, priorities, mistakes and unclear instructions',
+    blurb: 'Confidentiality, priorities, people and asking for what you need',
     intro:
       'Practice for the situational judgement questions used in admin and office job applications. Real tests rarely explain what they are looking for. This one does.',
     note: 'Practice only. Every employer scores these tests in its own way, so use the reasons here as a guide, not a mark scheme.',
@@ -52,10 +69,26 @@ export const sets = {
       'Own a mistake quickly and say what you have done about it.',
       'When an instruction is unclear, ask a specific question before you start.',
       'Stay calm with upset people. Listen first, then say what you can do.',
+      'Ask for help, training or adjustments when you need them. Struggling in silence helps nobody.',
     ],
     live: true,
   },
-  'customer-service': { name: 'Customer service', group: 'work', blurb: 'Coming later', live: false },
+  'customer-service': {
+    name: 'Customer service',
+    group: 'work',
+    blurb: 'Complaints, policies, queues and not knowing the answer',
+    intro:
+      'Practice for the situational judgement questions used in retail, call centre and front-of-house job applications. Each answer comes with the reason an employer would give.',
+    note: 'Practice only. Every employer has its own policies, so use the reasons here as a guide, not a mark scheme.',
+    rules: [
+      'Listen before you fix. An upset customer who feels heard is halfway to calm.',
+      'Say what you can do, not only what you cannot.',
+      'Never guess. "I will find out" is a better answer than a wrong one.',
+      'Policies exist for fairness. If an exception is needed, ask someone who is allowed to make it.',
+      'You do not have to accept abuse. Know when, and how, to hand over or end the conversation.',
+    ],
+    live: true,
+  },
   'care-support': { name: 'Care and support', group: 'work', blurb: 'Coming later', live: false },
   'team-leader': { name: 'Team leader', group: 'work', blurb: 'Coming later', live: false },
 } as const;
@@ -73,6 +106,17 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     pressure: { name: 'Pressure and power', blurb: 'When saying no is made hard' },
     nights: { name: 'Parties, clubs and nights out', blurb: 'Dancing, drinks, crowds, sleepovers and looking out for people' },
     intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
+  },
+  interview: {
+    opening: { name: 'About you', blurb: 'The questions most interviews start with' },
+    examples: { name: 'Tell me about a time', blurb: 'Questions that want a real example' },
+    tricky: { name: 'Tricky moments', blurb: 'Blanks, gaps, adjustments and your own questions' },
+  },
+  administrator: {
+    trust: { name: 'Trust and confidentiality', blurb: 'Private information, security and honesty' },
+    priorities: { name: 'Priorities and instructions', blurb: 'Deadlines, clashes and unclear requests' },
+    people: { name: 'Working with people', blurb: 'Upset visitors, gossip and feedback' },
+    asking: { name: 'Asking for what you need', blurb: 'Help, workload and adjustments' },
   },
   'adult-content': {
     children: { name: 'Children and teenagers', blurb: 'First phones, what they see, and what to say' },

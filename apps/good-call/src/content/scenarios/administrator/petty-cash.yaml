@@ -1,0 +1,42 @@
+set: administrator
+category: trust
+order: 4
+title: The petty cash is short
+topic: Honesty with money
+draft: false
+
+situation: |
+  You look after the office petty cash tin. At the end of the month you count it, and it is £20 short of what the records say. You are fairly sure you forgot to write down a taxi fare you paid out two weeks ago, but you have no receipt.
+
+  Nobody checks the tin except you.
+
+question: What is the best call?
+
+options:
+  - text: Put £20 of your own money in the tin so the numbers match.
+    call: okay
+    why: >-
+      It comes from a good place, and nobody loses money. But the records are still wrong, and you have
+      covered a gap instead of reporting it. If it happens again you will be hiding a pattern, and paying for it.
+
+  - text: Change the records so that they show £20 less.
+    call: risky
+    why: >-
+      Altering financial records to hide a difference is the serious part, far more than the missing £20.
+      Even with an innocent reason, it looks like covering something up, and it can be treated as dishonesty.
+
+  - text: Tell your manager that the tin is £20 short, what you think happened, and suggest a way to stop it recurring.
+    call: best
+    why: >-
+      A small shortfall, reported straight away with an explanation, is routine. It shows you can be
+      trusted with money because you say when something is wrong. Suggesting a fix, such as a receipt for every payment, makes it better still.
+
+  - text: Leave it. It is only £20 and it will probably even out next month.
+    call: risky
+    why: >-
+      It will not even out, and next month you will have a bigger gap that is harder to explain. Small
+      differences left alone are how people who did nothing wrong end up looking as if they did.
+
+principle: >-
+  With money, the amount matters less than the honesty. Report a difference as soon as you find it, say what
+  you think happened, and never adjust records to make them fit.

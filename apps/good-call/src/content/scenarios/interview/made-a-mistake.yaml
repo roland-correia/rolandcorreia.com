@@ -1,0 +1,42 @@
+set: interview
+category: examples
+order: 1
+title: A time you made a mistake
+topic: Owning up
+draft: false
+
+situation: |
+  The interviewer says: "Tell me about a time you made a mistake at work. What happened?"
+
+  You remember one clearly. In your last job you sent a customer the wrong delivery date, and they took a day off for nothing.
+
+question: Which answer works best?
+
+options:
+  - text: Say you cannot think of any mistakes.
+    call: risky
+    why: >-
+      Nobody will believe it, and it misses the point. The question is not about the mistake. It is about
+      what you did next. Saying you have none suggests you hide them or do not notice them.
+
+  - text: Describe the mistake, what you did to fix it, and what you changed afterwards so it would not happen again.
+    call: best
+    why: >-
+      That is the whole answer they want: you told the customer and your manager, you put it right, and you
+      now double-check dates before sending. A small, real mistake handled well is a strong answer.
+
+  - text: Describe the mistake, but explain that it was really the system's fault for being confusing.
+    call: risky
+    why: >-
+      The system may well have been confusing. But an answer that ends in blame tells them how you will talk
+      about problems in their team. Say what you did. You can add what would have helped, briefly, at the end.
+
+  - text: Tell them about it in detail, and how terrible you still feel.
+    call: okay
+    why: >-
+      Caring about it is to your credit. But if the answer stays on the feeling, they never hear the useful
+      part. Spend one line on the mistake and the rest on the fix and what you learned.
+
+principle: >-
+  A mistake question is about recovery, not the mistake. One line on what went wrong, then what you did, and
+  what you changed.

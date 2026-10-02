@@ -1,5 +1,6 @@
 set: administrator
-order: 3
+category: trust
+order: 2
 title: The wrong John
 topic: Owning a mistake
 draft: false

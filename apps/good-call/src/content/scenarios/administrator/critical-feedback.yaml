@@ -1,0 +1,42 @@
+set: administrator
+category: people
+order: 3
+title: The feedback you did not expect
+topic: Taking criticism
+draft: false
+
+situation: |
+  In your one-to-one, your manager says: "Your work is accurate, which is great. But a couple of people have said your emails come across as abrupt. Can you have a think about that?"
+
+  You are surprised. You thought you were being clear and efficient, and you feel stung.
+
+question: What is the best call?
+
+options:
+  - text: Explain that you are just being efficient, and that the others are being oversensitive.
+    call: risky
+    why: >-
+      You may have a point about efficiency. But defending yourself first tells your manager that feedback
+      is hard to give you, so next time they may not bother. That leaves you to find things out the hard way.
+
+  - text: Say, "Thank you for telling me. Could you show me an example, so I can see what to change?"
+    call: best
+    why: >-
+      "Abrupt" is vague, and you cannot fix what you cannot see. Asking for an example turns a feeling into
+      something practical, such as adding a greeting. It also shows you can hear criticism without it becoming a row.
+
+  - text: Say "OK" and nothing else, then worry about it all week.
+    call: okay
+    why: >-
+      You have not argued, which helps. But you still do not know what to change, so nothing improves and
+      the worry grows. It is fine to say, "Can I think about it and come back with questions?"
+
+  - text: Start adding long, friendly paragraphs to every email.
+    call: okay
+    why: >-
+      You are trying to fix it, and that counts. But you are guessing at what the problem was, and you may
+      swing too far the other way. Ask for an example first, and change only what needs changing.
+
+principle: >-
+  Feedback that stings is still information. Thank the person, ask for a specific example, and decide what to
+  change once you can see it. Asking for time to think is allowed.

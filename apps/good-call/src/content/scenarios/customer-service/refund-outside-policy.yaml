@@ -1,0 +1,41 @@
+set: customer-service
+order: 1
+title: Forty days later
+topic: Policies and exceptions
+draft: false
+
+situation: |
+  You work on the returns desk. A customer brings back a coat with the receipt. Your policy is refunds within 30 days. It has been 40.
+
+  She says she was in hospital for two weeks and could not get here. She is polite, and upset.
+
+question: What is the best call?
+
+options:
+  - text: Say, "Sorry, it's past 30 days. There's nothing I can do."
+    call: okay
+    why: >-
+      You have applied the policy correctly, and that is not wrong. But "nothing I can do" is rarely true.
+      There is usually someone who can make an exception, and offering to ask costs you nothing.
+
+  - text: Give her the refund. Her reason is obviously genuine.
+    call: risky
+    why: >-
+      Your sympathy is right. But if you do not have the authority to override the policy, you could be the
+      one in trouble, and the next customer with a similar story may get a different answer from a colleague.
+
+  - text: Say you are sorry to hear it, explain the 30-day policy, and ask your supervisor whether an exception or an exchange is possible.
+    call: best
+    why: >-
+      You have been kind, honest about the rule, and taken it to someone who can decide. Whatever the
+      answer, she has been treated as a person and the decision has been made by the right person.
+
+  - text: Tell her that if she had read the receipt, she would have known the policy.
+    call: risky
+    why: >-
+      It may be true, and it helps nobody. She already knows she is late. Pointing it out makes an upset
+      customer feel blamed, and turns a simple request into a complaint.
+
+principle: >-
+  A policy is there to keep things fair, and you should apply it. But when a case seems to deserve an
+  exception, say what you can do: ask someone who has the authority to decide.

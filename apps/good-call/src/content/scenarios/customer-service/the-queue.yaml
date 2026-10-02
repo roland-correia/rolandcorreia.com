@@ -1,0 +1,39 @@
+set: customer-service
+order: 4
+title: The queue behind her
+topic: Fairness under pressure
+draft: false
+
+situation: |
+  You are on the only open till. An elderly customer is paying with vouchers and coins and wants to chat. She is taking a long time. Eight people are queuing behind her, and one of them sighs loudly and checks his watch.
+
+question: What is the best call?
+
+options:
+  - text: Hurry her along. "I'm sorry, there's a queue. Can we speed up?"
+    call: risky
+    why: >-
+      She is a customer too, and she is doing nothing wrong. Rushing her is likely to fluster her and make
+      it slower, and everyone in the queue sees how you treat someone who needs a bit more time.
+
+  - text: Keep serving her at her pace, call for another till to be opened, and thank the queue for waiting.
+    call: best
+    why: >-
+      She gets proper service, and the queue gets a real fix instead of an apology. Speaking to the people
+      waiting matters: most of them only want to know that someone has noticed.
+
+  - text: Carry on serving her and ignore the queue.
+    call: okay
+    why: >-
+      You are treating her well, which is right. But the people waiting have had no word and no sign that
+      anything will change. Calling for help takes five seconds and is the part that solves the problem.
+
+  - text: Roll your eyes at the man in the queue to show you agree with him.
+    call: risky
+    why: >-
+      It sides with one customer against another, in front of both. She may well notice. It also tells the
+      queue that impatience gets a result, which makes the next slow transaction harder.
+
+principle: >-
+  Every customer gets your full attention for their turn. When a queue builds, fix the queue: ask for help
+  and speak to the people waiting. Do not rush the person in front of you.

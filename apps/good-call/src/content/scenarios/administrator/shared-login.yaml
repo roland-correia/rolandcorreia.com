@@ -1,5 +1,6 @@
 set: administrator
-order: 4
+category: trust
+order: 3
 title: Can I borrow your login?
 topic: Security and saying no
 draft: false

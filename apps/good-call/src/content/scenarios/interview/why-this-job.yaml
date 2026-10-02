@@ -1,0 +1,42 @@
+set: interview
+category: opening
+order: 2
+title: Why do you want this job?
+topic: Motivation
+draft: false
+
+situation: |
+  You are being interviewed for a receptionist job at a GP surgery. You applied mainly because you need work and the surgery is ten minutes from your home.
+
+  The interviewer asks: "Why do you want this job?"
+
+question: Which answer works best?
+
+options:
+  - text: Be completely honest. "I need a job, and you're close to my house."
+    call: okay
+    why: >-
+      Both things are true, and being local is a real advantage: you will be reliable. But on its own the
+      answer says nothing about the work. It suggests any job nearby would have done.
+
+  - text: Name something about the work itself that suits you, and something about this employer. Being local can be part of it.
+    call: best
+    why: >-
+      For example: you like being the first person people meet, you stay calm when it is busy, and a
+      surgery matters to its community. That is honest, and it answers the real question: will you care about this job?
+
+  - text: Say it has always been your dream to work on a reception desk.
+    call: risky
+    why: >-
+      Interviewers hear overstatement straight away, and it makes your other answers harder to believe. You
+      do not need to pretend it is your dream. You need one or two true reasons that fit the role.
+
+  - text: Say you want to get some experience before moving on to something better.
+    call: risky
+    why: >-
+      Ambition is fine, but this tells them you plan to leave and that you see the job as second best.
+      Hiring takes time and money. They want someone who wants this job.
+
+principle: >-
+  They are asking whether you will care about the work and stay a while. Give true reasons that are about
+  the job and the employer, not only about what suits you.

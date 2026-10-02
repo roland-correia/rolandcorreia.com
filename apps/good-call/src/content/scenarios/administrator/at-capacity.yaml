@@ -1,0 +1,42 @@
+set: administrator
+category: asking
+order: 2
+title: One more thing
+topic: Workload
+draft: false
+
+situation: |
+  You already have a full week: month-end reports, two inductions to organise and the usual inbox. On Tuesday your manager says, "Could you also take on the conference bookings? It shouldn't take long."
+
+  You know it will take at least a day, and you do not have one.
+
+question: What is the best call?
+
+options:
+  - text: Say yes. You do not want to look as if you cannot cope.
+    call: risky
+    why: >-
+      Saying yes to everything feels safe and is not. Something will be late or rushed, and your manager
+      will not know why. They can only help you plan if they know how full your week is.
+
+  - text: Say, "I can, but something would have to move. Here is what I have on this week. Which should come second?"
+    call: best
+    why: >-
+      This is not refusing. You are showing your manager the trade-off and letting them choose, which is
+      their job. Most managers do not have a clear picture of your week until you give them one.
+
+  - text: Say, "No, I'm too busy."
+    call: okay
+    why: >-
+      It is honest, and better than a yes you cannot keep. But a flat no gives your manager nothing to work
+      with and can sound unwilling. Show what is on your list and ask what should give way.
+
+  - text: Say yes, then do the bookings quickly and less carefully than usual.
+    call: risky
+    why: >-
+      Bookings done in a rush are where expensive mistakes happen: wrong dates, wrong names, no refunds.
+      Your manager would rather hear about the workload now than about a conference booking gone wrong.
+
+principle: >-
+  You are allowed to have a limit. Do not say a flat yes or a flat no. Show what is on your plate and ask
+  what should come first.

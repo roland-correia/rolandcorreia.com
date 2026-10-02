@@ -1,0 +1,42 @@
+set: interview
+category: examples
+order: 4
+title: Working in a team
+topic: Teamwork
+draft: false
+
+situation: |
+  The interviewer asks: "Tell me about a time you worked well as part of a team."
+
+  You think of a stocktake at your last job. Five of you finished it a day early.
+
+question: Which answer works best?
+
+options:
+  - text: Say, "We did a stocktake and we finished it a day early. We all worked really well together."
+    call: okay
+    why: >-
+      It is a good example with a good result. But every sentence says "we", so the interviewer cannot tell
+      what you did. They are hiring you, not the team. Add your own part.
+
+  - text: Describe the stocktake, then say what you did. For example, you suggested splitting the aisles between you and kept the shared count up to date.
+    call: best
+    why: >-
+      Now they can see how you behave in a team: you had an idea, you did your share, you kept others
+      informed. Saying "I" here is not boasting. It is answering the question.
+
+  - text: Say you prefer to work on your own, because you get more done.
+    call: risky
+    why: >-
+      Preferring focused, independent work is completely valid, and many jobs suit it. But as an answer to
+      this question it sounds as if you avoid working with people. Give the example, and mention your preference elsewhere.
+
+  - text: Explain that you ended up doing most of the work because the others were slow.
+    call: risky
+    why: >-
+      Even if it is true, it tells them you talk your colleagues down. The question is about working well
+      with others. Say what you contributed without measuring it against anyone else.
+
+principle: >-
+  In a teamwork answer, describe the team's goal and then your own part in it. Say "I" for what you did, and
+  say nothing unkind about anyone else.

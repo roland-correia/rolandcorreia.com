@@ -1,5 +1,6 @@
 set: administrator
-order: 6
+category: priorities
+order: 2
 title: Tidy up the client list
 topic: Asking for clarity
 draft: false

@@ -1,0 +1,42 @@
+set: interview
+category: tricky
+order: 3
+title: Asking for adjustments
+topic: Before the interview
+draft: false
+
+situation: |
+  You have been invited to an interview next week. You are autistic, and you know you answer much better when you can read a question as well as hear it. The invitation email says: "Let us know if you need any adjustments."
+
+  You are worried that asking will count against you.
+
+question: What is the best call?
+
+options:
+  - text: Say nothing, and try to manage on the day.
+    call: okay
+    why: >-
+      It is your choice, and nobody has to disclose. But they have invited you to ask, and you already know
+      what would help. Without it they will see a weaker version of you than the one who could do the job.
+
+  - text: Reply to the email with a specific request. "It would help me to have the questions in writing during the interview, and a few extra minutes to answer."
+    call: best
+    why: >-
+      A specific, practical request is easy to say yes to. By law, employers have to make reasonable
+      adjustments for disabled applicants. You do not have to give your whole history, only what you need and why it helps.
+
+  - text: Wait until you are in the room, then ask whether you can see the questions.
+    call: okay
+    why: >-
+      Asking late is better than not asking, and a good interviewer will try. But they may not have the
+      questions printed, and it puts you both on the spot. Asking ahead gives them time to arrange it.
+
+  - text: Reply with a long email about every difficulty you have ever had at work.
+    call: risky
+    why: >-
+      You are not being asked to justify yourself, and this shares far more than they need. It can bury the
+      one useful thing: the request. Keep it to what would help you on the day.
+
+principle: >-
+  Asking for an adjustment is not asking for a favour. Say what you need, in one or two specific sentences,
+  before the day. It lets them see how well you can actually do the job.

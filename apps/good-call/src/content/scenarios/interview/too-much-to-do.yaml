@@ -1,0 +1,40 @@
+set: interview
+category: examples
+order: 3
+title: Too much to do
+topic: Prioritising
+draft: false
+
+situation: |
+  The interviewer asks: "How do you manage when you have several things to do and not enough time?"
+
+question: Which answer works best?
+
+options:
+  - text: Say you just work faster and stay late until everything is finished.
+    call: okay
+    why: >-
+      Willingness to work hard is good to show. But this is effort, not a method, and it will not always be
+      possible. They are asking how you decide what comes first, and whether you speak up in time.
+
+  - text: Say you never get stressed and can handle any amount of work.
+    call: risky
+    why: >-
+      Nobody can, and they know it. An answer like this skips the real question, and it can sound as if you
+      would not tell anyone when you were overloaded, which is what worries a manager most.
+
+  - text: Explain your method. You list the tasks, check which are most urgent and important, and tell your manager early if something will not fit. Then give a short example.
+    call: best
+    why: >-
+      This shows a system and good judgement. The key part is "tell my manager early". Employers value
+      someone who raises a problem in time far more than someone who quietly misses a deadline.
+
+  - text: Say you do the easiest tasks first to get them out of the way.
+    call: risky
+    why: >-
+      It is a real habit many people have, but it means the important work is left until last. They want to
+      hear that you sort by urgency and importance, not by what is most comfortable.
+
+principle: >-
+  Questions about pressure are asking for your method and your honesty. Say how you decide what comes first,
+  and that you warn people early when something will not fit.

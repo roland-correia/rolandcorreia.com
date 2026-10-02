@@ -1,0 +1,39 @@
+set: customer-service
+order: 5
+title: That is not right
+topic: Correcting a colleague
+draft: false
+
+situation: |
+  You are on the shop floor next to Reece, who has worked here longer than you. You hear him tell a customer that a laptop comes with a three-year warranty. You know it is one year. The customer is about to buy it.
+
+question: What is the best call?
+
+options:
+  - text: Say nothing. Reece is more experienced, and it is his sale.
+    call: risky
+    why: >-
+      The customer is about to pay because of something that is not true. When it comes out, the complaint
+      lands on the whole shop. Being newer does not make it less your business.
+
+  - text: Interrupt and say, "No, that's wrong. It's only one year."
+    call: okay
+    why: >-
+      The customer gets the right information, which is the most important thing. But flatly contradicting
+      Reece in front of them embarrasses him and makes the shop look disorganised. The same correction can be made gently.
+
+  - text: Step in lightly. "Sorry to jump in. I think that model changed recently. Shall I check the warranty to be sure?" Then check it together.
+    call: best
+    why: >-
+      The customer gets the truth before paying, and Reece gets a way to correct himself without losing
+      face. Offering to check, instead of announcing he is wrong, also covers you if you are the one mistaken.
+
+  - text: Wait until the customer has left, then tell Reece.
+    call: risky
+    why: >-
+      It is kinder to Reece and too late for the customer, who has bought something on a false promise. The
+      correction has to come before they pay. You can talk to Reece afterwards as well.
+
+principle: >-
+  If a customer is about to act on wrong information, correct it before they do. Offer to check instead of
+  contradicting, so the facts get fixed and your colleague keeps their dignity.
