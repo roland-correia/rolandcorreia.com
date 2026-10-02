@@ -63,12 +63,19 @@ const canonical = absolute(path);
       <main id="main">
         <slot />
       </main>
-      <!-- The short disclaimer is on every page. The full one is on the About page. -->
+      <!-- On every page: what Good Call is, the short disclaimer and the credit. The detail is on the About page. -->
       <footer class="foot">
         <p>
-          Good Call is for education only. It is not legal or professional advice, and it cannot be used to excuse or
-          defend anyone's behaviour. <a href={href('/about/#disclaimer')}>Read the full disclaimer</a>.
+          <b>Good Call</b> is practice for judgement. Short, realistic scenarios about everyday life and work: you
+          choose what you would do, then see the reason behind every answer. No timer and no account.{' '}
+          <a href={href('/about/')}>About Good Call</a>
         </p>
+        <p>
+          For education only. It is not legal or professional advice, and it cannot be used to excuse or defend
+          anyone's behaviour. Your answers stay in your browser and are not used to build a profile of you.{' '}
+          <a href={href('/about/#disclaimer')}>Read the full disclaimer</a>
+        </p>
+        <p>by <a href="https://rolandcorreia.com">Roland Correia</a></p>
       </footer>
     </div>
     <SettingsDialog />

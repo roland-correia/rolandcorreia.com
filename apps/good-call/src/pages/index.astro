@@ -5,7 +5,8 @@ import { getLiveSets } from '../lib/scenarios';
 import { sets } from '../lib/site';
 import { href } from '../lib/paths';
 
-// Home lists the everyday sets, then one door into the work roles.
+// Home lists the everyday sets, then one door into the work sets.
+// What Good Call is and how it works are in the footer and on the About page.
 const liveSets = await getLiveSets();
 const everyday = liveSets.filter(({ id }) => sets[id].group === 'everyday');
 const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
@@ -39,16 +40,4 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
     </a>
   </section>
 
-  <section class="card" aria-labelledby="how-title">
-    <h2 id="how-title">How it works</h2>
-    <ul class="ticks">
-      <li>No timer. Take as long as you need.</li>
-      <li>Every answer comes with its reason, the good ones too.</li>
-      <li>One go at each scenario. Once you lock in an answer, it stays.</li>
-      <li>No account. Your progress is saved in this browser.</li>
-    </ul>
-  </section>
-
-  <a class="textbtn" href={href('/about/')}>About Good Call</a>
-  <p class="credit">by <a href="https://rolandcorreia.com">Roland Correia</a></p>
 </Base>
