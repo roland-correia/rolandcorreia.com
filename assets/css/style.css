@@ -224,9 +224,9 @@ section + section { border-top: 1px solid var(--border); }
    ABOUT
    ========================================================================== */
 /* Two-column on wider screens, same "spread across the width" rhythm
-   as the Projects grid and Experience section below it — previously
-   About was the one section still stacked in a single narrow strip
-   while everything else used the full wrap width. The bio column's
+   as the Projects grid below it — previously About was the one section
+   still stacked in a single narrow strip while everything else used
+   the full wrap width. The bio column's
    ~600-650px rendered width at typical desktop sizes also happens to
    land inside the readable 60-80 characters/line range, so a separate
    max-width hack on the paragraphs isn't needed any more — the grid
@@ -279,52 +279,6 @@ section + section { border-top: 1px solid var(--border); }
   font-size: 0.8rem;
   border: 1px solid var(--border);
   background: var(--bg-raised);
-}
-
-/* ==========================================================================
-   EXPERIENCE
-   ========================================================================== */
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.experience-item {
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--border);
-}
-.experience-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.experience-head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.5rem 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.experience-head h3 { font-size: 1.05rem; }
-
-.experience-dates {
-  font-size: 0.8rem;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.experience-org {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-.experience-item p {
-  color: var(--muted);
-  max-width: 720px;
 }
 
 /* ==========================================================================
