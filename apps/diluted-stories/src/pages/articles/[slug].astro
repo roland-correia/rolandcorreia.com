@@ -69,6 +69,9 @@ const published = story.publishedAt.toLocaleDateString('en-GB', {
     <section class="scard" id="the-source" data-card data-title="The source">
       <p class="kicker">The source</p>
       <h2 tabindex="-1">Where this comes from</h2>
+      {story.sources.length > 5 && (
+        <p class="src-note">Every source used in the original research, so you can check any claim yourself.</p>
+      )}
       {
         story.sources.map((source) => (
           <div class="src">
