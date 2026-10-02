@@ -187,6 +187,7 @@ h2 {
   background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
   padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem;
 }
+.card h2 { font-size: 1.45rem; text-wrap: pretty; }
 
 .poster {
   position: relative; overflow: hidden;
