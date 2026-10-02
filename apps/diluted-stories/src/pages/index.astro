@@ -22,10 +22,7 @@ const [latest] = await getArticles();
           imageAlt={latest.data.heroImage?.alt}
         />
         <h2>{latest.data.title}</h2>
-        <p class="meta">
-          {readMinutes(latest)} min read
-          {latest.data.paperMinutes && `. The paper takes about ${latest.data.paperMinutes} min.`}
-        </p>
+        <p class="meta">{readMinutes(latest)} min read</p>
         <a class="btn block" href={href(`/articles/${latest.id}/`)}>Open story</a>
       </article>
     ) : (
