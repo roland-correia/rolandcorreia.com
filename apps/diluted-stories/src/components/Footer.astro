@@ -3,11 +3,9 @@
 // consistent way back to its own home and topics, instead of each page
 // improvising its own ad-hoc "More in Tech"-style link.
 import Wordmark from './Wordmark.astro';
-import { pillars } from '../lib/site';
 import { href } from '../lib/paths';
 
 const year = new Date().getFullYear();
-const livePillars = Object.entries(pillars).filter(([, p]) => p.live);
 ---
 
 <footer class="site-footer">
@@ -18,9 +16,8 @@ const livePillars = Object.entries(pillars).filter(([, p]) => p.live);
   <nav class="footer-nav" aria-label="Diluted Stories">
     <a href={href('/')}>Home</a>
     <a href={href('/topics/')}>Topics</a>
-    {livePillars.map(([key, pillar]) => <a href={href(`/topics/${key}/`)}>{pillar.name}</a>)}
   </nav>
   <p class="footer-fine">
-    © {year} Roland Correia. Part of <a href="https://rolandcorreia.com">rolandcorreia.com</a>.
+    © {year} Diluted Stories. Part of <a href="https://rolandcorreia.com">rolandcorreia.com</a>.
   </p>
 </footer>
