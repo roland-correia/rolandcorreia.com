@@ -204,8 +204,7 @@ draft: false
 <!--
   Adapted from Roland's own EPQ dissertation, "Should the existing Right to
   Repair Legislation be extended to cover more products within the UK?"
-  (2022), originally hosted as a PDF under Research & Writing on the main
-  portfolio. This rewrites that research into Diluted Stories' explainer
+  (2022), originally hosted as a PDF on the main portfolio. This rewrites that research into Diluted Stories' explainer
   format — it does not copy the dissertation's sentences, only its findings
   and sourcing. paperMinutes (45) is the dissertation's own section word
   counts (Abstract 202 + Introduction 1,073 + Literature Review 2,877 +
