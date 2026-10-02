@@ -6,6 +6,7 @@ import '@fontsource/jetbrains-mono/500.css';
 import '../styles/global.css';
 import Wordmark from '../components/Wordmark.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
+import Footer from '../components/Footer.astro';
 import { SITE_NAME, DESCRIPTION } from '../lib/site';
 import { href, absolute } from '../lib/paths';
 
@@ -14,7 +15,7 @@ interface Props {
   description?: string;
   /** The page's own path, e.g. '/topics/', used for the canonical and share URLs. */
   path: string;
-  /** Leave out on the home page, which shows the wordmark instead of a Back button. */
+  /** Optional Back button, shown to the left of the wordmark (which is always present and always links home). */
   back?: { href: string; label: string };
   type?: 'website' | 'article';
 }
@@ -64,12 +65,18 @@ const canonical = absolute(path);
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="shell">
       <header class="bar">
-        {back ? <a class="iconbtn" href={back.href}>{back.label}</a> : <Wordmark />}
-        <button type="button" class="iconbtn" data-open-settings aria-haspopup="dialog" aria-label="Reading settings">Aa</button>
+        <span class="bar-start">{back && <a class="iconbtn" href={back.href}>{back.label}</a>}</span>
+        <a class="wm-link" href={href('/')} aria-label="Diluted Stories home">
+          <Wordmark />
+        </a>
+        <span class="bar-end">
+          <button type="button" class="iconbtn" data-open-settings aria-haspopup="dialog" aria-label="Reading settings">Aa</button>
+        </span>
       </header>
       <main id="main">
         <slot />
       </main>
+      <Footer />
     </div>
     <SettingsDialog />
     <script>

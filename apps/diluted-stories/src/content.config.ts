@@ -29,6 +29,17 @@ const articles = defineCollection({
         duration: z.string().regex(/^\d+:\d{2}$/, 'Use m:ss, for example 0:58'),
       })
       .optional(),
+    // Optional photo shown on the poster card when there's no video yet.
+    // `src` is a path under public/ (e.g. "/images/articles/whatever.jpg") —
+    // pre-size and compress it yourself before adding it; nothing in the
+    // build pipeline does that for you.
+    heroImage: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+        credit: z.object({ name: z.string(), url: z.url() }),
+      })
+      .optional(),
     // Optional: about how long the source takes to read (roughly 200 words a minute).
     // Only add it once you have checked. Without it, the minutes bar is left out.
     paperMinutes: z.number().int().positive().optional(),

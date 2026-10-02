@@ -18,6 +18,8 @@ const [latest] = await getArticles();
         <Poster
           caption={latest.data.posterCaption}
           chip={latest.data.video ? `Watch, ${latest.data.video.duration}` : undefined}
+          image={latest.data.heroImage && href(latest.data.heroImage.src)}
+          imageAlt={latest.data.heroImage?.alt}
         />
         <h2>{latest.data.title}</h2>
         <p class="meta">
@@ -35,5 +37,4 @@ const [latest] = await getArticles();
   }
 
   <a class="textbtn" href={href('/topics/')}>Explore topics</a>
-  <p class="credit">by <a href="https://rolandcorreia.com">Roland Correia</a></p>
 </Base>
