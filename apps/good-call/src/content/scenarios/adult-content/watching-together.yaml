@@ -1,0 +1,43 @@
+set: adult-content
+category: relationships
+order: 3
+title: Watching together
+topic: A shared decision
+draft: false
+
+situation: |
+  Your partner Tom suggests watching porn together. You are open to the idea, but you find most of what you have seen off-putting: it seems made for men, and the women in it rarely look as if they are enjoying themselves.
+
+  Tom has already picked something and is about to press play.
+
+question: What is the best call for you?
+
+options:
+  - text: Go along with whatever he has chosen, so you do not spoil the mood.
+    call: risky
+    why: >-
+      You would be watching something you expect to dislike, and Tom would think you were enjoying it. That
+      teaches him the wrong thing about what you like, and it is not really a joint decision.
+
+  - text: Say what puts you off, and suggest you choose something together that suits you both.
+    call: best
+    why: >-
+      Now it is a shared decision. Not all porn is made the same way. Some is directed by women and built
+      around both people's enjoyment, and Bellesa is one company known for that. Looking together also tells
+      you a lot about what each of you likes.
+
+  - text: Say, "No, I hate that stuff," and leave it there.
+    call: okay
+    why: >-
+      You are entitled to say no, and you never have to watch anything you do not want to. But you said you
+      were open to the idea. Telling Tom what puts you off gives him the chance to find something better.
+
+  - text: Watch it, then tell him afterwards that you did not like it.
+    call: okay
+    why: >-
+      Being honest afterwards is better than saying nothing. But you sat through something you did not
+      enjoy, and Tom may feel wrong-footed. The same thirty-second conversation works better before he presses play.
+
+principle: >-
+  Watching together is something you both agree to, including what you watch. What suits one of you may not
+  suit the other, so choose together, and either of you can say stop.

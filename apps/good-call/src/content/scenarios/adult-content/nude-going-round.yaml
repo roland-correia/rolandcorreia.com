@@ -1,0 +1,42 @@
+set: adult-content
+category: children
+order: 5
+title: The picture going round
+topic: Nudes at school
+draft: false
+
+situation: |
+  Your son Dylan is fifteen. He comes to you looking uneasy and shows you his phone. A nude photo of a girl in his year is being passed around group chats. Someone sent it to him an hour ago.
+
+  "Everyone's got it," he says. "I didn't ask for it."
+
+question: What is the best call?
+
+options:
+  - text: Tell him to delete it and forget about it. It is not his problem.
+    call: okay
+    why: >-
+      Deleting it is right, and he should not keep it. But the photo is still spreading, and a girl his age is
+      being badly hurt by it. Dylan came to you because it felt wrong. Help him do something about it.
+
+  - text: Ask him to forward it to you so you can show the school.
+    call: risky
+    why: >-
+      A sexual image of anyone under 18 is illegal to share, whatever the reason, and forwarding it makes
+      another copy. The school does not need to see it. They need to know that it exists and who is passing it on.
+
+  - text: Thank him for telling you. Make sure he does not forward or screenshot it, tell the school's safeguarding lead, then have him delete it.
+    call: best
+    why: >-
+      He did the right thing, and he needs to hear that. Schools have a named person for exactly this. The
+      girl can also use Report Remove, a Childline and Internet Watch Foundation tool that gets nude images of under-18s taken down.
+
+  - text: Take his phone away for being in a chat like that.
+    call: risky
+    why: >-
+      He did not ask for the picture, and he brought it to you. Punishing him teaches him, and his friends,
+      to keep quiet next time. That is how these images keep circulating.
+
+principle: >-
+  A nude of someone under 18 must never be forwarded, even to report it. Tell the school, do not pass it on,
+  and praise the child who spoke up.
