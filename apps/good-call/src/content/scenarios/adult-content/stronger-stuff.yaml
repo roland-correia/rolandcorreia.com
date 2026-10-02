@@ -1,0 +1,43 @@
+set: adult-content
+category: yourself
+order: 5
+title: Stronger stuff
+topic: Where a habit is heading
+draft: false
+
+situation: |
+  You have noticed that what you watch has changed. Things that would have put you off a year ago are now what you search for, and the ordinary stuff no longer holds your attention.
+
+  Some of it sits badly with you afterwards. You have not told anyone.
+
+question: What is the best call for you?
+
+options:
+  - text: Do not think about it. It is only on a screen, and nobody is harmed.
+    call: risky
+    why: >-
+      Your own reaction is telling you something. Some people find that what they watch drifts towards more
+      extreme material over time, and that it starts to shape what they expect. Noticing the drift is the moment to act.
+
+  - text: Take a proper break, a few weeks at least, and see how you feel. If it is hard to stop, or it is heading somewhere that worries you, talk to someone.
+    call: best
+    why: >-
+      A break lets you see how strong the pull really is. If you cannot stop, a GP or a therapist can help.
+      If you are worried about being drawn towards illegal material, Stop It Now runs a confidential,
+      anonymous helpline for exactly that.
+
+  - text: Tell yourself you are disgusting and promise never to do it again.
+    call: okay
+    why: >-
+      You have recognised a problem, which is the hard part. But self-disgust is not a plan, and for many
+      people feeling that bad is what sends them back. Treat it as a habit to change, not a verdict on who you are.
+
+  - text: Keep watching, but only late at night when nobody could find out.
+    call: risky
+    why: >-
+      Secrecy does not change where this is heading. It just removes anyone who might notice. The more
+      hidden a habit is, the harder it becomes to ask for help with it.
+
+principle: >-
+  If what you watch is drifting somewhere that unsettles you, stop and take stock early. Asking for help
+  before a line is crossed is a sign of responsibility, and confidential help exists.

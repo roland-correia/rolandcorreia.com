@@ -1,0 +1,42 @@
+set: adult-content
+category: relationships
+order: 4
+title: Second best
+topic: When it replaces closeness
+draft: false
+
+situation: |
+  You and your partner Sam have been together for four years. Over the last few months Sam has been less and less interested in sex with you, and often stays up alone after you have gone to bed. You know Sam watches porn then.
+
+  You feel pushed aside, and you have started to wonder what is wrong with you.
+
+question: What is the best call for you?
+
+options:
+  - text: Decide it must be your fault, and try harder to look and act like what Sam watches.
+    call: risky
+    why: >-
+      This is not about how you measure up. Nobody can compete with endless novelty on a screen, and you
+      should not have to try. Changing yourself leaves the real issue, the distance between you, untouched.
+
+  - text: Tell Sam how it feels, without blaming. "I miss being close to you, and I feel pushed aside." Ask what is going on for them.
+    call: best
+    why: >-
+      Starting with how you feel is hard to argue with and easy to hear. There may be stress, low mood or a
+      habit Sam is not proud of behind it. If it is hard to talk about alone, a relationship counsellor, such as Relate, can help.
+
+  - text: Say nothing, and wait for it to pass.
+    call: okay
+    why: >-
+      Giving it time is understandable, and some phases do pass. But it has been months, and it is already
+      changing how you see yourself. The longer it goes unsaid, the harder the conversation gets.
+
+  - text: Confront Sam at one in the morning, mid-video.
+    call: risky
+    why: >-
+      You have every right to raise it. But ambushing someone when they are embarrassed and you are upset
+      gets defensiveness, not honesty. Pick a calm moment, in daylight, when you can both think.
+
+principle: >-
+  When porn starts to take the place of closeness with a partner, it has become a relationship issue. It is
+  not a sign that you are not enough. Say how it feels, and get help together if you need it.

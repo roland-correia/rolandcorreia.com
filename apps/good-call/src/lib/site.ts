@@ -75,9 +75,9 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
   },
   'adult-content': {
-    children: { name: 'Children and teenagers', blurb: 'When a young person has seen it, and what to say' },
-    yourself: { name: 'Your own viewing', blurb: 'Habits, expectations and what you choose to watch' },
-    relationships: { name: 'Relationships', blurb: 'What you bring from the screen to a partner' },
+    children: { name: 'Children and teenagers', blurb: 'First phones, what they see, and what to say' },
+    yourself: { name: 'Your own viewing', blurb: 'Habits, expectations, where it comes from and who agreed to it' },
+    relationships: { name: 'Relationships', blurb: 'What the screen brings into a relationship' },
   },
 };
 

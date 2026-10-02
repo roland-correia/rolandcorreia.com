@@ -1,0 +1,42 @@
+set: adult-content
+category: yourself
+order: 4
+title: Choosing what you watch
+topic: Where it comes from
+draft: false
+
+situation: |
+  You watch porn sometimes and do not plan to stop. But the free sites you use have started to bother you. The front page is mostly rough clips with no context, the titles are degrading, and you have no idea who uploaded them or whether the people in them agreed.
+
+question: What is the best call?
+
+options:
+  - text: Carry on with whatever the site puts in front of you. It is all the same anyway.
+    call: risky
+    why: >-
+      It is not all the same. Free sites tend to promote whatever gets clicked, which pushes rougher and more
+      extreme clips to the top. You have already noticed that it bothers you. That is worth listening to.
+
+  - text: Be choosy. Use studios that name and pay their performers and show them as willing, such as films directed by women, and remember that it is still a performance.
+    call: best
+    why: >-
+      Where it comes from matters. Some studios work differently from the free sites. Bellesa, for example,
+      makes films directed by a woman, and says its performers choose their partners and storylines. Paying
+      for porn made this way is a real choice. It is still acting, not a guide.
+
+  - text: Switch to anything labelled "ethical" or "for women" and stop thinking about it.
+    call: okay
+    why: >-
+      Looking for better sources is the right move. But a label is marketing, not proof. Bellesa itself was
+      criticised in 2017 for showing clips without the performers' consent, apologised and changed how it
+      works. Check what a site actually does.
+
+  - text: Stop watching altogether.
+    call: okay
+    why: >-
+      That is a perfectly good choice if it is what you want, and some people feel better for it. It is not
+      the only responsible one. The question you asked was about where it comes from, and you can act on that.
+
+principle: >-
+  If you watch porn, you choose what you support. Look for performers who are named, paid and plainly
+  willing, be wary of labels, and never treat any of it as a picture of real sex.

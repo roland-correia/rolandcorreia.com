@@ -1,0 +1,43 @@
+set: adult-content
+category: yourself
+order: 6
+title: It's not even real
+topic: Faked images
+draft: false
+
+situation: |
+  Your friend Callum shows you his phone, laughing. He has used an app to make a fake nude of Beth, a woman you both know from work, out of a photo from her social media. It looks convincing.
+
+  "Relax," he says. "It's not even real."
+
+question: What is the best call?
+
+options:
+  - text: Laugh. He is right, it is only a fake.
+    call: risky
+    why: >-
+      Beth did not agree to it, and anyone who sees it will see her. Fake or not, she is the one who would be
+      humiliated if it got out. Laughing tells Callum it is fine, and makes it more likely he shows other people.
+
+  - text: Ask him to send it to you so you can see how good it is.
+    call: risky
+    why: >-
+      Now there are two copies, and he has shared it. In England and Wales, sharing an intimate image without
+      consent is a crime, and the law covers images that only appear to show the person. You would be asking
+      him to commit it.
+
+  - text: Tell him, "That's not OK. She never agreed to that. Delete it." Make sure he does.
+    call: best
+    why: >-
+      You have said plainly why it is wrong: not because it might be found out, but because Beth did not
+      consent. Callum is far more likely to listen to a friend than to anyone else. Deleting it now is the only safe outcome.
+
+  - text: Say nothing to Callum, but warn Beth.
+    call: okay
+    why: >-
+      Beth may well want to know, and that comes from the right place. But the image still exists and Callum
+      has not been challenged. It could also frighten her about something you could have stopped at the source.
+
+principle: >-
+  A faked sexual image of a real person is done to that person. "It isn't real" is not consent. Do not make
+  them, do not pass them on, and tell friends who do to delete them.

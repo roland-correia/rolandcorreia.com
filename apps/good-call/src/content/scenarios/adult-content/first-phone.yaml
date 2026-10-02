@@ -1,0 +1,42 @@
+set: adult-content
+category: children
+order: 4
+title: The first phone
+topic: Before they see it
+draft: false
+
+situation: |
+  Your daughter Isla turns ten next week, and she is getting her first smartphone. Most of her friends already have one.
+
+  You know that sooner or later she will come across things online that are not meant for children. You are setting the phone up tonight.
+
+question: What is the best call?
+
+options:
+  - text: Hand it over as it comes. She is a sensible girl, and you trust her.
+    call: risky
+    why: >-
+      This is not about trust. Children mostly come across porn by accident or because another child shows
+      them, not because they went looking. A phone with no controls and no conversation leaves her to deal with that alone.
+
+  - text: Turn on every control you can find and say nothing about why.
+    call: okay
+    why: >-
+      The controls are worth setting up, and they will block a lot. But no filter catches everything, and
+      none works on a friend's phone. If she does see something, she will not know that she can tell you.
+
+  - text: Set up the parental controls, and tell her plainly that if she ever sees something upsetting or confusing, she will not be in trouble for telling you.
+    call: best
+    why: >-
+      Controls reduce what gets through. The conversation covers what they miss. Saying in advance that she
+      will not be punished is the part that matters most, because fear of losing the phone is why children stay quiet.
+
+  - text: Wait until she is thirteen, so the problem does not arise.
+    call: okay
+    why: >-
+      Waiting is a reasonable choice for a family to make, and it does lower the risk. It does not remove
+      it: her friends have phones. Whenever she gets one, the same two things are needed: controls and a conversation.
+
+principle: >-
+  Prevention is two things together: controls that cut down what a child comes across, and a promise, made
+  early, that telling you will never get them into trouble.
