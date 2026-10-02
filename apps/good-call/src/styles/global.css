@@ -200,6 +200,18 @@ a.tile:hover { border-color: var(--accent); }
 
 .tiles { display: flex; flex-direction: column; gap: 0.75rem; list-style: none; padding: 0; }
 
+/* Progress through a set: a bar with the count underneath. */
+.pbar { display: flex; flex-direction: column; gap: 0.3rem; width: 100%; }
+.pbar progress {
+  appearance: none; -webkit-appearance: none; display: block; width: 100%; height: 0.7rem;
+  border: 0; border-radius: 999px; overflow: hidden; background: var(--line);
+}
+.pbar progress::-webkit-progress-bar { background: var(--line); }
+.pbar progress::-webkit-progress-value { background: var(--accent); border-radius: 999px; }
+.pbar progress::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
+.pbar .meta { font-size: 0.85rem; }
+.tile .pbar { margin-top: 0.5rem; }
+
 /* "Choose a topic": links that jump to each category on a set's page. */
 .jump { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
 .jump a {
@@ -252,6 +264,12 @@ a.tile:hover { border-color: var(--accent); }
 .opt:has(input:checked) > label { background: var(--accent-soft); font-weight: 600; }
 .opt:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 3px; }
 .opt input:focus-visible { outline: none; }
+
+/* Once an answer is locked in, the options stop responding and the chosen one stays marked. */
+.locked .opt label { cursor: default; }
+.locked .opt input { cursor: default; }
+.locked .opt:not(.chosen):hover { border-color: var(--line); }
+.yours { display: block; margin-top: 0.25rem; font-style: normal; font-size: 0.8rem; font-weight: 700; color: var(--accent); }
 
 /* Without JavaScript the radio buttons do nothing, so they are left out and every reason shows. */
 [data-scenario]:not(.js-quiz) .opt input { display: none; }

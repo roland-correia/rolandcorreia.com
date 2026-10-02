@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
+import ProgressBar from '../../../components/ProgressBar.astro';
 import { getLiveSets, pathOf, slugOf, type Scenario } from '../../../lib/scenarios';
 import { sets, calls } from '../../../lib/site';
 import { href } from '../../../lib/paths';
@@ -10,15 +11,16 @@ export async function getStaticPaths() {
   return liveSets.flatMap(({ id, scenarios }) =>
     scenarios.map((entry, index) => ({
       params: { set: id, scenario: slugOf(entry) },
-      props: { entry, number: index + 1, total: scenarios.length, next: scenarios[index + 1] },
+      props: { entry, number: index + 1, all: scenarios, next: scenarios[index + 1] },
     })),
   );
 }
 
-const { entry, number, total, next } = Astro.props as {
+const { entry, number, all, next } = Astro.props as {
   entry: Scenario;
   number: number;
-  total: number;
+  /** Every scenario in this set, for the progress bar. */
+  all: Scenario[];
   next?: Scenario;
 };
 const scenario = entry.data;
@@ -39,8 +41,9 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
 
   <article data-scenario data-id={entry.id}>
     <header class="group">
-      <p class="kicker">{set.name}. Scenario {number} of {total}. {scenario.topic}</p>
+      <p class="kicker">{set.name}. Scenario {number} of {all.length}. {scenario.topic}</p>
       <h1>{scenario.title}</h1>
+      <ProgressBar name={set.name} scenarios={all} />
     </header>
 
     <div class="prose situation">
@@ -55,7 +58,10 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
             <div class="opt" data-option data-call={option.call}>
               <label>
                 <input type="radio" name="answer" value={index} />
-                <span>{option.text}</span>
+                <span>
+                  {option.text}
+                  <em class="yours" data-yours hidden>Your answer</em>
+                </span>
               </label>
               <div class="why" data-why data-call={option.call} tabindex="-1">
                 <b>
@@ -69,8 +75,10 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
       </fieldset>
 
       <p class="hint" data-hint role="alert" hidden>Choose an answer first. There is no time limit.</p>
-      <button class="btn block" data-check hidden>Check my answer</button>
-      <button type="button" class="btn ghost block" data-show-all hidden>Show the reasons for every answer</button>
+      <button class="btn block" data-check hidden>Lock in my answer</button>
+      <p class="fine" data-once hidden>You get one go. Once you lock in an answer, you cannot change it.</p>
+      <p class="fine" data-locked hidden>Your answer is locked in and cannot be changed.</p>
+      <button type="button" class="btn ghost block" data-show-all hidden>Show the reasons for the other answers</button>
     </form>
 
     <div data-after>

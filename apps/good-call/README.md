@@ -68,20 +68,24 @@ src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
 src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
 src/pages/               home, the role picker, a set, one scenario, about
 src/layouts/Base.astro   the page shell, share tags and reading settings
-src/components/          the wordmark, scenario tile, settings dialog and support links
-src/scripts/             scenario.ts (check an answer), set-progress.ts, progress.ts, settings.ts
+src/components/          the wordmark, scenario tile, progress bar, settings dialog and support links
+src/scripts/             scenario.ts (lock in an answer), progress.ts (saved answers), progress-bar.ts,
+                         set-progress.ts, settings.ts
 src/styles/global.css    colours, type and layout, all in one place
 ```
 
 Choices worth knowing about:
 
-- **No timer, and no limit on tries.** Checking a second answer is how you compare the reasons.
+- **No timer, but one go.** Visitors can take as long as they like, then lock in an answer. A locked
+  answer cannot be changed, on that visit or a later one, so it is their real first judgement.
+  They can still read the reasons for the other answers afterwards.
 - **Three verdicts, not right and wrong.** Each has a label and a mark, so it never depends on colour.
 - **The quiz is progressive enhancement.** Without JavaScript every reason is on the page, so each
   scenario reads as a worked example.
 - **Nothing leaves the browser.** Answers and reading settings are kept in `localStorage`. There is
   no account, no analytics and no third-party request.
-- **Only the first answer is saved**, so trying again never overwrites an honest first go.
+- **Progress is saved and shown as a bar** on the home page, each set's page and each scenario.
+  "Clear my answers and start this set again" on a set's page is the only way to answer again.
 - **Links use `href()`** from `src/lib/paths.ts`, so nothing hard-codes the `/projects/good-call` base path.
 
 ## Before this is promoted

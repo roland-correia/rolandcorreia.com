@@ -2,6 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
 import ScenarioTile from '../../../components/ScenarioTile.astro';
+import ProgressBar from '../../../components/ProgressBar.astro';
 import { getLiveSets, pathOf, sectionsOf, type Scenario } from '../../../lib/scenarios';
 import { sets, type SetId } from '../../../lib/site';
 import { href } from '../../../lib/paths';
@@ -35,7 +36,7 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
       <p class="notice">{note}</p>
 
       <a class="btn block" href={href(pathOf(scenarios[0]))} data-start>Start</a>
-      <p class="meta" data-summary aria-live="polite" hidden></p>
+      <ProgressBar name={set.name} scenarios={scenarios} />
     </div>
 
     {
@@ -75,7 +76,7 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
       )
     }
 
-    <button type="button" class="textbtn" data-reset hidden>Clear my answers for this set</button>
+    <button type="button" class="textbtn" data-reset hidden>Clear my answers and start this set again</button>
   </div>
 
   <section class="card" aria-labelledby="rules-title">

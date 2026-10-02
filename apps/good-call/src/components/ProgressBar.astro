@@ -1,0 +1,23 @@
+---
+// How far the visitor is through a set: a bar, a count and how many were good calls.
+// It reads the answers saved in this browser, so it starts hidden and is filled in
+// by src/scripts/progress-bar.ts. Without JavaScript nothing is saved, and it stays hidden.
+import type { Scenario } from '../lib/scenarios';
+
+interface Props {
+  /** The set's name, for the bar's label: "Consent progress". */
+  name: string;
+  scenarios: Scenario[];
+}
+
+const { name, scenarios } = Astro.props;
+---
+
+<div class="pbar" data-pbar data-ids={scenarios.map((scenario) => scenario.id).join(',')} hidden>
+  <progress max={scenarios.length} value="0" aria-label={`${name} progress`}></progress>
+  <p class="meta" data-pbar-text aria-live="polite"></p>
+</div>
+
+<script>
+  import '../scripts/progress-bar.ts';
+</script>

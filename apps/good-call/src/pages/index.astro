@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ProgressBar from '../components/ProgressBar.astro';
 import { getLiveSets } from '../lib/scenarios';
 import { sets } from '../lib/site';
 import { href } from '../lib/paths';
@@ -24,6 +25,7 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
           <b>{sets[id].name}</b>
           <small>{sets[id].blurb}</small>
           <small>{count(scenarios.length)}</small>
+          <ProgressBar name={sets[id].name} scenarios={scenarios} />
         </a>
       ))
     }
@@ -42,8 +44,8 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
     <ul class="ticks">
       <li>No timer. Take as long as you need.</li>
       <li>Every answer comes with its reason, the good ones too.</li>
-      <li>Try again as often as you like.</li>
-      <li>No account. Your answers stay in this browser.</li>
+      <li>One go at each scenario. Once you lock in an answer, it stays.</li>
+      <li>No account. Your progress is saved in this browser.</li>
     </ul>
   </section>
 
