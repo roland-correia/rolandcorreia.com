@@ -5,18 +5,22 @@
    Everything else is sized in rem, so it scales with those settings.
    ========================================================================== */
 :root {
-  --ground: #f0f2f7;
+  /* Warm paper, not blue-grey — the base look a classic editorial masthead
+     is built on. Burgundy is the one accent colour across every background
+     option below; only the neutrals change. */
+  --ground: #f7f2ea;
   --surface: #ffffff;
-  --ink: #0e1330;
-  --muted: #444b6d;
-  --line: #cbd1e4;
-  --dye: #2438ff;
-  --dye-ink: #ffffff;
-  --caveat-bg: #fff1d6;
-  --caveat-ink: #6b3f00;
-  --caveat-line: #e4c87f;
+  --ink: #221714;
+  --muted: #6b5b52;
+  --line: #e2d6c7;
+  --dye: #7a2331;
+  --dye-ink: #fbf2e7;
+  --caveat-bg: #f2e2be;
+  --caveat-ink: #5c3d0a;
+  --caveat-line: #d8b978;
 
   --sans: 'Lexend Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --fs: 112.5%; /* 18px: a comfortable reading size, not the browser's 16px */
@@ -30,42 +34,44 @@
 
 @media (prefers-color-scheme: dark) {
   html[data-bg='auto'] {
-    --ground: #0b0f24;
-    --surface: #141a3d;
-    --ink: #edf0ff;
-    --muted: #b4bce0;
-    --line: #2c3466;
-    --dye: #7b8bff;
-    --dye-ink: #0b0f24;
-    --caveat-bg: #2a2110;
-    --caveat-ink: #f3c77a;
-    --caveat-line: #57431c;
+    --ground: #19100e;
+    --surface: #241714;
+    --ink: #f3e8dd;
+    --muted: #bba495;
+    --line: #3c2b25;
+    --dye: #c2495a;
+    --dye-ink: #19100e;
+    --caveat-bg: #2e2013;
+    --caveat-ink: #f0c184;
+    --caveat-line: #5c4425;
     color-scheme: dark;
   }
 }
 
+/* A deeper, more saturated parchment — an old-book alternative to the
+   default paper, for readers who want more warmth, not less. */
 html[data-bg='cream'] {
-  --ground: #f7f0df;
-  --surface: #fffbf0;
-  --ink: #1d1b16;
-  --muted: #4a4636;
-  --line: #dbd1b5;
-  --caveat-bg: #fbe6b8;
+  --ground: #f1e4cd;
+  --surface: #fbf3e4;
+  --ink: #241712;
+  --muted: #6e5a44;
+  --line: #dec9a3;
+  --caveat-bg: #f3e4c5;
   --caveat-ink: #5e3700;
   --caveat-line: #ddbc72;
 }
 
 html[data-bg='dark'] {
-  --ground: #0b0f24;
-  --surface: #141a3d;
-  --ink: #edf0ff;
-  --muted: #b4bce0;
-  --line: #2c3466;
-  --dye: #7b8bff;
-  --dye-ink: #0b0f24;
-  --caveat-bg: #2a2110;
-  --caveat-ink: #f3c77a;
-  --caveat-line: #57431c;
+  --ground: #19100e;
+  --surface: #241714;
+  --ink: #f3e8dd;
+  --muted: #bba495;
+  --line: #3c2b25;
+  --dye: #c2495a;
+  --dye-ink: #19100e;
+  --caveat-bg: #2e2013;
+  --caveat-ink: #f0c184;
+  --caveat-line: #5c4425;
   color-scheme: dark;
 }
 
@@ -109,27 +115,46 @@ button, input { font: inherit; color: inherit; }
 
 main { display: flex; flex-direction: column; gap: 1.4rem; min-height: 70vh; }
 
-h1 { font-size: 2.2rem; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
-h1 span { font-weight: 400; }
-h2 { font-size: 1.5rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+h1 {
+  font-family: var(--display); font-size: 2.3rem; line-height: 1.14; font-weight: 600;
+  letter-spacing: -0.01em; text-wrap: balance;
+}
+h1 span { font-weight: 400; font-style: italic; }
+h2 {
+  font-family: var(--display); font-size: 1.6rem; line-height: 1.25; font-weight: 600;
+  letter-spacing: -0.005em; text-wrap: balance;
+}
 
 .lead, .meta { color: var(--muted); }
-.kicker { font-weight: 600; color: var(--dye); font-size: 0.85rem; }
+
+/* The small tracked uppercase label above a headline or card — a section
+   flag, the kind a classic masthead prints above a story. */
+.kicker {
+  font-weight: 700; color: var(--dye); font-size: 0.78rem;
+  text-transform: uppercase; letter-spacing: 0.09em;
+}
+.count { font-weight: 600; font-size: 0.78rem; margin-top: 0.5rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
 .mono { font-family: var(--mono); font-size: 0.78rem; overflow-wrap: anywhere; color: var(--muted); letter-spacing: 0; }
 
 /* ==========================================================================
    TOP BAR AND WORDMARK
    ========================================================================== */
-.bar { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 4.5rem; }
+/* A rule under the masthead, the way a print nameplate sits above a
+   hairline that separates it from the page. */
+.bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  min-height: 4.5rem; border-bottom: 1px solid var(--line); margin-bottom: 0.4rem;
+}
 
-.wm { font-size: 1.45rem; letter-spacing: -0.01em; line-height: 1; text-decoration: none; }
+.wm { font-family: var(--display); font-size: 1.6rem; letter-spacing: -0.005em; line-height: 1; text-decoration: none; }
 .wm span { font-weight: var(--w); }
 
 .iconbtn {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 3rem; min-height: 3rem; padding: 0 0.9rem;
   border: 2px solid var(--line); background: var(--surface); color: var(--ink);
-  border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; text-decoration: none;
+  border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer; text-decoration: none;
 }
 .iconbtn:hover { border-color: var(--dye); }
 
@@ -138,7 +163,7 @@ h2 { font-size: 1.5rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.0
    ========================================================================== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; text-align: center;
-  min-height: 3.4rem; padding: 0 1.4rem; border-radius: 10px;
+  min-height: 3.4rem; padding: 0 1.4rem; border-radius: 6px;
   border: 2px solid var(--dye); background: var(--dye); color: var(--dye-ink);
   font-weight: 700; cursor: pointer; text-decoration: none;
 }
@@ -155,30 +180,34 @@ h2 { font-size: 1.5rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.0
    CARDS, POSTER, TILES
    ========================================================================== */
 .card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
   padding: 1rem; display: flex; flex-direction: column; gap: 0.9rem;
 }
 
 .poster {
   display: flex; flex-direction: column; justify-content: space-between; gap: 1rem;
-  background: var(--dye); color: var(--dye-ink); border-radius: 10px; padding: 1rem;
+  background: var(--dye); color: var(--dye-ink); border-radius: 4px; padding: 1.1rem;
   aspect-ratio: 4 / 3; text-decoration: none;
 }
 .poster.sq { aspect-ratio: 1; }
 .chip {
-  align-self: flex-start; border: 2px solid currentColor; border-radius: 999px;
-  padding: 0.1rem 0.75rem; font-weight: 600; font-size: 0.8rem; line-height: 1.6;
+  align-self: flex-start; border: 1px solid currentColor; border-radius: 3px;
+  padding: 0.1rem 0.6rem; font-weight: 600; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 0.07em; line-height: 1.6;
 }
-.cap { margin-top: auto; font-size: 1.45rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+.cap {
+  margin-top: auto; font-family: var(--display); font-size: 1.6rem; font-weight: 500;
+  line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance;
+}
 a.poster:hover { filter: brightness(1.08); }
 
 .tile {
   display: flex; flex-direction: column; gap: 0.1rem; width: 100%; min-height: 5.5rem;
-  padding: 1rem 1.1rem; background: var(--surface); border: 2px solid var(--line); border-radius: 14px;
+  padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
   text-decoration: none; text-align: left;
 }
 a.tile:hover { border-color: var(--dye); }
-.tile b { font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+.tile b { font-family: var(--display); font-size: 1.25rem; font-weight: 600; line-height: 1.3; }
 .tile small { color: var(--muted); font-size: 0.85rem; }
 .tile.off { border-style: dashed; }
 .tile.off b, .tile.off small { opacity: 0.85; }
@@ -191,14 +220,13 @@ a.tile:hover { border-color: var(--dye); }
 .progress { display: flex; gap: 0.4rem; }
 .progress i { flex: 1; height: 0.5rem; border-radius: 4px; background: var(--line); }
 .progress i.done { background: var(--dye); }
-.count { font-weight: 600; font-size: 0.85rem; margin-top: 0.5rem; color: var(--muted); }
 
 .scard { display: flex; flex-direction: column; gap: 1rem; }
 .scard + .scard { border-top: 1px solid var(--line); padding-top: 1.5rem; margin-top: 0.5rem; }
 .scard h1:focus, .scard h2:focus { outline: none; }
 .js-cards .scard + .scard { border-top: 0; padding-top: 0; margin-top: 0; }
 
-.finding { font-size: 1.2rem; font-weight: 600; line-height: 1.4; }
+.finding { font-family: var(--display); font-size: 1.35rem; font-weight: 500; line-height: 1.35; }
 .ticks { display: flex; gap: 2px; align-items: flex-end; height: 1.4rem; }
 .tick { flex: 1; height: 0.6rem; background: var(--line); }
 .tick.on { height: 1.4rem; background: var(--dye); }
@@ -206,13 +234,17 @@ a.tile:hover { border-color: var(--dye); }
 .caveat {
   display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem;
   background: var(--caveat-bg); color: var(--caveat-ink);
-  border: 2px solid var(--caveat-line); border-radius: 12px;
+  border: 2px solid var(--caveat-line); border-radius: 6px;
 }
 .caveat b { font-weight: 700; }
 
 .src { display: flex; flex-direction: column; gap: 0.25rem; }
 .src + .src { border-top: 1px solid var(--line); padding-top: 1rem; }
 .src small { color: var(--muted); }
+/* A publication title set in italic is the standard citation convention.
+   Lexend has no italic cut of its own — a synthesized slant looks poor and
+   hurts readability, so this borrows the serif's real italic instead. */
+.src b { font-family: var(--display); font-weight: 500; font-style: italic; font-size: 1.05rem; }
 .fine { color: var(--muted); font-size: 0.85rem; }
 
 .stepper { display: flex; gap: 0.6rem; margin-top: 0.25rem; }
@@ -224,7 +256,7 @@ a.tile:hover { border-color: var(--dye); }
 .prose a { text-underline-offset: 4px; }
 
 .notice {
-  padding: 0.75rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem;
+  padding: 0.75rem 1rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem;
   background: var(--caveat-bg); color: var(--caveat-ink); border: 2px solid var(--caveat-line);
 }
 
@@ -236,7 +268,7 @@ a.tile:hover { border-color: var(--dye); }
 dialog.settings {
   width: calc(100% - 2rem); max-width: 26rem; padding: 0;
   background: var(--ground); color: var(--ink);
-  border: 1px solid var(--line); border-radius: 18px;
+  border: 1px solid var(--line); border-radius: 8px;
 }
 dialog.settings::backdrop { background: rgb(14 19 48 / 0.55); }
 dialog.settings form { display: flex; flex-direction: column; gap: 1.4rem; padding: 1.4rem 1.25rem; }
@@ -249,7 +281,7 @@ legend { font-weight: 700; padding: 0; margin-bottom: 0.6rem; }
 .seg input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
 .seg span {
   display: flex; align-items: center; justify-content: center; text-align: center;
-  min-height: 3rem; padding: 0 0.75rem; border: 2px solid var(--line); border-radius: 10px;
+  min-height: 3rem; padding: 0 0.75rem; border: 2px solid var(--line); border-radius: 6px;
   background: var(--surface); font-size: 0.85rem; line-height: 1.3;
 }
 .seg input:checked + span { border-color: var(--dye); background: var(--dye-soft); font-weight: 700; }
