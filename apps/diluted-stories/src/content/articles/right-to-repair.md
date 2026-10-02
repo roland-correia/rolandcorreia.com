@@ -3,6 +3,12 @@ title: "Should the UK extend its right to repair?"
 pillar: tech
 finding: "The UK's repair law protects washing machines and fridges — but not the phones and laptops we throw away the most."
 posterCaption: "The UK is the world's 2nd-highest e-waste producer per person."
+heroImage:
+  src: "/images/articles/right-to-repair-bench.jpg"
+  alt: "A technician's hands repairing the internal circuit board of a smartphone."
+  credit:
+    name: "Clint Bustrillos"
+    url: "https://unsplash.com/photos/K7OUs6y_cm8"
 storyHeading: "A law that protects fridges, not phones"
 paperMinutes: 45
 caveat:

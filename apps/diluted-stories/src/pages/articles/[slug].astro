@@ -4,7 +4,6 @@ import Base from '../../layouts/Base.astro';
 import Poster from '../../components/Poster.astro';
 import Scale from '../../components/Scale.astro';
 import { getArticles, readMinutes, type Article } from '../../lib/articles';
-import { pillars } from '../../lib/site';
 import { href } from '../../lib/paths';
 
 export async function getStaticPaths() {
@@ -15,7 +14,6 @@ export async function getStaticPaths() {
 const { entry } = Astro.props as { entry: Article };
 const { Content } = await render(entry);
 const story = entry.data;
-const topic = pillars[story.pillar];
 const minutes = readMinutes(entry);
 const chip = story.video ? `Watch, ${story.video.duration}` : undefined;
 const hostname = (url: string) => new URL(url).hostname.replace(/^www\./, '');
@@ -46,7 +44,21 @@ const published = story.publishedAt.toLocaleDateString('en-GB', {
     <section class="scard" id="the-finding" data-card data-title="The finding">
       <p class="kicker">The finding</p>
       <h1 tabindex="-1">{story.title}</h1>
-      <Poster caption={story.posterCaption} chip={chip} href={story.video?.url} square />
+      <Poster
+        caption={story.posterCaption}
+        chip={chip}
+        href={story.video?.url}
+        image={story.heroImage && href(story.heroImage.src)}
+        imageAlt={story.heroImage?.alt}
+        square
+      />
+      {
+        story.heroImage && (
+          <p class="fine">
+            Photo: <a href={story.heroImage.credit.url} target="_blank" rel="noopener">{story.heroImage.credit.name}</a>
+          </p>
+        )
+      }
       <p class="finding">{story.finding}</p>
       {story.paperMinutes && <Scale page={minutes} paper={story.paperMinutes} />}
     </section>
@@ -82,8 +94,9 @@ const published = story.publishedAt.toLocaleDateString('en-GB', {
             </span>
             <small>{source.access === 'open' ? 'Free to read' : 'Behind a paywall'}</small>
             {source.doi && <span class="mono">DOI: {source.doi}</span>}
-            <a class="btn" href={source.url} target="_blank" rel="noopener">Open the source</a>
-            <span class="mono">{hostname(source.url)}</span>
+            <a class="src-link" href={source.url} target="_blank" rel="noopener">
+              {hostname(source.url)} <span aria-hidden="true">→</span>
+            </a>
           </div>
         ))
       }
@@ -93,7 +106,6 @@ const published = story.publishedAt.toLocaleDateString('en-GB', {
         )
       }
       <p class="fine">By Roland Correia. Published {published}.</p>
-      <a class="textbtn" href={href(`/topics/${story.pillar}/`)}>More in {topic.name}</a>
     </section>
 
     <div class="stepper" data-stepper hidden>
