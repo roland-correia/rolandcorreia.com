@@ -301,7 +301,7 @@ a.tile:hover { border-color: var(--dye); }
   display: flex; flex-direction: column; gap: 1.1rem;
 }
 .site-footer .wm { font-size: 1.2rem; }
-.footer-lead { color: var(--muted); max-width: 32ch; }
+.footer-lead { color: var(--muted); max-width: 42ch; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; }
 .footer-nav a { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .footer-fine { color: var(--muted); font-size: 0.8rem; }
