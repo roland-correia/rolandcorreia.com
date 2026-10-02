@@ -6,7 +6,7 @@ import { href } from '../lib/paths';
 
 <Base
   title="About"
-  description="What Good Call is, who it is for, how answers are judged, what it cannot do, and the disclaimer."
+  description="What Good Call is, how it works, who it is for, how answers are judged, and the disclaimer."
   path="/about/"
   back={{ href: href('/'), label: 'Back' }}
 >
@@ -27,6 +27,16 @@ import { href } from '../lib/paths';
       already know the unwritten rules. Good Call writes the rules down.
     </p>
   </div>
+
+  <section class="card" id="how" aria-labelledby="how-title">
+    <h2 id="how-title">How it works</h2>
+    <ul class="ticks">
+      <li>No timer. Take as long as you need.</li>
+      <li>Every answer comes with its reason, the good ones too.</li>
+      <li>One go at each scenario. Once you lock in an answer, it stays.</li>
+      <li>No account. Your progress is saved in this browser.</li>
+    </ul>
+  </section>
 
   <section class="card" aria-labelledby="judged-title">
     <h2 id="judged-title">How answers are judged</h2>
@@ -66,6 +76,11 @@ import { href } from '../lib/paths';
       site or by anyone else.
     </p>
     <p>
+      Your answers are not used to build a profile of you. They are saved only in your own browser. They are never
+      sent to Good Call, its author, an employer or anyone else, so they cannot be used to assess you, rank you,
+      target you or discriminate against you.
+    </p>
+    <p>
       Everyone remains fully responsible for their own choices and actions. Good Call and its author accept no
       responsibility for how this material is used, or for any decision made or action taken because of it.
     </p>
@@ -84,6 +99,4 @@ import { href } from '../lib/paths';
       a set's page.
     </p>
   </section>
-
-  <p class="credit">by <a href="https://rolandcorreia.com">Roland Correia</a></p>
 </Base>

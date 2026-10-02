@@ -245,13 +245,16 @@ a.tile:hover { border-color: var(--accent); }
 .support a { font-weight: 600; text-underline-offset: 4px; }
 .support span { color: var(--muted); font-size: 0.85rem; }
 
-.credit { margin-top: 2rem; color: var(--muted); font-size: 0.85rem; }
-
-/* The disclaimer line at the foot of every page. */
-.foot { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
-.foot a { text-underline-offset: 4px; }
-/* A section reached from the footer link stops clear of the top edge. */
-#disclaimer { scroll-margin-top: 1rem; }
+/* The footer on every page: a summary of Good Call, the short disclaimer and the credit. */
+.foot {
+  display: flex; flex-direction: column; gap: 0.75rem;
+  margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 0.85rem;
+}
+.foot b { color: var(--ink); }
+.foot a { font-weight: 600; text-underline-offset: 4px; }
+/* A section reached from a footer link stops clear of the top edge. */
+#disclaimer, #how { scroll-margin-top: 1rem; }
 
 /* ==========================================================================
    SCENARIO: THE SITUATION, THE ANSWERS, THE REASONS
