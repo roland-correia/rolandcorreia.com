@@ -16,7 +16,7 @@ const option = z.object({
 
 const scenario = z.object({
   // Which set it belongs to. Must match a live set in src/lib/site.ts.
-  set: z.enum(['consent', 'adult-content', 'interview', 'administrator', 'customer-service']),
+  set: z.enum(['consent', 'racism', 'adult-content', 'interview', 'administrator', 'customer-service']),
   // The section of the set's page it sits under. Only for sets that have categories in src/lib/site.ts.
   category: z.string().optional(),
   // Position within the category (or within the set, if it has no categories), lowest first.

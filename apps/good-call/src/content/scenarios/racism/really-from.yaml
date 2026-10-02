@@ -1,0 +1,42 @@
+set: racism
+category: everyday
+order: 2
+title: Where are you really from?
+topic: Questions that single people out
+draft: false
+
+situation: |
+  At a friend's birthday you get talking to Maya. You ask where she is from, and she says, "Leeds." She is brown-skinned, and you are curious about her background.
+
+  You are about to say: "No, I mean, where are you really from?"
+
+question: What is the best call?
+
+options:
+  - text: Ask it. You are only being friendly and interested.
+    call: risky
+    why: >-
+      She has answered. "Really from" tells her that Leeds cannot be the true answer because of how she
+      looks. She has probably been asked hundreds of times, and each time it says: you are not quite from here.
+
+  - text: Take "Leeds" as the answer and carry on. "Oh nice, whereabouts? I've got family near there."
+    call: best
+    why: >-
+      You have treated her answer the way you would treat anyone's. If her family background matters to her
+      and she wants to share it, it will come up, in her words and when she chooses.
+
+  - text: Ask, "What's your heritage?" instead.
+    call: okay
+    why: >-
+      It is more respectful wording, and some people are happy to be asked. But two minutes after meeting,
+      it still makes her background the first interesting thing about her. Let her bring it up.
+
+  - text: Guess. "Let me think... India? Pakistan?"
+    call: risky
+    why: >-
+      Now her appearance has become a guessing game. It is the same question, only harder to answer
+      politely, and a wrong guess makes it worse. Curiosity about someone is not a reason to sort them.
+
+principle: >-
+  If someone tells you where they are from, that is the answer. Being curious about a person is fine. Asking
+  them to account for how they look is not.

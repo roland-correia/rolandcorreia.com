@@ -1,0 +1,42 @@
+set: racism
+category: work
+order: 2
+title: The CV pile
+topic: Who gets a chance
+draft: false
+
+situation: |
+  You are helping your manager, Louise, sift job applications. She puts one on the "no" pile after a few seconds. You glance at it: the applicant, Oluwaseun Adeyemi, has the right experience.
+
+  "Communication might be an issue," Louise says. Nothing on the CV suggests that. It is clearly written.
+
+question: What is the best call?
+
+options:
+  - text: Say nothing. She is the manager, and it is her decision.
+    call: risky
+    why: >-
+      A good candidate is being rejected because of a name. That is unfair to them, and it is against the
+      law: race, which includes national or ethnic origin, cannot be a reason. Staying quiet makes you part of the sift.
+
+  - text: Say, "Can I check that one? The experience matches what we asked for. Shall we score them all on the same list?"
+    call: best
+    why: >-
+      You have brought it back to the evidence without accusing her, which makes it easy for her to look
+      again. Suggesting the same checklist for everyone is a practical fix that takes guesses about names out of it.
+
+  - text: Quietly move the CV back to the "yes" pile when she is not looking.
+    call: okay
+    why: >-
+      Your instinct is right, and the candidate may get an interview. But Louise has not been asked to think
+      about why she did it, so it will happen to the next name she finds unfamiliar. It needs to be said.
+
+  - text: Say nothing now, and report her to HR straight away.
+    call: okay
+    why: >-
+      If this is a pattern, HR should know, and that may be where it ends up. But a question in the moment
+      might fix it today, for this candidate. Try that first, and keep a note of what happened.
+
+principle: >-
+  Judging a candidate by their name is discrimination, and it is unlawful. Bring the decision back to the
+  evidence: the same criteria, applied to everyone.

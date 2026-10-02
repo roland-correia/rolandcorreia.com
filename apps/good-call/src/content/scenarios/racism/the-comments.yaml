@@ -1,0 +1,42 @@
+set: racism
+category: online
+order: 2
+title: The comments underneath
+topic: Abuse of a stranger
+draft: false
+
+situation: |
+  A young Black footballer misses a penalty in a big match. Within minutes his latest post is filling up with racist comments and monkey emojis.
+
+  You are scrolling through them, feeling sick.
+
+question: What is the best call?
+
+options:
+  - text: Screenshot the worst ones and share them, to show people how bad it is.
+    call: okay
+    why: >-
+      You mean to expose it, and awareness does matter. But sharing spreads the abuse further, including to
+      people it hurts. If you want to speak out, say what you think without repeating what they wrote.
+
+  - text: Reply to the abusers and argue with them.
+    call: okay
+    why: >-
+      Your instinct to push back is right. But replies push those comments up where more people see them,
+      and the people writing them are not there to be persuaded. Reporting takes them down. Arguing keeps them up.
+
+  - text: Report the comments to the platform, and leave a message of support for the player.
+    call: best
+    why: >-
+      Reports are how abuse gets removed and accounts get banned. A supportive comment is one more thing he
+      and other Black fans see that is not hate. Racist abuse online can be a crime, and football abuse can be reported to Kick It Out.
+
+  - text: Scroll on. He is rich and famous, and there is nothing you can do.
+    call: risky
+    why: >-
+      Money does not make it hurt less, and he is not the only one reading. Every Black child who follows
+      him sees those comments too. A report takes ten seconds and is the thing that removes them.
+
+principle: >-
+  When you see racist abuse online, do not amplify it and do not feed it. Report it, and add your voice to
+  the support, so the abuse is not the only thing people see.

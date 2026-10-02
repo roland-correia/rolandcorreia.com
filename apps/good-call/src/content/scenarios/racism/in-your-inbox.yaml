@@ -1,0 +1,42 @@
+set: racism
+category: online
+order: 4
+title: In your inbox
+topic: When it is aimed at you
+draft: false
+
+situation: |
+  You post a video about your small business. It gets shared more widely than usual. Overnight, strangers leave comments about your skin colour and tell you to "go back where you came from". Two send you threatening direct messages.
+
+  You feel shaken and angry.
+
+question: What is the best call for you?
+
+options:
+  - text: Reply to every one of them and tell them what you think.
+    call: okay
+    why: >-
+      Your anger is completely justified. But replying is what they are hoping for, and it costs you time
+      and peace while giving them attention. You do not owe any of them a response.
+
+  - text: Take screenshots, report and block the accounts, and tell someone you trust. Report the threats to the police.
+    call: best
+    why: >-
+      Screenshots first, because reported comments can vanish. Threats and racist abuse can be crimes, and
+      they can be reported to the police or to True Vision. Telling someone matters too. You should not carry this alone.
+
+  - text: Delete the video and stay offline for a while.
+    call: okay
+    why: >-
+      Protecting yourself is a good enough reason to step back, and nobody could blame you. But it is your
+      business and your space. If you can, save the evidence and report first, so that leaving is your choice and not their win.
+
+  - text: Ignore it and tell nobody. It is just words.
+    call: risky
+    why: >-
+      Carrying it alone is heavy, and threats are more than words. Keeping no record and making no report
+      leaves the same accounts free to do it again, to you or to someone else. None of this is your fault.
+
+principle: >-
+  If racist abuse is aimed at you online: keep evidence, report, block, and tell someone. You do not have to
+  answer it, and you do not have to carry it alone.

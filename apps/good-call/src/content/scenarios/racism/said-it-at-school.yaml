@@ -1,0 +1,42 @@
+set: racism
+category: family
+order: 3
+title: A word he used at school
+topic: Children
+draft: false
+
+situation: |
+  The school phones. Your seven-year-old son, Alfie, called a classmate a racist name in the playground. The other boy went home upset.
+
+  When you ask Alfie about it, he looks confused. "Everyone says it," he tells you. He does not seem to know what the word means.
+
+question: What is the best call?
+
+options:
+  - text: Tell the school he is only seven and did not mean anything by it.
+    call: risky
+    why: >-
+      He probably did not understand it. The other boy was still hurt. Brushing it off teaches Alfie that
+      the word is no big deal, and tells the other family that it was not taken seriously.
+
+  - text: Punish him hard, and tell him he is a bad boy.
+    call: okay
+    why: >-
+      You are taking it seriously, which is right. But a child who does not understand why learns only that
+      the word gets him into trouble with you, not why it hurts. Shame makes children hide things. It does not teach them.
+
+  - text: Explain calmly what the word means and why it hurts, find out where he heard it, and help him apologise to the other boy.
+    call: best
+    why: >-
+      At seven, he needs to understand, not just to be afraid. Knowing where it came from tells you what
+      else he is hearing. An apology he understands will mean something to both boys, and it shows the other family you care.
+
+  - text: Tell him never to say it again, and leave it at that.
+    call: okay
+    why: >-
+      A clear rule is a start. But without the reason, it is just one more banned word, and he will not
+      recognise the next one. The other boy has also had no apology.
+
+principle: >-
+  Children repeat what they hear before they understand it. Treat it as something to teach, not just to
+  punish: what the word means, who it hurts, and how to put it right.

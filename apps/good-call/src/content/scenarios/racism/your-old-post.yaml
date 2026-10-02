@@ -1,0 +1,42 @@
+set: racism
+category: online
+order: 3
+title: Something you posted
+topic: Getting it wrong
+draft: false
+
+situation: |
+  You share a joke on social media that plays on a stereotype about Chinese people. You thought it was harmless.
+
+  An hour later your friend Mei messages you: "I know you probably didn't mean anything by it, but that post really stung. I get that 'joke' all the time."
+
+question: What is the best call?
+
+options:
+  - text: Reply, "It was just a joke. You know I'm not racist."
+    call: risky
+    why: >-
+      Mei has not called you a racist. She has told you the post hurt. This answer makes the conversation
+      about your reputation and tells her she was wrong to mention it. She may not bother next time, with you or anyone.
+
+  - text: Reply, "I'm sorry if you were offended."
+    call: risky
+    why: >-
+      It sounds like an apology and is not one. "If you were offended" puts the problem in her reaction,
+      not in what you posted. People hear the difference straight away.
+
+  - text: Reply, "Thank you for telling me. I'm sorry. I didn't think about how it would land, and I've taken it down."
+    call: best
+    why: >-
+      You have thanked her for a hard message, apologised for the thing itself and fixed it. No excuses, no
+      asking her to reassure you. Not meaning harm and causing harm can both be true.
+
+  - text: Delete the post quietly and do not reply to Mei.
+    call: okay
+    why: >-
+      Taking it down is right. But Mei took a risk in telling you, and silence leaves her wondering whether
+      you are annoyed with her. A short, real apology finishes the job.
+
+principle: >-
+  When someone tells you that something you said was racist, they are trusting you with it. Listen,
+  apologise for the thing itself, put it right, and do not ask them to make you feel better.
