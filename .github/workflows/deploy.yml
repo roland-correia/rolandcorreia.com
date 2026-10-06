@@ -32,7 +32,7 @@ jobs:
       # Each folder in apps/ is its own Astro project, built the same way.
       - name: Install, type-check and build each app
         run: |
-          for app in good-call; do
+          for app in diluted-stories good-call; do
             echo "::group::$app"
             npm --prefix "apps/$app" ci
             npm --prefix "apps/$app" run check
@@ -49,7 +49,7 @@ jobs:
             --exclude='.git' --exclude='.github' --exclude='.claude' --exclude='apps' \
             --exclude='node_modules' --exclude='_site' \
             ./ _site/
-          for app in good-call; do
+          for app in diluted-stories good-call; do
             mkdir -p "_site/projects/$app"
             cp -R "apps/$app/dist/." "_site/projects/$app/"
           done

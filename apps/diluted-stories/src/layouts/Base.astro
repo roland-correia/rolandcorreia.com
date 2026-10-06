@@ -1,27 +1,32 @@
 ---
 import '@fontsource-variable/lexend';
+import '@fontsource-variable/newsreader';
+import '@fontsource-variable/newsreader/wght-italic.css';
+import '@fontsource/jetbrains-mono/500.css';
 import '../styles/global.css';
 import Wordmark from '../components/Wordmark.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
+import Footer from '../components/Footer.astro';
 import { SITE_NAME, DESCRIPTION } from '../lib/site';
 import { href, absolute } from '../lib/paths';
 
 interface Props {
   title: string;
   description?: string;
-  /** The page's own path, e.g. '/work/', used for the canonical and share URLs. */
+  /** The page's own path, e.g. '/topics/', used for the canonical and share URLs. */
   path: string;
-  /** Leave out on the home page, which shows the wordmark instead of a Back button. */
+  /** Optional Back button, shown to the left of the wordmark (which is always present and always links home). */
   back?: { href: string; label: string };
+  type?: 'website' | 'article';
 }
 
-const { title, description = DESCRIPTION, path, back } = Astro.props;
-const pageTitle = path === '/' ? `${SITE_NAME}: practise the call before it counts` : `${title} | ${SITE_NAME}`;
+const { title, description = DESCRIPTION, path, back, type = 'website' } = Astro.props;
+const pageTitle = path === '/' ? `${SITE_NAME}: research, diluted` : `${title} | ${SITE_NAME}`;
 const canonical = absolute(path);
 ---
 
 <!doctype html>
-<html lang="en-GB" data-size="md" data-space="normal" data-bg="auto">
+<html lang="en-GB" data-size="md" data-space="normal" data-bg="auto" data-flow="cards">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,19 +36,22 @@ const canonical = absolute(path);
     <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
 
     <meta property="og:site_name" content={SITE_NAME} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absolute('/og-default.png')} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Runs before the page paints, so saved reading settings never flash the default look. -->
     <script is:inline>
       try {
-        var saved = JSON.parse(localStorage.getItem('gc-settings') || '{}');
+        var saved = JSON.parse(localStorage.getItem('ds-settings') || '{}');
         var allowed = {
           size: ['sm', 'md', 'lg'],
           space: ['normal', 'roomy'],
           bg: ['auto', 'soft', 'cream', 'dark'],
+          flow: ['cards', 'page'],
         };
         for (var key in allowed) {
           if (allowed[key].indexOf(saved[key]) > -1) {
@@ -57,29 +65,18 @@ const canonical = absolute(path);
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="shell">
       <header class="bar">
-        {back ? <a class="iconbtn" href={back.href}>{back.label}</a> : <Wordmark />}
-        <button type="button" class="iconbtn" data-open-settings aria-haspopup="dialog" aria-label="Reading settings">Aa</button>
+        <span class="bar-start">{back && <a class="iconbtn" href={back.href}>{back.label}</a>}</span>
+        <a class="wm-link" href={href('/')} aria-label="Diluted Stories home">
+          <Wordmark />
+        </a>
+        <span class="bar-end">
+          <button type="button" class="iconbtn" data-open-settings aria-haspopup="dialog" aria-label="Reading settings">Aa</button>
+        </span>
       </header>
       <main id="main">
         <slot />
       </main>
-      <!-- On every page: what Good Call is, the short disclaimer and the copyright line. The detail is on the About page. -->
-      <footer class="foot">
-        <p>
-          <b>Good Call</b> is practice for judgement. Short, realistic scenarios about everyday life and work: you
-          choose what you would do, then see the reason behind every answer. No timer and no account.{' '}
-          <a href={href('/about/')}>About Good Call</a>
-        </p>
-        <p>
-          For education only. It is not legal or professional advice, and it cannot be used to excuse or defend
-          anyone's behaviour. Your answers stay in your browser and are not used to build a profile of you.{' '}
-          <a href={href('/about/#disclaimer')}>Read the full disclaimer</a>
-        </p>
-        <p>
-          © 2026 Good Call, a subsidiary of{' '}
-          <a href="https://rolandcorreia.com/projects/diluted-stories/">Diluted Stories</a>.
-        </p>
-      </footer>
+      <Footer />
     </div>
     <SettingsDialog />
     <script>

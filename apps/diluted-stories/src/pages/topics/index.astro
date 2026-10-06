@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { pillars } from '../../lib/site';
+import { href } from '../../lib/paths';
+---
+
+<Base title="Topics" description="Pick a topic: tech or money." path="/topics/" back={{ href: href('/'), label: 'Back' }}>
+  <h1>Topics</h1>
+  {
+    Object.entries(pillars).map(([key, pillar]) =>
+      pillar.live ? (
+        <a class="tile" href={href(`/topics/${key}/`)}>
+          <b>{pillar.name}</b>
+          <small>{pillar.blurb}</small>
+        </a>
+      ) : (
+        <div class="tile off">
+          <b>{pillar.name}</b>
+          <small>{pillar.blurb}</small>
+        </div>
+      ),
+    )
+  }
+</Base>
