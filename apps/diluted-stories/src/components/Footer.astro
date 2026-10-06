@@ -1,0 +1,25 @@
+---
+// Rendered once, by Base.astro, at the end of every page. Gives the site a
+// consistent way back to its own home and topics, instead of each page
+// improvising its own ad-hoc "More in Tech"-style link.
+import Wordmark from './Wordmark.astro';
+import { href } from '../lib/paths';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <a class="wm-link" href={href('/')} aria-label="Diluted Stories home">
+    <Wordmark />
+  </a>
+  <p class="footer-lead">
+    Good research shouldn't sit behind a paywall. We take well-researched work and explain it plainly, with every source linked so you can check it yourself.
+  </p>
+  <nav class="footer-nav" aria-label="Diluted Stories">
+    <a href={href('/')}>Home</a>
+    <a href={href('/topics/')}>Topics</a>
+  </nav>
+  <p class="footer-fine">
+    © {year} Diluted Stories. Part of <a href="https://rolandcorreia.com">rolandcorreia.com</a>.
+  </p>
+</footer>
