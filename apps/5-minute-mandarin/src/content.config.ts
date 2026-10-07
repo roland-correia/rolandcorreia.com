@@ -42,4 +42,16 @@ const lessons = defineCollection({
   schema: lesson,
 });
 
-export const collections = { lessons };
+// Blog posts: Markdown files in src/content/posts/.
+const posts = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
+  schema: z.object({
+    title: z.string(),
+    // One or two sentences, shown on the blog's list.
+    summary: z.string(),
+    date: z.coerce.date(),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { lessons, posts };

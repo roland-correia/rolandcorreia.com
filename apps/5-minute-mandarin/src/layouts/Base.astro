@@ -1,10 +1,8 @@
 ---
-import '@fontsource-variable/lexend';
-import '../styles/global.css';
+import Head from '../components/Head.astro';
 import Wordmark from '../components/Wordmark.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
-import { SITE_NAME, DESCRIPTION } from '../lib/site';
-import { href, absolute } from '../lib/paths';
+import { href } from '../lib/paths';
 
 interface Props {
   title: string;
@@ -15,44 +13,13 @@ interface Props {
   back?: { href: string; label: string };
 }
 
-const { title, description = DESCRIPTION, path, back } = Astro.props;
-const pageTitle = path === '/' ? `${SITE_NAME}: a little Mandarin, every day` : `${title} | ${SITE_NAME}`;
-const canonical = absolute(path);
+const { title, description, path, back } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-GB" data-size="md" data-space="normal" data-bg="auto" data-pinyin="show">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
-
-    <meta property="og:site_name" content={SITE_NAME} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-
-    <!-- Runs before the page paints, so saved reading settings never flash the default look. -->
-    <script is:inline>
-      try {
-        var saved = JSON.parse(localStorage.getItem('fmm-settings') || '{}');
-        var allowed = {
-          size: ['sm', 'md', 'lg'],
-          space: ['normal', 'roomy'],
-          bg: ['auto', 'soft', 'cream', 'dark'],
-          pinyin: ['show', 'hide'],
-        };
-        for (var key in allowed) {
-          if (allowed[key].indexOf(saved[key]) > -1) {
-            document.documentElement.setAttribute('data-' + key, saved[key]);
-          }
-        }
-      } catch (e) {}
-    </script>
+    <Head title={title} description={description} path={path} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -66,13 +33,13 @@ const canonical = absolute(path);
       </main>
       <footer class="foot">
         <p>
-          <b>5 Minute Mandarin</b> is a short daily lesson for complete beginners: a handful of words with characters,
-          pinyin and sound, then a quick check. No account and no timer.{' '}
-          <a href={href('/about/')}>About 5 Minute Mandarin</a>
+          <b>5 Minute Mandarin</b> brings Mandarin tutors and students together: lessons on Zoom, group chats for
+          each class, and free five-minute practice lessons for complete beginners.{' '}
+          <a href={href('/about/')}>About 5 Minute Mandarin</a> · <a href={href('/blog/')}>Blog</a>
         </p>
         <p>
-          The lessons are first versions and have not yet been reviewed by a Mandarin teacher. Your progress stays in
-          your browser.
+          The tutor and student app is a prototype with sample data. The practice lessons are first versions and have
+          not yet been reviewed by a Mandarin teacher.
         </p>
         <p>
           © 2026 5 Minute Mandarin, a subsidiary of{' '}
