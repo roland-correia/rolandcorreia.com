@@ -1,28 +1,25 @@
 ---
-// The tutor and student app: a full-width page with one interactive island.
+// The signed-in screens: the usual page with one interactive island in it.
 // It runs only in the browser (client:only), because everything it shows comes
 // from the signed-in person's data.
-import Head from '../components/Head.astro';
-import App from '../app/App';
-import '../styles/app.css';
+import Base from './Base.astro';
+import App, { type Page } from '../app/App';
+import { getLessons, pathOf } from '../lib/lessons';
+import { href } from '../lib/paths';
 
 interface Props {
   title: string;
   path: string;
-  page: 'sign-in' | 'dashboard' | 'chats' | 'credits';
+  page: Page;
 }
 
 const { title, path, page } = Astro.props;
+// The dashboard shows practice progress, so it needs the list of practice lessons.
+const practice = (await getLessons()).map((l) => ({ id: l.id, title: l.data.title, path: href(pathOf(l)) }));
+const nav = page === 'sign-in' ? 'sign-in' : page;
 ---
 
-<!doctype html>
-<html lang="en-GB" data-size="md" data-space="normal" data-bg="auto" data-pinyin="show">
-  <head>
-    <Head title={title} path={path} description="The 5 Minute Mandarin app for tutors and students." />
-    <meta name="robots" content="noindex" />
-  </head>
-  <body class="app-body">
-    <App client:only="preact" page={page} />
-    <noscript><p class="shell">The tutor and student app needs JavaScript.</p></noscript>
-  </body>
-</html>
+<Base title={title} path={path} nav={nav} noindex={page !== 'sign-in'} description="The 5 Minute Mandarin app for tutors and students.">
+  <App client:only="preact" page={page} practice={practice} />
+  <noscript><p>The tutor and student app needs JavaScript.</p></noscript>
+</Base>

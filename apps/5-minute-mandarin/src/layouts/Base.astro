@@ -1,51 +1,49 @@
 ---
+// Every page: the sidebar on the left (src/app/Sidebar.tsx) and the page on the right.
+// The sidebar runs in the browser because it shows who is signed in. Its column is
+// part of this page, so the layout does not move while it loads.
 import Head from '../components/Head.astro';
-import Wordmark from '../components/Wordmark.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
+import Sidebar, { type NavId } from '../app/Sidebar';
 import { href } from '../lib/paths';
+import '../styles/app.css';
 
 interface Props {
   title: string;
   description?: string;
   /** The page's own path, e.g. '/about/', used for the canonical and share URLs. */
   path: string;
-  /** Leave out on the home page, which shows the wordmark instead of a Back button. */
-  back?: { href: string; label: string };
+  /** Which sidebar item to highlight. */
+  nav: NavId;
+  /** Signed-in screens are not for search engines. */
+  noindex?: boolean;
 }
 
-const { title, description, path, back } = Astro.props;
+const { title, description, path, nav, noindex } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-GB" data-size="md" data-space="normal" data-bg="auto" data-pinyin="show">
   <head>
     <Head title={title} description={description} path={path} />
+    {noindex && <meta name="robots" content="noindex" />}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="shell">
-      <header class="bar">
-        {back ? <a class="iconbtn" href={back.href}>{back.label}</a> : <Wordmark />}
-        <button type="button" class="iconbtn" data-open-settings aria-haspopup="dialog" aria-label="Reading settings">Aa</button>
-      </header>
-      <main id="main">
+    <div class="app">
+      <aside class="side">
+        <Sidebar client:only="preact" current={nav} />
+      </aside>
+      <main id="main" class="app-main">
         <slot />
+        <footer class="foot">
+          <p>
+            © 2026 5 Minute Mandarin, a subsidiary of <a href="https://dilutedstories.com/">Diluted Stories</a>. The
+            tutor and student app is a prototype with sample data. Practice lessons and blog posts have not yet been
+            reviewed by a Mandarin teacher. <a href={href('/about/')}>About</a>
+          </p>
+        </footer>
       </main>
-      <footer class="foot">
-        <p>
-          <b>5 Minute Mandarin</b> brings Mandarin tutors and students together: lessons on Zoom, group chats for
-          each class, and free five-minute practice lessons for complete beginners.{' '}
-          <a href={href('/about/')}>About 5 Minute Mandarin</a> · <a href={href('/blog/')}>Blog</a>
-        </p>
-        <p>
-          The tutor and student app is a prototype with sample data. The practice lessons are first versions and have
-          not yet been reviewed by a Mandarin teacher.
-        </p>
-        <p>
-          © 2026 5 Minute Mandarin, a subsidiary of{' '}
-          <a href="https://dilutedstories.com/">Diluted Stories</a>.
-        </p>
-      </footer>
     </div>
     <SettingsDialog />
     <script>

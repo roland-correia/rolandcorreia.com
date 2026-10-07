@@ -28,7 +28,6 @@
   --lh: 1.7;
   --ls: 0.01em;
   --ws: 0em;
-  --column: 34rem;
 
   color-scheme: light;
 }
@@ -113,8 +112,6 @@ button, input { font: inherit; color: inherit; }
 }
 .skip-link:focus { top: 1rem; }
 
-.shell { max-width: var(--column); margin: 0 auto; padding: 0 1.25rem 3rem; }
-
 main { display: flex; flex-direction: column; gap: 1.4rem; min-height: 70vh; }
 
 h1 { font-size: 2.2rem; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
@@ -136,10 +133,8 @@ h1:focus, h2:focus { outline: none; }
 .group > h3 + .meta { margin-top: -0.6rem; }
 
 /* ==========================================================================
-   TOP BAR AND WORDMARK
+   WORDMARK
    ========================================================================== */
-.bar { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 4.5rem; }
-
 .wm { display: inline-flex; align-items: center; gap: 0.55rem; font-size: 1.25rem; white-space: nowrap; font-weight: 300; letter-spacing: -0.01em; line-height: 1; }
 .wm b { font-weight: 800; }
 .wm svg { width: 1.6rem; height: 1.6rem; flex: none; }

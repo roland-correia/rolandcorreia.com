@@ -1,9 +1,8 @@
 /* ==========================================================================
-   THE TUTOR AND STUDENT APP
-   Uses the same tokens as global.css, on a wider page: navigation on the left,
-   the screen on the right. On a phone the navigation sits on top.
+   THE PAGE LAYOUT, ON EVERY PAGE
+   Uses the same tokens as global.css: the sidebar on the left, the page on the
+   right. Made for laptop screens for now.
    ========================================================================== */
-.app-body { min-height: 100vh; }
 
 .app { display: grid; grid-template-columns: 15rem 1fr; min-height: 100vh; }
 
@@ -20,13 +19,55 @@
 }
 .side-nav a:hover { background: var(--accent-soft); }
 .side-nav a[aria-current='page'] { background: var(--accent); color: var(--accent-ink); }
-.side-user { display: flex; gap: 0.6rem; align-items: center; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); }
+.side-foot { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 0.4rem; }
+.side-user { display: flex; gap: 0.6rem; align-items: center; padding-bottom: 0.3rem; }
+.side-link {
+  display: flex; align-items: center; min-height: 2.4rem; padding: 0; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: 0.85rem; font-weight: 600; color: var(--muted); text-align: left;
+}
+.side-link:hover { color: var(--accent); }
 .side-user div { display: flex; flex-direction: column; line-height: 1.3; }
 .side-user small { color: var(--muted); font-size: 0.8rem; }
-.side .textbtn { min-height: 2.4rem; font-size: 0.85rem; }
-
-.app-main { display: flex; flex-direction: column; gap: 1.4rem; padding: 1.25rem clamp(1rem, 3vw, 2.5rem) 3rem; min-width: 0; }
+.app-main { display: flex; flex-direction: column; gap: 1.4rem; padding: 1.5rem clamp(1.5rem, 3vw, 3rem) 1.5rem; min-width: 0; min-height: 100vh; }
 .app-main h1 { font-size: 1.9rem; }
+.app-main > .foot { margin-top: auto; }
+
+/* Reading pages (about, a blog post, a lesson) keep a comfortable line length. */
+.page-narrow { max-width: 46rem; display: flex; flex-direction: column; gap: 1.4rem; }
+.crumbs { font-size: 0.85rem; color: var(--muted); }
+.crumbs a { font-weight: 600; color: var(--accent); text-underline-offset: 3px; }
+.page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; }
+.page-head .lead { max-width: 38rem; }
+.page-head-side { display: flex; flex-direction: column; gap: 0.6rem; min-width: 18rem; }
+.tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
+
+/* Home */
+.hero {
+  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+  padding: 2rem 2.2rem; border-radius: 18px; background: var(--surface); border: 1px solid var(--line);
+}
+.hero > div:first-child { display: flex; flex-direction: column; gap: 1rem; max-width: 38rem; }
+.hero h1 { font-size: 2.6rem; }
+.hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.hero-card {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem; padding: 1.8rem 2.6rem;
+  border-radius: 18px; background: var(--accent); color: var(--accent-ink); transform: rotate(-3deg);
+}
+.hero-card .hanzi { font-size: 4rem; }
+.hero-card .pinyin { color: inherit; font-size: 1.3rem; }
+.feature-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
+.feature-grid h3 { font-size: 1.05rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
+.post-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.post-list li { display: flex; flex-direction: column; }
+.post-list a { font-weight: 700; text-underline-offset: 4px; }
+.post-list small { color: var(--muted); font-size: 0.8rem; }
+
+/* A practice lesson: the words side by side, the check at reading width. */
+[data-lesson-page] { max-width: 60rem; }
+[data-lesson-page] > header { max-width: 46rem; }
+.words { display: grid !important; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
+[data-check], [data-result] { max-width: 40rem; }
 
 .demo-note {
   font-size: 0.8rem; color: var(--wrong-ink); background: var(--wrong-bg);
@@ -71,7 +112,7 @@
 }
 
 /* Sign in */
-.signin { max-width: 26rem; margin: 3rem auto; padding: 0 1.25rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.signin { max-width: 26rem; margin: 2rem auto; padding: 2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; display: flex; flex-direction: column; gap: 1.2rem; }
 .stack-sm { display: flex; flex-direction: column; gap: 0.6rem; }
 .accounts { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 .account {
@@ -263,23 +304,4 @@ a.stat:hover { border-color: var(--accent); }
 @media (max-width: 54rem) {
   .dash-grid { grid-template-columns: 1fr; }
   .calendar { position: static; }
-}
-
-@media (max-width: 48rem) {
-  .app { grid-template-columns: 1fr; }
-  .side { position: static; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; border-right: 0; border-bottom: 1px solid var(--line); padding: 0.75rem 1rem; gap: 0.5rem 1rem; }
-  .side-nav { flex-direction: row; flex-wrap: wrap; order: 3; width: 100%; }
-  .side-nav a { min-height: 2.6rem; padding: 0 0.7rem; font-size: 0.9rem; }
-  .side-user { margin: 0 0 0 auto; padding: 0; border: 0; }
-  .side-user div { display: none; }
-  .side .textbtn { order: 4; }
-
-  .chats { grid-template-columns: 1fr; min-height: 70vh; }
-  .chats.has-open .chat-side { display: none; }
-  .chats:not(.has-open) .thread, .chats:not(.has-open) .chat-empty { display: none; }
-  .chat-side { border-right: 0; }
-  .back-btn { display: inline-flex; }
-  .thread { max-height: none; min-height: 75vh; }
-  .composer-row { flex-wrap: wrap; }
-  .composer textarea { flex-basis: 100%; order: -1; }
 }

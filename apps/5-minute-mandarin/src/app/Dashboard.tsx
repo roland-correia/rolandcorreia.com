@@ -19,9 +19,11 @@ import { toast } from './toast';
 import { Calendar } from './Calendar';
 import { LessonCard } from './LessonCard';
 import { Modal } from './Modal';
+import { readProgress } from '../scripts/progress';
 import type { User } from './types';
+import type { PracticeLesson } from './App';
 
-export function Dashboard({ user }: { user: User }) {
+export function Dashboard({ user, practice }: { user: User; practice: PracticeLesson[] }) {
   const state = useStore();
   const [selected, setSelected] = useState<Date | null>(null);
   const [booking, setBooking] = useState(false);
@@ -41,6 +43,9 @@ export function Dashboard({ user }: { user: User }) {
   const students = new Set(groups.flatMap((g) => g.memberIds).filter((id) => userById(state, id)?.role === 'student'));
   state.lessons.filter((l) => l.tutorId === user.id && l.studentId).forEach((l) => students.add(l.studentId!));
   const balance = balanceOf(state, user.id);
+  const practised = readProgress();
+  const practiceDone = practice.filter((p) => practised[p.id]).length;
+  const nextPractice = practice.find((p) => !practised[p.id]);
   const tutorId = isTutor ? user.id : state.users.find((u) => u.role === 'tutor')!.id;
 
   return (
@@ -85,6 +90,12 @@ export function Dashboard({ user }: { user: User }) {
               <b>{groups.length}</b>
               <span>{groups.length === 1 ? 'group' : 'groups'}: {groups.map((g) => g.name).join(', ')}</span>
             </div>
+            <a class="stat" href={nextPractice?.path ?? href('/practice/')}>
+              <b>
+                {practiceDone}/{practice.length}
+              </b>
+              <span>{nextPractice ? `practice lessons done. Next: ${nextPractice.title}` : 'practice lessons done'}</span>
+            </a>
           </>
         )}
       </div>

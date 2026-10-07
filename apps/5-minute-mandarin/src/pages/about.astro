@@ -1,29 +1,29 @@
 ---
 import Base from '../layouts/Base.astro';
-import { href } from '../lib/paths';
 ---
 
 <Base
   title="About"
   description="What 5 Minute Mandarin is, how the lessons work, and what it is not."
   path="/about/"
-  back={{ href: href('/'), label: 'Back' }}
+  nav="about"
 >
+  <div class="page-narrow">
   <h1>About 5 Minute Mandarin</h1>
 
   <div class="prose">
     <p>
-      5 Minute Mandarin is for people who have never learned any Chinese and do not have much time. Each lesson is a
-      handful of everyday words and phrases, short enough to fit in a tea break.
+      5 Minute Mandarin brings Mandarin tutors and their students together in one place: lessons on a shared calendar,
+      calls on Zoom, a group chat for each class and a private chat with your tutor.
     </p>
     <p>
-      Five minutes a day does more than an hour once a week. Coming back tomorrow is what makes words stick, so the
-      lessons are kept small on purpose.
+      Between lessons there are free five-minute practice lessons for complete beginners. Five minutes a day does more
+      than an hour once a week, so they are kept small on purpose.
     </p>
   </div>
 
   <section class="card" id="how" aria-labelledby="how-title">
-    <h2 id="how-title">How a lesson works</h2>
+    <h2 id="how-title">How a practice lesson works</h2>
     <ul class="ticks">
       <li>Learn: each word in Chinese characters, in pinyin (the spelling in Latin letters) and in English.</li>
       <li>Listen: if your device has a Mandarin voice installed, a Listen button says each word.</li>
@@ -63,15 +63,17 @@ import { href } from '../lib/paths';
   </section>
 
   <section class="card" aria-labelledby="privacy-title">
-    <h2 id="privacy-title">Your progress</h2>
+    <h2 id="privacy-title">Your practice progress</h2>
     <p>
-      Your progress and reading settings are saved in this browser only. Nothing is sent anywhere, there is no account
+      Your practice progress and reading settings are saved in this browser only. Nothing is sent anywhere, there is no account
       and no tracking. The Listen button only uses voices installed on your device, so the words are not sent to a
       speech service either.
     </p>
     <button type="button" class="btn ghost block" data-clear hidden>Clear my progress</button>
     <p class="fine" data-cleared role="status" hidden>Your progress has been cleared.</p>
   </section>
+
+  </div>
 
   <script>
     import { clearAll } from '../scripts/progress';

@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProgressBar from '../../components/ProgressBar.astro';
+import StartButton from '../../components/StartButton.astro';
+import { getLessons, unitsOf, pathOf } from '../../lib/lessons';
+import { href } from '../../lib/paths';
+
+// Every practice lesson by unit. The "Done" lines and the start button are
+// filled in from saved progress by src/scripts/progress-bar.ts.
+const lessons = await getLessons();
+const sections = unitsOf(lessons);
+---
+
+<Base
+  title="Practice"
+  description="Free five-minute Mandarin lessons for complete beginners: characters, pinyin, sound and a quick check."
+  path="/practice/"
+  nav="practice"
+>
+  <header class="page-head">
+    <div>
+      <h1>Practice</h1>
+      <p class="lead">
+        Short lessons for complete beginners. Learn a handful of words, hear them, then check yourself. About five
+        minutes each.
+      </p>
+    </div>
+    <div class="page-head-side">
+      <StartButton lessons={lessons} />
+      <ProgressBar lessons={lessons} />
+    </div>
+  </header>
+
+  {
+    sections.map((section) => (
+      <section class="group" aria-labelledby={`${section.id}-title`}>
+        <h2 id={`${section.id}-title`}>{section.name}</h2>
+        <p class="meta">{section.blurb}</p>
+        <ol class="tiles tile-grid">
+          {section.lessons.map((lesson) => (
+            <li>
+              <a class="tile" href={href(pathOf(lesson))} data-lesson={lesson.id} data-title={lesson.data.title}>
+                <small>Lesson {lessons.indexOf(lesson) + 1}</small>
+                <b>{lesson.data.title}</b>
+                <small lang="zh-Hans" class="tile-hanzi">
+                  {lesson.data.words
+                    .slice(0, 4)
+                    .map((w) => w.hanzi.replace(/[？…]/g, ''))
+                    .join(' · ')}
+                </small>
+                <small class="status" data-status hidden />
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))
+  }
+</Base>

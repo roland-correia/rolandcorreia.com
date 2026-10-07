@@ -1,19 +1,15 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import { getPosts, postDate as date } from '../../lib/posts';
 import { href } from '../../lib/paths';
 
-const showDrafts = import.meta.env.DEV || import.meta.env.PUBLIC_SHOW_DRAFTS === 'true';
-const posts = (await getCollection('posts', ({ data }) => showDrafts || !data.draft)).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
-const date = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const posts = await getPosts();
 ---
 
-<Base title="Blog" description="Tips for learning Mandarin from 5 Minute Mandarin's tutors." path="/blog/" back={{ href: href('/'), label: 'Back' }}>
+<Base title="Blog" description="Tips for learning Mandarin from 5 Minute Mandarin's tutors." path="/blog/" nav="blog">
   <h1>Blog</h1>
   <p class="lead">Short tips for learning Mandarin.</p>
-  <ul class="tiles">
+  <ul class="tiles tile-grid">
     {
       posts.map((post) => (
         <li>

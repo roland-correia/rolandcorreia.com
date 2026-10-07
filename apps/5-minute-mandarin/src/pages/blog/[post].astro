@@ -13,9 +13,10 @@ const { entry } = Astro.props as { entry: CollectionEntry<'posts'> };
 const { Content } = await render(entry);
 ---
 
-<Base title={entry.data.title} description={entry.data.summary} path={`/blog/${entry.id}/`} back={{ href: href('/blog/'), label: 'Back' }}>
+<Base title={entry.data.title} description={entry.data.summary} path={`/blog/${entry.id}/`} nav="blog">
   {entry.data.draft && <p class="notice">Draft. This post is not published yet.</p>}
-  <article class="prose post">
+  <article class="prose post page-narrow">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href={href('/blog/')}>Blog</a></nav>
     <p class="kicker">{entry.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
     <h1>{entry.data.title}</h1>
     <Content />
