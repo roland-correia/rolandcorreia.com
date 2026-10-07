@@ -5,7 +5,6 @@
 import Head from '../components/Head.astro';
 import SettingsDialog from '../components/SettingsDialog.astro';
 import Sidebar, { type NavId } from '../app/Sidebar';
-import { href } from '../lib/paths';
 import '../styles/app.css';
 
 interface Props {
@@ -38,9 +37,7 @@ const { title, description, path, nav, noindex } = Astro.props;
         <slot />
         <footer class="foot">
           <p>
-            © 2026 5 Minute Mandarin, a subsidiary of <a href="https://dilutedstories.com/">Diluted Stories</a>. The
-            tutor and student app is a prototype with sample data. Practice lessons and blog posts have not yet been
-            reviewed by a Mandarin teacher. <a href={href('/about/')}>About</a>
+            © 2026 5 Minute Mandarin, all rights reserved. Prototype design by <a href="https://dilutedstories.com/">Diluted Stories</a>.
           </p>
         </footer>
       </main>
