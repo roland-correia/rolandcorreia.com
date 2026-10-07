@@ -1,0 +1,30 @@
+unit: start
+order: 1
+title: The four tones
+goal: Hear why one syllable can be four different words.
+words:
+  - hanzi: 妈
+    pinyin: mā
+    meaning: mother
+    note: First tone. High and level, as if you are holding a note.
+  - hanzi: 麻
+    pinyin: má
+    meaning: hemp
+    note: Second tone. Rises, like the end of a surprised "what?".
+  - hanzi: 马
+    pinyin: mǎ
+    meaning: horse
+    note: Third tone. Dips low, then comes back up a little.
+  - hanzi: 骂
+    pinyin: mà
+    meaning: to scold
+    note: Fourth tone. Falls sharply, like a firm "no!".
+  - hanzi: 吗
+    pinyin: ma
+    meaning: (turns a sentence into a yes or no question)
+    note: Neutral tone. Short and light, with no mark over it.
+tip: >-
+  In Mandarin the pitch of a syllable is part of the word. Mā and mǎ are as different as "cat" and
+  "cot". The mark over the vowel tells you the tone, so read it every time, and say each new word
+  out loud.
+draft: false

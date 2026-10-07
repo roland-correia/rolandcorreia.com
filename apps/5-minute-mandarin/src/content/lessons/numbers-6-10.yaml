@@ -1,0 +1,30 @@
+unit: out
+order: 8
+title: Numbers from 6 to 10
+goal: Count to ten, and say "two" of something.
+words:
+  - hanzi: 六
+    pinyin: liù
+    meaning: six
+  - hanzi: 七
+    pinyin: qī
+    meaning: seven
+  - hanzi: 八
+    pinyin: bā
+    meaning: eight
+    note: Sounds a little like 发 (fā, to prosper), so eight is a lucky number.
+  - hanzi: 九
+    pinyin: jiǔ
+    meaning: nine
+  - hanzi: 十
+    pinyin: shí
+    meaning: ten
+    note: 十一 is eleven (ten one), 二十 is twenty (two ten) and 二十一 is twenty-one.
+  - hanzi: 两
+    pinyin: liǎng
+    meaning: two (of something)
+    note: Use 二 when counting, and 两 for an amount, as in 两个人 (two people).
+tip: >-
+  With 0 to 10 you can say every number up to 99. Twelve is 十二 (ten two), and ninety-nine is
+  九十九 (nine ten nine).
+draft: false

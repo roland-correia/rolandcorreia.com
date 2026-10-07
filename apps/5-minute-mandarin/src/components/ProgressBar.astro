@@ -1,0 +1,21 @@
+---
+// How far the visitor is through the course: a bar and a count of lessons done.
+// It reads the results saved in this browser, so it starts hidden and is filled in
+// by src/scripts/progress-bar.ts. Without JavaScript nothing is saved, and it stays hidden.
+import type { Lesson } from '../lib/lessons';
+
+interface Props {
+  lessons: Lesson[];
+}
+
+const { lessons } = Astro.props;
+---
+
+<div class="pbar" data-pbar data-ids={lessons.map((lesson) => lesson.id).join(',')} hidden>
+  <progress max={lessons.length} value="0" aria-label="Course progress"></progress>
+  <p class="meta" data-pbar-text aria-live="polite"></p>
+</div>
+
+<script>
+  import '../scripts/progress-bar.ts';
+</script>

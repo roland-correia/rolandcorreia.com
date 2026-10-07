@@ -1,0 +1,33 @@
+unit: people
+order: 6
+title: Where are you from?
+goal: Say which country you are from and ask someone else.
+words:
+  - hanzi: 你是哪国人？
+    pinyin: nǐ shì nǎ guó rén?
+    meaning: Which country are you from?
+    note: Literally "you are which country person?".
+  - hanzi: 我是英国人
+    pinyin: wǒ shì Yīngguó rén
+    meaning: I'm British
+  - hanzi: 哪
+    pinyin: nǎ
+    meaning: which
+  - hanzi: 人
+    pinyin: rén
+    meaning: person, people
+    note: Add it to a country to make a nationality. 中国人 is a Chinese person.
+  - hanzi: 中国
+    pinyin: Zhōngguó
+    meaning: China
+    note: Literally "middle country".
+  - hanzi: 英国
+    pinyin: Yīngguó
+    meaning: the UK, Britain
+  - hanzi: 美国
+    pinyin: Měiguó
+    meaning: the USA
+tip: >-
+  Country + 人 = nationality. Once you know a country's name you can say where someone is from
+  without learning a new word.
+draft: false

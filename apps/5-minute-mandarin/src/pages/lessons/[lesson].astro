@@ -1,0 +1,116 @@
+---
+import Base from '../../layouts/Base.astro';
+import Listen from '../../components/Listen.astro';
+import { getLessons, pathOf, quizOf, type Lesson } from '../../lib/lessons';
+import { units } from '../../lib/site';
+import { href } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const lessons = await getLessons();
+  return lessons.map((entry, index) => ({
+    params: { lesson: entry.id },
+    props: { entry, number: index + 1, total: lessons.length, next: lessons[index + 1] },
+  }));
+}
+
+const { entry, number, total, next } = Astro.props as {
+  entry: Lesson;
+  number: number;
+  total: number;
+  next?: Lesson;
+};
+const lesson = entry.data;
+const quiz = quizOf(entry);
+---
+
+<Base
+  title={lesson.title}
+  description={`Mandarin lesson ${number}: ${lesson.goal} About five minutes.`}
+  path={pathOf(entry)}
+  back={{ href: href(`/#${lesson.unit}-title`), label: 'Back' }}
+>
+  {lesson.draft && <p class="notice">Draft. This lesson is not published yet.</p>}
+
+  <article data-lesson-page data-id={entry.id}>
+    <header class="group">
+      <p class="kicker">Lesson {number} of {total}. {units[lesson.unit].name}</p>
+      <h1>{lesson.title}</h1>
+      <p class="lead">{lesson.goal}</p>
+      <p class="fine">About 5 minutes. {lesson.words.length} words and phrases.</p>
+    </header>
+
+    <section class="group" data-learn aria-labelledby="learn-title">
+      <h2 id="learn-title">Learn</h2>
+      <p class="meta">Read each one out loud, following the pinyin. Say it a second time before you move on.</p>
+      <ol class="words">
+        {
+          lesson.words.map((word) => (
+            <li class="word">
+              <div class="word-head">
+                <p class="hanzi" lang="zh-Hans">{word.hanzi}</p>
+                <Listen text={word.hanzi} label={word.pinyin} />
+              </div>
+              <p class="pinyin" lang="zh-Latn-pinyin">{word.pinyin}</p>
+              <p class="meaning">{word.meaning}</p>
+              {word.note && <p class="note">{word.note}</p>}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <button type="button" class="btn block" data-begin hidden>I'm ready: check myself</button>
+
+    <section class="group" data-check aria-labelledby="check-title">
+      <h2 id="check-title">Check yourself</h2>
+      <p class="meta">What does each one mean? You can take the check again as often as you like.</p>
+      {
+        quiz.map((q, i) => (
+          <fieldset class="q" data-q data-answer={q.answer} tabindex="-1">
+            <legend>
+              <span class="kicker">Question {i + 1} of {quiz.length}</span>
+              <span class="hanzi" lang="zh-Hans">{q.word.hanzi}</span>
+              <span class="pinyin q-pinyin" lang="zh-Latn-pinyin">{q.word.pinyin}</span>
+            </legend>
+            {q.options.map((text, j) => (
+              <div class="opt" data-text={text} data-right={j === q.answer ? '' : undefined}>
+                <label>
+                  <input type="radio" name={`q${i}`} value={j} />
+                  <span>{text}</span>
+                </label>
+              </div>
+            ))}
+            <p class="feedback" data-feedback role="status" hidden />
+          </fieldset>
+        ))
+      }
+      <button type="button" class="btn block" data-next hidden>Next question</button>
+    </section>
+
+    <section class="group" data-result aria-labelledby="result-title">
+      <h2 id="result-title" data-score tabindex="-1">Lesson done</h2>
+      <section class="principle">
+        <h2>Take this with you</h2>
+        <p>{lesson.tip}</p>
+      </section>
+      <nav class="stepper" aria-label="Lessons">
+        {
+          next ? (
+            <a class="btn block" href={href(pathOf(next))}>
+              Next: {next.data.title}
+            </a>
+          ) : (
+            <a class="btn block" href={href('/')}>
+              Finish: back to all lessons
+            </a>
+          )
+        }
+        <button type="button" class="textbtn" data-retry hidden>Take the check again</button>
+      </nav>
+    </section>
+  </article>
+
+  <script>
+    import '../../scripts/lesson.ts';
+  </script>
+</Base>

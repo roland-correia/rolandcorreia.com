@@ -1,0 +1,32 @@
+unit: out
+order: 9
+title: Ordering a drink
+goal: Order food and drink, ask the price and ask for the bill.
+words:
+  - hanzi: 我要…
+    pinyin: wǒ yào…
+    meaning: I'd like…
+    note: Literally "I want". In a café or shop this is normal and not rude.
+  - hanzi: 水
+    pinyin: shuǐ
+    meaning: water
+  - hanzi: 茶
+    pinyin: chá
+    meaning: tea
+  - hanzi: 咖啡
+    pinyin: kāfēi
+    meaning: coffee
+  - hanzi: 米饭
+    pinyin: mǐfàn
+    meaning: rice (cooked)
+  - hanzi: 多少钱？
+    pinyin: duōshao qián?
+    meaning: How much is it?
+    note: Literally "how much money?".
+  - hanzi: 买单
+    pinyin: mǎidān
+    meaning: The bill, please
+tip: >-
+  我要 + the thing is all you need to order. 我要茶 is "I'd like tea" and 我要咖啡 is "I'd
+  like coffee".
+draft: false

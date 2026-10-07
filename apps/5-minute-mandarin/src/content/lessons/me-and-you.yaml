@@ -1,0 +1,36 @@
+unit: start
+order: 3
+title: Me, you and "is"
+goal: Say I, you, he and she, and make your first sentences.
+words:
+  - hanzi: 我
+    pinyin: wǒ
+    meaning: I, me
+  - hanzi: 你
+    pinyin: nǐ
+    meaning: you
+  - hanzi: 他
+    pinyin: tā
+    meaning: he, him
+  - hanzi: 她
+    pinyin: tā
+    meaning: she, her
+    note: 他 and 她 sound exactly the same. Only the written character shows the difference.
+  - hanzi: 是
+    pinyin: shì
+    meaning: to be (am, is, are)
+    note: Used to link two nouns, as in 我是老师 (I am a teacher). It does not change for I, you or they.
+  - hanzi: 不
+    pinyin: bù
+    meaning: not, no
+    note: Goes in front of the verb. 我不是 means "I am not".
+  - hanzi: 很
+    pinyin: hěn
+    meaning: very
+  - hanzi: 好
+    pinyin: hǎo
+    meaning: good, well
+tip: >-
+  Mandarin verbs never change their form. 我是, 你是 and 她是 all use the same 是, and there is
+  no past tense ending to learn. Word order does most of the work.
+draft: false

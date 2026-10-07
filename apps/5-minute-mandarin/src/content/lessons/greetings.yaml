@@ -1,0 +1,37 @@
+unit: start
+order: 2
+title: Hello and thank you
+goal: Say hello, thank you, sorry and goodbye.
+words:
+  - hanzi: 你好
+    pinyin: nǐ hǎo
+    meaning: hello
+    note: >-
+      Two third tones in a row are hard to say, so the first one rises instead. It is written nǐ hǎo
+      but said ní hǎo.
+  - hanzi: 您好
+    pinyin: nín hǎo
+    meaning: hello (polite)
+    note: 您 is the polite "you". Use it with older people, customers and anyone senior.
+  - hanzi: 谢谢
+    pinyin: xièxie
+    meaning: thank you
+  - hanzi: 不客气
+    pinyin: bú kèqi
+    meaning: you're welcome
+    note: 不 is usually bù, but it becomes bú in front of a fourth tone, as here.
+  - hanzi: 对不起
+    pinyin: duìbuqǐ
+    meaning: sorry
+  - hanzi: 没关系
+    pinyin: méi guānxi
+    meaning: that's OK, no problem
+    note: The usual reply to 对不起.
+  - hanzi: 再见
+    pinyin: zàijiàn
+    meaning: goodbye
+    note: Literally "again see", as in "see you again".
+tip: >-
+  Each of these comes in a pair: 谢谢 is answered with 不客气, and 对不起 with 没关系. Learn them
+  as pairs and you have a whole exchange.
+draft: false

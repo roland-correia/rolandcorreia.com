@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import ProgressBar from '../components/ProgressBar.astro';
+import { getLessons, unitsOf, pathOf } from '../lib/lessons';
+import { href } from '../lib/paths';
+
+// Home: one button to the next lesson, then every lesson by unit.
+// The button and the "Done" lines are filled in from saved progress by src/scripts/progress-bar.ts.
+const lessons = await getLessons();
+const sections = unitsOf(lessons);
+const first = lessons[0];
+---
+
+<Base title="5 Minute Mandarin" path="/">
+  <h1>A little Mandarin,<br /><span>every day.</span></h1>
+  <p class="lead">
+    Short lessons for complete beginners. Learn a handful of words, hear them, then check yourself. About five
+    minutes each.
+  </p>
+
+  <div class="group">
+    {first && <a class="btn block" data-start href={href(pathOf(first))}>Start: {first.data.title}</a>}
+    <ProgressBar lessons={lessons} />
+  </div>
+
+  {
+    sections.map((section) => (
+      <section class="group" aria-labelledby={`${section.id}-title`}>
+        <h2 id={`${section.id}-title`}>{section.name}</h2>
+        <p class="meta">{section.blurb}</p>
+        <ol class="tiles">
+          {section.lessons.map((lesson) => (
+            <li>
+              <a
+                class="tile"
+                href={href(pathOf(lesson))}
+                data-lesson={lesson.id}
+                data-title={lesson.data.title}
+              >
+                <small>Lesson {lessons.indexOf(lesson) + 1}</small>
+                <b>{lesson.data.title}</b>
+                <small lang="zh-Hans" class="tile-hanzi">
+                  {lesson.data.words.slice(0, 4).map((w) => w.hanzi.replace(/[？…]/g, '')).join(' · ')}
+                </small>
+                <small class="status" data-status hidden />
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))
+  }
+</Base>
