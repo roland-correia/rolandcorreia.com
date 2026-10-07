@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "apps/good-call", "run", "dev", "--", "--port", "4322"],
       "port": 4322
+    },
+    {
+      "name": "5-minute-mandarin",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "apps/5-minute-mandarin", "run", "dev", "--", "--port", "4323"],
+      "port": 4323
     }
   ]
 }

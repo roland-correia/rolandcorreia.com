@@ -1,0 +1,31 @@
+unit: out
+order: 7
+title: Numbers from 0 to 5
+goal: Count to five and read the characters for each number.
+words:
+  - hanzi: 零
+    pinyin: líng
+    meaning: zero
+  - hanzi: 一
+    pinyin: yī
+    meaning: one
+    note: >-
+      Said yī when counting. In front of other words its tone changes, so you will also hear yí and
+      yì.
+  - hanzi: 二
+    pinyin: èr
+    meaning: two
+  - hanzi: 三
+    pinyin: sān
+    meaning: three
+  - hanzi: 四
+    pinyin: sì
+    meaning: four
+    note: Sounds close to 死 (sǐ, death), so four is an unlucky number for many people.
+  - hanzi: 五
+    pinyin: wǔ
+    meaning: five
+tip: >-
+  One, two and three are one, two and three lines: 一, 二, 三. From four on you just have to learn
+  the shapes, but there are only ten of them.
+draft: false

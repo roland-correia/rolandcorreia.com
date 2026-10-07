@@ -1,0 +1,34 @@
+unit: out
+order: 10
+title: Where is it?
+goal: Ask where something is and understand a simple answer.
+words:
+  - hanzi: 在哪儿？
+    pinyin: zài nǎr?
+    meaning: Where is it?
+    note: >-
+      Put the place first: 厕所在哪儿？ is "Where is the toilet?". In the south you will often hear
+      在哪里 (zài nǎlǐ) instead.
+  - hanzi: 厕所
+    pinyin: cèsuǒ
+    meaning: toilet
+    note: 洗手间 (xǐshǒujiān, "wash hands room") is a more polite word you will see on signs.
+  - hanzi: 地铁站
+    pinyin: dìtiězhàn
+    meaning: metro station
+  - hanzi: 这儿
+    pinyin: zhèr
+    meaning: here
+  - hanzi: 那儿
+    pinyin: nàr
+    meaning: there
+  - hanzi: 左边
+    pinyin: zuǒbian
+    meaning: on the left
+  - hanzi: 右边
+    pinyin: yòubian
+    meaning: on the right
+tip: >-
+  The thing you are looking for goes first, then 在哪儿. The answer follows the same pattern:
+  厕所在左边 is "the toilet is on the left".
+draft: false

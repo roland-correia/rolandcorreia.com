@@ -1,0 +1,32 @@
+unit: people
+order: 4
+title: How are you?
+goal: Ask how someone is, answer, and ask back.
+words:
+  - hanzi: 你好吗？
+    pinyin: nǐ hǎo ma?
+    meaning: How are you?
+    note: 你好 (hello) plus 吗, which turns it into a question.
+  - hanzi: 我很好
+    pinyin: wǒ hěn hǎo
+    meaning: I'm well
+    note: >-
+      很 is needed here even though it means "very". 我好 on its own sounds unfinished, so 我很好
+      is closer to a plain "I'm fine".
+  - hanzi: 你呢？
+    pinyin: nǐ ne?
+    meaning: And you?
+  - hanzi: 也
+    pinyin: yě
+    meaning: also, too
+    note: Goes before the verb or adjective. 我也很好 is "I'm well too".
+  - hanzi: 忙
+    pinyin: máng
+    meaning: busy
+  - hanzi: 累
+    pinyin: lèi
+    meaning: tired
+tip: >-
+  吗 and 呢 are small words at the end of a sentence that change what it does. 吗 makes a yes or
+  no question. 呢 bounces the question back: "and you?".
+draft: false

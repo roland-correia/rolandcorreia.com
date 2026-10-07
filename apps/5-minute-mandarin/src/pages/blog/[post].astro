@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { href } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const showDrafts = import.meta.env.DEV || import.meta.env.PUBLIC_SHOW_DRAFTS === 'true';
+  const posts = await getCollection('posts', ({ data }) => showDrafts || !data.draft);
+  return posts.map((entry) => ({ params: { post: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props as { entry: CollectionEntry<'posts'> };
+const { Content } = await render(entry);
+---
+
+<Base title={entry.data.title} description={entry.data.summary} path={`/blog/${entry.id}/`} back={{ href: href('/blog/'), label: 'Back' }}>
+  {entry.data.draft && <p class="notice">Draft. This post is not published yet.</p>}
+  <article class="prose post">
+    <p class="kicker">{entry.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+    <h1>{entry.data.title}</h1>
+    <Content />
+  </article>
+</Base>

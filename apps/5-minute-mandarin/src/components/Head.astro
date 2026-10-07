@@ -1,0 +1,48 @@
+---
+// Everything in <head>: title, share tags, the icon and the reading settings,
+// which are applied before the page paints so they never flash the default look.
+import '@fontsource-variable/lexend';
+import '../styles/global.css';
+import { SITE_NAME, DESCRIPTION } from '../lib/site';
+import { href, absolute } from '../lib/paths';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;
+}
+
+const { title, description = DESCRIPTION, path } = Astro.props;
+const pageTitle = path === '/' ? `${SITE_NAME}: learn Mandarin with a tutor` : `${title} | ${SITE_NAME}`;
+const canonical = absolute(path);
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
+
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+
+<script is:inline>
+  try {
+    var saved = JSON.parse(localStorage.getItem('fmm-settings') || '{}');
+    var allowed = {
+      size: ['sm', 'md', 'lg'],
+      space: ['normal', 'roomy'],
+      bg: ['auto', 'soft', 'cream', 'dark'],
+      pinyin: ['show', 'hide'],
+    };
+    for (var key in allowed) {
+      if (allowed[key].indexOf(saved[key]) > -1) {
+        document.documentElement.setAttribute('data-' + key, saved[key]);
+      }
+    }
+  } catch (e) {}
+</script>

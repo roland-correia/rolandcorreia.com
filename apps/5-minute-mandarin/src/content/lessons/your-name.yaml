@@ -1,0 +1,29 @@
+unit: people
+order: 5
+title: What's your name?
+goal: Ask someone's name, give yours, and say it is nice to meet them.
+words:
+  - hanzi: 你叫什么名字？
+    pinyin: nǐ jiào shénme míngzi?
+    meaning: What's your name?
+    note: Literally "you are called what name?". The question word sits where the answer will go.
+  - hanzi: 我叫…
+    pinyin: wǒ jiào…
+    meaning: My name is…
+  - hanzi: 什么
+    pinyin: shénme
+    meaning: what
+  - hanzi: 名字
+    pinyin: míngzi
+    meaning: name
+  - hanzi: 认识
+    pinyin: rènshi
+    meaning: to know (a person), to meet
+  - hanzi: 很高兴认识你
+    pinyin: hěn gāoxìng rènshi nǐ
+    meaning: Nice to meet you
+    note: Literally "very happy to know you".
+tip: >-
+  Questions in Mandarin keep the same word order as the answer. Swap 什么 (what) in 你叫什么 for
+  a name and you have the reply: 我叫 Sam.
+draft: false

@@ -1,0 +1,17 @@
+---
+// A button that says the word out loud with the browser's own Chinese voice.
+// It starts hidden and src/scripts/speak.ts shows it only when this device has
+// a Mandarin voice installed, so it never sends anything over the network.
+interface Props {
+  text: string;
+  /** What is being said, for the button's label: "Listen to nǐ hǎo". */
+  label: string;
+}
+
+const { text, label } = Astro.props;
+---
+
+<button type="button" class="listen" data-say={text} aria-label={`Listen to ${label}`} hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" /><path class="wave" d="M16 8.5a4.5 4.5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12" /></svg>
+  <span>Listen</span>
+</button>
