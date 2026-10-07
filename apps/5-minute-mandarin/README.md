@@ -8,7 +8,11 @@ It has two parts:
 
 - **The tutor and student app** (`/sign-in/`, `/app/`). A prototype that runs on sample data. See
   [The tutor and student app](#the-tutor-and-student-app) below.
-- **Practice lessons and the blog** (`/`, `/lessons/`, `/blog/`). Static pages anyone can read.
+- **Home, practice lessons and the blog** (`/`, `/practice/`, `/lessons/`, `/blog/`). Static pages anyone can read.
+
+Every page has the same layout: the sidebar on the left (`src/app/Sidebar.tsx`) and the page on
+the right. Signed out, the sidebar shows Home, Practice, Blog, About and Sign in. Signed in, it adds
+Dashboard, Chats and Credits (Students for a tutor). It is made for laptop screens for now.
 
 ## The tutor and student app
 
@@ -52,10 +56,11 @@ but not any of the above. All the places that will call the backend are the acti
 src/app/types.ts         the shape of every record: users, lessons, chats, messages, credits, texts
 src/app/seed.ts          the sample data, dated from today so the calendar is never empty
 src/app/store.ts         the state and every action (cancel, reschedule, send, add member…)
-src/app/App.tsx          the frame: navigation, who is signed in, texts sent, toasts
+src/app/Sidebar.tsx      the sidebar on every page: navigation, who is signed in, texts sent, toasts
+src/app/App.tsx          picks the signed-in screen and guards it behind sign-in
 src/app/*.tsx            the screens: SignIn, Dashboard, Calendar, LessonCard, Chats, Credits
-src/layouts/AppLayout.astro   the page the app runs in (client-only, not indexed)
-src/styles/app.css       the app's layout, on top of global.css
+src/layouts/AppLayout.astro   the signed-in pages (client-only, not indexed)
+src/styles/app.css       the page layout and the app's screens, on top of global.css
 ```
 
 Sample people, phone numbers and meeting IDs are made up. Phone numbers use the 07700 900xxx range,
@@ -115,9 +120,9 @@ src/content.config.ts    the rules every lesson must follow (the schema)
 src/content/lessons/     the lessons, one YAML file each
 src/lib/site.ts          the name, description and units
 src/lib/lessons.ts       loading lessons, and building each lesson's check
-src/pages/               home, one lesson, about, blog, sign-in and the app pages
-src/layouts/Base.astro   the page shell, share tags, reading settings and the footer
-src/components/          the wordmark, progress bar, Listen button and settings dialog
+src/pages/               home, practice, one lesson, about, blog, sign-in and the app pages
+src/layouts/Base.astro   every page: the sidebar, the page, the footer and reading settings
+src/components/          head tags, start button, progress bar, Listen button and settings dialog
 src/scripts/             lesson.ts (the check), progress.ts (saved results), progress-bar.ts,
                          speak.ts (the Listen button), settings.ts
 src/styles/global.css    colours, type and layout, all in one place

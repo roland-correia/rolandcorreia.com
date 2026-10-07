@@ -1,73 +1,99 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProgressBar from '../components/ProgressBar.astro';
-import { getLessons, unitsOf, pathOf } from '../lib/lessons';
+import StartButton from '../components/StartButton.astro';
+import { getLessons } from '../lib/lessons';
+import { getPosts, postDate } from '../lib/posts';
 import { href } from '../lib/paths';
 
-// Home: what the tutor and student app does, the way in, then the free practice lessons by unit.
-// The button and the "Done" lines are filled in from saved progress by src/scripts/progress-bar.ts.
+// Home: what the platform does and the way in, then free practice and the latest posts.
+// Signed in, the main button goes to the dashboard instead of sign-in (the script at the end).
 const lessons = await getLessons();
-const sections = unitsOf(lessons);
-const first = lessons[0];
+const posts = (await getPosts()).slice(0, 3);
+
+const features = [
+  { title: 'Lessons on your calendar', text: 'Every group class and one-to-one in one place. Join on Zoom with one click.' },
+  { title: 'A chat for your class', text: 'Text, photos and voice notes with your classmates, to practise speaking between lessons.' },
+  { title: 'Talk to your tutor', text: 'A private chat with your tutor for questions, changes and anything else.' },
+  { title: 'Credits, not contracts', text: 'One credit books one lesson. If your tutor cancels, it comes straight back.' },
+  { title: 'Slides after every lesson', text: 'Your tutor adds the presentation to each lesson so you can look back at it.' },
+  { title: 'A text when plans change', text: 'If a lesson is cancelled or moved, you get a text with the details.' },
+];
 ---
 
-<Base title="5 Minute Mandarin" path="/">
-  <h1>Learn Mandarin<br /><span>with a real tutor.</span></h1>
-  <p class="lead">
-    Book lessons on Zoom, practise with your class in a group chat, and keep going with five-minute lessons between
-    classes.
-  </p>
-  <div class="group">
-    <a class="btn block" href={href('/sign-in/')}>Sign in</a>
-    <p class="fine">With Google, Microsoft or Apple. Tutors and students use the same sign-in.</p>
-  </div>
+<Base title="5 Minute Mandarin" path="/" nav="home">
+  <section class="hero">
+    <div>
+      <p class="kicker">For Mandarin tutors and their students</p>
+      <h1>Learn Mandarin<br /><span>with a real tutor.</span></h1>
+      <p class="lead">
+        Book lessons on Zoom, practise with your class in a group chat, and keep going with five-minute lessons
+        between classes.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href={href('/sign-in/')} data-home-cta>Sign in</a>
+        <StartButton lessons={lessons} class="btn ghost" />
+      </div>
+      <p class="fine" data-home-note>With Google, Microsoft or Apple. Tutors and students use the same sign-in.</p>
+    </div>
+    <div class="hero-card" aria-hidden="true">
+      <p class="hanzi" lang="zh-Hans">你好</p>
+      <p class="pinyin">nǐ hǎo</p>
+      <p>hello</p>
+    </div>
+  </section>
 
-  <section class="card" aria-labelledby="how-title">
+  <section class="group" aria-labelledby="how-title">
     <h2 id="how-title">How it works</h2>
-    <ul class="ticks">
-      <li>Buy credits. One credit books one lesson, in a group or one-to-one.</li>
-      <li>See every lesson on your calendar, and join on Zoom with one tap.</li>
-      <li>Chat with your class: text, photos and voice notes to practise speaking.</li>
-      <li>Your tutor adds the slides from each lesson for you to look back at.</li>
-      <li>If your tutor cancels, your credit comes straight back and you get a text.</li>
+    <ul class="feature-grid">
+      {
+        features.map((f) => (
+          <li class="card">
+            <h3>{f.title}</h3>
+            <p class="meta">{f.text}</p>
+          </li>
+        ))
+      }
     </ul>
   </section>
 
-  <section class="group" id="practice" aria-labelledby="practice-title">
-    <h2 id="practice-title">Free practice</h2>
-    <p class="meta">
-      Short lessons for complete beginners. Learn a handful of words, hear them, then check yourself. About five
-      minutes each, no sign-in needed.
-    </p>
-    {first && <a class="btn ghost block" data-start href={href(pathOf(first))}>Start: {first.data.title}</a>}
-    <ProgressBar lessons={lessons} />
-  </section>
+  <div class="two-col">
+    <section class="card" aria-labelledby="practice-title">
+      <h2 id="practice-title">Free practice</h2>
+      <p class="meta">
+        {lessons.length} short lessons for complete beginners. Learn a handful of words, hear them, then check yourself.
+        No sign-in needed.
+      </p>
+      <ProgressBar lessons={lessons} />
+      <a class="textbtn" href={href('/practice/')}>See all practice lessons</a>
+    </section>
 
-  {
-    sections.map((section) => (
-      <section class="group" aria-labelledby={`${section.id}-title`}>
-        <h3 id={`${section.id}-title`}>{section.name}</h3>
-        <p class="meta">{section.blurb}</p>
-        <ol class="tiles">
-          {section.lessons.map((lesson) => (
+    <section class="card" aria-labelledby="blog-title">
+      <h2 id="blog-title">From the blog</h2>
+      <ul class="post-list">
+        {
+          posts.map((post) => (
             <li>
-              <a
-                class="tile"
-                href={href(pathOf(lesson))}
-                data-lesson={lesson.id}
-                data-title={lesson.data.title}
-              >
-                <small>Lesson {lessons.indexOf(lesson) + 1}</small>
-                <b>{lesson.data.title}</b>
-                <small lang="zh-Hans" class="tile-hanzi">
-                  {lesson.data.words.slice(0, 4).map((w) => w.hanzi.replace(/[？…]/g, '')).join(' · ')}
-                </small>
-                <small class="status" data-status hidden />
-              </a>
+              <a href={href(`/blog/${post.id}/`)}>{post.data.title}</a>
+              <small>{postDate(post.data.date)}</small>
             </li>
-          ))}
-        </ol>
-      </section>
-    ))
-  }
+          ))
+        }
+      </ul>
+      <a class="textbtn" href={href('/blog/')}>All posts</a>
+    </section>
+  </div>
+
+  <script>
+    import { getState, currentUser } from '../app/store';
+    import { href } from '../lib/paths';
+
+    const user = currentUser(getState());
+    if (user) {
+      const cta = document.querySelector<HTMLAnchorElement>('[data-home-cta]')!;
+      cta.href = href('/app/');
+      cta.textContent = 'Go to your dashboard';
+      document.querySelector<HTMLElement>('[data-home-note]')!.textContent = `Signed in as ${user.name}.`;
+    }
+  </script>
 </Base>

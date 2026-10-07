@@ -27,13 +27,17 @@ const quiz = quizOf(entry);
   title={lesson.title}
   description={`Mandarin lesson ${number}: ${lesson.goal} About five minutes.`}
   path={pathOf(entry)}
-  back={{ href: href(`/#${lesson.unit}-title`), label: 'Back' }}
+  nav="practice"
 >
   {lesson.draft && <p class="notice">Draft. This lesson is not published yet.</p>}
 
   <article data-lesson-page data-id={entry.id}>
     <header class="group">
-      <p class="kicker">Lesson {number} of {total}. {units[lesson.unit].name}</p>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href={href(`/practice/#${lesson.unit}-title`)}>Practice</a> <span aria-hidden="true">›</span>{' '}
+        {units[lesson.unit].name}
+      </nav>
+      <p class="kicker">Lesson {number} of {total}</p>
       <h1>{lesson.title}</h1>
       <p class="lead">{lesson.goal}</p>
       <p class="fine">About 5 minutes. {lesson.words.length} words and phrases.</p>
@@ -100,7 +104,7 @@ const quiz = quizOf(entry);
               Next: {next.data.title}
             </a>
           ) : (
-            <a class="btn block" href={href('/')}>
+            <a class="btn block" href={href('/practice/')}>
               Finish: back to all lessons
             </a>
           )

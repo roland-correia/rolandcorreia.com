@@ -43,8 +43,9 @@ if (dialog) {
     if (input) input.checked = true;
   }
 
-  document.querySelectorAll('[data-open-settings]').forEach((button) => {
-    button.addEventListener('click', () => dialog.showModal());
+  // The button is in the sidebar, which is drawn after this runs, so listen on the whole page.
+  document.addEventListener('click', (event) => {
+    if ((event.target as Element).closest?.('[data-open-settings]')) dialog.showModal();
   });
 
   dialog.addEventListener('change', (event) => {

@@ -1,0 +1,21 @@
+---
+// "Start" / "Carry on" / "Go round again": goes to the first practice lesson not yet done.
+// It links to lesson 1 until src/scripts/progress-bar.ts reads saved progress and updates it.
+import { pathOf, type Lesson } from '../lib/lessons';
+import { href } from '../lib/paths';
+
+interface Props {
+  lessons: Lesson[];
+  class?: string;
+}
+
+const { lessons, class: className = 'btn' } = Astro.props;
+const list = lessons.map((l) => ({ id: l.id, title: l.data.title, href: href(pathOf(l)) }));
+const first = list[0];
+---
+
+{first && <a class={className} data-start data-lessons={JSON.stringify(list)} href={first.href}>Start: {first.title}</a>}
+
+<script>
+  import '../scripts/progress-bar.ts';
+</script>
