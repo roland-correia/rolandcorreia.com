@@ -6,9 +6,9 @@ export const DESCRIPTION =
 // Where sets are listed. 'everyday' sets sit on the home page itself; the others
 // each have their own page, reached from a tile on the home page.
 export const groups = {
-  everyday: { name: 'Everyday life', path: '/' },
+  everyday: { name: 'Relationships and society', path: '/' },
   parenting: { name: 'Parenting', path: '/parenting/' },
-  work: { name: 'At work', path: '/work/' },
+  work: { name: 'Work and careers', path: '/work/' },
 } as const;
 
 export type GroupId = keyof typeof groups;
@@ -17,11 +17,11 @@ export type GroupId = keyof typeof groups;
 // `live: false` shows as "coming later" and has no page yet.
 export const sets = {
   consent: {
-    name: 'Consent',
+    name: 'Consent and healthy relationships',
     group: 'everyday',
-    blurb: 'Touch, texting, photos, privacy, parties, pressure and changing your mind',
+    blurb: 'Bodily autonomy, sexual consent and respect, in person and online',
     intro:
-      'Consent is for everyone. Anyone can misread a moment, and anyone can have their own boundary ignored. These scenarios put you on both sides.',
+      'Consent is the foundation of every healthy relationship, from a hug to sex. This module looks at bodily autonomy, sexual consent, digital boundaries, alcohol and power, from both sides: respecting other people\'s boundaries, and holding your own.',
     note: 'Some scenarios are about dating, sex and alcohol. Nothing is described in detail. Written for adults.',
     rules: [
       'Consent is a free choice. A yes given under pressure, fear or obligation is not one.',
@@ -33,11 +33,11 @@ export const sets = {
     live: true,
   },
   racism: {
-    name: 'Racism',
+    name: 'Race, respect and equality',
     group: 'everyday',
-    blurb: 'Remarks, jokes, skin colour, and what to do when you see it',
+    blurb: 'Recognising racism and colourism, and responding with confidence',
     intro:
-      'Racism is not only shouting in the street. It is also the joke in the group chat, the comment about skin tone and the CV put to one side. These scenarios put you in three positions: the person who sees it, the person who did it, and the person it happens to.',
+      'Racism ranges from open abuse to the quiet assumptions that shape who is trusted, hired and believed. This module builds the confidence to recognise it, respond to it and take responsibility when you get it wrong, as a bystander, as the person who caused harm, and as the person it happens to.',
     note: 'Describes racist remarks and behaviour, online and in person. No slurs are repeated. Written for adults.',
     rules: [
       'Impact matters more than intent. "I didn\'t mean it" does not undo how it landed.',
@@ -50,11 +50,11 @@ export const sets = {
     live: true,
   },
   'adult-content': {
-    name: 'Porn and real life',
+    name: 'Pornography and healthy sexuality',
     group: 'everyday',
-    blurb: 'Children seeing it early, habits, expectations and relationships',
+    blurb: 'How porn shapes expectations, and how to keep a healthy perspective',
     intro:
-      'Most people will see porn, and many see it before they are ready. These scenarios are about what it can do to expectations, habits and relationships, and what helps.',
+      'Most people encounter pornography, and many do before they are ready for it. This module takes a frank, non-judgemental look at how it can shape expectations, habits and relationships, how to protect children, and how to keep a healthy perspective on sex.',
     note: 'About pornography, including children coming across it. Nothing is described in detail. Written for adults.',
     rules: [
       'Porn is a performance made to be watched. It is not a guide to sex, bodies or what people enjoy.',
@@ -66,11 +66,11 @@ export const sets = {
     live: true,
   },
   'parent-newborn': {
-    name: 'Newborns: 0 to 3 months',
+    name: 'The early weeks: 0 to 3 months',
     group: 'parenting',
-    blurb: 'Crying, safer sleep, fevers, bath time, bonding and check-ups',
+    blurb: 'Safety, bonding and recovery in the first months',
     intro:
-      'The first weeks are the steepest learning curve most people ever face, on the least sleep. These scenarios cover the moments that frighten new parents most, and what keeps a newborn safe.',
+      'The first weeks are the steepest learning curve most parents ever face, on the least sleep. This module covers what keeps a newborn safe, how bonding really happens, and why a parent\'s own wellbeing matters from day one.',
     note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
     rules: [
       'Crying is normal, and it can be overwhelming. It is always OK to put your baby down safely and step away for a few minutes.',
@@ -83,11 +83,11 @@ export const sets = {
     live: true,
   },
   'parent-baby': {
-    name: 'Babies: 3 to 12 months',
+    name: 'Infancy: 3 to 12 months',
     group: 'parenting',
-    blurb: 'Choking, falls, car seats, crawling, starting solids and attention',
+    blurb: 'Safety, connection and development as your baby grows',
     intro:
-      'Babies start moving, eating and noticing everything. Most of what goes wrong at this age is an accident that a small habit would have prevented, and most of what goes right is ordinary time together.',
+      'In the first year babies begin to move, eat and explore. This module covers preventing the accidents that are most common at this age, building a secure attachment, and supporting development without comparing your baby to others.',
     note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
     rules: [
       'Cut small round foods, such as grapes and cherry tomatoes, into quarters. Never leave a baby alone while eating.',
@@ -99,11 +99,11 @@ export const sets = {
     live: true,
   },
   'parent-toddler': {
-    name: 'Toddlers: 1 to 3 years',
+    name: 'The toddler years: 1 to 3',
     group: 'parenting',
-    blurb: 'Tantrums, fears, talking, sharing, wandering off and water',
+    blurb: 'Big emotions, boundaries and early independence',
     intro:
-      'Toddlers have big feelings and very little control over them. Tantrums are not bad behaviour or bad parenting. They are a brain that is still being built. These scenarios are about staying calm and safe while it happens.',
+      'Toddlers feel everything intensely, with very little ability to manage it yet. This module is about staying calm, setting boundaries with warmth, keeping a newly mobile child safe, and supporting the first steps towards independence.',
     note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
     rules: [
       'A tantrum is a feeling too big to handle, not a plan. Stay calm, keep them safe, and wait it out.',
@@ -115,11 +115,11 @@ export const sets = {
     live: true,
   },
   'parent-preschool': {
-    name: 'Pre-schoolers: 3 to 5 years',
+    name: 'The pre-school years: 3 to 5',
     group: 'parenting',
-    blurb: 'Getting lost, roads, body safety, anger, honesty and loss',
+    blurb: 'Curiosity, honesty, body safety and the first big changes',
     intro:
-      'Pre-schoolers ask everything, out loud, in public. How you answer now teaches them which subjects are safe to bring to you, which matters far more later on.',
+      'Pre-school children are curious about everything, and they ask out loud. This module covers answering honestly, teaching body safety and road sense, guiding behaviour, and helping children through change and loss.',
     note: 'General guidance, not professional advice. If you are worried about your child, talk to your GP or health visitor.',
     rules: [
       'Answer questions simply and truthfully, at their level. "I don\'t know, let\'s find out" is a good answer.',
@@ -131,11 +131,11 @@ export const sets = {
     live: true,
   },
   'parent-school': {
-    name: 'Primary school: 5 to 11 years',
+    name: 'The primary years: 5 to 11',
     group: 'parenting',
-    blurb: 'Bullying, worries, home alone, sleepovers, money and praise',
+    blurb: 'Friendships, learning, independence and character',
     intro:
-      'At school age, much of your child\'s life happens out of your sight. Your job shifts towards being the person they tell. These scenarios are about listening first and acting well.',
+      'In the primary years, more of a child\'s life happens out of your sight. This module covers friendships and bullying, learning differences, online safety, growing independence, and building character through responsibility and the right kind of praise.',
     note: 'General guidance, not professional advice. If you are worried about your child\'s safety or development, talk to their school or your GP.',
     rules: [
       'Listen to the whole story before you react. A calm reaction is what makes them tell you next time.',
@@ -147,11 +147,11 @@ export const sets = {
     live: true,
   },
   'parent-teen': {
-    name: 'Teenagers: 11 to 18 years',
+    name: 'Adolescence: 11 to 18',
     group: 'parenting',
-    blurb: 'Parties, lifts, mental health, heartbreak, results and their future',
+    blurb: 'Independence, identity, wellbeing and the road to adulthood',
     intro:
-      'Teenagers need more independence and more support at the same time. The connection you keep through the hard conversations is what keeps them safe when you are not there.',
+      'Adolescents need more independence and more support at the same time. This module covers risk and safety, mental health and identity, setbacks and choices about the future, and keeping a relationship strong enough to carry the hard conversations.',
     note: 'General guidance, not professional advice. If your teenager is at risk of harm, call 999. For worries about their mental health, talk to your GP.',
     rules: [
       'Stay the person they can call. "Ring me, any time, and I will come. No lecture tonight."',
@@ -165,7 +165,7 @@ export const sets = {
   'parent-adoption': {
     name: 'Adoption, fostering and kinship care',
     group: 'parenting',
-    blurb: 'For any age: their story, birth family, trauma and belonging',
+    blurb: 'Identity, belonging and healing, at any age',
     intro:
       'Children who join a family through adoption, fostering or kinship care have the same needs as any child, and some extra ones. Many have lived through loss or trauma before they reached you. These scenarios are about honesty, patience and belonging.',
     note: 'General guidance, not professional advice. Your adoption agency, fostering service or local authority can offer support, and many families are entitled to it.',
@@ -179,11 +179,11 @@ export const sets = {
     live: true,
   },
   'parent-you': {
-    name: 'Looking after yourself',
+    name: 'Parental wellbeing',
     group: 'parenting',
-    blurb: 'For any age: help, rows, co-parenting, mistakes and comparison',
+    blurb: 'Support, repair and co-parenting, at any age',
     intro:
-      'Children do best when the adults looking after them are coping. These scenarios are about you: asking for help, repairing after a bad moment, and parenting alongside someone else, or on your own.',
+      'Children do best when the adults caring for them are coping. This module is about the parent: accepting support, repairing after difficult moments, managing conflict and co-parenting, and letting go of comparison.',
     note: 'General guidance, not professional advice. If you are struggling to cope, talk to your GP, or call Samaritans on 116 123 at any time.',
     rules: [
       'Accepting help is part of parenting well, not a sign that you are failing.',
@@ -195,11 +195,11 @@ export const sets = {
     live: true,
   },
   interview: {
-    name: 'Interview questions',
+    name: 'Interview skills',
     group: 'work',
-    blurb: 'For any role: the common questions, and what they are really asking',
+    blurb: 'What common questions are really asking, and how to answer well',
     intro:
-      'Interview questions often mean more than they say. Each of these gives you a common question and four ways to answer it, then explains what the interviewer is listening for.',
+      'Interview questions often mean more than they say. This module takes the questions asked in almost every interview, compares ways of answering them, and explains what the interviewer is listening for, for any role.',
     note: 'Practice only. Interviewers differ, so use the reasons as a guide and put the answers in your own words, with your own examples.',
     rules: [
       'Most questions are asking one thing: can we rely on you to do this job alongside other people?',
@@ -212,11 +212,11 @@ export const sets = {
     live: true,
   },
   administrator: {
-    name: 'Administrator',
+    name: 'Office and administration',
     group: 'work',
-    blurb: 'Confidentiality, priorities, people and asking for what you need',
+    blurb: 'Confidentiality, prioritising, professionalism and self-advocacy',
     intro:
-      'Practice for the situational judgement questions used in admin and office job applications. Real tests rarely explain what they are looking for. This one does.',
+      'Preparation for the situational judgement tests used in office and administrative recruitment. This module covers confidentiality, prioritising, professional relationships and asking for support, and explains what employers are looking for, which real tests rarely do.',
     note: 'Practice only. Every employer scores these tests in its own way, so use the reasons here as a guide, not a mark scheme.',
     rules: [
       'Tell people early. A problem shared at 10am is easier to fix than one found at 5pm.',
@@ -231,9 +231,9 @@ export const sets = {
   'customer-service': {
     name: 'Customer service',
     group: 'work',
-    blurb: 'Complaints, policies, queues and not knowing the answer',
+    blurb: 'Handling complaints, policies and pressure professionally',
     intro:
-      'Practice for the situational judgement questions used in retail, call centre and front-of-house job applications. Each answer comes with the reason an employer would give.',
+      'Preparation for the situational judgement tests used in retail, call centre and front-of-house recruitment. This module covers complaints, policies, pressure and honesty with customers, with the reasoning an employer would give.',
     note: 'Practice only. Every employer has its own policies, so use the reasons here as a guide, not a mark scheme.',
     rules: [
       'Listen before you fix. An upset customer who feels heard is halfway to calm.',
@@ -244,8 +244,8 @@ export const sets = {
     ],
     live: true,
   },
-  'care-support': { name: 'Care and support', group: 'work', blurb: 'Coming later', live: false },
-  'team-leader': { name: 'Team leader', group: 'work', blurb: 'Coming later', live: false },
+  'care-support': { name: 'Health and social care', group: 'work', blurb: 'Coming later', live: false },
+  'team-leader': { name: 'Leadership and management', group: 'work', blurb: 'Coming later', live: false },
 } as const;
 
 export type SetId = keyof typeof sets;
@@ -255,68 +255,68 @@ export type SetId = keyof typeof sets;
 // categories must name one of them (checked in src/content.config.ts).
 export const categories: Partial<Record<SetId, Record<string, { name: string; blurb: string }>>> = {
   consent: {
-    touch: { name: 'Everyday touch', blurb: 'Hugs, play, offering help and children' },
-    privacy: { name: 'Privacy, photos and messages', blurb: 'What is yours to see, share or send' },
-    texting: { name: 'Texting and crushes', blurb: 'Asking, waiting, mixed signals and friends for now' },
-    pressure: { name: 'Pressure and power', blurb: 'When saying no is made hard' },
-    nights: { name: 'Parties, clubs and nights out', blurb: 'Dancing, drinks, crowds, sleepovers and looking out for people' },
-    intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
+    touch: { name: 'Bodily autonomy', blurb: 'Everyone decides who touches them, and how' },
+    privacy: { name: 'Privacy and digital consent', blurb: 'Images, messages and information belong to the person they are about' },
+    texting: { name: 'Dating and digital communication', blurb: 'Interest, rejection and boundaries in modern dating' },
+    pressure: { name: 'Coercion and power', blurb: 'When saying no is made difficult' },
+    nights: { name: 'Alcohol, nightlife and bystander action', blurb: 'Capacity, intoxication and looking out for others' },
+    intimacy: { name: 'Sexual consent', blurb: 'Agreement that is freely given, specific and ongoing' },
   },
   'parent-newborn': {
-    safety: { name: 'Health and safety', blurb: 'Crying, safer sleep, illness, bath time and visitors' },
-    bonding: { name: 'Bonding and feelings', blurb: 'Your mood, your bond with the baby, and your partner' },
-    care: { name: 'Feeding and everyday care', blurb: 'Feeding choices and health checks' },
+    safety: { name: 'Health and safety', blurb: 'Safer sleep, illness and everyday risks in the first weeks' },
+    bonding: { name: 'Bonding and parental wellbeing', blurb: 'How attachment grows, and how both parents are coping' },
+    care: { name: 'Feeding and health checks', blurb: 'Feeding choices, vaccinations and reviews' },
   },
   'parent-baby': {
-    safety: { name: 'Safety and awareness', blurb: 'Choking, falls, car seats, crawling and hot drinks' },
-    connection: { name: 'Connection and feelings', blurb: 'Attention, goodbyes and wariness of strangers' },
-    growing: { name: 'Milestones and development', blurb: 'Moving, starting solids and comparing babies' },
+    safety: { name: 'Safety and safeguarding', blurb: 'Preventing the accidents most common in the first year' },
+    connection: { name: 'Attachment and connection', blurb: 'Attention, separation and trust' },
+    growing: { name: 'Development and milestones', blurb: 'Movement, feeding and the wide range of normal' },
   },
   'parent-toddler': {
-    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
-    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
-    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
-    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+    safety: { name: 'Safety and safeguarding', blurb: 'Protecting them, and recognising risk early' },
+    feelings: { name: 'Emotional wellbeing', blurb: 'Understanding feelings, and support through hard moments' },
+    growing: { name: 'Development and milestones', blurb: 'Growth, firsts and the gradual steps to independence' },
+    values: { name: 'Behaviour, values and character', blurb: 'Kindness, honesty and responsibility' },
   },
   'parent-preschool': {
-    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
-    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
-    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
-    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+    safety: { name: 'Safety and safeguarding', blurb: 'Protecting them, and recognising risk early' },
+    feelings: { name: 'Emotional wellbeing', blurb: 'Understanding feelings, and support through hard moments' },
+    growing: { name: 'Development and milestones', blurb: 'Growth, firsts and the gradual steps to independence' },
+    values: { name: 'Behaviour, values and character', blurb: 'Kindness, honesty and responsibility' },
   },
   'parent-school': {
-    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
-    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
-    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
-    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+    safety: { name: 'Safety and safeguarding', blurb: 'Protecting them, and recognising risk early' },
+    feelings: { name: 'Emotional wellbeing', blurb: 'Understanding feelings, and support through hard moments' },
+    growing: { name: 'Development and milestones', blurb: 'Growth, firsts and the gradual steps to independence' },
+    values: { name: 'Behaviour, values and character', blurb: 'Kindness, honesty and responsibility' },
   },
   'parent-teen': {
-    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
-    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
-    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
-    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+    safety: { name: 'Safety and safeguarding', blurb: 'Protecting them, and recognising risk early' },
+    feelings: { name: 'Emotional wellbeing', blurb: 'Understanding feelings, and support through hard moments' },
+    growing: { name: 'Development and milestones', blurb: 'Growth, firsts and the gradual steps to independence' },
+    values: { name: 'Behaviour, values and character', blurb: 'Kindness, honesty and responsibility' },
   },
   interview: {
-    opening: { name: 'About you', blurb: 'The questions most interviews start with' },
-    examples: { name: 'Tell me about a time', blurb: 'Questions that want a real example' },
-    tricky: { name: 'Tricky moments', blurb: 'Blanks, gaps, adjustments and your own questions' },
+    opening: { name: 'Opening questions', blurb: 'Motivation, self-awareness and first impressions' },
+    examples: { name: 'Competency questions', blurb: 'Evidence from real experience' },
+    tricky: { name: 'Challenging moments', blurb: 'Pressure, gaps and adjustments' },
   },
   administrator: {
-    trust: { name: 'Trust and confidentiality', blurb: 'Private information, security and honesty' },
-    priorities: { name: 'Priorities and instructions', blurb: 'Deadlines, clashes and unclear requests' },
-    people: { name: 'Working with people', blurb: 'Upset visitors, gossip and feedback' },
-    asking: { name: 'Asking for what you need', blurb: 'Help, workload and adjustments' },
+    trust: { name: 'Confidentiality and integrity', blurb: 'Information, security and honesty' },
+    priorities: { name: 'Prioritising and planning', blurb: 'Competing demands and unclear instructions' },
+    people: { name: 'Professional relationships', blurb: 'Difficult conversations, discretion and feedback' },
+    asking: { name: 'Self-advocacy and support', blurb: 'Asking for training, capacity and adjustments' },
   },
   racism: {
-    online: { name: 'Social media and group chats', blurb: 'Memes, comments, old posts and abuse in your inbox' },
-    everyday: { name: 'Out and about', blurb: 'What you see, and what you say, in public' },
-    family: { name: 'Family and home', blurb: 'Relatives, children and comments about skin colour' },
-    work: { name: 'At work', blurb: 'Customers, colleagues, names and who gets a chance' },
+    online: { name: 'Online abuse and digital spaces', blurb: 'Social media, group chats and what you share' },
+    everyday: { name: 'Everyday racism', blurb: 'Public spaces, assumptions and casual remarks' },
+    family: { name: 'Family, children and colourism', blurb: 'Prejudice close to home, and what children learn from it' },
+    work: { name: 'Discrimination at work', blurb: 'Fair treatment of colleagues, customers and candidates' },
   },
   'adult-content': {
-    children: { name: 'Children and teenagers', blurb: 'First phones, what they see, and what to say' },
-    yourself: { name: 'Your own viewing', blurb: 'Habits, expectations, where it comes from and who agreed to it' },
-    relationships: { name: 'Relationships', blurb: 'What the screen brings into a relationship' },
+    children: { name: 'Children and young people', blurb: 'Protection, early exposure and honest conversations' },
+    yourself: { name: 'Personal use and wellbeing', blurb: 'Habits, expectations, ethics and consent on screen' },
+    relationships: { name: 'Intimacy and relationships', blurb: 'Communication, trust and shared decisions' },
   },
 };
 
