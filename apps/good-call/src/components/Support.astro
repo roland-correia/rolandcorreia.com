@@ -1,8 +1,8 @@
 ---
 // Where to get help. Shown with the sets that can bring things up for the reader.
 // Links only: each service keeps its own contact details current.
-// A set with no entry here shows nothing.
-import type { SetId } from '../lib/site';
+// A set with no entry here shows its group's entry, if there is one, or nothing.
+import { sets, type SetId, type GroupId } from '../lib/site';
 
 interface Props {
   set: SetId;
@@ -135,7 +135,67 @@ const support: Partial<Record<SetId, { summary: string; lead: string; services: 
   },
 };
 
-const entry = support[Astro.props.set];
+// Every parenting module shares one list.
+const groupSupport: Partial<Record<GroupId, { summary: string; lead: string; services: Service[] }>> = {
+  parenting: {
+    summary: 'Where to get help and advice',
+    lead: 'These UK services are free to use. For health worries call NHS 111. In an emergency, call 999.',
+    services: [
+      {
+        name: 'NHS 111',
+        detail: 'Urgent health advice for you or your child, day or night, online or by phone.',
+        url: 'https://111.nhs.uk/',
+      },
+      {
+        name: 'The Lullaby Trust',
+        detail: 'Safer sleep advice for babies, with a baby safety helpline.',
+        url: 'https://www.lullabytrust.org.uk/',
+      },
+      {
+        name: 'ICON',
+        detail: 'Help for coping with a crying baby.',
+        url: 'https://iconcope.org/',
+      },
+      {
+        name: 'PANDAS',
+        detail: 'Support for parents with depression or anxiety before or after a birth, including partners.',
+        url: 'https://pandasfoundation.org.uk/',
+      },
+      {
+        name: 'Family Lives',
+        detail: 'A free, confidential helpline for any parenting worry, at any age.',
+        url: 'https://www.familylives.org.uk/',
+      },
+      {
+        name: 'YoungMinds Parents Helpline',
+        detail: "Advice if you are worried about your child's mental health.",
+        url: 'https://www.youngminds.org.uk/parent/parents-helpline-and-webchat/',
+      },
+      {
+        name: 'CEOP',
+        detail: 'Report an adult who is contacting a child online in a worrying way.',
+        url: 'https://www.ceop.police.uk/Safety-Centre/',
+      },
+      {
+        name: 'Adoption UK',
+        detail: 'Support and community for adoptive families.',
+        url: 'https://www.adoptionuk.org/',
+      },
+      {
+        name: 'Kinship',
+        detail: 'Support for grandparents, relatives and friends raising a child.',
+        url: 'https://kinship.org.uk/',
+      },
+      {
+        name: 'Gingerbread',
+        detail: 'Advice and support for single parents.',
+        url: 'https://www.gingerbread.org.uk/',
+      },
+    ],
+  },
+};
+
+const entry = support[Astro.props.set] ?? groupSupport[sets[Astro.props.set].group];
 ---
 
 {

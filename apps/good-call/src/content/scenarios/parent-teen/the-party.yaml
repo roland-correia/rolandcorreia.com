@@ -1,0 +1,39 @@
+set: parent-teen
+order: 1
+title: Everyone's going
+topic: Parties and alcohol
+draft: false
+
+situation: |
+  Your fifteen-year-old, Chloe, asks whether she can go to a friend's party on Saturday. You know there is likely to be alcohol there, and the friend's parents may not be home.
+
+question: What is the best call?
+
+options:
+  - text: Say no, and tell her there is nothing to discuss.
+    call: okay
+    why: >-
+      You are entitled to say no, and sometimes that is the right answer. But a flat no with no conversation
+      can lead teenagers to go anyway, without telling you. That is when they are least safe.
+
+  - text: Talk it through. Find out who will be there and whether an adult will be home, agree a time and a pick-up, and promise, "If anything goes wrong, call me and I'll come. No lecture tonight."
+    call: best
+    why: >-
+      You are making a decision with real information, and keeping the door open. The promise of a pick-up
+      with no immediate telling-off is one of the most protective things a parent can offer a teenager.
+
+  - text: Let her go, and give her some drinks to take so she knows what she is drinking.
+    call: risky
+    why: >-
+      The Chief Medical Officers advise that an alcohol-free childhood is best. Supplying alcohol can also make
+      it seem approved. If she does drink, the pick-up plan matters more than what she takes.
+
+  - text: Let her go, and secretly track her phone.
+    call: okay
+    why: >-
+      Wanting to know she is safe is natural, and many families agree to location sharing. But doing it
+      secretly can damage trust badly if she finds out. Agree it with her openly, as part of the deal.
+
+principle: >-
+  Be the person your teenager can call. Make decisions with information, agree a plan, and offer a pick-up
+  any time, with the lecture saved for later, if at all.

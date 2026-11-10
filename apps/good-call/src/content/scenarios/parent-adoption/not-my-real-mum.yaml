@@ -1,0 +1,43 @@
+set: parent-adoption
+order: 2
+title: "You're not my real mum!"
+topic: In the middle of a row
+draft: false
+
+situation: |
+  You have fostered, and now adopted, eleven-year-old Tyler. You tell him he cannot go out until his homework is done. He shouts, "You can't tell me what to do. You're not my real mum!" and slams his bedroom door.
+
+  It hits you hard.
+
+question: What is the best call?
+
+options:
+  - text: Shout back, "After everything I've done for you!"
+    call: risky
+    why: >-
+      Your hurt is completely understandable. But reacting this way tells him that his words worked, and that
+      his place in the family depends on gratitude. He needs to see that you are not going anywhere.
+
+  - text: >-
+      Give him some space. Later, calmly: "I am your mum, and I'm not going anywhere. Your birth mum is real
+      too. The homework rule still stands."
+    call: best
+    why: >-
+      You have held the boundary and the relationship at the same time. Children who have lost parents before
+      often test whether this family will last. Staying calm and constant is the answer to that test.
+
+  - text: Let him go out, to keep the peace.
+    call: risky
+    why: >-
+      It ends the row, but it teaches him that this phrase is a way out of rules. It can also make him feel
+      that you are less his parent, which is the very fear behind what he said.
+
+  - text: Tell him he should be grateful.
+    call: risky
+    why: >-
+      No child should have to be grateful for being cared for. Asking for gratitude can confirm his fear that
+      he has to earn his place, which makes him feel less secure, not more.
+
+principle: >-
+  "You're not my real parent" is usually a test of whether you will stay, not a statement of fact. Stay calm,
+  hold the boundary, and tell them you are their parent and not going anywhere.

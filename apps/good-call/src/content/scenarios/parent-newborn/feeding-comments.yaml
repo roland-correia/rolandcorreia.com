@@ -1,0 +1,41 @@
+set: parent-newborn
+order: 4
+title: "Breast is best, you know"
+topic: Feeding choices
+draft: false
+
+situation: |
+  Breastfeeding has been painful and stressful for weeks, and your baby, Isla, has not been gaining much weight. With your midwife's support, you have moved to formula. Isla is feeding well and you finally feel calmer.
+
+  At a family lunch your aunt watches you make up a bottle and says, "Breast is best, you know. Did you give up?"
+
+question: What is the best call for you?
+
+options:
+  - text: Explain every detail of what went wrong, so she understands.
+    call: okay
+    why: >-
+      You may want her to understand, and that is fair. But you do not owe anyone a defence of how you feed
+      your baby. A long justification can leave you feeling as if you did something wrong. You did not.
+
+  - text: Say, calmly, "Isla is fed, growing and happy, and this is what works for us." Then change the subject.
+    call: best
+    why: >-
+      It is true, it is enough, and it closes the topic. The decision was made with your midwife, for your
+      baby. A fed baby and a parent who is coping are what matter.
+
+  - text: Go home and try to start breastfeeding again so that nobody can criticise you.
+    call: risky
+    why: >-
+      Changing a decision that is working, because of one comment, puts other people's opinions ahead of you
+      and Isla. If you do want to try again, talk to your health visitor, but do it for yourself.
+
+  - text: Snap back at her and leave the lunch.
+    call: okay
+    why: >-
+      Your hurt is completely understandable. New parents are tired and raw, and her comment was unkind. But
+      a short, calm reply protects you better than a row you will replay all night.
+
+principle: >-
+  A fed baby is the goal. Breast, bottle or both, how you feed your baby is your decision, made with your
+  midwife or health visitor. You do not have to justify it to anyone.

@@ -1,0 +1,41 @@
+set: parent-baby
+order: 3
+title: It's only around the corner
+topic: Car seats
+draft: false
+
+situation: |
+  You are at your sister's house and need to pop to the shop two minutes away. Your car seat is in your partner's car. Your sister says, "Just hold him on your lap, it's only around the corner."
+
+  Your son Leo is eight months old.
+
+question: What is the best call?
+
+options:
+  - text: Hold him on your lap. It is a short, slow drive.
+    call: risky
+    why: >-
+      In a crash, even at low speed, a baby on a lap is thrown forward with a force no adult can hold. Most
+      crashes happen close to home. In the UK, children must use a suitable car seat until they are 12 or 135cm tall.
+
+  - text: Walk to the shop with him in the pram or a sling, or wait until the car seat is back.
+    call: best
+    why: >-
+      There is always another way to make a two-minute trip. A walk, a wait or a borrowed, properly fitted
+      seat is a small inconvenience next to the risk.
+
+  - text: Strap him in with the adult seat belt around both of you.
+    call: risky
+    why: >-
+      A seat belt around an adult and a baby together is more dangerous, not less. In a crash the adult's
+      weight is pressed into the baby by the belt. Babies need their own seat, fitted for their size.
+
+  - text: Borrow your sister's old car seat from the loft and use it.
+    call: okay
+    why: >-
+      A borrowed seat can be fine, but only if it fits your car and your baby's size, has all its parts and
+      instructions, and you know it has never been in a crash. If you cannot be sure, walk instead.
+
+principle: >-
+  Every journey, however short, in a properly fitted car seat. A baby can never be held safely in a car. If
+  you do not have a seat, change the plan, not the rule.

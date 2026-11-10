@@ -1,0 +1,39 @@
+set: parent-baby
+order: 1
+title: Just a few grapes
+topic: Choking
+draft: false
+
+situation: |
+  Your daughter Rosie is nine months old and loves finger food. Her grandad, who is looking after her for the afternoon, puts a handful of whole grapes on her high-chair tray. "She'll love these," he says, and goes to make a cup of tea.
+
+question: What is the best call?
+
+options:
+  - text: Leave it. Grandad raised three children and knows what he is doing.
+    call: risky
+    why: >-
+      Advice has changed since he was a parent. Whole grapes are just the right size and shape to block a
+      small child's airway. It is not about his experience. It is about how food is cut.
+
+  - text: Swap them for grapes cut into quarters, lengthways, and ask Grandad to stay with her while she eats.
+    call: best
+    why: >-
+      The NHS advises cutting small round foods, like grapes and cherry tomatoes, into quarters, and never
+      leaving a baby alone while eating. You can explain it kindly. Most grandparents are glad to know.
+
+  - text: Cut them in half and let her carry on.
+    call: okay
+    why: >-
+      Halving is better than whole, but quarters lengthways is the guidance, because halves can still be the
+      right size to cause a blockage. And someone should still be sitting with her while she eats.
+
+  - text: Take the grapes away and stop giving her finger food until she is older.
+    call: okay
+    why: >-
+      Keeping her safe is the right instinct. But finger foods are an important part of learning to eat, and
+      she does not need to miss out. Safe preparation and supervision are the answer, not avoiding them.
+
+principle: >-
+  Cut small round foods into quarters, lengthways. Stay with babies and toddlers while they eat. Gagging is
+  normal while they learn. Choking is silent, which is why someone needs to be watching.

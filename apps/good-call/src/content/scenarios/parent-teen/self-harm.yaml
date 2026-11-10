@@ -1,0 +1,41 @@
+set: parent-teen
+order: 3
+title: The marks on her arm
+topic: Self-harm
+draft: false
+
+situation: |
+  You notice thin cuts on the inside of your thirteen-year-old daughter Mei's forearm when her sleeve rides up. She pulls it down quickly.
+
+  You feel sick with fear.
+
+question: What is the best call?
+
+options:
+  - text: Stay as calm as you can. Tell her you have noticed, that you are not angry, and that you want to understand. Then make an appointment with your GP.
+    call: best
+    why: >-
+      Self-harm is usually a way of coping with overwhelming feelings, not attention-seeking. A calm, loving
+      response makes her more likely to talk. Your GP can arrange support. If a wound is serious, or she is in danger, call 999.
+
+  - text: Demand that she promises never to do it again.
+    call: risky
+    why: >-
+      You want her safe, which is right. But a promise made under pressure tends to lead to hiding, not
+      stopping, because the feelings behind it are still there. She needs support, not a promise.
+
+  - text: Pretend you did not see, so she does not feel embarrassed.
+    call: risky
+    why: >-
+      It is tempting to avoid such a frightening subject. But she may already feel very alone. Saying nothing
+      can confirm that it cannot be talked about, at home or anywhere.
+
+  - text: Take away her phone and her bedroom door.
+    call: risky
+    why: >-
+      These feel protective, but they are often experienced as punishment, which increases shame and
+      secrecy. Focus on talking and getting professional support.
+
+principle: >-
+  If your child is self-harming, respond with calm and care, not panic or punishment. Tell them you want to
+  understand, and get support from your GP. The YoungMinds Parents Helpline can help you too.

@@ -1,0 +1,39 @@
+set: parent-school
+order: 4
+title: A friend from the game
+topic: Online safety
+draft: false
+
+situation: |
+  Your nine-year-old, Jayden, plays an online game. He mentions a new "friend" he met in the game who is "really nice", gives him free game currency, and has asked him for a photo and to keep their chats secret.
+
+question: What is the best call?
+
+options:
+  - text: Thank Jayden for telling you, stay calm, look at the messages with him, block the account, and report it to the game and to CEOP.
+    call: best
+    why: >-
+      Gifts, flattery, requests for photos and secrecy are classic signs of grooming. Reporting to CEOP, the
+      police's child protection service, means trained advisors can act. Praising Jayden for telling you keeps him telling you.
+
+  - text: Take away his console for good.
+    call: risky
+    why: >-
+      It removes the risk today, but Jayden learns that telling you means losing his game. Next time he may
+      not tell you. Keep the conversation open, and change the settings instead.
+
+  - text: Message the "friend" and threaten them.
+    call: risky
+    why: >-
+      It is natural to want to confront them, but it can tip them off, make them delete evidence, or move to
+      another child. Leave it to the people trained to deal with it.
+
+  - text: Tell Jayden to be careful, but let him keep chatting, because the person is probably fine.
+    call: risky
+    why: >-
+      An adult asking a child for photos and secrecy is not fine, however nice they seem. Children cannot be
+      expected to spot grooming. That is the adult's job.
+
+principle: >-
+  Secrets, gifts and requests for photos from an online "friend" are warning signs. Make "tell me, and you
+  will not be in trouble" your family rule, and report worrying contact to CEOP.

@@ -1,0 +1,41 @@
+set: parent-you
+order: 1
+title: "Let me know if you need anything"
+topic: Accepting help
+draft: false
+
+situation: |
+  You are a single dad with a six-week-old and a four-year-old. You have not slept properly in weeks, the house is a mess and you feel close to breaking. A friend texts, "Let me know if you need anything!"
+
+  You usually reply, "We're fine, thanks!"
+
+question: What is the best call for you?
+
+options:
+  - text: Reply, "We're fine, thanks!" You do not want to be a burden.
+    call: risky
+    why: >-
+      Most people who offer help mean it, and are glad to be asked. Saying you are fine when you are not keeps
+      you on your own, at a time when support makes a real difference for you and your children.
+
+  - text: Reply with something specific. "Actually, could you take my eldest to the park on Saturday morning so I can sleep?"
+    call: best
+    why: >-
+      A specific request is easy to say yes to, and it gets you what you need. Accepting help is part of
+      parenting well, not a sign of failing. Gingerbread also supports single parents.
+
+  - text: Reply, "That's kind, maybe some time."
+    call: okay
+    why: >-
+      It keeps the door open, but a vague answer rarely turns into real help. The person offering often does
+      not know what to do next. Think of one thing that would help this week, and ask for it.
+
+  - text: Keep going alone until things get easier.
+    call: risky
+    why: >-
+      Things may get easier, but exhaustion builds, and running on empty makes everything harder, including
+      staying calm with the children. If you feel unable to cope, talk to your GP or health visitor.
+
+principle: >-
+  Accepting help is part of parenting well. Say yes to offers, and turn them into something specific. If you
+  are struggling to cope, tell your GP or health visitor.

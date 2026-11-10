@@ -1,0 +1,39 @@
+set: parent-baby
+order: 2
+title: Off the bed
+topic: Falls and head bumps
+draft: false
+
+situation: |
+  You turn away for a second to grab a nappy, and your seven-month-old, Kofi, rolls off the bed. He lands on the carpet and screams. There is a small red mark on his forehead. After a few minutes of cuddles he calms down, feeds and seems himself.
+
+question: What is the best call?
+
+options:
+  - text: Keep a close eye on him for the next day. Call NHS 111 if anything worries you, and go to A&E or call 999 if he is hard to wake, vomits or has a fit.
+    call: best
+    why: >-
+      Crying straight away, then settling and feeding normally, is reassuring. Watching him carefully is
+      what the NHS advises for a minor bump. Knowing the warning signs means you will act quickly if anything changes.
+
+  - text: Rush to A&E straight away, even though he seems fine.
+    call: okay
+    why: >-
+      Being cautious is never wrong with a baby, and nobody will turn you away. But for a short fall with a
+      quick recovery, the advice is to watch at home and know when to go. If you are unsure, 111 can help you decide.
+
+  - text: Let him have a long nap and do not wake him to check on him.
+    call: risky
+    why: >-
+      Sleep is fine after a bump, but you need to be able to tell that he is just sleepy and not hard to wake.
+      Check on him as he sleeps, and wake him if you are worried. Unusual drowsiness is a warning sign.
+
+  - text: Feel too guilty to tell anyone, and say nothing.
+    call: risky
+    why: >-
+      Almost every parent has a moment like this. Guilt is understandable, but hiding it means nobody else
+      knows to watch him too. What matters now is noticing if anything changes, and preventing the next one.
+
+principle: >-
+  Babies roll and fall sooner than anyone expects. Change them on the floor, or keep a hand on them. After a
+  bump, watch them closely and know the signs that mean 111 or 999.

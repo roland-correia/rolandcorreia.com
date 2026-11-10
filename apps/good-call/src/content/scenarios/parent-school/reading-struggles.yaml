@@ -1,0 +1,41 @@
+set: parent-school
+order: 3
+title: Struggling to read
+topic: Learning differences
+draft: false
+
+situation: |
+  Your seven-year-old, Leo, is bright and chatty but is falling behind with reading. Homework ends in tears most nights. He has started saying, "I'm stupid." His teacher says he will "catch up".
+
+  Dyslexia runs in your family.
+
+question: What is the best call?
+
+options:
+  - text: Do an extra hour of reading practice every night until he improves.
+    call: okay
+    why: >-
+      Your commitment is clear, but more of what is already distressing him may make things worse. If he has
+      a learning difference, he may need a different approach, not just more practice. Find out first.
+
+  - text: Ask for a meeting with the school's SENCo, the special educational needs coordinator, and share your concerns and the family history.
+    call: best
+    why: >-
+      Every school has a SENCo whose job is exactly this. Raising it early, with specific worries, is far
+      better than waiting. Support works best when it starts young, and you are entitled to ask.
+
+  - text: Wait, as the teacher suggested.
+    call: okay
+    why: >-
+      The teacher may be right, and many children do catch up. But Leo is already calling himself stupid,
+      and there is a family history. Asking for a closer look costs nothing and could save years.
+
+  - text: Tell him he is just lazy and needs to try harder.
+    call: risky
+    why: >-
+      A child who is struggling and getting upset is very rarely lazy. Being told so confirms what he already
+      fears about himself. Tell him that brains learn in different ways, and you will find out what works for his.
+
+principle: >-
+  If your child is struggling to learn, trust your instinct and ask early. Every school has a SENCo. Tell
+  your child it is not their fault, and that you will find what works.

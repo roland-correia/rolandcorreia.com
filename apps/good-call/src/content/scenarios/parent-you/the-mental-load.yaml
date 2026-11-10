@@ -1,0 +1,41 @@
+set: parent-you
+order: 6
+title: Who remembers the jabs?
+topic: Sharing the load
+draft: false
+
+situation: |
+  You and your partner both work. Your partner does bath time and the school run, and says they do half the parenting. But you are the one who books the vaccinations, remembers the school forms, buys the birthday presents and notices when shoes are too small.
+
+  You are exhausted and starting to resent it.
+
+question: What is the best call?
+
+options:
+  - text: Keep doing it all, because it is quicker than explaining.
+    call: risky
+    why: >-
+      It may be quicker today, but resentment grows, and you will burn out. Your partner cannot share work
+      they cannot see. The thinking and planning is work too.
+
+  - text: Choose a calm moment, explain the invisible jobs, and agree to split whole areas, such as one of you owning health appointments and the other school admin, from start to finish.
+    call: best
+    why: >-
+      Naming the invisible work makes it visible. Owning a whole area, the remembering as well as the doing,
+      shares the load properly, instead of one person managing and the other helping.
+
+  - text: Stop doing some of it without saying anything, to see whether they notice.
+    call: okay
+    why: >-
+      It can make the point, but it risks a missed appointment or form, and the children pay the price. Say
+      what you need first.
+
+  - text: Bring it up in the middle of an argument about something else.
+    call: okay
+    why: >-
+      Your feelings are valid, but in the middle of a row it will sound like an attack, and your partner is
+      likely to defend themselves instead of listening. A calm, planned conversation works better.
+
+principle: >-
+  Parenting includes invisible work: remembering, planning and organising. Share it out loud, and split whole
+  areas from start to finish, so that one person is not managing while the other helps.

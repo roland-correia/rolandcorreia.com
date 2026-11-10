@@ -1,0 +1,39 @@
+set: parent-preschool
+order: 3
+title: The right words
+topic: Body safety
+draft: false
+
+situation: |
+  Your daughter Lily is three and a half. At bath time she asks what her private parts are called. In your family, people have always used cute nicknames, and saying the real words feels embarrassing.
+
+question: What is the best call?
+
+options:
+  - text: Teach her the correct names, such as vulva and vagina, in the same matter-of-fact way you would teach elbow or knee.
+    call: best
+    why: >-
+      Safeguarding experts recommend correct names, because a child who has the words can tell an adult
+      clearly if something is wrong. Saying them calmly also tells her that her body is nothing to be ashamed of.
+
+  - text: Use the family nickname. She is too young for the real words.
+    call: okay
+    why: >-
+      Many families use nicknames, and they are not harmful in themselves. But if a child ever needs to tell a
+      teacher or doctor that someone touched them, a nickname can be misunderstood. Teach the real words too.
+
+  - text: Tell her it is rude to talk about that, and change the subject.
+    call: risky
+    why: >-
+      This teaches her that her body is a secret subject. Children who feel they cannot talk about their bodies
+      are less likely to tell anyone if something happens that should not.
+
+  - text: Leave it to nursery or school to explain.
+    call: okay
+    why: >-
+      Schools do teach this, and that helps. But she asked you, and it is a chance to set the tone at home:
+      bodies are normal, and she can always ask. Keep it short and simple.
+
+principle: >-
+  Teach young children the correct names for their private parts, and that their body belongs to them. The
+  NSPCC's PANTS rules are a simple way to explain which secrets they should always tell.

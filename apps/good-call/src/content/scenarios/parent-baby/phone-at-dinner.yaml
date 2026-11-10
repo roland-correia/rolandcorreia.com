@@ -1,0 +1,39 @@
+set: parent-baby
+order: 4
+title: The phone in your hand
+topic: Talking and attention
+draft: false
+
+situation: |
+  Your ten-month-old, Maya, babbles and points at things all through her meals. You are tired, and you have got into the habit of scrolling your phone while she eats. You have noticed she now bangs the tray and shouts more to get your attention.
+
+question: What is the best call?
+
+options:
+  - text: Give her a tablet at mealtimes too, so you both have something to watch.
+    call: risky
+    why: >-
+      It solves the noise but removes what she is asking for: you. At this age, babies learn language and
+      connection from back-and-forth with a person. A screen cannot answer her pointing.
+
+  - text: Put the phone away for mealtimes, and talk back to her. Name what she points at, and answer her babble.
+    call: best
+    why: >-
+      This back-and-forth, sometimes called serve and return, is how babies' brains build language. It does
+      not need to be clever. "Yes, that's a spoon!" is exactly right. Her shouting is likely to calm down too.
+
+  - text: Feel guilty, and decide you are a bad parent.
+    call: okay
+    why: >-
+      Noticing the habit shows you care, and that is the important part. Guilt does not help either of you. A
+      small change at one regular moment, like meals, makes more difference than feeling bad.
+
+  - text: Tell her firmly to stop shouting at the table.
+    call: risky
+    why: >-
+      At ten months, shouting is how she gets your attention, because it works. Telling her off teaches her
+      little. Answering her pointing and babble gives her a better way to get what she wants.
+
+principle: >-
+  Babies learn to talk by being talked with. Ordinary moments, like meals, nappy changes and walks, are when
+  it happens. You do not need to be with them all the time, but when you are, be there.

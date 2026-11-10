@@ -1,0 +1,39 @@
+set: parent-preschool
+order: 5
+title: Where is Grandad?
+topic: Death and grief
+draft: false
+
+situation: |
+  Your father died last week. Your five-year-old, Amara, was close to him. She keeps asking when Grandad is coming back, and you do not know how to answer. You are grieving too.
+
+question: What is the best call?
+
+options:
+  - text: Tell her Grandad has gone to sleep for a very long time.
+    call: risky
+    why: >-
+      Young children take words literally. Saying "gone to sleep" can make them afraid of going to sleep, or
+      worried that others who sleep will not wake. It also leaves her waiting for him to wake up.
+
+  - text: Use clear, gentle words. "Grandad died. His body stopped working, and he can't come back. It's OK to feel sad, and I'm sad too."
+    call: best
+    why: >-
+      Clear words help young children understand what has happened, even though it is hard to say. Letting
+      her see that you are sad shows her that grief is normal and can be shared. She may ask the same questions many times.
+
+  - text: Avoid the subject so she does not get upset.
+    call: risky
+    why: >-
+      She already knows something is wrong. Silence leaves her to make sense of it alone, often with worse
+      ideas than the truth. Children grieve too, in short bursts, and need adults who will talk about it.
+
+  - text: Tell her Grandad has gone on a long trip.
+    call: risky
+    why: >-
+      It may feel gentler, but she will wait for him and may feel abandoned when he does not come back. When
+      she learns the truth, she may stop trusting what you tell her.
+
+principle: >-
+  Use clear words about death: "died", not "lost", "gone to sleep" or "gone away". Be honest, answer the same
+  questions as often as they are asked, and let children see that grief is shared.

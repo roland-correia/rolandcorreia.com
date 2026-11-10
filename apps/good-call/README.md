@@ -24,9 +24,9 @@ Stop it with `Ctrl+C`. `npm run dev` also shows **draft** scenarios.
 
 ## Add a scenario
 
-1. Copy a file in a folder under `src/content/scenarios/` (`consent/`, `racism/`, `adult-content/`,
-   `interview/`, `administrator/`, `customer-service/`) and rename it. The file name becomes the URL (`my-scenario.yaml` is
-   `/practice/consent/my-scenario/`).
+1. Copy a file in a folder under `src/content/scenarios/`. There is one folder per set, such as
+   `consent/`, `parent-toddler/` or `interview/`. Rename the copy: the file name becomes the URL
+   (`my-scenario.yaml` is `/practice/consent/my-scenario/`).
 2. Fill in the fields and leave `draft: true` while you work on it.
 3. Run `npm run dev` and answer it the way a visitor will. Check every option, not just the best one.
 4. Check any fact or law it mentions against the source. Then change `draft` to `false`.
@@ -53,12 +53,17 @@ The categories for each set are listed in `categories` in `src/lib/site.ts`. The
 the order on the page. To add one, add a line there and use its name in a scenario. A set with no
 categories is shown as one list.
 
-## Add a role
+## Add a set, a role or a parenting module
 
-1. Add the role to `sets` in `src/lib/site.ts` with `group: 'work'`, an `intro`, a `note`, its
-   `rules` and `live: true`. Roles marked `live: false` show on `/work/` as "Coming later".
+1. Add it to `sets` in `src/lib/site.ts` with a `group`, an `intro`, a `note`, its `rules` and
+   `live: true`. The group decides where it is listed: `everyday` on the home page, `parenting` on
+   `/parenting/`, `work` on `/work/`. Sets marked `live: false` show as "Coming later".
 2. Add its name to the `set` list in `src/content.config.ts`.
-3. Create `src/content/scenarios/<role>/` and add scenarios to it.
+3. Create `src/content/scenarios/<set>/` and add scenarios to it.
+
+The parenting modules (`parent-newborn` to `parent-teen`, then `parent-adoption` and `parent-you`)
+are listed on `/parenting/` in the order they are written in `site.ts`, and share one list of
+support links in `src/components/Support.astro`.
 
 ## How it is put together
 
@@ -66,9 +71,9 @@ categories is shown as one list.
 src/content.config.ts    the rules every scenario must follow (the schema)
 src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
 src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
-src/pages/               home, the role picker, a set, one scenario, about
+src/pages/               home, the parenting and work pages, a set, one scenario, about
 src/layouts/Base.astro   the page shell, share tags, reading settings and the footer (summary, disclaimer, copyright)
-src/components/          the wordmark, scenario tile, progress bar, settings dialog and support links
+src/components/          the wordmark, scenario and set tiles, progress bar, settings dialog and support links
 src/scripts/             scenario.ts (lock in an answer), progress.ts (saved answers), progress-bar.ts,
                          set-progress.ts, settings.ts
 src/styles/global.css    colours, type and layout, all in one place
