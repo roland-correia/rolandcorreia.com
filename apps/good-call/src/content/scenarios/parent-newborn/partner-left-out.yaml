@@ -1,0 +1,40 @@
+set: parent-newborn
+category: bonding
+order: 3
+title: What do I do?
+topic: The other parent
+draft: false
+
+situation: |
+  Your partner is breastfeeding your four-week-old, so most of the baby's care seems to happen with them. You go back to work, come home, and feel like a spare part. When you try to settle the baby, she cries, and your partner takes her back.
+
+question: What is the best call for you?
+
+options:
+  - text: Step back, since the baby seems to prefer your partner.
+    call: risky
+    why: >-
+      Babies settle most easily with whoever is most familiar, which is why stepping back makes it harder,
+      not easier. She needs time with you to get to know you. So do you.
+
+  - text: Take on regular parts of her care that are yours, such as bath time, nappy changes and skin-to-skin, and talk to your partner about how you are both feeling.
+    call: best
+    why: >-
+      Routines you own build your bond and give your partner a real break. Telling each other how you feel
+      prevents resentment on both sides. Partners can also get postnatal depression, so be honest about your mood.
+
+  - text: Say nothing and hope it changes as she gets older.
+    call: okay
+    why: >-
+      It often does get easier, especially as babies grow more sociable. But waiting can leave you feeling
+      shut out for months, and your partner may not know. Say how you feel, and ask for your own part.
+
+  - text: Insist on switching to bottles so you can do more of the feeds.
+    call: okay
+    why: >-
+      Sharing feeds can be a good choice, and some families do it with expressed milk or formula. But it is a
+      decision to make together, not to insist on. There are many other ways to care for her in the meantime.
+
+principle: >-
+  Both parents need their own time caring for the baby, and both need support. Take on regular parts of the
+  care, and talk to each other about how you are feeling.

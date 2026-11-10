@@ -1,5 +1,6 @@
 set: parent-teen
-order: 5
+category: growing
+order: 1
 title: I can't go in
 topic: School avoidance
 draft: false

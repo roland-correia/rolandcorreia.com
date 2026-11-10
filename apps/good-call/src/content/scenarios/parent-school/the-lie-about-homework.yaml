@@ -1,5 +1,6 @@
 set: parent-school
-order: 6
+category: values
+order: 2
 title: You said you'd done it
 topic: Trust and consequences
 draft: false

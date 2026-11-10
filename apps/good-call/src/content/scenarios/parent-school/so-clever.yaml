@@ -1,0 +1,40 @@
+set: parent-school
+category: values
+order: 4
+title: You're so clever
+topic: Praise that helps
+draft: false
+
+situation: |
+  Your eight-year-old, Toby, shows you a maths sheet with full marks. You usually say, "You're so clever!" You have noticed that he gets very upset and gives up quickly when work is hard.
+
+question: What is the best call?
+
+options:
+  - text: Keep saying he is clever. It builds his confidence.
+    call: okay
+    why: >-
+      Praise is good, and he should know you are proud. But praising only his cleverness can make him think
+      being clever is fixed, so finding something hard feels like proof he is not. That may be why he gives up.
+
+  - text: Praise his effort and approach. "You kept going on the tricky ones, and you checked your answers. That really paid off."
+    call: best
+    why: >-
+      Praising what he did, such as effort, strategies and not giving up, tells him that improving is in his
+      control. Children praised this way tend to try harder when things get difficult.
+
+  - text: Stop praising him, so he does not get big-headed.
+    call: risky
+    why: >-
+      Children need warmth and encouragement. Withholding praise can leave them feeling unnoticed. The answer
+      is to change what you praise, not to stop.
+
+  - text: Give him a reward every time he gets full marks.
+    call: okay
+    why: >-
+      Rewards can motivate, and celebrating is fine. But rewarding only perfect results may make him afraid of
+      anything less. Praise the effort, and celebrate progress as well as top marks.
+
+principle: >-
+  Praise what children do, such as effort, strategies and persistence, more than what they are. It helps them
+  keep going when things get hard.

@@ -1,0 +1,42 @@
+set: parent-toddler
+category: growing
+order: 2
+title: Only a few words
+topic: Speech and language
+draft: false
+
+situation: |
+  Your two-year-old, Oliver, uses only a handful of words, mostly pointing and grunting to get what he wants. His cousin, the same age, talks in short sentences. Your partner says, "Boys talk later. He'll get there."
+
+question: What is the best call?
+
+options:
+  - text: Wait. Your partner is probably right.
+    call: okay
+    why: >-
+      Many children do catch up, and there is a wide range. But if you are worried, it is always worth asking,
+      because speech and language support works best when it starts early. A check costs nothing.
+
+  - text: >-
+      Raise it at his 2-year review with the health visitor, or contact them now. In the meantime, talk to
+      him lots: name things, read together and give him time to answer.
+    call: best
+    why: >-
+      Health visitors check speech and language as part of development reviews, and can refer to speech and
+      language therapy if needed. Everyday chat and reading are the best things you can do at home.
+
+  - text: Stop giving him things until he says the word for them.
+    call: risky
+    why: >-
+      It can turn talking into a battle, and frustration can make speaking harder, not easier. Model the word
+      for him, "Milk? Here's your milk", and give him the chance to try, without making him earn it.
+
+  - text: Give him more screen time with educational programmes for talking.
+    call: okay
+    why: >-
+      Some programmes are harmless and can be fun. But children learn to talk mainly through back-and-forth
+      with people, not screens. Time talking and reading with you helps much more.
+
+principle: >-
+  Children learn to talk by being talked with. If you are worried about how your child is talking, ask your
+  health visitor early. Help starts sooner when someone asks.

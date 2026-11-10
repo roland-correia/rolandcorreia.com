@@ -1,5 +1,6 @@
 set: parent-toddler
-order: 2
+category: values
+order: 1
 title: He bit another child
 topic: Biting and hitting
 draft: false

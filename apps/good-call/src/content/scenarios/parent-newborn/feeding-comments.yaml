@@ -1,5 +1,6 @@
 set: parent-newborn
-order: 4
+category: care
+order: 1
 title: "Breast is best, you know"
 topic: Feeding choices
 draft: false

@@ -68,7 +68,7 @@ export const sets = {
   'parent-newborn': {
     name: 'Newborns: 0 to 3 months',
     group: 'parenting',
-    blurb: 'Crying, sleep, fevers, feeding and how you are feeling',
+    blurb: 'Crying, safer sleep, fevers, bath time, bonding and check-ups',
     intro:
       'The first weeks are the steepest learning curve most people ever face, on the least sleep. These scenarios cover the moments that frighten new parents most, and what keeps a newborn safe.',
     note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
@@ -85,7 +85,7 @@ export const sets = {
   'parent-baby': {
     name: 'Babies: 3 to 12 months',
     group: 'parenting',
-    blurb: 'Weaning, falls, car seats, childcare and attention',
+    blurb: 'Choking, falls, car seats, crawling, starting solids and attention',
     intro:
       'Babies start moving, eating and noticing everything. Most of what goes wrong at this age is an accident that a small habit would have prevented, and most of what goes right is ordinary time together.',
     note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
@@ -101,7 +101,7 @@ export const sets = {
   'parent-toddler': {
     name: 'Toddlers: 1 to 3 years',
     group: 'parenting',
-    blurb: 'Tantrums, biting, potty training, safety at home and a new sibling',
+    blurb: 'Tantrums, fears, talking, sharing, wandering off and water',
     intro:
       'Toddlers have big feelings and very little control over them. Tantrums are not bad behaviour or bad parenting. They are a brain that is still being built. These scenarios are about staying calm and safe while it happens.',
     note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
@@ -117,7 +117,7 @@ export const sets = {
   'parent-preschool': {
     name: 'Pre-schoolers: 3 to 5 years',
     group: 'parenting',
-    blurb: 'Questions, fibs, body safety, screens, starting school and loss',
+    blurb: 'Getting lost, roads, body safety, anger, honesty and loss',
     intro:
       'Pre-schoolers ask everything, out loud, in public. How you answer now teaches them which subjects are safe to bring to you, which matters far more later on.',
     note: 'General guidance, not professional advice. If you are worried about your child, talk to your GP or health visitor.',
@@ -133,7 +133,7 @@ export const sets = {
   'parent-school': {
     name: 'Primary school: 5 to 11 years',
     group: 'parenting',
-    blurb: 'Friendships, bullying, learning, online safety and puberty',
+    blurb: 'Bullying, worries, home alone, sleepovers, money and praise',
     intro:
       'At school age, much of your child\'s life happens out of your sight. Your job shifts towards being the person they tell. These scenarios are about listening first and acting well.',
     note: 'General guidance, not professional advice. If you are worried about your child\'s safety or development, talk to their school or your GP.',
@@ -149,7 +149,7 @@ export const sets = {
   'parent-teen': {
     name: 'Teenagers: 11 to 18 years',
     group: 'parenting',
-    blurb: 'Parties, privacy, mental health, identity and school pressure',
+    blurb: 'Parties, lifts, mental health, heartbreak, results and their future',
     intro:
       'Teenagers need more independence and more support at the same time. The connection you keep through the hard conversations is what keeps them safe when you are not there.',
     note: 'General guidance, not professional advice. If your teenager is at risk of harm, call 999. For worries about their mental health, talk to your GP.',
@@ -261,6 +261,40 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     pressure: { name: 'Pressure and power', blurb: 'When saying no is made hard' },
     nights: { name: 'Parties, clubs and nights out', blurb: 'Dancing, drinks, crowds, sleepovers and looking out for people' },
     intimacy: { name: 'Sex and intimacy', blurb: 'Checking in, sleep, conditions and changing your mind' },
+  },
+  'parent-newborn': {
+    safety: { name: 'Health and safety', blurb: 'Crying, safer sleep, illness, bath time and visitors' },
+    bonding: { name: 'Bonding and feelings', blurb: 'Your mood, your bond with the baby, and your partner' },
+    care: { name: 'Feeding and everyday care', blurb: 'Feeding choices and health checks' },
+  },
+  'parent-baby': {
+    safety: { name: 'Safety and awareness', blurb: 'Choking, falls, car seats, crawling and hot drinks' },
+    connection: { name: 'Connection and feelings', blurb: 'Attention, goodbyes and wariness of strangers' },
+    growing: { name: 'Milestones and development', blurb: 'Moving, starting solids and comparing babies' },
+  },
+  'parent-toddler': {
+    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
+    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
+    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
+    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+  },
+  'parent-preschool': {
+    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
+    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
+    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
+    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+  },
+  'parent-school': {
+    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
+    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
+    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
+    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
+  },
+  'parent-teen': {
+    safety: { name: 'Safety and awareness', blurb: 'Keeping them safe, and seeing danger before it happens' },
+    feelings: { name: 'Feelings and support', blurb: 'Big emotions, worries and being there for them' },
+    growing: { name: 'Milestones and growing up', blurb: 'Development, firsts and the steps towards independence' },
+    values: { name: 'Behaviour and values', blurb: 'Kindness, honesty, responsibility and how to respond' },
   },
   interview: {
     opening: { name: 'About you', blurb: 'The questions most interviews start with' },

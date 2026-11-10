@@ -1,5 +1,6 @@
 set: parent-teen
-order: 6
+category: values
+order: 1
 title: Their phone is right there
 topic: Privacy and trust
 draft: false

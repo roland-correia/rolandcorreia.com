@@ -1,5 +1,6 @@
 set: parent-school
-order: 4
+category: safety
+order: 1
 title: A friend from the game
 topic: Online safety
 draft: false

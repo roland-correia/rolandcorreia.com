@@ -1,0 +1,40 @@
+set: parent-school
+category: feelings
+order: 2
+title: Worrying at bedtime
+topic: Anxiety
+draft: false
+
+situation: |
+  Your eight-year-old, Nora, has started lying awake worrying. Tonight it is about whether you might die, whether a burglar could get in, and a test next week. She calls you back to her room again and again.
+
+question: What is the best call?
+
+options:
+  - text: Tell her not to be silly, there is nothing to worry about, and to go to sleep.
+    call: risky
+    why: >-
+      Her worries feel real, even if they are unlikely. Being told not to worry does not stop the worry. It
+      just tells her not to share it with you.
+
+  - text: Listen, and take the worries seriously. Set aside some "worry time" earlier in the evening to talk them through, and keep bedtime calm and predictable. Talk to her teacher or GP if it gets worse.
+    call: best
+    why: >-
+      Talking worries through before bed, instead of at lights-out, helps many children. Listening without
+      dismissing builds trust. If the anxiety grows or affects her day, school and the GP can help.
+
+  - text: Reassure her that nothing bad will ever happen to you or the family.
+    call: okay
+    why: >-
+      Reassurance is kind and she needs some. But promises you cannot keep can backfire, and they can teach
+      her she needs a guarantee to feel safe. "We are safe, and we look after each other" is honest and comforting.
+
+  - text: Let her stay up until she is too tired to worry.
+    call: okay
+    why: >-
+      It may work for a night, but tiredness makes anxiety worse over time. A calm routine and an earlier time
+      to talk work better.
+
+principle: >-
+  Children's worries feel real to them. Listen, do not dismiss, and make a time to talk before bed. If
+  anxiety starts to affect daily life, talk to school or your GP.
