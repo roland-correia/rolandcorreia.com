@@ -1,0 +1,39 @@
+set: parent-toddler
+order: 1
+title: The supermarket meltdown
+topic: Tantrums
+draft: false
+
+situation: |
+  You are at the checkout with a full trolley. Your two-year-old, Mia, wants the chocolate on the shelf by the till. You say no. She throws herself on the floor, screaming and kicking. People in the queue are staring.
+
+question: What is the best call?
+
+options:
+  - text: Give her the chocolate so that the screaming stops.
+    call: okay
+    why: >-
+      It works in the moment, and every parent has done it. But it teaches her that a big enough meltdown
+      changes a no into a yes, so the next one will be bigger. Try to hold the limit when you can.
+
+  - text: Stay calm, keep her safe, and say, "You really wanted the chocolate. It's a no today." Wait it out, and ignore the stares.
+    call: best
+    why: >-
+      A toddler in a tantrum cannot be reasoned with. Their feelings are bigger than their brain can manage.
+      Naming the feeling and keeping the limit, calmly, is what helps them learn. Most people staring have been there.
+
+  - text: Smack her hand to stop it.
+    call: risky
+    why: >-
+      Physical punishment is illegal in Scotland and Wales, and research consistently links it to worse
+      behaviour, not better. It also teaches her that big feelings are dealt with by hitting.
+
+  - text: Shout at her to stop embarrassing you.
+    call: risky
+    why: >-
+      Your embarrassment is real, but shouting adds your big feelings to hers. At two, she cannot stop because
+      you tell her to. She needs you to be the calm one.
+
+principle: >-
+  A tantrum is a feeling too big to handle, not a plan to manipulate you. Stay calm, keep them safe, name the
+  feeling, and hold the limit. It passes, and it is not a sign that you are doing anything wrong.

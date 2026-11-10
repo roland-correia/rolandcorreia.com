@@ -1,10 +1,19 @@
 export const SITE_NAME = 'Good Call';
 export const TAGLINE = 'Practise the call before it counts.';
 export const DESCRIPTION =
-  'Short, realistic scenarios on consent and on judgement at work. Choose what you would do, then see why each choice helps or harms. No timer and no account.';
+  'Short, realistic scenarios on consent, racism, parenting and judgement at work. Choose what you would do, then see why each choice helps or harms. No timer and no account.';
 
-// A "set" is a group of scenarios. `group` decides where it is listed:
-// 'everyday' sets sit on the home page, 'work' sets are the roles on /work/.
+// Where sets are listed. 'everyday' sets sit on the home page itself; the others
+// each have their own page, reached from a tile on the home page.
+export const groups = {
+  everyday: { name: 'Everyday life', path: '/' },
+  parenting: { name: 'Parenting', path: '/parenting/' },
+  work: { name: 'At work', path: '/work/' },
+} as const;
+
+export type GroupId = keyof typeof groups;
+
+// A "set" is a group of scenarios. `group` decides where it is listed (see `groups`).
 // `live: false` shows as "coming later" and has no page yet.
 export const sets = {
   consent: {
@@ -53,6 +62,135 @@ export const sets = {
       'Something you saw on a screen is not something your partner has agreed to. Ask first, and not in the moment.',
       'If a habit is costing you sleep, focus or closeness, that is worth acting on. Shame makes it harder to change, not easier.',
       'The people on screen have to have agreed too. If it looks secret, leaked or underage, do not watch it or share it. Report it.',
+    ],
+    live: true,
+  },
+  'parent-newborn': {
+    name: 'Newborns: 0 to 3 months',
+    group: 'parenting',
+    blurb: 'Crying, sleep, fevers, feeding and how you are feeling',
+    intro:
+      'The first weeks are the steepest learning curve most people ever face, on the least sleep. These scenarios cover the moments that frighten new parents most, and what keeps a newborn safe.',
+    note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
+    rules: [
+      'Crying is normal, and it can be overwhelming. It is always OK to put your baby down safely and step away for a few minutes.',
+      'Never shake a baby, however frustrated you feel.',
+      'Every sleep, day and night: on their back, in their own clear cot. Never fall asleep with them on a sofa or armchair.',
+      'Under 3 months, a temperature of 38C or higher needs advice the same day. Call NHS 111.',
+      'A fed baby is the goal. How you feed is your decision.',
+      'Feeling low for more than two weeks is a reason to talk to your GP or health visitor, for either parent.',
+    ],
+    live: true,
+  },
+  'parent-baby': {
+    name: 'Babies: 3 to 12 months',
+    group: 'parenting',
+    blurb: 'Weaning, falls, car seats, childcare and attention',
+    intro:
+      'Babies start moving, eating and noticing everything. Most of what goes wrong at this age is an accident that a small habit would have prevented, and most of what goes right is ordinary time together.',
+    note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
+    rules: [
+      'Cut small round foods, such as grapes and cherry tomatoes, into quarters. Never leave a baby alone while eating.',
+      'Babies roll and fall sooner than you expect. Change them on the floor, or keep a hand on them.',
+      'Every journey, however short, in a properly fitted car seat.',
+      'Talking, singing and back-and-forth babble build their brain more than any toy or app.',
+      'Short, warm goodbyes at childcare. Sneaking out makes the next drop-off harder.',
+    ],
+    live: true,
+  },
+  'parent-toddler': {
+    name: 'Toddlers: 1 to 3 years',
+    group: 'parenting',
+    blurb: 'Tantrums, biting, potty training, safety at home and a new sibling',
+    intro:
+      'Toddlers have big feelings and very little control over them. Tantrums are not bad behaviour or bad parenting. They are a brain that is still being built. These scenarios are about staying calm and safe while it happens.',
+    note: "General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an emergency, call 999.",
+    rules: [
+      'A tantrum is a feeling too big to handle, not a plan. Stay calm, keep them safe, and wait it out.',
+      'Name the feeling, hold the limit. "You are cross that we are leaving. We are still leaving."',
+      'Physical punishment is illegal in Scotland and Wales, and it does not teach what you want it to.',
+      'Children are ready for the potty when they are ready, not by a date.',
+      'Button batteries, medicines and hot drinks: up high and out of reach. A swallowed button battery means A&E straight away.',
+    ],
+    live: true,
+  },
+  'parent-preschool': {
+    name: 'Pre-schoolers: 3 to 5 years',
+    group: 'parenting',
+    blurb: 'Questions, fibs, body safety, screens, starting school and loss',
+    intro:
+      'Pre-schoolers ask everything, out loud, in public. How you answer now teaches them which subjects are safe to bring to you, which matters far more later on.',
+    note: 'General guidance, not professional advice. If you are worried about your child, talk to your GP or health visitor.',
+    rules: [
+      'Answer questions simply and truthfully, at their level. "I don\'t know, let\'s find out" is a good answer.',
+      'Teach the correct names for private parts, and that their body belongs to them.',
+      'Warn before screen time ends, and keep screens out of the hour before bed.',
+      'Use clear words about death. "Died", not "gone to sleep" or "lost".',
+      'A fib at four is a sign of a growing imagination, not a moral failing.',
+    ],
+    live: true,
+  },
+  'parent-school': {
+    name: 'Primary school: 5 to 11 years',
+    group: 'parenting',
+    blurb: 'Friendships, bullying, learning, online safety and puberty',
+    intro:
+      'At school age, much of your child\'s life happens out of your sight. Your job shifts towards being the person they tell. These scenarios are about listening first and acting well.',
+    note: 'General guidance, not professional advice. If you are worried about your child\'s safety or development, talk to their school or your GP.',
+    rules: [
+      'Listen to the whole story before you react. A calm reaction is what makes them tell you next time.',
+      'Work with the school, in writing if needed. Most problems are solved faster together.',
+      'If your child may be struggling to learn, ask for a meeting with the school\'s SENCo.',
+      'Online, the rule is "tell me, and you will not be in trouble". Report adults who ask for photos or secrets to CEOP.',
+      'Talk about puberty before it starts. For some children that is eight or nine.',
+    ],
+    live: true,
+  },
+  'parent-teen': {
+    name: 'Teenagers: 11 to 18 years',
+    group: 'parenting',
+    blurb: 'Parties, privacy, mental health, identity and school pressure',
+    intro:
+      'Teenagers need more independence and more support at the same time. The connection you keep through the hard conversations is what keeps them safe when you are not there.',
+    note: 'General guidance, not professional advice. If your teenager is at risk of harm, call 999. For worries about their mental health, talk to your GP.',
+    rules: [
+      'Stay the person they can call. "Ring me, any time, and I will come. No lecture tonight."',
+      'Ask more than you tell. Curious questions get honest answers. Interrogations do not.',
+      'Respect their privacy, unless their safety is at real risk. Then tell them what you are doing and why.',
+      'Self-harm needs a calm response, not panic or punishment. Talk to your GP.',
+      'Who they are is not a phase to be argued out of. Listen first.',
+    ],
+    live: true,
+  },
+  'parent-adoption': {
+    name: 'Adoption, fostering and kinship care',
+    group: 'parenting',
+    blurb: 'For any age: their story, birth family, trauma and belonging',
+    intro:
+      'Children who join a family through adoption, fostering or kinship care have the same needs as any child, and some extra ones. Many have lived through loss or trauma before they reached you. These scenarios are about honesty, patience and belonging.',
+    note: 'General guidance, not professional advice. Your adoption agency, fostering service or local authority can offer support, and many families are entitled to it.',
+    rules: [
+      'Tell children their story early, truthfully and often. It should never be a secret they discover.',
+      'Behaviour that comes from early trauma needs understanding and support, not only consequences.',
+      'You are their real parent or carer, and their birth family is real too. They do not have to choose.',
+      'Never speak badly of their birth parents in front of them.',
+      'Ask for support early. Post-adoption and kinship support exists for exactly this.',
+    ],
+    live: true,
+  },
+  'parent-you': {
+    name: 'Looking after yourself',
+    group: 'parenting',
+    blurb: 'For any age: help, rows, co-parenting, mistakes and comparison',
+    intro:
+      'Children do best when the adults looking after them are coping. These scenarios are about you: asking for help, repairing after a bad moment, and parenting alongside someone else, or on your own.',
+    note: 'General guidance, not professional advice. If you are struggling to cope, talk to your GP, or call Samaritans on 116 123 at any time.',
+    rules: [
+      'Accepting help is part of parenting well, not a sign that you are failing.',
+      'Every parent loses their temper sometimes. What matters is the repair: say sorry, and explain.',
+      'Keep adult arguments away from children, and never make them choose between parents.',
+      'Other parents\' photos are their best moments, not their whole day.',
+      'Share the thinking as well as the doing: the appointments, the forms and the planning are work too.',
     ],
     live: true,
   },

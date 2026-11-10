@@ -1,0 +1,39 @@
+set: parent-school
+order: 6
+title: You said you'd done it
+topic: Trust and consequences
+draft: false
+
+situation: |
+  Your eleven-year-old, Daniel, told you every night for two weeks that he had done his homework. Today his teacher emails to say none of it has been handed in.
+
+question: What is the best call?
+
+options:
+  - text: Calm down first, then ask him what is going on, before deciding on a consequence.
+    call: best
+    why: >-
+      Two weeks of hiding homework is often a sign of something else: work that is too hard, worry or trouble
+      with friends. Finding out why tells you what will actually help. A consequence can still follow.
+
+  - text: Ground him for a month, straight away.
+    call: okay
+    why: >-
+      A consequence is fair, and lying does need to be addressed. But a big punishment without a conversation
+      may miss the reason, and it does not get the homework done. Talk first, then decide.
+
+  - text: Check his bag and his online homework every day from now on.
+    call: okay
+    why: >-
+      Closer checking for a while is reasonable after a broken promise. But on its own it treats the symptom.
+      Agree a plan together, and give him a chance to rebuild your trust.
+
+  - text: Do the homework for him this weekend to help him catch up.
+    call: risky
+    why: >-
+      It removes the immediate problem but teaches him that you will rescue him. The teacher also loses the
+      chance to see where he is struggling. Help him do it, instead of doing it for him.
+
+principle: >-
+  When a child hides something, find out why before deciding on a consequence. The reason is often a problem
+  they did not know how to tell you about.

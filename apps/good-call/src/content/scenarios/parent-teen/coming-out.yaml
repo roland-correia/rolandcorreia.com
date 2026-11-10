@@ -1,0 +1,41 @@
+set: parent-teen
+order: 4
+title: I need to tell you something
+topic: Identity
+draft: false
+
+situation: |
+  Your sixteen-year-old son, Callum, sits you down. Shaking, he tells you he is gay. He has clearly been dreading this conversation.
+
+  You were not expecting it.
+
+question: What is the best call?
+
+options:
+  - text: Tell him you love him, thank him for trusting you, and ask how he is feeling and what he needs from you.
+    call: best
+    why: >-
+      What he needs to hear first is that nothing has changed in how you love him. You can have your own
+      questions and feelings later, with another adult. Today is about making him feel safe.
+
+  - text: Ask whether he is sure, and suggest it might be a phase.
+    call: risky
+    why: >-
+      You may be surprised, but questioning him tells him you do not believe him, after he found the courage
+      to tell you. Young people who feel rejected at home are at much greater risk of harm.
+
+  - text: Say, "I always knew," and move on quickly to something else.
+    call: okay
+    why: >-
+      It is meant to be relaxed, and that is kind. But moving on quickly can make it seem you do not want to
+      talk about it. Give him space to say more, if he wants to.
+
+  - text: Ask him not to tell the rest of the family yet.
+    call: risky
+    why: >-
+      You may be worried about others' reactions, but asking him to hide it can feel like shame. It is his
+      news to share, when and with whom he chooses. Offer to support him when he does.
+
+principle: >-
+  When your child tells you who they are, the first thing they need is your love, out loud. Listen, thank
+  them for telling you, and let them lead. Your own questions can wait.

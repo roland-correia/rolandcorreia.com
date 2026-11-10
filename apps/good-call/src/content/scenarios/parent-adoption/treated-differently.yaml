@@ -1,0 +1,43 @@
+set: parent-adoption
+order: 6
+title: The presents under the tree
+topic: Belonging
+draft: false
+
+situation: |
+  At Christmas, your mother gives your two birth children big, thoughtful presents. Your adopted son, Femi, who is eight, gets a small gift card. He notices, and goes quiet.
+
+  It is not the first time.
+
+question: What is the best call?
+
+options:
+  - text: Say nothing to avoid a scene at Christmas.
+    call: okay
+    why: >-
+      Keeping the peace in the moment is understandable. But Femi has noticed, and he needs to know you
+      noticed too. Comfort him on the day, and speak to your mother soon after.
+
+  - text: >-
+      Comfort Femi quietly on the day. Then talk to your mother privately: all three of your children are her
+      grandchildren, and need to be treated the same.
+    call: best
+    why: >-
+      Femi gets reassurance when he needs it, and your mother hears clearly, away from the children, what you
+      expect. Adopted children are acutely sensitive to signs that they belong a little less.
+
+  - text: Confront your mother in front of everyone.
+    call: okay
+    why: >-
+      Your instinct to defend Femi is right. But a public row can put him at the centre of something painful
+      and embarrassing. A private conversation is more likely to change things.
+
+  - text: Take some of the other children's presents and give them to Femi.
+    call: risky
+    why: >-
+      It is meant to be fair, but it upsets the other children and makes the difference even more obvious to
+      Femi. The fairness needs to come from the adult who gives the presents.
+
+principle: >-
+  Children who join a family by adoption, fostering or kinship care must be treated exactly the same as any
+  other child in it. When relatives do not, protect the child first, then talk to the adult.

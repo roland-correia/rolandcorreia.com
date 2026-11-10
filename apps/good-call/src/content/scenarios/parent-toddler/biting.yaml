@@ -1,0 +1,41 @@
+set: parent-toddler
+order: 2
+title: He bit another child
+topic: Biting and hitting
+draft: false
+
+situation: |
+  When you collect your 20-month-old son, Ethan, from nursery, his key worker tells you he bit another child today who took his toy. The other child's parent has been told.
+
+  You feel mortified.
+
+question: What is the best call?
+
+options:
+  - text: Bite him back, gently, so he learns how it feels.
+    call: risky
+    why: >-
+      It teaches him that biting is what people do when they are cross, including the adults he trusts. It
+      does not help him learn what to do instead. It also hurts him.
+
+  - text: Thank the nursery, ask how they handle it, and do the same at home. A firm "No biting. Biting hurts," then help him find other ways to show he is cross.
+    call: best
+    why: >-
+      Biting is common at this age, when feelings outrun words. Responding the same way at home and at nursery
+      helps him learn fastest. Giving him words like "Mine!" or "Stop!" gives him something to do instead.
+
+  - text: Decide he is an aggressive child and worry about what that means.
+    call: okay
+    why: >-
+      Your worry comes from caring, but one bite, or a phase of biting, does not say anything about who he
+      will be. If it carries on for months or gets worse, talk to his nursery or health visitor.
+
+  - text: Punish him at home that evening.
+    call: risky
+    why: >-
+      Hours after the event, a toddler cannot link the punishment to the bite. He will only be confused and
+      upset. The response needs to come in the moment, which is the nursery's job today.
+
+principle: >-
+  Biting, hitting and grabbing are common in toddlers who do not yet have the words for big feelings. Respond
+  calmly, the same way every time, and teach them what to do instead.

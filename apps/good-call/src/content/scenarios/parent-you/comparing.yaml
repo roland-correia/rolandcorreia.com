@@ -1,0 +1,41 @@
+set: parent-you
+order: 5
+title: Everyone else is doing it better
+topic: Comparison
+draft: false
+
+situation: |
+  Late at night you scroll through other parents' posts: homemade baby food, perfect birthday parties, calm toddlers in matching outfits. Your two-year-old ate toast for dinner and you shouted at bath time.
+
+  You feel like you are failing.
+
+question: What is the best call for you?
+
+options:
+  - text: Try to match what you see, starting tomorrow.
+    call: risky
+    why: >-
+      Those posts are chosen moments, often after many attempts. Trying to match them sets you a standard
+      nobody actually lives by, and adds pressure at a time when you need less of it.
+
+  - text: Remind yourself that you are seeing other people's best moments, not their whole day. Put the phone down, and think of one thing that went well today.
+    call: best
+    why: >-
+      Comparison with edited highlights distorts how well you are doing. A fed, loved child and a parent who
+      keeps trying is what good enough parenting looks like. Muting accounts that make you feel worse is fine.
+
+  - text: Post your own perfect photos so you feel better.
+    call: okay
+    why: >-
+      There is nothing wrong with sharing happy moments. But posting to keep up rarely helps, and it adds to
+      the pressure on other parents. Share if you want to, not to compete.
+
+  - text: Decide you are a bad parent.
+    call: risky
+    why: >-
+      Toast for dinner and one shout do not make a bad parent. Every parent has days like this, including the
+      ones posting. If these feelings are with you most days, talk to your GP or health visitor.
+
+principle: >-
+  Other people's posts are their best moments, not their whole day. Good enough parenting is real
+  parenting: a loved child and an adult who keeps trying.

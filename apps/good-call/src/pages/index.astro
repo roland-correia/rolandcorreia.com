@@ -5,7 +5,7 @@ import { getLiveSets } from '../lib/scenarios';
 import { sets } from '../lib/site';
 import { href } from '../lib/paths';
 
-// Home lists the everyday sets, then one door into the work sets.
+// Home lists the everyday sets, then one door each into parenting and work.
 // What Good Call is and how it works are in the footer and on the About page.
 const liveSets = await getLiveSets();
 const everyday = liveSets.filter(({ id }) => sets[id].group === 'everyday');
@@ -30,6 +30,14 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
         </a>
       ))
     }
+  </section>
+
+  <section class="group" aria-labelledby="parenting-title">
+    <h2 id="parenting-title">Parenting</h2>
+    <a class="tile" href={href('/parenting/')}>
+      <b>Parenting, age by age</b>
+      <small>A course for every kind of family, from newborns to teenagers, including adoption and kinship care</small>
+    </a>
   </section>
 
   <section class="group" aria-labelledby="work-title">

@@ -1,0 +1,41 @@
+set: parent-school
+order: 2
+title: It was your son
+topic: When your child is unkind
+draft: false
+
+situation: |
+  The school phones. Your ten-year-old, Harry, and two friends have been calling another boy names and sharing an unkind photo of him in a group chat. The other boy's parents have complained.
+
+  Your first thought is, "Not my son."
+
+question: What is the best call?
+
+options:
+  - text: Tell the school Harry would never do that, and that the other boy must be exaggerating.
+    call: risky
+    why: >-
+      It is hard to hear, and defending your child is instinctive. But if it is true, denial tells Harry it is
+      fine and leaves the other boy unprotected. Most children who bully are not "bad". They need adults to step in.
+
+  - text: Listen to the school, then talk calmly with Harry. Find out what happened and why, make clear it stops now, and help him put it right.
+    call: best
+    why: >-
+      Taking it seriously, without writing him off, gives Harry the best chance to change. Understanding why
+      matters, because unkindness often comes from wanting to fit in. Putting it right, such as deleting the photo and apologising, matters too.
+
+  - text: Ban his phone for a month and leave it there.
+    call: okay
+    why: >-
+      A consequence is reasonable, and taking the photo out of circulation matters. But a ban without a
+      conversation teaches him to hide things better, not to understand why it hurt.
+
+  - text: Tell him he is a nasty bully and you are ashamed of him.
+    call: risky
+    why: >-
+      You may well be upset, and he needs to know it was wrong. But labelling him as a bully can make him
+      believe that is who he is. Criticise the behaviour, not the child.
+
+principle: >-
+  If your child has been unkind, listen to the school, take it seriously and stay calm. Make clear the
+  behaviour stops, find out why it happened, and help them put it right.

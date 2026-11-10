@@ -1,0 +1,39 @@
+set: parent-preschool
+order: 4
+title: Five more minutes
+topic: Screens
+draft: false
+
+situation: |
+  Every evening, when you take the tablet away from your four-year-old, Oscar, he screams, throws things and takes ages to calm down. Bedtime is getting later and later.
+
+question: What is the best call?
+
+options:
+  - text: Get rid of the tablet completely.
+    call: okay
+    why: >-
+      It is your decision, and some families find that simplest. But screens are part of life, and learning
+      to stop is a skill he will need. A clear routine may solve the meltdowns without a ban.
+
+  - text: Give him warnings, such as "Ten minutes, then five, then when this episode ends", use a timer, and keep screens off for the hour before bed.
+    call: best
+    why: >-
+      Sudden stops are hard for young children, because they cannot switch attention quickly. Warnings and a
+      timer make the end predictable. Screens off before bed help him wind down and sleep.
+
+  - text: Let him keep it until he falls asleep, to avoid the fight.
+    call: risky
+    why: >-
+      It ends the battle but costs him sleep, which young children need a lot of. Screens in bed are linked
+      to poorer sleep, and a tired child finds everything harder the next day.
+
+  - text: Take it away without warning, and ignore the screaming.
+    call: okay
+    why: >-
+      Holding the limit is right, and his anger is not dangerous. But without warning, a sudden stop is much
+      harder for him. A few minutes of notice usually means fewer tears for both of you.
+
+principle: >-
+  Make screen time predictable: warnings before it ends, an agreed signal, and no screens in the hour before
+  bed. A calm, consistent routine beats a nightly battle.

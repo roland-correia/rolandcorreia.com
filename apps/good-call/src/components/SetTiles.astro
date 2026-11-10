@@ -1,0 +1,45 @@
+---
+// The tiles for every set in one group, in the order they are written in
+// src/lib/site.ts. A set with scenarios links to its page and shows a progress
+// bar; one marked "coming later", or with nothing published yet, is greyed out.
+import ProgressBar from './ProgressBar.astro';
+import { getLiveSets } from '../lib/scenarios';
+import { sets, type SetId, type GroupId } from '../lib/site';
+import { href } from '../lib/paths';
+
+interface Props {
+  group: GroupId;
+}
+
+const liveSets = await getLiveSets();
+const scenariosOf = new Map(liveSets.map(({ id, scenarios }) => [id, scenarios]));
+const ids = (Object.keys(sets) as SetId[]).filter((id) => sets[id].group === Astro.props.group);
+---
+
+<ul class="tiles">
+  {
+    ids.map((id) => {
+      const scenarios = scenariosOf.get(id);
+      const n = scenarios?.length;
+      return (
+        <li>
+          {scenarios ? (
+            <a class="tile" href={href(`/practice/${id}/`)}>
+              <b>{sets[id].name}</b>
+              <small>{sets[id].blurb}</small>
+              <small>
+                {n} {n === 1 ? 'scenario' : 'scenarios'}
+              </small>
+              <ProgressBar name={sets[id].name} scenarios={scenarios} />
+            </a>
+          ) : (
+            <div class="tile off">
+              <b>{sets[id].name}</b>
+              <small>Coming later</small>
+            </div>
+          )}
+        </li>
+      );
+    })
+  }
+</ul>

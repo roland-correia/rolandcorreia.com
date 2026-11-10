@@ -1,0 +1,41 @@
+set: parent-newborn
+order: 5
+title: Not just tired
+topic: Your mental health
+draft: false
+
+situation: |
+  Your daughter is seven weeks old. For more than a month you have felt flat, anxious and close to tears most days. You do not enjoy anything, even time with her, and you feel guilty about that. You are not sleeping even when she does.
+
+  Your partner, Sam, says, "It's just the baby blues. Everyone gets them."
+
+question: What is the best call for you?
+
+options:
+  - text: Agree with Sam, and wait for it to pass.
+    call: risky
+    why: >-
+      The baby blues usually pass within two weeks of the birth. Feeling like this for over a month is
+      different, and it is a sign that you may need support. Postnatal depression is common, treatable and not your fault.
+
+  - text: Talk to your GP or health visitor about how you have been feeling.
+    call: best
+    why: >-
+      The NHS says to speak to your GP, midwife or health visitor if low mood goes on past two weeks. They
+      hear this every week and will not judge you. Getting help early makes recovery quicker, for you and your baby.
+
+  - text: Try harder to enjoy her. Plan more outings and keep busy.
+    call: okay
+    why: >-
+      Getting out can help a little, and there is nothing wrong with trying. But postnatal depression is not
+      a lack of effort, and you cannot push through it alone. Use it alongside support, not instead of it.
+
+  - text: Hide it, so nobody thinks you cannot cope.
+    call: risky
+    why: >-
+      Many parents fear being judged, or that their baby will be taken away. That is not what happens when you
+      ask for help. Hiding it only keeps you struggling for longer.
+
+principle: >-
+  Feeling low for more than two weeks after a baby arrives is a reason to talk to your GP or health visitor.
+  This applies to partners, dads and adoptive parents too. Asking early is a strength.

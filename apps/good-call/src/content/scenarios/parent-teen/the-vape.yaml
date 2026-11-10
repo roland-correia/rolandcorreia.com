@@ -1,0 +1,39 @@
+set: parent-teen
+order: 2
+title: You find a vape
+topic: Vaping and drugs
+draft: false
+
+situation: |
+  While putting washing away, you find a vape in your fourteen-year-old son Ali's drawer.
+
+question: What is the best call?
+
+options:
+  - text: Wait for a calm moment, tell him what you found, and ask him about it. Listen to his answers, share why you are worried, and agree what happens next.
+    call: best
+    why: >-
+      A calm conversation is far more likely to get honesty than an ambush. Understanding why he vapes, such
+      as friends, stress or curiosity, tells you what will help. Selling vapes to under-18s is illegal, so where he got it matters too.
+
+  - text: Confront him the moment he walks in.
+    call: okay
+    why: >-
+      Your worry is fair, but a confrontation at the door usually leads to denial and a row. Take time to
+      calm down and plan what you want to say.
+
+  - text: Throw it away and say nothing.
+    call: okay
+    why: >-
+      It removes this vape, but not the reason he had one. He will probably get another, and now knows you
+      check his drawer without talking to him.
+
+  - text: Search his room thoroughly for anything else.
+    call: risky
+    why: >-
+      Searching without talking first can feel like a huge breach of trust to a teenager. Unless you believe
+      he is in immediate danger, start with a conversation. If you do need to search, tell him why.
+
+principle: >-
+  When you find something worrying, talk before you act. Calm, curious questions get honest answers far more
+  often than accusations.

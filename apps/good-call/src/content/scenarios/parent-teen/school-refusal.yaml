@@ -1,0 +1,39 @@
+set: parent-teen
+order: 5
+title: I can't go in
+topic: School avoidance
+draft: false
+
+situation: |
+  For three weeks your thirteen-year-old, Ben, has had stomach aches and panic most mornings, and has missed several days of school. When you try to make him go, he cries and refuses. The school has been in touch about his attendance.
+
+question: What is the best call?
+
+options:
+  - text: Physically take him to school every day, however upset he is.
+    call: okay
+    why: >-
+      Getting back to school does matter, and long absences make returning harder. But forcing him, while
+      the reason is unknown, can make the anxiety worse. Find out what is going on, with the school's help.
+
+  - text: Talk calmly with Ben about what is happening, and arrange to meet the school, including the pastoral team or SENCo, to agree a plan. See your GP about the stomach aches.
+    call: best
+    why: >-
+      Struggling to attend school often comes from anxiety, bullying, a learning need or something else he
+      has not said. Working with the school, and ruling out illness, gives the best chance of a gradual return.
+
+  - text: Let him stay home until he feels ready.
+    call: risky
+    why: >-
+      It ends the distress for now, but avoidance tends to make anxiety grow, and returning gets harder the
+      longer it goes on. He needs support to go back, not open-ended time off.
+
+  - text: Tell him he is being dramatic.
+    call: risky
+    why: >-
+      His symptoms are real, even if they come from anxiety. Being dismissed makes him less likely to tell
+      you what is wrong, and that is what you most need to know.
+
+principle: >-
+  When a child cannot face school, there is usually a reason they have not been able to say. Stay calm, find
+  out why, and work with the school and your GP on a plan to return.

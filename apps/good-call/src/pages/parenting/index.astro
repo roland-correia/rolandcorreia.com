@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import SetTiles from '../../components/SetTiles.astro';
+import { href } from '../../lib/paths';
+
+// The parenting course: one module for each age, then two for any age.
+---
+
+<Base
+  title="Parenting"
+  description="A parenting course in everyday scenarios, by your child's age. For birth, adoptive, foster and kinship families, and first-time parents most of all."
+  path="/parenting/"
+  back={{ href: href('/'), label: 'Back' }}
+>
+  <p class="kicker">Parenting</p>
+  <h1>Parenting,<br /><span>age by age</span></h1>
+  <p class="lead">
+    Nobody is handed a manual. These scenarios are the moments many parents find hard, especially the first time:
+    the crying that will not stop, the tantrum in the shop, the question you were not ready for.
+  </p>
+  <p class="lead">
+    They are for every kind of family: children born to you, adopted, fostered, stepchildren, or a grandchild, niece
+    or nephew you are raising. Start with your child's age, or with the two modules for any age at the end.
+  </p>
+  <p class="notice">
+    General guidance, not medical advice. If you are worried about your child's health, call NHS 111. In an
+    emergency, call 999.
+  </p>
+
+  <SetTiles group="parenting" />
+</Base>

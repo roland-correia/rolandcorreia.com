@@ -1,0 +1,41 @@
+set: parent-baby
+order: 5
+title: The first nursery morning
+topic: Separation
+draft: false
+
+situation: |
+  Your eleven-month-old, Freddie, starts nursery today so you can go back to work. As soon as you hand him to his key worker, he cries and reaches for you.
+
+  You are due at work in twenty minutes.
+
+question: What is the best call?
+
+options:
+  - text: Wait until he is distracted, then slip out without saying goodbye.
+    call: risky
+    why: >-
+      It feels kinder, but it teaches him that you can vanish without warning. That usually makes the next
+      drop-off harder, because he will hold on tighter to stop you disappearing.
+
+  - text: Give him a cuddle, say a short, warm goodbye such as "Bye, see you after lunch", and leave, trusting his key worker to comfort him.
+    call: best
+    why: >-
+      A short, predictable goodbye is the most settling for babies. Most stop crying soon after the parent
+      leaves. Ask the nursery to message you once he has settled, so you are not left worrying all morning.
+
+  - text: Stay until he stops crying, however long it takes.
+    call: okay
+    why: >-
+      Settling-in time is valuable, and many nurseries plan for it in the first week. But staying until the
+      crying stops can teach him that crying keeps you there. Agree a settling plan with the nursery instead.
+
+  - text: Take him home and decide nursery is not right for him.
+    call: okay
+    why: >-
+      It is your decision, and some children do need longer. But crying at drop-off is very normal at this
+      age, a stage called separation anxiety, and it nearly always passes in a few weeks. Give it time first.
+
+principle: >-
+  Short, warm, predictable goodbyes. Tell them you are going and that you will come back, then go. Crying at
+  separation is a normal stage, not a sign that you have done anything wrong.

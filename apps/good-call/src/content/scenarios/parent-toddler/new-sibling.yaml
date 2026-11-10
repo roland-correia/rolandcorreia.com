@@ -1,0 +1,39 @@
+set: parent-toddler
+order: 5
+title: The new baby
+topic: Siblings
+draft: false
+
+situation: |
+  Your daughter Ruby is two and a half. Her baby brother was born three weeks ago. Since then she has started having more tantrums, wanting a bottle again and, today, she pinched the baby's foot while he slept.
+
+question: What is the best call?
+
+options:
+  - text: Tell her she is a big girl now and should know better.
+    call: risky
+    why: >-
+      Her whole world has changed, and she is not a big girl. She is two. Wanting to be a baby again is a very
+      common way of saying, "I want you to look after me too." Shame makes jealousy worse.
+
+  - text: Keep the baby safe, say calmly, "No pinching. Gentle hands." Then make some time each day that is just for Ruby.
+    call: best
+    why: >-
+      You protect the baby and set the limit without making her feel bad for being jealous. Ten minutes a day
+      of her choosing, with your full attention, does a lot to reassure her that she has not been replaced.
+
+  - text: Keep her away from the baby as much as possible.
+    call: okay
+    why: >-
+      Supervising them together is sensible, and you should never leave a toddler alone with a newborn. But
+      keeping her away entirely can make her feel more pushed out. Involve her, with you right there.
+
+  - text: Let her have a bottle again for a while if she wants one.
+    call: okay
+    why: >-
+      Allowing a little "baby" behaviour for a while is fine, and often helps it pass. It works best alongside
+      plenty of one-to-one time, so she does not feel she has to act like a baby to get your attention.
+
+principle: >-
+  Jealousy of a new sibling is normal. Keep everyone safe, set limits calmly, and give the older child time
+  that is only theirs. They need to know they are still loved, not told to grow up.
