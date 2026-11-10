@@ -82,9 +82,9 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
 
   <section class="card" aria-labelledby="rules-title">
     <h2 id="rules-title">
-      {isWork ? 'The unwritten rules' : set.group === 'parenting' ? 'What helps at this stage' : 'The ideas behind these'}
+      {isWork ? 'What employers look for' : 'Key principles'}
     </h2>
-    {isWork && <p class="meta">What these questions are usually looking for, said out loud:</p>}
+    {isWork && <p class="meta">The unwritten rules behind these questions, said out loud:</p>}
     <ul class="ticks">
       {rules.map((rule) => <li>{rule}</li>)}
     </ul>

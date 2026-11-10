@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import { getLiveSets } from '../lib/scenarios';
-import { sets } from '../lib/site';
+import { sets, groups } from '../lib/site';
 import { href } from '../lib/paths';
 
 // Home lists the everyday sets, then one door each into parenting and work.
@@ -19,7 +19,7 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
   </p>
 
   <section class="group" aria-labelledby="everyday-title">
-    <h2 id="everyday-title">Everyday life</h2>
+    <h2 id="everyday-title">{groups.everyday.name}</h2>
     {
       everyday.map(({ id, scenarios }) => (
         <a class="tile" href={href(`/practice/${id}/`)}>
@@ -33,18 +33,18 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
   </section>
 
   <section class="group" aria-labelledby="parenting-title">
-    <h2 id="parenting-title">Parenting</h2>
+    <h2 id="parenting-title">{groups.parenting.name}</h2>
     <a class="tile" href={href('/parenting/')}>
-      <b>Parenting, age by age</b>
-      <small>A course for every kind of family, from newborns to teenagers, including adoption and kinship care</small>
+      <b>The parenting course</b>
+      <small>From the first weeks to adolescence, for every kind of family</small>
     </a>
   </section>
 
   <section class="group" aria-labelledby="work-title">
-    <h2 id="work-title">At work</h2>
+    <h2 id="work-title">{groups.work.name}</h2>
     <a class="tile" href={href('/work/')}>
-      <b>Interviews and roles</b>
-      <small>Practice for interview questions and the judgement tests in job applications</small>
+      <b>Workplace readiness</b>
+      <small>Interview skills and professional judgement for working life</small>
     </a>
   </section>
 
