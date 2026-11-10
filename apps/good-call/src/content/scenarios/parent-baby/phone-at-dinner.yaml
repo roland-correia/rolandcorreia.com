@@ -1,5 +1,6 @@
 set: parent-baby
-order: 4
+category: connection
+order: 1
 title: The phone in your hand
 topic: Talking and attention
 draft: false

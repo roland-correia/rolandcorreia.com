@@ -1,0 +1,40 @@
+set: parent-toddler
+category: safety
+order: 3
+title: The paddling pool
+topic: Water and garden safety
+draft: false
+
+situation: |
+  On a hot afternoon, your two-year-old, Ava, is splashing in a paddling pool in the garden. The phone rings inside. Your neighbour is sunbathing next door and says, "Go on, I'll keep an eye on her."
+
+question: What is the best call?
+
+options:
+  - text: Go and answer it. Your neighbour is right there.
+    call: risky
+    why: >-
+      A neighbour "keeping an eye" while sunbathing is not active supervision. Drowning in young children is
+      usually silent and very fast, and can happen in shallow water. Someone has to be watching, not nearby.
+
+  - text: Take Ava out of the pool with you, or let the phone ring.
+    call: best
+    why: >-
+      It is the same rule as the bath: young children are never left in or near water without an adult
+      within arm's reach and paying attention. Empty the paddling pool when you finish.
+
+  - text: Tell Ava to sit still in the pool until you get back.
+    call: risky
+    why: >-
+      A two-year-old cannot be relied on to follow an instruction like this, and even sitting still she could
+      slip. The danger is real even in a few centimetres of water.
+
+  - text: Ask your neighbour to come over and watch her properly until you are back.
+    call: okay
+    why: >-
+      Handing over to another adult who agrees to watch closely is better than leaving her. But it is easy
+      for "watching" to drift. If it is just a phone call, it is simpler to take her with you.
+
+principle: >-
+  Toddlers can drown quickly and silently in shallow water. Stay within arm's reach and watch them all the
+  time near water, including paddling pools and ponds, and empty pools after use.

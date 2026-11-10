@@ -1,0 +1,40 @@
+set: parent-school
+category: safety
+order: 3
+title: Can I walk to school on my own?
+topic: Growing independence
+draft: false
+
+situation: |
+  Your nine-year-old, Ibrahim, asks whether he can walk to school with a friend instead of being taken. The route is fifteen minutes, with one busy road and a crossing.
+
+question: What is the best call?
+
+options:
+  - text: Say no. It is too dangerous.
+    call: okay
+    why: >-
+      You know your child and your area, and it is your decision. But independence builds confidence, and
+      children who practise it gradually learn to manage risk. There may be a way to start safely.
+
+  - text: Walk the route together several times first. Let him lead while you follow, practise the busy crossing, and agree what to do if anything goes wrong. Then try it with his friend.
+    call: best
+    why: >-
+      Practice is what turns a route into a safe habit. Letting him lead shows you whether he is ready. A
+      plan for problems, such as who to go to and when to call you, prepares him for the unexpected.
+
+  - text: Let him go tomorrow, since his friend does it.
+    call: risky
+    why: >-
+      Every child is different, and he has not yet shown you he can manage the busy road. A few practice walks
+      first make a big difference to how safe the first solo walk is.
+
+  - text: Give him a phone and track him the whole way.
+    call: okay
+    why: >-
+      Location sharing can give peace of mind, and many families agree to it. But a phone cannot cross the
+      road for him. The practice and the plan matter more.
+
+principle: >-
+  Independence is a milestone children grow into with practice. Walk it together first, let them lead, agree
+  a plan, and step back gradually.

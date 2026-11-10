@@ -1,5 +1,6 @@
 set: parent-baby
-order: 5
+category: connection
+order: 2
 title: The first nursery morning
 topic: Separation
 draft: false

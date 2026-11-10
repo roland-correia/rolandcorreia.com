@@ -1,5 +1,6 @@
 set: parent-toddler
-order: 4
+category: safety
+order: 1
 title: The missing battery
 topic: Hidden dangers at home
 draft: false

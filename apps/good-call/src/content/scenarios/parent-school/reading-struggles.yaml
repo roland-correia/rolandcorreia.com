@@ -1,5 +1,6 @@
 set: parent-school
-order: 3
+category: growing
+order: 1
 title: Struggling to read
 topic: Learning differences
 draft: false

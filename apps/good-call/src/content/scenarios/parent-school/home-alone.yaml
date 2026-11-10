@@ -1,0 +1,40 @@
+set: parent-school
+category: safety
+order: 2
+title: Just ten minutes
+topic: Being home alone
+draft: false
+
+situation: |
+  Your ten-year-old, Freya, asks to stay at home on her own for twenty minutes while you pick her brother up from football. She is sensible, and you are only five minutes away.
+
+question: What is the best call?
+
+options:
+  - text: Say no until she is sixteen, because there is a legal age.
+    call: okay
+    why: >-
+      Caution is understandable, but in fact the law does not set an age. It says it is an offence to leave a
+      child alone if it puts them at risk, and leaves it to your judgement. Short practice runs can build independence safely.
+
+  - text: Judge her maturity. If she is ready, start with a short, planned time. Agree what she does if someone knocks, how to reach you, and who to call in an emergency.
+    call: best
+    why: >-
+      Government guidance says to use your judgement about how mature your child is. The NSPCC advises that
+      children under 12 are rarely mature enough to be left for long. A short, planned trial, with clear rules, is a sensible first step.
+
+  - text: Leave her for the whole evening while you go out, since she managed twenty minutes.
+    call: risky
+    why: >-
+      A short trial is very different from a whole evening. The NSPCC advises against leaving children under
+      12 alone for long periods. Build up slowly.
+
+  - text: Let her stay, and leave her in charge of her four-year-old sister too.
+    call: risky
+    why: >-
+      Looking after a young child is a far bigger responsibility than looking after herself. If anything went
+      wrong, a ten-year-old should not be the one who has to handle it.
+
+principle: >-
+  The law does not set an age for leaving children home alone, but it is an offence if it puts them at risk.
+  Judge their maturity, start small, and agree clear rules first.

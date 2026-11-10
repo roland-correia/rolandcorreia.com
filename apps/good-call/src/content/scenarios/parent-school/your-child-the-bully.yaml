@@ -1,5 +1,6 @@
 set: parent-school
-order: 2
+category: values
+order: 1
 title: It was your son
 topic: When your child is unkind
 draft: false

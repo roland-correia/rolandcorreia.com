@@ -1,5 +1,6 @@
 set: parent-newborn
-order: 5
+category: bonding
+order: 1
 title: Not just tired
 topic: Your mental health
 draft: false

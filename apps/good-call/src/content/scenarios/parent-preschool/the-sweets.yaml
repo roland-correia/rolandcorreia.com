@@ -1,0 +1,40 @@
+set: parent-preschool
+category: values
+order: 3
+title: The sweets in his pocket
+topic: Taking things
+draft: false
+
+situation: |
+  On the way home from the shop, you find a packet of sweets in your four-year-old son Malik's coat pocket. You did not pay for them.
+
+question: What is the best call?
+
+options:
+  - text: Laugh it off. He is too young to know what stealing is.
+    call: okay
+    why: >-
+      You are right that he probably does not understand it as stealing, so this is not a big moral moment.
+      But it is the perfect age to learn that we pay for things in shops. A calm lesson now saves a harder one later.
+
+  - text: Go back to the shop with him, help him give the sweets back and say sorry, and explain simply that we pay for things before we take them home.
+    call: best
+    why: >-
+      It is calm, it is a natural consequence, and he learns the rule clearly. Shop staff are almost always
+      kind about it. He will remember that taking things gets put right.
+
+  - text: Tell him he is a thief and the police will come.
+    call: risky
+    why: >-
+      Frightening a four-year-old does not teach honesty. It teaches fear, and may make him hide things in
+      future. Calm and clear works far better.
+
+  - text: Let him keep them this time, but warn him not to do it again.
+    call: risky
+    why: >-
+      He learns that taking something gets him the sweets, with only a warning. Returning them is what makes
+      the lesson real.
+
+principle: >-
+  Young children take things before they understand ownership. Treat it as teaching, not crime: calmly put
+  it right together, and explain the rule.

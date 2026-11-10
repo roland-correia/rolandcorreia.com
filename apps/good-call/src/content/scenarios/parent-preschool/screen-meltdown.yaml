@@ -1,5 +1,6 @@
 set: parent-preschool
-order: 4
+category: growing
+order: 1
 title: Five more minutes
 topic: Screens
 draft: false

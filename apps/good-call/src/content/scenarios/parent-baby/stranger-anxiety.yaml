@@ -1,0 +1,40 @@
+set: parent-baby
+category: connection
+order: 3
+title: She won't go to Grandma
+topic: Wariness of strangers
+draft: false
+
+situation: |
+  At a family party, your ten-month-old, Nia, screams whenever anyone except you tries to hold her, including her grandmother, who has not seen her for two months. Grandma is hurt and says, "You've made her clingy."
+
+question: What is the best call?
+
+options:
+  - text: Hand Nia over anyway, so she gets used to it.
+    call: risky
+    why: >-
+      Wariness of less familiar people, often called stranger anxiety, is a normal stage at this age. Being
+      handed over while frightened tends to make it stronger, not weaker. She needs to feel safe first.
+
+  - text: Keep Nia on your lap while Grandma sits close, chats and plays with her, and let Nia go to her when she is ready.
+    call: best
+    why: >-
+      Letting her warm up from the safety of your lap is the quickest way to get her comfortable. You can
+      reassure Grandma that this is a normal stage, a sign of a healthy attachment to you, not clinginess.
+
+  - text: Apologise to Grandma, and agree that you have spoilt her.
+    call: okay
+    why: >-
+      Keeping the peace is understandable, but it is not true. Responding to a baby's fear does not spoil
+      them. It teaches them the world is safe. A short explanation will help Grandma more than an apology.
+
+  - text: Leave the party early to avoid the upset.
+    call: okay
+    why: >-
+      If everyone is exhausted, leaving can be sensible. But Nia also needs gentle chances to get to know
+      family. Short, relaxed time with them, from your lap, helps more than avoiding them.
+
+principle: >-
+  Wariness of strangers is a normal stage in babies, and a sign of a healthy bond with you. Let them warm up
+  from the safety of your arms, at their own pace.

@@ -1,5 +1,6 @@
 set: parent-preschool
-order: 3
+category: safety
+order: 1
 title: The right words
 topic: Body safety
 draft: false

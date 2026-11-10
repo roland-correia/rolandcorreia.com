@@ -1,0 +1,40 @@
+set: parent-preschool
+category: safety
+order: 2
+title: If you get lost
+topic: Who to go to
+draft: false
+
+situation: |
+  You are about to take your four-year-old, Ella, to a busy shopping centre for the first time. You have always told her "never talk to strangers". She asks, "But what if I get lost?"
+
+question: What is the best call?
+
+options:
+  - text: Tell her she will not get lost because she will hold your hand.
+    call: okay
+    why: >-
+      Holding hands in busy places is a good rule. But children do get separated, and she is asking you what
+      to do if it happens. Answering that question is what keeps her safe.
+
+  - text: Teach her a simple plan. Stop and stay where she is, and ask a shop worker in a uniform, or a mum or dad with children, for help. Practise your phone number with her.
+    call: best
+    why: >-
+      "Never talk to strangers" can leave a lost child afraid to ask for help. Teaching who safe adults are,
+      and to stay put, gives her a plan she can follow. A phone number, written on a wristband if needed, helps too.
+
+  - text: Repeat that she must never talk to any stranger, whatever happens.
+    call: risky
+    why: >-
+      Most strangers are people who would help a lost child. A frightened four-year-old who has been told
+      never to speak to anyone may wander further instead of asking for help.
+
+  - text: Tell her a scary story about what happens to children who get lost.
+    call: risky
+    why: >-
+      Fear does not make young children safer. It can make them panic if they do get lost. A calm, practised
+      plan is what they can actually use.
+
+principle: >-
+  Teach children what to do if they get lost: stop, stay where they are, and ask a safe adult, such as a
+  worker in uniform or a parent with children. A plan works better than fear.

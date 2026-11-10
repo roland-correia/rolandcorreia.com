@@ -1,0 +1,40 @@
+set: parent-newborn
+category: safety
+order: 4
+title: The doorbell at bath time
+topic: Water safety
+draft: false
+
+situation: |
+  You are bathing your ten-week-old, Theo, in the baby bath. The doorbell rings. You are expecting a parcel you have to sign for, and the courier will leave if nobody answers.
+
+question: What is the best call?
+
+options:
+  - text: Leave Theo in the bath for a few seconds while you dash to the door.
+    call: risky
+    why: >-
+      Babies can drown in a very small amount of water, quickly and silently. The NHS is clear that a baby
+      should never be left alone in the bath, even for a second. A parcel can always be redelivered.
+
+  - text: Ignore the doorbell, or lift Theo out, wrap him in a towel and take him with you.
+    call: best
+    why: >-
+      Either way, he is never alone near water. Missing a delivery is a small cost. Getting into the habit
+      now, of taking the baby with you or letting the door wait, will keep him safe for years of bath times.
+
+  - text: Ask your five-year-old to watch him while you answer the door.
+    call: risky
+    why: >-
+      A young child cannot keep a baby safe in water, however sensible they are. The NHS advises that older
+      children should not look after a baby in the bath. Only an adult should supervise.
+
+  - text: Prop him up in the corner of the bath so he cannot slip, and go.
+    call: risky
+    why: >-
+      Bath seats and props are not safety devices, and a baby can slip down or tip over in moments. Nothing
+      replaces an adult within arm's reach the whole time.
+
+principle: >-
+  Never leave a baby or young child alone in or near water, even for a second. If you have to go, they come
+  with you. The doorbell can wait.

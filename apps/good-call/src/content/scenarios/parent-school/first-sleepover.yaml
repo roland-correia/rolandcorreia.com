@@ -1,0 +1,40 @@
+set: parent-school
+category: growing
+order: 3
+title: The first sleepover
+topic: Milestones
+draft: false
+
+situation: |
+  Your seven-year-old, Jacob, has been invited to his first sleepover at a school friend's house. You have not met the parents. He is excited but has never slept away from home.
+
+question: What is the best call?
+
+options:
+  - text: Say yes and drop him off. He will be fine.
+    call: okay
+    why: >-
+      He probably will be. But you have not met the adults who will be looking after him overnight, and a
+      first sleepover goes better with a little preparation. A short conversation first is sensible.
+
+  - text: Speak to the other parents first, to check who will be there and the plan. Talk Jacob through what it will be like, and agree that he can call you to come and get him at any time, with no fuss.
+    call: best
+    why: >-
+      You know he is with trusted adults, and he knows what to expect. Being able to come home, without
+      shame, means he can try it knowing he is not trapped. Many children do come home early the first time.
+
+  - text: Say no until he is older.
+    call: okay
+    why: >-
+      It is your decision, and some families wait. But sleepovers are an important milestone for building
+      confidence and friendships. A well-prepared first one is a good step when he is keen.
+
+  - text: Tell him he has to stay all night, even if he is upset, so he learns.
+    call: risky
+    why: >-
+      Being made to stay when frightened can turn a milestone into a bad memory, and make him less keen next
+      time. Knowing he can come home usually helps children stay.
+
+principle: >-
+  New milestones go better with preparation. Check who will be looking after them, talk through what to
+  expect, and always leave them a way home with no shame.

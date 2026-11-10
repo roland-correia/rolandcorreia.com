@@ -1,5 +1,6 @@
 set: parent-school
-order: 5
+category: growing
+order: 2
 title: Already?
 topic: Puberty
 draft: false

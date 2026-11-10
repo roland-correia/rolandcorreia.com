@@ -1,0 +1,42 @@
+set: parent-newborn
+category: bonding
+order: 2
+title: Not feeling it yet
+topic: Bonding
+draft: false
+
+situation: |
+  Your son was born three weeks ago after a difficult birth. You look after him carefully, but you do not feel the rush of love everyone talked about. You feel numb, and ashamed of it.
+
+  Your friends keep posting about falling in love with their babies at first sight.
+
+question: What is the best call for you?
+
+options:
+  - text: Keep it to yourself. If anyone found out, they would think you are a terrible parent.
+    call: risky
+    why: >-
+      Many parents do not feel an instant bond, especially after a difficult birth, and it does not make you
+      a bad parent. Keeping it secret makes it heavier. It can also hide postnatal depression, which needs support.
+
+  - text: Tell your midwife, health visitor or GP how you feel. Keep doing the everyday things, such as holding him, talking to him and skin-to-skin, and give it time.
+    call: best
+    why: >-
+      For many parents, love grows over weeks or months through everyday care, not in one moment. Telling a
+      professional means they can check how you are and offer support. You are already caring for him well.
+
+  - text: Decide there is something wrong with you as a parent.
+    call: risky
+    why: >-
+      Bonding is not a test you have failed. It is a process, and the difficult birth you went through is a
+      very common reason for it taking longer. Be as gentle with yourself as you are with him.
+
+  - text: Ask your partner to do more of the care, so the baby is not affected.
+    call: okay
+    why: >-
+      Sharing the care is good for everyone, and resting helps. But stepping back can make bonding slower,
+      not faster. Try to keep some close, calm time with him every day, and get support for yourself.
+
+principle: >-
+  Not every parent feels an instant bond, and that is common, especially after a hard birth. Love often
+  grows through everyday care. Tell your midwife, health visitor or GP how you are feeling.

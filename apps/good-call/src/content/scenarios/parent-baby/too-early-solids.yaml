@@ -1,0 +1,40 @@
+set: parent-baby
+category: growing
+order: 2
+title: Baby rice at four months
+topic: Starting solids
+draft: false
+
+situation: |
+  Your daughter, Grace, is four months old and is waking a lot at night. Your mother tells you to start giving her baby rice in her bottle. "That's what we did. It'll help her sleep through."
+
+question: What is the best call?
+
+options:
+  - text: Try it tonight. You are desperate for sleep.
+    call: risky
+    why: >-
+      Your exhaustion is real. But the NHS advises starting solid foods at around 6 months, when babies'
+      bodies are ready, and never adding cereal to a bottle, which can be a choking risk. It does not reliably help sleep either.
+
+  - text: Thank your mother, explain that the advice has changed, and wait until Grace is around 6 months and showing signs she is ready. Ask your health visitor about the night waking.
+    call: best
+    why: >-
+      You have been kind and stuck to current guidance. Signs of readiness include sitting up with support
+      and picking up food. A health visitor can help with the sleep problem, which is a separate issue.
+
+  - text: Start a few spoonfuls of purée now, since she watches you eat.
+    call: okay
+    why: >-
+      Watching you eat is not a sign she is ready for food on its own. Starting much earlier than 6 months is
+      not advised. If you think she might need to start earlier, talk to your health visitor first.
+
+  - text: Argue with your mother about how out of date she is.
+    call: okay
+    why: >-
+      You are right that advice has changed, but an argument rarely changes anyone's mind. Most grandparents
+      just want to help. A short, kind explanation, and a link to the NHS page, works better.
+
+principle: >-
+  Advice changes as research does. Start solid foods at around 6 months, when your baby shows signs of being
+  ready, and take questions about feeding and sleep to your health visitor.

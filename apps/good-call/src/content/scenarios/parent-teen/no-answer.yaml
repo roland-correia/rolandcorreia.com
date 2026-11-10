@@ -1,0 +1,40 @@
+set: parent-teen
+category: safety
+order: 4
+title: Not answering
+topic: When they are late
+draft: false
+
+situation: |
+  Your fifteen-year-old, Amira, said she would be home from a friend's house by ten. It is now half past eleven. Her phone goes straight to voicemail.
+
+question: What is the best call?
+
+options:
+  - text: Wait up. She is probably just having fun and her phone has died.
+    call: okay
+    why: >-
+      That is the most likely explanation. But an hour and a half late, with no contact, is enough to start
+      calmly checking. You do not have to choose between panic and doing nothing.
+
+  - text: Contact the friend's parents and her other friends, check any location sharing you have agreed, and if you still cannot find her and you are worried, call the police on 101, or 999 if you think she is in danger.
+    call: best
+    why: >-
+      Checking with people she was with usually solves it within minutes. If it does not, the police want to
+      be told about missing children. You do not need to wait 24 hours. When she is home, talk calmly about what happened.
+
+  - text: Drive around the area looking for her.
+    call: okay
+    why: >-
+      It is a natural instinct, and sometimes it works. But you may miss her calls or her coming home. Make the
+      calls first, and if someone goes out, have another adult stay by the phone.
+
+  - text: Ground her for a month the moment she walks in.
+    call: okay
+    why: >-
+      Your fear and anger make sense, and a consequence may be fair. But listen first. If something frightening
+      happened, a punishment at the door can stop her ever telling you.
+
+principle: >-
+  Have a plan for when teenagers are late: who to call, which numbers you have, and when to contact the
+  police. Afterwards, listen first. The relief comes before the rules.
