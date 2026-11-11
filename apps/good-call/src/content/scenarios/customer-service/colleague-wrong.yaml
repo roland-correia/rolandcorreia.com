@@ -1,5 +1,6 @@
 set: customer-service
-order: 5
+category: pressure
+order: 3
 title: That is not right
 topic: Correcting a colleague
 draft: false

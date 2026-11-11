@@ -37,7 +37,7 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 | Field | What it is |
 | --- | --- |
 | `set`, `order` | Which set it belongs to (the folder name, such as `consent` or `interview`) and its position in it. |
-| `category` | For sets with sections (all except `customer-service`): which section it sits under. `order` then sorts within that section. |
+| `category` | Which chapter it belongs to. Every set is split into chapters, listed in `categories` in `src/lib/site.ts`. `order` then sorts within the chapter. |
 | `title`, `topic` | The heading, and the skill or theme shown as a small label. |
 | `situation` | What is happening. Leave a blank line between paragraphs. |
 | `question` | Optional. Defaults to "What is the best call?". Interview questions use "Which answer works best?". |
@@ -49,9 +49,10 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 `why` is the feedback, and every option must have one, including the best. Vary which position the
 best answer sits in.
 
-The categories for each set are listed in `categories` in `src/lib/site.ts`. Their order there is
-the order on the page. To add one, add a line there and use its name in a scenario. A set with no
-categories is shown as one list.
+Each set is split into chapters, listed in `categories` in `src/lib/site.ts`. Their order there is
+the chapter order. A set's page lists its chapters; each chapter has its own page at
+`/practice/<set>/chapters/<chapter>/` listing its scenarios. To add a chapter, add a line there and
+use its name in a scenario's `category`. A set with no chapters is shown as one list of scenarios.
 
 ## Add a set, a role or a parenting module
 

@@ -2,32 +2,45 @@
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
 import ProgressBar from '../../../components/ProgressBar.astro';
-import { getLiveSets, pathOf, slugOf, type Scenario } from '../../../lib/scenarios';
+import { getLiveSets, pathOf, slugOf, sectionsOf, chapterPathOf, type Scenario, type Section } from '../../../lib/scenarios';
 import { sets, calls } from '../../../lib/site';
 import { href } from '../../../lib/paths';
 
+// In a set with chapters, a scenario is numbered within its chapter, Back returns to
+// the chapter, and the last scenario in a chapter leads on to the next chapter.
 export async function getStaticPaths() {
   const liveSets = await getLiveSets();
-  return liveSets.flatMap(({ id, scenarios }) =>
-    scenarios.map((entry, index) => ({
-      params: { set: id, scenario: slugOf(entry) },
-      props: { entry, number: index + 1, all: scenarios, next: scenarios[index + 1] },
-    })),
-  );
+  return liveSets.flatMap(({ id, scenarios }) => {
+    const sections = sectionsOf(id, scenarios);
+    return scenarios.map((entry) => {
+      const index = sections.findIndex((section) => section.id === entry.data.category);
+      const chapter = sections[index];
+      const siblings = chapter ? chapter.scenarios : scenarios;
+      const position = siblings.indexOf(entry);
+      return {
+        params: { set: id, scenario: slugOf(entry) },
+        props: { entry, siblings, position, chapter, nextChapter: sections[index + 1] },
+      };
+    });
+  });
 }
 
-const { entry, number, all, next } = Astro.props as {
+const { entry, siblings, position, chapter, nextChapter } = Astro.props as {
   entry: Scenario;
-  number: number;
-  /** Every scenario in this set, for the progress bar. */
-  all: Scenario[];
-  next?: Scenario;
+  /** The scenarios in this chapter, or in the whole set if it has no chapters. */
+  siblings: Scenario[];
+  position: number;
+  chapter?: Section;
+  nextChapter?: Section;
 };
 const scenario = entry.data;
 const set = sets[scenario.set];
 const setPath = href(`/practice/${scenario.set}/`);
-// Back lands on the scenario's own section of the set page, when the set has sections.
-const backPath = scenario.category ? `${setPath}#${scenario.category}` : setPath;
+const chapterPath = chapter ? href(chapterPathOf(scenario.set, chapter.id)) : undefined;
+const backPath = chapterPath ?? setPath;
+const next = siblings[position + 1];
+// The label above the title names the chapter, or the set if it has no chapters.
+const place = chapter ? chapter.name : set.name;
 const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
 ---
 
@@ -41,9 +54,9 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
 
   <article data-scenario data-id={entry.id}>
     <header class="group">
-      <p class="kicker">{set.name}. Scenario {number} of {all.length}. {scenario.topic}</p>
+      <p class="kicker">{place}. Scenario {position + 1} of {siblings.length}. {scenario.topic}</p>
       <h1>{scenario.title}</h1>
-      <ProgressBar name={set.name} scenarios={all} />
+      <ProgressBar name={chapter ? chapter.name : set.name} scenarios={siblings} />
     </header>
 
     <div class="prose situation">
@@ -92,6 +105,10 @@ const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
           next ? (
             <a class="btn block" href={href(pathOf(next))}>
               Next: {next.data.title}
+            </a>
+          ) : nextChapter ? (
+            <a class="btn block" href={href(chapterPathOf(scenario.set, nextChapter.id))}>
+              Next chapter: {nextChapter.name}
             </a>
           ) : (
             <a class="btn block" href={setPath}>

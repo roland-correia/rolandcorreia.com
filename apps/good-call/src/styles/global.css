@@ -214,6 +214,9 @@ a.tile:hover { border-color: var(--accent); }
 .pbar .meta { font-size: 0.85rem; }
 .tile .pbar { margin-top: 0.5rem; }
 
+/* "Chapter 1" above a chapter's name on a set's page. */
+.tile .chapter-no { color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
 /* "Choose a topic": links that jump to each category on a set's page. */
 .jump { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
 .jump a {

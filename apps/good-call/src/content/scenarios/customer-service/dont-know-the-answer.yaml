@@ -1,5 +1,6 @@
 set: customer-service
-order: 2
+category: complaints
+order: 3
 title: You do not know the answer
 topic: Honesty with customers
 draft: false

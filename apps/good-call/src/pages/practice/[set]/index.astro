@@ -3,7 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
 import ScenarioTile from '../../../components/ScenarioTile.astro';
 import ProgressBar from '../../../components/ProgressBar.astro';
-import { getLiveSets, pathOf, sectionsOf, type Scenario } from '../../../lib/scenarios';
+import { getLiveSets, pathOf, sectionsOf, chapterPathOf, sequenceOf, type Scenario } from '../../../lib/scenarios';
 import { sets, groups, type SetId } from '../../../lib/site';
 import { href } from '../../../lib/paths';
 
@@ -18,7 +18,7 @@ const isWork = set.group === 'work';
 const group = groups[set.group];
 // Only live sets get a page, and every live set has these.
 const { intro, note, rules } = set as Extract<typeof set, { live: true }>;
-// A set with categories is shown in sections, with links to jump between them.
+// A set with categories is split into chapters, each with its own page.
 const sections = sectionsOf(id, scenarios);
 const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
 ---
@@ -36,37 +36,31 @@ const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
       <p class="lead">{intro}</p>
       <p class="notice">{note}</p>
 
-      <a class="btn block" href={href(pathOf(scenarios[0]))} data-start>Start</a>
+      <a class="btn block" href={href(pathOf(scenarios[0]))} data-start data-sequence={sequenceOf(scenarios, href)}>
+        Start
+      </a>
       <ProgressBar name={set.name} scenarios={scenarios} />
     </div>
 
     {
       sections.length > 0 ? (
         <>
-          <nav class="group" aria-labelledby="jump-title">
-            <h2 id="jump-title">Choose a topic</h2>
-            <ul class="jump">
-              {sections.map((section) => (
+          <section class="group" aria-labelledby="chapters-title">
+            <h2 id="chapters-title">Chapters</h2>
+            <ol class="tiles">
+              {sections.map((section, index) => (
                 <li>
-                  <a href={`#${section.id}`}>{section.name}</a>
+                  <a class="tile" href={href(chapterPathOf(id, section.id))}>
+                    <small class="chapter-no">Chapter {index + 1}</small>
+                    <b>{section.name}</b>
+                    <small>{section.blurb}</small>
+                    <small>{count(section.scenarios.length)}</small>
+                    <ProgressBar name={section.name} scenarios={section.scenarios} />
+                  </a>
                 </li>
               ))}
-            </ul>
-          </nav>
-
-          {sections.map((section) => (
-            <section class="group" id={section.id} aria-labelledby={`${section.id}-title`} data-section>
-              <h2 id={`${section.id}-title`}>{section.name}</h2>
-              <p class="meta">
-                {section.blurb}. <span data-section-count>{count(section.scenarios.length)}</span>
-              </p>
-              <ol class="tiles">
-                {section.scenarios.map((scenario) => (
-                  <ScenarioTile scenario={scenario} />
-                ))}
-              </ol>
-            </section>
-          ))}
+            </ol>
+          </section>
         </>
       ) : (
         <ol class="tiles">

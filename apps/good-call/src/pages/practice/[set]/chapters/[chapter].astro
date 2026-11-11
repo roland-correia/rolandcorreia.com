@@ -1,0 +1,83 @@
+---
+// One chapter of a set: its scenarios, its own progress, and the way on to the next chapter.
+import Base from '../../../../layouts/Base.astro';
+import Support from '../../../../components/Support.astro';
+import ScenarioTile from '../../../../components/ScenarioTile.astro';
+import ProgressBar from '../../../../components/ProgressBar.astro';
+import { getLiveSets, pathOf, sectionsOf, chapterPathOf, sequenceOf, type Section } from '../../../../lib/scenarios';
+import { sets, type SetId } from '../../../../lib/site';
+import { href } from '../../../../lib/paths';
+
+export async function getStaticPaths() {
+  const liveSets = await getLiveSets();
+  return liveSets.flatMap(({ id, scenarios }) => {
+    const sections = sectionsOf(id, scenarios);
+    return sections.map((section, index) => ({
+      params: { set: id, chapter: section.id },
+      props: { id, section, number: index + 1, total: sections.length, next: sections[index + 1] },
+    }));
+  });
+}
+
+const { id, section, number, total, next } = Astro.props as {
+  id: SetId;
+  section: Section;
+  number: number;
+  total: number;
+  next?: Section;
+};
+const set = sets[id];
+const setPath = href(`/practice/${id}/`);
+const count = (n: number) => `${n} ${n === 1 ? 'scenario' : 'scenarios'}`;
+---
+
+<Base
+  title={`${section.name}: ${set.name}`}
+  description={`${section.blurb}. A chapter of ${set.name}.`}
+  path={chapterPathOf(id, section.id)}
+  back={{ href: setPath, label: 'Back' }}
+>
+  <div class="stack" data-set={id}>
+    <div class="group">
+      <p class="kicker">{set.name}. Chapter {number} of {total}</p>
+      <h1>{section.name}</h1>
+      <p class="lead">{section.blurb}.</p>
+      <p class="meta">{count(section.scenarios.length)}</p>
+
+      <a
+        class="btn block"
+        href={href(pathOf(section.scenarios[0]))}
+        data-start
+        data-start-label="Start this chapter"
+        data-sequence={sequenceOf(section.scenarios, href)}
+      >
+        Start this chapter
+      </a>
+      <ProgressBar name={section.name} scenarios={section.scenarios} />
+    </div>
+
+    <ol class="tiles">
+      {section.scenarios.map((scenario) => <ScenarioTile scenario={scenario} />)}
+    </ol>
+
+    <nav class="stepper" aria-label="Chapters">
+      {
+        next ? (
+          <a class="btn ghost block" href={href(chapterPathOf(id, next.id))}>
+            Next chapter: {next.name}
+          </a>
+        ) : (
+          <a class="btn ghost block" href={setPath}>
+            Back to {set.name}
+          </a>
+        )
+      }
+    </nav>
+  </div>
+
+  <Support set={id} />
+
+  <script>
+    import '../../../../scripts/set-progress.ts';
+  </script>
+</Base>

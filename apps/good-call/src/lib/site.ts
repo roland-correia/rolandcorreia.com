@@ -296,6 +296,18 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     growing: { name: 'Development and milestones', blurb: 'Growth, firsts and the gradual steps to independence' },
     values: { name: 'Behaviour, values and character', blurb: 'Kindness, honesty and responsibility' },
   },
+  'parent-adoption': {
+    identity: { name: 'Identity and their story', blurb: 'Telling the truth about where they came from, at every age' },
+    belonging: { name: 'Trauma and belonging', blurb: 'Healing from early harm, and feeling fully part of the family' },
+  },
+  'parent-you': {
+    support: { name: 'Support and self-care', blurb: 'Accepting help, sharing the load and letting go of comparison' },
+    repair: { name: 'Conflict and repair', blurb: 'Losing your temper, arguing and co-parenting well' },
+  },
+  'customer-service': {
+    complaints: { name: 'Complaints and honesty', blurb: 'Policies, exceptions and putting mistakes right' },
+    pressure: { name: 'Pressure and professionalism', blurb: 'Abuse, queues and correcting a colleague' },
+  },
   interview: {
     opening: { name: 'Opening questions', blurb: 'Motivation, self-awareness and first impressions' },
     examples: { name: 'Competency questions', blurb: 'Evidence from real experience' },

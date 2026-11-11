@@ -30,6 +30,13 @@ export function sectionsOf(set: SetId, scenarios: Scenario[]): Section[] {
     .filter((section) => section.scenarios.length > 0);
 }
 
+// A chapter is one section of a set, with its own page.
+export const chapterPathOf = (set: SetId, chapter: string) => `/practice/${set}/chapters/${chapter}/`;
+
+// The scenarios behind a Start / Carry on button, in order, for src/scripts/set-progress.ts.
+export const sequenceOf = (scenarios: Scenario[], toHref: (path: string) => string) =>
+  JSON.stringify(scenarios.map((scenario) => ({ id: scenario.id, href: toHref(pathOf(scenario)) })));
+
 // The sets that have a page: marked live and with at least one scenario to show.
 export async function getLiveSets(): Promise<{ id: SetId; scenarios: Scenario[] }[]> {
   const ids = (Object.keys(sets) as SetId[]).filter((id) => sets[id].live);

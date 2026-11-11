@@ -1,5 +1,6 @@
 set: customer-service
-order: 4
+category: pressure
+order: 2
 title: The queue behind her
 topic: Fairness under pressure
 draft: false
