@@ -1,6 +1,7 @@
 ---
 // Topics used to have pages of their own. Each module is now one deck, so these
 // addresses send people to the first card of that topic in its module's deck.
+import Redirect from '../../../../components/Redirect.astro';
 import { getLiveSets, sectionsOf, type Scenario } from '../../../../lib/scenarios';
 import { href } from '../../../../lib/paths';
 
@@ -11,11 +12,12 @@ export async function getStaticPaths() {
     const order: Scenario[] = topics.flatMap((topic) => topic.scenarios);
     return topics.map((topic) => ({
       params: { set: id, topic: topic.id },
-      props: { target: `${href(`/practice/${id}/`)}#card=${order.indexOf(topic.scenarios[0]) + 1}` },
+      props: { to: `${href(`/practice/${id}/`)}#card=${order.indexOf(topic.scenarios[0]) + 1}` },
     }));
   });
 }
 
-// A permanent redirect, so the browser moves on straight away.
-return Astro.redirect((Astro.props as { target: string }).target, 301);
+const { to } = Astro.props as { to: string };
 ---
+
+<Redirect to={to} />

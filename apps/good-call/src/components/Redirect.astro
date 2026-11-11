@@ -1,0 +1,32 @@
+---
+// A page that only sends the visitor on to another address. It uses the site's
+// neutral title (see "Discretion" in src/layouts/Base.astro), so even the brief
+// redirect never shows the subject in the browser tab or history.
+// location.replace() moves on without leaving this page in the back history;
+// the meta refresh does the same job without JavaScript.
+import { SITE_NAME } from '../lib/site';
+import { absolute } from '../lib/paths';
+
+interface Props {
+  /** Where to send the visitor: a full path under the site, with any #card= part. */
+  to: string;
+}
+
+const { to } = Astro.props;
+const title = `${SITE_NAME}: practise the call before it counts`;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${to}`} />
+    <link rel="canonical" href={absolute(to.replace(/^\/projects\/good-call/, '').split('#')[0])} />
+    <script is:inline define:vars={{ to }}>location.replace(to);</script>
+  </head>
+  <body>
+    <a href={to}>Continue</a>
+  </body>
+</html>
