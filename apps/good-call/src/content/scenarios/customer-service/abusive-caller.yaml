@@ -1,5 +1,6 @@
 set: customer-service
-order: 3
+category: pressure
+order: 1
 title: When it turns personal
 topic: Abuse and limits
 draft: false

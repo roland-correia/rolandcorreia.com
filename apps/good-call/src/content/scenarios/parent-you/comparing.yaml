@@ -1,5 +1,6 @@
 set: parent-you
-order: 5
+category: support
+order: 2
 title: Everyone else is doing it better
 topic: Comparison
 draft: false

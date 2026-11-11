@@ -37,7 +37,7 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 | Field | What it is |
 | --- | --- |
 | `set`, `order` | Which set it belongs to (the folder name, such as `consent` or `interview`) and its position in it. |
-| `category` | For sets with sections (all except `customer-service`): which section it sits under. `order` then sorts within that section. |
+| `category` | Which chapter it belongs to. Every set is split into chapters, listed in `categories` in `src/lib/site.ts`. `order` then sorts within the chapter. |
 | `title`, `topic` | The heading, and the skill or theme shown as a small label. |
 | `situation` | What is happening. Leave a blank line between paragraphs. |
 | `question` | Optional. Defaults to "What is the best call?". Interview questions use "Which answer works best?". |
@@ -49,9 +49,11 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 `why` is the feedback, and every option must have one, including the best. Vary which position the
 best answer sits in.
 
-The categories for each set are listed in `categories` in `src/lib/site.ts`. Their order there is
-the order on the page. To add one, add a line there and use its name in a scenario. A set with no
-categories is shown as one list.
+Each set is split into chapters, listed in `categories` in `src/lib/site.ts`. Their order there is
+the chapter order. A set's page is the quiz itself: every scenario, in order, under its chapter's
+heading, with the chapters listed at the top as links down the page. Each scenario also has a page
+of its own at `/practice/<set>/<scenario>/`, for direct links. To add a chapter, add a line there and
+use its name in a scenario's `category`. A set with no chapters is shown as one list of questions.
 
 ## Add a set, a role or a parenting module
 
@@ -71,9 +73,9 @@ support links in `src/components/Support.astro`.
 src/content.config.ts    the rules every scenario must follow (the schema)
 src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
 src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
-src/pages/               home, the parenting and work pages, a set, one scenario, about
+src/pages/               home, the parenting and work pages, a set's quiz, one scenario, about
 src/layouts/Base.astro   the page shell, share tags, reading settings and the footer (summary, disclaimer, copyright)
-src/components/          the wordmark, scenario and set tiles, progress bar, settings dialog and support links
+src/components/          the wordmark, quiz card, set tiles, progress bar, settings dialog and support links
 src/scripts/             scenario.ts (lock in an answer), progress.ts (saved answers), progress-bar.ts,
                          set-progress.ts, settings.ts
 src/styles/global.css    colours, type and layout, all in one place

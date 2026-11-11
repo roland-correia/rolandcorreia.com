@@ -1,5 +1,6 @@
 set: parent-you
-order: 2
+category: repair
+order: 1
 title: You shouted
 topic: Repair after a bad moment
 draft: false

@@ -1,107 +1,55 @@
 ---
+// A single scenario on a page of its own, for links that point straight to it.
+// The usual way through is the module's page, which holds every scenario inline.
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
-import ProgressBar from '../../../components/ProgressBar.astro';
-import { getLiveSets, pathOf, slugOf, type Scenario } from '../../../lib/scenarios';
-import { sets, calls } from '../../../lib/site';
+import QuizCard from '../../../components/QuizCard.astro';
+import { getLiveSets, pathOf, slugOf, sectionsOf, chapterAnchorOf, type Scenario, type Section } from '../../../lib/scenarios';
+import { sets } from '../../../lib/site';
 import { href } from '../../../lib/paths';
 
 export async function getStaticPaths() {
   const liveSets = await getLiveSets();
-  return liveSets.flatMap(({ id, scenarios }) =>
-    scenarios.map((entry, index) => ({
-      params: { set: id, scenario: slugOf(entry) },
-      props: { entry, number: index + 1, all: scenarios, next: scenarios[index + 1] },
-    })),
-  );
+  return liveSets.flatMap(({ id, scenarios }) => {
+    const sections = sectionsOf(id, scenarios);
+    return scenarios.map((entry) => {
+      const chapter = sections.find((section) => section.id === entry.data.category);
+      const siblings = chapter ? chapter.scenarios : scenarios;
+      return {
+        params: { set: id, scenario: slugOf(entry) },
+        props: { entry, siblings, chapter },
+      };
+    });
+  });
 }
 
-const { entry, number, all, next } = Astro.props as {
+const { entry, siblings, chapter } = Astro.props as {
   entry: Scenario;
-  number: number;
-  /** Every scenario in this set, for the progress bar. */
-  all: Scenario[];
-  next?: Scenario;
+  siblings: Scenario[];
+  chapter?: Section;
 };
 const scenario = entry.data;
 const set = sets[scenario.set];
 const setPath = href(`/practice/${scenario.set}/`);
-// Back lands on the scenario's own section of the set page, when the set has sections.
-const backPath = scenario.category ? `${setPath}#${scenario.category}` : setPath;
-const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
+// Back, and the button after answering, return to this scenario's place in the module's quiz.
+const quizPath = chapter ? `${setPath}#${chapterAnchorOf(chapter.id)}` : setPath;
+const place = chapter ? chapter.name : set.name;
+const label = `${place}. Question ${siblings.indexOf(entry) + 1} of ${siblings.length}. ${scenario.topic}`;
 ---
 
 <Base
   title={scenario.title}
   description={`${set.name} scenario: ${scenario.topic}. Choose what you would do and see why.`}
   path={pathOf(entry)}
-  back={{ href: backPath, label: 'Back' }}
+  back={{ href: quizPath, label: 'Back' }}
 >
   {scenario.draft && <p class="notice">Draft. This scenario is not published yet.</p>}
 
-  <article data-scenario data-id={entry.id}>
-    <header class="group">
-      <p class="kicker">{set.name}. Scenario {number} of {all.length}. {scenario.topic}</p>
-      <h1>{scenario.title}</h1>
-      <ProgressBar name={set.name} scenarios={all} />
-    </header>
-
-    <div class="prose situation">
-      {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-    </div>
-
-    <form data-quiz>
-      <fieldset>
-        <legend>{scenario.question}</legend>
-        {
-          scenario.options.map((option, index) => (
-            <div class="opt" data-option data-call={option.call}>
-              <label>
-                <input type="radio" name="answer" value={index} />
-                <span>
-                  {option.text}
-                  <em class="yours" data-yours hidden>Your answer</em>
-                </span>
-              </label>
-              <div class="why" data-why data-call={option.call} tabindex="-1">
-                <b>
-                  <span aria-hidden="true">{calls[option.call].mark}</span> {calls[option.call].label}
-                </b>
-                <p>{option.why}</p>
-              </div>
-            </div>
-          ))
-        }
-      </fieldset>
-
-      <p class="hint" data-hint role="alert" hidden>Choose an answer first. There is no time limit.</p>
-      <button class="btn block" data-check hidden>Lock in my answer</button>
-      <p class="fine" data-once hidden>You get one go. Once you lock in an answer, you cannot change it.</p>
-      <p class="fine" data-locked hidden>Your answer is locked in and cannot be changed.</p>
-      <button type="button" class="btn ghost block" data-show-all hidden>Show the reasons for the other answers</button>
-    </form>
-
-    <div data-after>
-      <section class="principle">
-        <h2>The principle</h2>
-        <p>{scenario.principle}</p>
-      </section>
-
-      <nav class="stepper" aria-label="Scenarios">
-        {
-          next ? (
-            <a class="btn block" href={href(pathOf(next))}>
-              Next: {next.data.title}
-            </a>
-          ) : (
-            <a class="btn block" href={setPath}>
-              Finish: back to {set.name}
-            </a>
-          )
-        }
-      </nav>
-    </div>
-  </article>
+  <QuizCard entry={entry} label={label} as="page">
+    <nav class="stepper" aria-label="Module" slot="after">
+      <a class="btn block" href={quizPath}>Go to the full {set.name} quiz</a>
+    </nav>
+  </QuizCard>
 
   <Support set={scenario.set} />
 

@@ -1,0 +1,75 @@
+---
+// One scenario as a quiz: the situation, the answers, and the reason for each.
+// Used on a module's page, where every scenario sits inline under its chapter,
+// and on a scenario's own page. src/scripts/scenario.ts makes each one work.
+import { slugOf, type Scenario } from '../lib/scenarios';
+import { calls } from '../lib/site';
+
+interface Props {
+  entry: Scenario;
+  /** The line above the title, such as "Question 2 of 4. Touch". */
+  label: string;
+  /** 'page' when the scenario has a page to itself, so its title is the page heading. */
+  as?: 'page' | 'inline';
+}
+
+const { entry, label, as = 'inline' } = Astro.props;
+const scenario = entry.data;
+const slug = slugOf(entry);
+const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
+const Title = as === 'page' ? 'h1' : 'h3';
+const Principle = as === 'page' ? 'h2' : 'h4';
+---
+
+<article class:list={['quiz', { 'quiz-inline': as === 'inline' }]} id={`q-${slug}`} data-scenario data-id={entry.id}>
+  <header class="group">
+    <p class="kicker">{label}</p>
+    <Title class="quiz-title">{scenario.title}</Title>
+    <slot name="header" />
+  </header>
+
+  <div class="prose situation">
+    {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+
+  <form data-quiz>
+    <fieldset>
+      <legend>{scenario.question}</legend>
+      {
+        scenario.options.map((option, index) => (
+          <div class="opt" data-option data-call={option.call}>
+            <label>
+              <input type="radio" name={`answer-${slug}`} value={index} />
+              <span>
+                {option.text}
+                <em class="yours" data-yours hidden>
+                  Your answer
+                </em>
+              </span>
+            </label>
+            <div class="why" data-why data-call={option.call} tabindex="-1">
+              <b>
+                <span aria-hidden="true">{calls[option.call].mark}</span> {calls[option.call].label}
+              </b>
+              <p>{option.why}</p>
+            </div>
+          </div>
+        ))
+      }
+    </fieldset>
+
+    <p class="hint" data-hint role="alert" hidden>Choose an answer first. There is no time limit.</p>
+    <button class="btn block" data-check hidden>Lock in my answer</button>
+    <p class="fine" data-once hidden>You get one go. Once you lock in an answer, you cannot change it.</p>
+    <p class="fine" data-locked hidden>Your answer is locked in and cannot be changed.</p>
+    <button type="button" class="btn ghost block" data-show-all hidden>Show the reasons for the other answers</button>
+  </form>
+
+  <div data-after>
+    <section class="principle">
+      <Principle>The principle</Principle>
+      <p>{scenario.principle}</p>
+    </section>
+    <slot name="after" />
+  </div>
+</article>

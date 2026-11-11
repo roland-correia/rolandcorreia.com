@@ -30,6 +30,9 @@ export function sectionsOf(set: SetId, scenarios: Scenario[]): Section[] {
     .filter((section) => section.scenarios.length > 0);
 }
 
+// A chapter is one section of a set. It is a part of the module's quiz page, reached by this anchor.
+export const chapterAnchorOf = (chapter: string) => `chapter-${chapter}`;
+
 // The sets that have a page: marked live and with at least one scenario to show.
 export async function getLiveSets(): Promise<{ id: SetId; scenarios: Scenario[] }[]> {
   const ids = (Object.keys(sets) as SetId[]).filter((id) => sets[id].live);
