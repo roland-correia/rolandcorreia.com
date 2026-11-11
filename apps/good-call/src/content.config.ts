@@ -19,7 +19,6 @@ const scenario = z.object({
   set: z.enum([
     'consent',
     'racism',
-    'adult-content',
     'parent-newborn',
     'parent-baby',
     'parent-toddler',
