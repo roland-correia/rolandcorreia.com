@@ -1,7 +1,9 @@
 export const SITE_NAME = 'Good Call';
 export const TAGLINE = 'Practise the call before it counts.';
+// Used as the description of every page, so it is deliberately general: see
+// "Discretion" in src/layouts/Base.astro.
 export const DESCRIPTION =
-  'Short, realistic scenarios on consent, racism, parenting and judgement at work. Choose what you would do, then see why each choice helps or harms. No timer and no account.';
+  'Short, realistic scenarios about everyday life and work. Choose what you would do, then see why each choice helps or harms. No timer and no account.';
 
 // Where sets are listed. 'everyday' sets sit on the home page itself; the others
 // each have their own page, reached from a tile on the home page.

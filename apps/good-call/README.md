@@ -85,6 +85,11 @@ src/styles/global.css    colours, type and layout, all in one place
 
 Choices worth knowing about:
 
+- **Discretion.** Every page has the same neutral title and description, so the browser tab, history,
+  bookmarks, search results and link previews never name a subject such as sex or pornography.
+  Redirect pages use the same title. This is set in `src/layouts/Base.astro` and
+  `src/components/Redirect.astro`; keep it that way.
+
 - **No timer, but one go.** Visitors can take as long as they like, then lock in an answer. A locked
   answer cannot be changed, on that visit or a later one, so it is their real first judgement.
   They can still read the reasons for the other answers afterwards.

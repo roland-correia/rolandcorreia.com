@@ -7,7 +7,9 @@ import { SITE_NAME, DESCRIPTION } from '../lib/site';
 import { href, absolute } from '../lib/paths';
 
 interface Props {
+  /** The page's name. Kept for reference only: see "Discretion" below. */
   title: string;
+  /** Kept for reference only: see "Discretion" below. */
   description?: string;
   /** The page's own path, e.g. '/work/', used for the canonical and share URLs. */
   path: string;
@@ -15,9 +17,17 @@ interface Props {
   back?: { href: string; label: string };
 }
 
-const { title, description = DESCRIPTION, path, back } = Astro.props;
-const pageTitle = path === '/' ? `${SITE_NAME}: practise the call before it counts` : `${title} | ${SITE_NAME}`;
+const { path, back } = Astro.props;
 const canonical = absolute(path);
+
+// Discretion. Some modules are about sex, pornography and other subjects people
+// may not want seen on their screen, in their browser history or in a link
+// preview, for example in a strict household or in public. So every page shares
+// one neutral title and description: the browser tab, history, bookmarks, search
+// results and shared-link previews never name the subject. Each page's own
+// heading says what it is about once it is open.
+const pageTitle = `${SITE_NAME}: practise the call before it counts`;
+const description = DESCRIPTION;
 ---
 
 <!doctype html>
@@ -33,7 +43,7 @@ const canonical = absolute(path);
 
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
 

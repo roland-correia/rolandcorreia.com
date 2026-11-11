@@ -1,0 +1,8 @@
+---
+// The "Pornography and healthy sexuality" module was merged into the consent
+// module. Its old address sends people to the new one.
+import Redirect from '../../../components/Redirect.astro';
+import { href } from '../../../lib/paths';
+---
+
+<Redirect to={href('/practice/consent/')} />

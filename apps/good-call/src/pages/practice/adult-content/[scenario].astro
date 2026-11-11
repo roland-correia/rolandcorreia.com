@@ -1,0 +1,21 @@
+---
+// The questions from the old "Pornography and healthy sexuality" module now live
+// in the consent module, under the same names. Their old addresses send people there.
+import Redirect from '../../../components/Redirect.astro';
+import { getScenarios, slugOf } from '../../../lib/scenarios';
+import { href } from '../../../lib/paths';
+
+export async function getStaticPaths() {
+  // The categories the pornography questions were given when they moved. Declared
+  // in here because getStaticPaths cannot see the rest of this file.
+  const moved = ['children', 'yourself', 'relationships'];
+  const consent = await getScenarios('consent');
+  return consent
+    .filter((entry) => moved.includes(entry.data.category ?? ''))
+    .map((entry) => ({ params: { scenario: slugOf(entry) }, props: { to: href(`/practice/consent/${slugOf(entry)}/`) } }));
+}
+
+const { to } = Astro.props as { to: string };
+---
+
+<Redirect to={to} />
