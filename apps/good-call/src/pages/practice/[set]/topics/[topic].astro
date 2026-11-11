@@ -1,23 +1,109 @@
 ---
-// Topics used to have pages of their own. Each module is now one deck, so these
-// addresses send people to the first card of that topic in its module's deck.
-import Redirect from '../../../../components/Redirect.astro';
-import { getLiveSets, sectionsOf, type Scenario } from '../../../../lib/scenarios';
+// One topic as a deck of cards: one question at a time, swiped or tapped through,
+// then a summary that leads straight on to the next topic. src/scripts/deck.ts
+// runs the deck and src/scripts/scenario.ts each question on it.
+// Without JavaScript every card is shown in order, as a worked example.
+import Base from '../../../../layouts/Base.astro';
+import Support from '../../../../components/Support.astro';
+import QuizCard from '../../../../components/QuizCard.astro';
+import { getLiveSets, sectionsOf, topicPathOf, type Section } from '../../../../lib/scenarios';
+import { sets, type SetId } from '../../../../lib/site';
 import { href } from '../../../../lib/paths';
 
 export async function getStaticPaths() {
   const liveSets = await getLiveSets();
   return liveSets.flatMap(({ id, scenarios }) => {
     const topics = sectionsOf(id, scenarios);
-    const order: Scenario[] = topics.flatMap((topic) => topic.scenarios);
-    return topics.map((topic) => ({
+    return topics.map((topic, index) => ({
       params: { set: id, topic: topic.id },
-      props: { to: `${href(`/practice/${id}/`)}#card=${order.indexOf(topic.scenarios[0]) + 1}` },
+      props: { id, topic, next: topics[index + 1] },
     }));
   });
 }
 
-const { to } = Astro.props as { to: string };
+const { id, topic, next } = Astro.props as { id: SetId; topic: Section; next?: Section };
+const set = sets[id];
+const setPath = href(`/practice/${id}/`);
+const cards = topic.scenarios;
+const count = (n: number) => `${n} ${n === 1 ? 'question' : 'questions'}`;
 ---
 
-<Redirect to={to} />
+<Base
+  title={`${topic.name}: ${set.name}`}
+  description={`${topic.blurb}. Part of ${set.name}.`}
+  path={topicPathOf(id, topic.id)}
+  back={{ href: setPath, label: 'Topics' }}
+>
+  <div class="deck" data-deck>
+    <header class="deck-head">
+      <p class="kicker">{set.name}</p>
+      <h1>{topic.name}</h1>
+      <p class="meta">{topic.blurb}.</p>
+      <ol class="deck-dots" data-deck-dots aria-hidden="true">
+        {cards.map((entry) => <li data-dot data-id={entry.id} />)}
+      </ol>
+      <p class="deck-count" data-deck-count aria-live="polite">{count(cards.length)}</p>
+    </header>
+
+    <div class="deck-stage" data-deck-stage>
+      {
+        cards.map((entry, index) => (
+          <section class="deck-card" id={`card-${index + 1}`} data-slide aria-label={`Card ${index + 1} of ${cards.length}`}>
+            <QuizCard entry={entry} label={entry.data.topic} />
+          </section>
+        ))
+      }
+
+      <section class="deck-card deck-done" id="done" data-slide data-summary aria-labelledby="done-title">
+        <div class="done-badge" data-done-badge aria-hidden="true" hidden>
+          <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+        </div>
+        <p class="kicker" data-done-kicker>Topic summary</p>
+        <h2 id="done-title" tabindex="-1">{topic.name}</h2>
+        <p class="done-score" data-done-score></p>
+        <ol class="done-list">
+          {
+            cards.map((entry, index) => (
+              <li>
+                <a href={`#card-${index + 1}`} data-goto={index}>
+                  <span class="done-mark" data-done-mark data-id={entry.id} aria-hidden="true" />
+                  <span>
+                    <b>{entry.data.title}</b>
+                    <small data-done-verdict data-id={entry.id}>Not answered yet</small>
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+        {
+          next ? (
+            <a class="btn block" href={href(topicPathOf(id, next.id))} data-next-topic>
+              Next topic: {next.name}
+            </a>
+          ) : (
+            <a class="btn block" href={setPath}>
+              Finish {set.name}
+            </a>
+          )
+        }
+        <a class="btn ghost block" href={setPath}>All topics</a>
+      </section>
+    </div>
+
+    <nav class="deck-nav" data-deck-nav aria-label="Cards" hidden>
+      <button type="button" class="btn ghost deck-prev" data-prev aria-label="Previous card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <button type="button" class="btn deck-next" data-next>Next card</button>
+    </nav>
+
+  </div>
+
+  <Support set={id} />
+
+  <script>
+    import '../../../../scripts/scenario.ts';
+    import '../../../../scripts/deck.ts';
+  </script>
+</Base>
