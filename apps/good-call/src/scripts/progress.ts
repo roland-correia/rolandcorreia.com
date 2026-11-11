@@ -33,7 +33,9 @@ export function readProgress(): Progress {
   }
 
   const progress: Progress = {};
-  for (const [id, value] of Object.entries(saved)) {
+  for (const [savedId, value] of Object.entries(saved)) {
+    // The pornography module was merged into the consent module, so its answers move with it.
+    const id = savedId.replace(/^adult-content\//, 'consent/');
     progress[id] = typeof value === 'string' ? { call: value, choice: -1 } : value;
   }
   return progress;
