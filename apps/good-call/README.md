@@ -50,9 +50,10 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 best answer sits in.
 
 Each set is split into chapters, listed in `categories` in `src/lib/site.ts`. Their order there is
-the chapter order. A set's page lists its chapters; each chapter has its own page at
-`/practice/<set>/chapters/<chapter>/` listing its scenarios. To add a chapter, add a line there and
-use its name in a scenario's `category`. A set with no chapters is shown as one list of scenarios.
+the chapter order. A set's page is the quiz itself: every scenario, in order, under its chapter's
+heading, with the chapters listed at the top as links down the page. Each scenario also has a page
+of its own at `/practice/<set>/<scenario>/`, for direct links. To add a chapter, add a line there and
+use its name in a scenario's `category`. A set with no chapters is shown as one list of questions.
 
 ## Add a set, a role or a parenting module
 
@@ -72,9 +73,9 @@ support links in `src/components/Support.astro`.
 src/content.config.ts    the rules every scenario must follow (the schema)
 src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
 src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
-src/pages/               home, the parenting and work pages, a set, one scenario, about
+src/pages/               home, the parenting and work pages, a set's quiz, one scenario, about
 src/layouts/Base.astro   the page shell, share tags, reading settings and the footer (summary, disclaimer, copyright)
-src/components/          the wordmark, scenario and set tiles, progress bar, settings dialog and support links
+src/components/          the wordmark, quiz card, set tiles, progress bar, settings dialog and support links
 src/scripts/             scenario.ts (lock in an answer), progress.ts (saved answers), progress-bar.ts,
                          set-progress.ts, settings.ts
 src/styles/global.css    colours, type and layout, all in one place

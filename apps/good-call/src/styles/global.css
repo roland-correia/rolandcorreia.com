@@ -266,6 +266,13 @@ a.tile:hover { border-color: var(--accent); }
    ========================================================================== */
 [data-scenario], [data-quiz], [data-after] { display: flex; flex-direction: column; gap: 1.4rem; }
 
+/* A module's page: chapters one after another, each holding its questions inline. */
+.chapter { display: flex; flex-direction: column; gap: 2rem; scroll-margin-top: 1rem; }
+.chapter-head { padding: 1.25rem 0 0.25rem; border-top: 3px solid var(--accent); }
+.quiz-inline { padding-top: 1.75rem; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
+.quiz-inline .quiz-title { font-size: 1.35rem; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
+.quiz-inline .principle h4 { font-size: 1.1rem; }
+
 .situation { font-size: 1.1rem; }
 
 [data-quiz] fieldset { display: flex; flex-direction: column; gap: 0.75rem; }

@@ -1,4 +1,4 @@
-// One scenario: choose an answer, lock it in, read why.
+// Each scenario: choose an answer, lock it in, read why.
 //
 // An answer is final. Once it is locked in it cannot be changed, on this visit or
 // a later one, so the result is the visitor's real first judgement. There is still
@@ -9,9 +9,10 @@
 
 import { readProgress, recordAnswer, type Call } from './progress';
 
-const root = document.querySelector<HTMLElement>('[data-scenario]');
+// A module's page holds every scenario in it, so each one is set up on its own.
+document.querySelectorAll<HTMLElement>('[data-scenario]').forEach(setUp);
 
-if (root) {
+function setUp(root: HTMLElement) {
   const id = root.dataset.id!;
   const form = root.querySelector<HTMLFormElement>('[data-quiz]')!;
   const options = Array.from(root.querySelectorAll<HTMLElement>('[data-option]'));
@@ -45,7 +46,7 @@ if (root) {
       input.checked = option === chosen;
       input.disabled = true;
     }
-    root!.classList.add('locked');
+    root.classList.add('locked');
 
     if (chosen) {
       chosen.classList.add('chosen');

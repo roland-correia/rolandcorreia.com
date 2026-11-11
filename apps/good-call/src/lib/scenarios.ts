@@ -30,12 +30,8 @@ export function sectionsOf(set: SetId, scenarios: Scenario[]): Section[] {
     .filter((section) => section.scenarios.length > 0);
 }
 
-// A chapter is one section of a set, with its own page.
-export const chapterPathOf = (set: SetId, chapter: string) => `/practice/${set}/chapters/${chapter}/`;
-
-// The scenarios behind a Start / Carry on button, in order, for src/scripts/set-progress.ts.
-export const sequenceOf = (scenarios: Scenario[], toHref: (path: string) => string) =>
-  JSON.stringify(scenarios.map((scenario) => ({ id: scenario.id, href: toHref(pathOf(scenario)) })));
+// A chapter is one section of a set. It is a part of the module's quiz page, reached by this anchor.
+export const chapterAnchorOf = (chapter: string) => `chapter-${chapter}`;
 
 // The sets that have a page: marked live and with at least one scenario to show.
 export async function getLiveSets(): Promise<{ id: SetId; scenarios: Scenario[] }[]> {
