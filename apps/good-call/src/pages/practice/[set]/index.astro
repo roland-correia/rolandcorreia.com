@@ -1,84 +1,147 @@
 ---
-// A module's page: what it covers, and its topics. Each topic opens as a deck of
-// cards on its own page. No questions are shown here.
+// A module is one continuous deck of flashcards: every question in it, topic after
+// topic, one card at a time. Tapping a module from the home page lands straight on
+// the first unanswered card. After the last card, a summary leads on to the next module.
+// src/scripts/deck.ts runs the deck and src/scripts/scenario.ts each question on it.
+// Without JavaScript every card is shown in order, as a worked example.
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
-import ProgressBar from '../../../components/ProgressBar.astro';
-import { getLiveSets, sectionsOf, topicPathOf, type Scenario } from '../../../lib/scenarios';
+import QuizCard from '../../../components/QuizCard.astro';
+import { getLiveSets, sectionsOf, type Scenario, type Section } from '../../../lib/scenarios';
 import { sets, groups, type SetId } from '../../../lib/site';
 import { href } from '../../../lib/paths';
 
 export async function getStaticPaths() {
   const liveSets = await getLiveSets();
-  return liveSets.map(({ id, scenarios }) => ({ params: { set: id }, props: { id, scenarios } }));
+  return liveSets.map(({ id, scenarios }) => {
+    // The next module in the same group (home page, parenting or work), if there is one.
+    const siblings = liveSets.filter((other) => sets[other.id].group === sets[id].group);
+    const next = siblings[siblings.findIndex((other) => other.id === id) + 1];
+    return { params: { set: id }, props: { id, scenarios, nextId: next?.id } };
+  });
 }
 
-const { id, scenarios } = Astro.props as { id: SetId; scenarios: Scenario[] };
+const { id, scenarios, nextId } = Astro.props as { id: SetId; scenarios: Scenario[]; nextId?: SetId };
 const set = sets[id];
-const isWork = set.group === 'work';
 const group = groups[set.group];
 // Only live sets get a page, and every live set has these.
-const { intro, note, rules } = set as Extract<typeof set, { live: true }>;
-const topics = sectionsOf(id, scenarios);
+const { intro, note, rules, blurb } = set as Extract<typeof set, { live: true }>;
+const isWork = set.group === 'work';
+const sectioned = sectionsOf(id, scenarios);
+// A module without topics is treated as one topic named after the module.
+const topics: Section[] = sectioned.length > 0 ? sectioned : [{ id: id, name: set.name, blurb, scenarios }];
+// The deck runs through the topics in order.
+const cards = topics.flatMap((topic) => topic.scenarios.map((entry) => ({ entry, topic })));
+const indexOf = (entry: Scenario) => cards.findIndex((card) => card.entry === entry);
 const count = (n: number) => `${n} ${n === 1 ? 'question' : 'questions'}`;
-// Start / Carry on opens the topic holding the first unanswered question.
-const sequence = JSON.stringify(
-  topics.flatMap((topic) => topic.scenarios.map((s) => ({ id: s.id, href: href(topicPathOf(id, topic.id)) }))),
-);
+const next = nextId ? { name: sets[nextId].name, path: href(`/practice/${nextId}/`) } : undefined;
 ---
 
-<Base
-  title={set.name}
-  description={intro}
-  path={`/practice/${id}/`}
-  back={{ href: href(group.path), label: 'Back' }}
->
-  <div class="stack" data-set={id}>
-    <div class="group">
+<Base title={set.name} description={intro} path={`/practice/${id}/`} back={{ href: href(group.path), label: 'Back' }}>
+  <div class="deck" data-deck data-set={id}>
+    <header class="deck-head">
       <p class="kicker">{group.name}</p>
       <h1>{set.name}</h1>
-      <p class="lead">{intro}</p>
+      <details class="deck-about">
+        <summary>About this module</summary>
+        <p>{intro}</p>
+        <p class="meta">{count(scenarios.length)} across {topics.length} {topics.length === 1 ? 'topic' : 'topics'}.</p>
+      </details>
       <p class="notice">{note}</p>
-      <p class="meta">{count(scenarios.length)} across {topics.length} topics</p>
 
-      <a class="btn block" href={href(topicPathOf(id, topics[0].id))} data-start data-sequence={sequence}>Start</a>
-      <ProgressBar name={set.name} scenarios={scenarios} />
-    </div>
-
-    <nav class="group" aria-labelledby="topics-title">
-      <h2 id="topics-title">Topics</h2>
-      <ul class="tiles">
+      <ol class="deck-segs" aria-hidden="true">
         {
           topics.map((topic) => (
-            <li>
-              <a class="tile topic-tile" href={href(topicPathOf(id, topic.id))}>
-                <b>{topic.name}</b>
-                <small>{topic.blurb}</small>
-                <small>{count(topic.scenarios.length)}</small>
-                <ProgressBar name={topic.name} scenarios={topic.scenarios} />
-              </a>
+            <li data-seg data-ids={topic.scenarios.map((s) => s.id).join(',')} title={topic.name}>
+              <i data-seg-fill />
             </li>
           ))
         }
-      </ul>
+      </ol>
+      <p class="deck-count" data-deck-count aria-live="polite">{count(scenarios.length)}</p>
+    </header>
+
+    <div class="deck-stage" data-deck-stage>
+      {
+        cards.map(({ entry, topic }, index) => (
+          <section
+            class="deck-card"
+            id={`card-${index + 1}`}
+            data-slide
+            data-topic={topic.id}
+            aria-label={`${topic.name}. Card ${index + 1} of ${cards.length}`}
+          >
+            <QuizCard entry={entry} label={topic.name} />
+          </section>
+        ))
+      }
+
+      <section class="deck-card deck-done" id="done" data-slide data-summary aria-labelledby="done-title">
+        <div class="done-badge" data-done-badge aria-hidden="true" hidden>
+          <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+        </div>
+        <p class="kicker" data-done-kicker>Your progress</p>
+        <h2 id="done-title" tabindex="-1">{set.name}</h2>
+        <p class="done-score" data-done-score></p>
+
+        {
+          topics.map((topic) => (
+            <section class="done-group" aria-label={topic.name}>
+              <h3>{topic.name}</h3>
+              <ol class="done-list">
+                {topic.scenarios.map((entry) => (
+                  <li>
+                    <a href={`#card-${indexOf(entry) + 1}`} data-goto={indexOf(entry)}>
+                      <span class="done-mark" data-done-mark data-id={entry.id} aria-hidden="true" />
+                      <span>
+                        <b>{entry.data.title}</b>
+                        <small data-done-verdict data-id={entry.id}>
+                          Not answered yet
+                        </small>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))
+        }
+
+        <section class="done-rules" aria-labelledby="rules-title">
+          <h3 id="rules-title">{isWork ? 'What employers look for' : 'Key principles'}</h3>
+          <ul class="ticks">
+            {rules.map((rule) => <li>{rule}</li>)}
+          </ul>
+        </section>
+
+        <button type="button" class="btn block" data-resume hidden>Continue where you left off</button>
+        {
+          next ? (
+            <a class="btn block" href={next.path} data-next-module>
+              Next: {next.name}
+            </a>
+          ) : (
+            <a class="btn block" href={href(group.path)}>
+              Back to {group.path === '/' ? 'all modules' : group.name}
+            </a>
+          )
+        }
+        <button type="button" class="textbtn done-reset" data-deck-reset>Clear my answers and start again</button>
+      </section>
+    </div>
+
+    <nav class="deck-nav" data-deck-nav aria-label="Cards" hidden>
+      <button type="button" class="btn ghost deck-prev" data-prev aria-label="Previous card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <button type="button" class="btn deck-next" data-next>Next card</button>
     </nav>
-
-    <button type="button" class="textbtn" data-reset hidden>Clear my answers and start this module again</button>
   </div>
-
-  <section class="card" aria-labelledby="rules-title">
-    <h2 id="rules-title">
-      {isWork ? 'What employers look for' : 'Key principles'}
-    </h2>
-    {isWork && <p class="meta">The unwritten rules behind these questions, said out loud:</p>}
-    <ul class="ticks">
-      {rules.map((rule) => <li>{rule}</li>)}
-    </ul>
-  </section>
 
   <Support set={id} />
 
   <script>
-    import '../../../scripts/set-progress.ts';
+    import '../../../scripts/scenario.ts';
+    import '../../../scripts/deck.ts';
   </script>
 </Base>

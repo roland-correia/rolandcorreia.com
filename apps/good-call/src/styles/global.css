@@ -256,24 +256,34 @@ a.tile:hover { border-color: var(--accent); }
 [data-scenario], [data-quiz], [data-after] { display: flex; flex-direction: column; gap: 1.4rem; }
 
 /* ==========================================================================
-   TOPIC DECK: one question at a time, like flashcards (src/scripts/deck.ts)
+   MODULE DECK: every question in a module, one at a time, like flashcards
+   (src/scripts/deck.ts)
    ========================================================================== */
 .deck { display: flex; flex-direction: column; gap: 1.1rem; }
 .deck-head { display: flex; flex-direction: column; gap: 0.6rem; }
-.deck-head h1 { font-size: 1.9rem; }
+.deck-head h1 { font-size: 1.7rem; }
+/* The content note stays visible before any card, but compact, so the first card starts high. */
+.deck-head .notice { font-size: 0.78rem; padding: 0.55rem 0.8rem; line-height: 1.45; }
+.deck-segs { scroll-margin-top: 0.75rem; }
 
-/* One segment per card. Answered cards take their verdict's colour; the count
-   underneath says the same in words, so colour is never the only signal. */
-.deck-dots { display: flex; gap: 0.35rem; list-style: none; padding: 0; margin-top: 0.25rem; }
-.deck:not(.js-deck) .deck-dots { display: none; }
-.deck-dots li {
-  flex: 1; height: 0.45rem; border-radius: 999px; background: var(--line);
-  transition: background-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+/* "About this module": the full intro, folded away so the first card is close to the top. */
+.deck-about { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.deck-about summary { min-height: 2.75rem; padding: 0.6rem 0.9rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+.deck-about p { padding: 0 0.9rem 0.8rem; font-size: 0.95rem; }
+
+/* One segment per topic, filling as its cards are answered. The count underneath
+   says where you are in words, so the bar is never the only signal. */
+.deck-segs { display: flex; gap: 0.3rem; list-style: none; padding: 0; margin-top: 0.25rem; }
+.deck:not(.js-deck) .deck-segs { display: none; }
+.deck-segs li {
+  position: relative; flex: 1; height: 0.45rem; border-radius: 999px; background: var(--line); overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
-.deck-dots li[data-call='best'] { background: var(--accent); }
-.deck-dots li[data-call='okay'] { background: var(--okay-line); }
-.deck-dots li[data-call='risky'] { background: var(--risky-line); }
-.deck-dots li.current { transform: scaleY(1.7); box-shadow: inset 0 0 0 2px var(--ink); }
+.deck-segs li i {
+  position: absolute; inset: 0 auto 0 0; width: 0; background: var(--accent); border-radius: inherit;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.deck-segs li.current { transform: scaleY(1.6); box-shadow: inset 0 0 0 2px var(--ink); }
 .deck-count { font-weight: 600; font-size: 0.85rem; color: var(--muted); }
 
 /* The cards. The page still scrolls vertically while a card is swiped sideways. */
@@ -319,6 +329,10 @@ a.tile:hover { border-color: var(--accent); }
   content: ''; position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--accent);
   animation: badge-ring 0.9s ease-out 0.15s both;
 }
+.done-group { display: flex; flex-direction: column; gap: 0.5rem; text-align: left; }
+.done-group h3, .done-rules h3 { font-size: 1rem; font-weight: 700; margin-top: 0.5rem; }
+.done-rules { text-align: left; display: flex; flex-direction: column; gap: 0.6rem; padding: 1rem; border-radius: 14px; background: var(--accent-soft); }
+.done-reset { align-self: center; }
 .done-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; text-align: left; }
 .done-list a {
   display: flex; gap: 0.8rem; align-items: center; padding: 0.75rem 0.9rem; min-height: 3.4rem;
@@ -347,8 +361,6 @@ a.tile:hover { border-color: var(--accent); }
 @keyframes badge-pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: none; } }
 @keyframes badge-ring { from { opacity: 0.8; transform: scale(1); } to { opacity: 0; transform: scale(1.8); } }
 
-/* Topic tiles on a module's page. */
-.topic-tile b { font-size: 1.15rem; }
 
 .situation { font-size: 1.1rem; }
 
