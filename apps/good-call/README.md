@@ -49,11 +49,13 @@ Every scenario needs these fields, and the build **fails with a clear message** 
 `why` is the feedback, and every option must have one, including the best. Vary which position the
 best answer sits in.
 
-Each set is split into chapters, listed in `categories` in `src/lib/site.ts`. Their order there is
-the chapter order. A set's page is the quiz itself: every scenario, in order, under its chapter's
-heading, with the chapters listed at the top as links down the page. Each scenario also has a page
-of its own at `/practice/<set>/<scenario>/`, for direct links. To add a chapter, add a line there and
-use its name in a scenario's `category`. A set with no chapters is shown as one list of questions.
+Each set (module) is split into topics, listed in `categories` in `src/lib/site.ts`, in the order
+shown. A module's page lists its topics and no questions. Each topic has its own page at
+`/practice/<set>/topics/<topic>/`, where its questions are worked through one card at a time, like
+flashcards (`src/scripts/deck.ts`): Next and Back buttons at the bottom of the screen, swiping on
+touch screens, arrow keys, and a summary at the end that leads on to the next topic. Each question
+also has a page of its own at `/practice/<set>/<scenario>/`, for direct links. To add a topic, add a
+line to `categories` and use its name in a scenario's `category`.
 
 ## Add a set, a role or a parenting module
 
@@ -73,10 +75,10 @@ support links in `src/components/Support.astro`.
 src/content.config.ts    the rules every scenario must follow (the schema)
 src/content/scenarios/   the scenarios, one YAML file each, in a folder per set
 src/lib/site.ts          the sets (consent and each work role), their categories and the three verdicts
-src/pages/               home, the parenting and work pages, a set's quiz, one scenario, about
+src/pages/               home, the parenting and work pages, a module, a topic's deck, one scenario, about
 src/layouts/Base.astro   the page shell, share tags, reading settings and the footer (summary, disclaimer, copyright)
 src/components/          the wordmark, quiz card, set tiles, progress bar, settings dialog and support links
-src/scripts/             scenario.ts (lock in an answer), progress.ts (saved answers), progress-bar.ts,
+src/scripts/             scenario.ts (lock in an answer), deck.ts (the flashcards), progress.ts (saved answers), progress-bar.ts,
                          set-progress.ts, settings.ts
 src/styles/global.css    colours, type and layout, all in one place
 ```

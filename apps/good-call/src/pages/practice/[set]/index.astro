@@ -1,11 +1,10 @@
 ---
-// A module's page is the quiz itself: every scenario in the module, in order,
-// grouped under its chapters. Chapters are listed at the top and link down the page.
+// A module's page: what it covers, and its topics. Each topic opens as a deck of
+// cards on its own page. No questions are shown here.
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
-import QuizCard from '../../../components/QuizCard.astro';
 import ProgressBar from '../../../components/ProgressBar.astro';
-import { getLiveSets, sectionsOf, slugOf, chapterAnchorOf, type Scenario } from '../../../lib/scenarios';
+import { getLiveSets, sectionsOf, topicPathOf, type Scenario } from '../../../lib/scenarios';
 import { sets, groups, type SetId } from '../../../lib/site';
 import { href } from '../../../lib/paths';
 
@@ -20,12 +19,12 @@ const isWork = set.group === 'work';
 const group = groups[set.group];
 // Only live sets get a page, and every live set has these.
 const { intro, note, rules } = set as Extract<typeof set, { live: true }>;
-const chapters = sectionsOf(id, scenarios);
+const topics = sectionsOf(id, scenarios);
 const count = (n: number) => `${n} ${n === 1 ? 'question' : 'questions'}`;
-// The Start / Carry on button jumps to the first unanswered question on this page.
-const sequence = JSON.stringify(scenarios.map((s) => ({ id: s.id, href: `#q-${slugOf(s)}` })));
-const label = (entry: Scenario, list: Scenario[]) =>
-  `Question ${list.indexOf(entry) + 1} of ${list.length}. ${entry.data.topic}`;
+// Start / Carry on opens the topic holding the first unanswered question.
+const sequence = JSON.stringify(
+  topics.flatMap((topic) => topic.scenarios.map((s) => ({ id: s.id, href: href(topicPathOf(id, topic.id)) }))),
+);
 ---
 
 <Base
@@ -40,61 +39,29 @@ const label = (entry: Scenario, list: Scenario[]) =>
       <h1>{set.name}</h1>
       <p class="lead">{intro}</p>
       <p class="notice">{note}</p>
-      <p class="meta">{count(scenarios.length)}{chapters.length > 0 && ` in ${chapters.length} chapters`}</p>
+      <p class="meta">{count(scenarios.length)} across {topics.length} topics</p>
 
-      <a class="btn block" href={`#q-${slugOf(scenarios[0])}`} data-start data-sequence={sequence}>Start</a>
+      <a class="btn block" href={href(topicPathOf(id, topics[0].id))} data-start data-sequence={sequence}>Start</a>
       <ProgressBar name={set.name} scenarios={scenarios} />
     </div>
 
-    {
-      chapters.length > 0 && (
-        <nav class="group" aria-labelledby="chapters-title">
-          <h2 id="chapters-title">Chapters</h2>
-          <ol class="tiles">
-            {chapters.map((chapter, index) => (
-              <li>
-                <a class="tile" href={`#${chapterAnchorOf(chapter.id)}`}>
-                  <small class="chapter-no">Chapter {index + 1}</small>
-                  <b>{chapter.name}</b>
-                  <small>{chapter.blurb}</small>
-                  <small>{count(chapter.scenarios.length)}</small>
-                  <ProgressBar name={chapter.name} scenarios={chapter.scenarios} />
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      )
-    }
-
-    {
-      chapters.length > 0 ? (
-        chapters.map((chapter, index) => (
-          <section class="chapter" id={chapterAnchorOf(chapter.id)} aria-labelledby={`${chapter.id}-title`}>
-            <header class="group chapter-head">
-              <p class="kicker">Chapter {index + 1} of {chapters.length}</p>
-              <h2 id={`${chapter.id}-title`}>{chapter.name}</h2>
-              <p class="meta">{chapter.blurb}.</p>
-              <ProgressBar name={chapter.name} scenarios={chapter.scenarios} />
-            </header>
-            {chapter.scenarios.map((entry) => (
-              <QuizCard entry={entry} label={label(entry, chapter.scenarios)} />
-            ))}
-            {chapters[index + 1] && (
-              <a class="textbtn" href={`#${chapterAnchorOf(chapters[index + 1].id)}`}>
-                Next chapter: {chapters[index + 1].name}
+    <nav class="group" aria-labelledby="topics-title">
+      <h2 id="topics-title">Topics</h2>
+      <ul class="tiles">
+        {
+          topics.map((topic) => (
+            <li>
+              <a class="tile topic-tile" href={href(topicPathOf(id, topic.id))}>
+                <b>{topic.name}</b>
+                <small>{topic.blurb}</small>
+                <small>{count(topic.scenarios.length)}</small>
+                <ProgressBar name={topic.name} scenarios={topic.scenarios} />
               </a>
-            )}
-          </section>
-        ))
-      ) : (
-        <section class="chapter">
-          {scenarios.map((entry) => (
-            <QuizCard entry={entry} label={label(entry, scenarios)} />
-          ))}
-        </section>
-      )
-    }
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
 
     <button type="button" class="textbtn" data-reset hidden>Clear my answers and start this module again</button>
   </div>
@@ -112,7 +79,6 @@ const label = (entry: Scenario, list: Scenario[]) =>
   <Support set={id} />
 
   <script>
-    import '../../../scripts/scenario.ts';
     import '../../../scripts/set-progress.ts';
   </script>
 </Base>

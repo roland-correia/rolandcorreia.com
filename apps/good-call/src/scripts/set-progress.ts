@@ -1,7 +1,6 @@
-// On a module's page: points the Start button at the first unanswered question
-// on the page, and offers a reset. The progress bars are drawn by progress-bar.ts,
-// and each question by scenario.ts.
-// Without JavaScript the Start button jumps to the first question.
+// On a module's page: points the Start button at the topic holding the first
+// unanswered question, and offers a reset. The progress bars are drawn by progress-bar.ts.
+// Without JavaScript the Start button opens the first topic.
 
 import { readProgress, clearSet, PROGRESS_EVENT } from './progress';
 
@@ -10,7 +9,7 @@ const root = document.querySelector<HTMLElement>('[data-set]');
 if (root) {
   const set = root.dataset.set!;
   const start = root.querySelector<HTMLAnchorElement>('[data-start]')!;
-  // The questions behind the Start button, in page order, with their anchors.
+  // Every question in the module, in order, with the address of its topic.
   const sequence: { id: string; href: string }[] = JSON.parse(start.dataset.sequence ?? '[]');
   const reset = root.querySelector<HTMLButtonElement>('[data-reset]');
 
@@ -26,14 +25,12 @@ if (root) {
     if (reset) reset.hidden = done === 0;
   }
 
-  // Clearing answers has to unlock every question on the page, so the page is reloaded.
   reset?.addEventListener('click', () => {
     clearSet(set);
-    location.hash = '';
-    location.reload();
+    start.focus();
   });
 
-  // Answering a question further down updates the button without a reload.
+  // Clearing answers redraws the button and the bars.
   document.addEventListener(PROGRESS_EVENT, render);
   render();
 }
