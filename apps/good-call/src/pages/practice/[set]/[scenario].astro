@@ -1,10 +1,10 @@
 ---
 // A single scenario on a page of its own, for links that point straight to it.
-// The usual way through is its topic's deck of cards.
+// The usual way through is its module's deck of cards.
 import Base from '../../../layouts/Base.astro';
 import Support from '../../../components/Support.astro';
 import QuizCard from '../../../components/QuizCard.astro';
-import { getLiveSets, pathOf, slugOf, sectionsOf, topicPathOf, type Scenario, type Section } from '../../../lib/scenarios';
+import { getLiveSets, pathOf, slugOf, sectionsOf, type Scenario, type Section } from '../../../lib/scenarios';
 import { sets } from '../../../lib/site';
 import { href } from '../../../lib/paths';
 
@@ -12,29 +12,30 @@ export async function getStaticPaths() {
   const liveSets = await getLiveSets();
   return liveSets.flatMap(({ id, scenarios }) => {
     const sections = sectionsOf(id, scenarios);
-    return scenarios.map((entry) => {
-      const chapter = sections.find((section) => section.id === entry.data.category);
-      const siblings = chapter ? chapter.scenarios : scenarios;
-      return {
-        params: { set: id, scenario: slugOf(entry) },
-        props: { entry, siblings, chapter },
-      };
-    });
+    // The order of cards in the module's deck: topic after topic.
+    const deck = sections.length > 0 ? sections.flatMap((section) => section.scenarios) : scenarios;
+    return scenarios.map((entry) => ({
+      params: { set: id, scenario: slugOf(entry) },
+      props: {
+        entry,
+        card: deck.indexOf(entry) + 1,
+        chapter: sections.find((section) => section.id === entry.data.category),
+      },
+    }));
   });
 }
 
-const { entry, siblings, chapter } = Astro.props as {
+const { entry, card, chapter } = Astro.props as {
   entry: Scenario;
-  siblings: Scenario[];
+  /** This scenario's place in its module's deck, counting from 1. */
+  card: number;
   chapter?: Section;
 };
 const scenario = entry.data;
 const set = sets[scenario.set];
 const setPath = href(`/practice/${scenario.set}/`);
-// Back, and the button after answering, return to this card in its topic's deck.
-const quizPath = chapter
-  ? `${href(topicPathOf(scenario.set, chapter.id))}#card=${siblings.indexOf(entry) + 1}`
-  : setPath;
+// Back, and the button after answering, return to this card in its module's deck.
+const quizPath = `${setPath}#card=${card}`;
 const label = chapter ? `${chapter.name}. ${scenario.topic}` : scenario.topic;
 ---
 
@@ -48,7 +49,7 @@ const label = chapter ? `${chapter.name}. ${scenario.topic}` : scenario.topic;
 
   <QuizCard entry={entry} label={label} as="page">
     <nav class="stepper" aria-label="Module" slot="after">
-      <a class="btn block" href={quizPath}>{chapter ? `Continue with ${chapter.name}` : `Back to ${set.name}`}</a>
+      <a class="btn block" href={quizPath}>Continue {set.name}</a>
     </nav>
   </QuizCard>
 

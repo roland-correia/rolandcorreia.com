@@ -30,9 +30,6 @@ export function sectionsOf(set: SetId, scenarios: Scenario[]): Section[] {
     .filter((section) => section.scenarios.length > 0);
 }
 
-// A topic is one section of a set, with a page of its own where its questions are
-// worked through as a deck of cards. The id is the category name used in scenario files.
-export const topicPathOf = (set: SetId, topic: string) => `/practice/${set}/topics/${topic}/`;
 
 // The sets that have a page: marked live and with at least one scenario to show.
 export async function getLiveSets(): Promise<{ id: SetId; scenarios: Scenario[] }[]> {
