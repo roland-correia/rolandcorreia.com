@@ -17,18 +17,21 @@ export type GroupId = keyof typeof groups;
 // `live: false` shows as "coming later" and has no page yet.
 export const sets = {
   consent: {
-    name: 'Consent and healthy relationships',
+    name: 'Sex, consent and healthy relationships',
     group: 'everyday',
-    blurb: 'Bodily autonomy, sexual consent and respect, in person and online',
+    blurb: 'Consent, sexuality and respect, in person, online and on screen',
     intro:
-      'Consent is the foundation of every healthy relationship, from a hug to sex. This module looks at bodily autonomy, sexual consent, digital boundaries, alcohol and power, from both sides: respecting other people\'s boundaries, and holding your own.',
-    note: 'Some scenarios are about dating, sex and alcohol. Nothing is described in detail. Written for adults.',
+      'Consent is the foundation of every healthy relationship, from a hug to sex. This module covers bodily autonomy, sexual consent, digital boundaries, alcohol and power, and takes a frank, non-judgemental look at pornography: how it shapes expectations and relationships, and how to protect children from it. Throughout, it looks from both sides: respecting other people\'s boundaries, and holding your own.',
+    note: 'Covers dating, sex, alcohol and pornography, including children coming across it. Nothing is described in detail. Written for adults.',
     rules: [
       'Consent is a free choice. A yes given under pressure, fear or obligation is not one.',
       'It is specific. Yes to one thing, one time, with one person is not yes to anything else.',
       'It can be taken back at any point, with or without words.',
       'The person has to be able to choose. Very drunk, asleep or afraid is not able.',
       'If you are not sure, ask. Asking is not awkward. Guessing wrong is.',
+      'Porn is a performance made to be watched. It is not a guide to sex, bodies or what people enjoy.',
+      'The people on screen have to have agreed too. If it looks secret, leaked or underage, do not watch it or share it. Report it.',
+      'Children often see porn by accident or are shown it. A calm conversation protects them more than a punishment does.',
     ],
     live: true,
   },
@@ -46,22 +49,6 @@ export const sets = {
       'No skin tone is better than another. Praise for being lighter is the same prejudice as an insult for being darker.',
       'If you get it wrong, listen, apologise without excuses and change it. Being corrected is not an attack.',
       'Racist abuse and threats can be crimes, online as well as in person, and can be reported.',
-    ],
-    live: true,
-  },
-  'adult-content': {
-    name: 'Pornography and healthy sexuality',
-    group: 'everyday',
-    blurb: 'How porn shapes expectations, and how to keep a healthy perspective',
-    intro:
-      'Most people encounter pornography, and many do before they are ready for it. This module takes a frank, non-judgemental look at how it can shape expectations, habits and relationships, how to protect children, and how to keep a healthy perspective on sex.',
-    note: 'About pornography, including children coming across it. Nothing is described in detail. Written for adults.',
-    rules: [
-      'Porn is a performance made to be watched. It is not a guide to sex, bodies or what people enjoy.',
-      'Children often see it by accident or are shown it. A calm conversation protects them more than a punishment does.',
-      'Something you saw on a screen is not something your partner has agreed to. Ask first, and not in the moment.',
-      'If a habit is costing you sleep, focus or closeness, that is worth acting on. Shame makes it harder to change, not easier.',
-      'The people on screen have to have agreed too. If it looks secret, leaked or underage, do not watch it or share it. Report it.',
     ],
     live: true,
   },
@@ -261,6 +248,9 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     pressure: { name: 'Coercion and power', blurb: 'When saying no is made difficult' },
     nights: { name: 'Alcohol, nightlife and bystander action', blurb: 'Capacity, intoxication and looking out for others' },
     intimacy: { name: 'Sexual consent', blurb: 'Agreement that is freely given, specific and ongoing' },
+    children: { name: 'Pornography and young people', blurb: 'Protection, early exposure and honest conversations' },
+    yourself: { name: 'Pornography and personal wellbeing', blurb: 'Habits, expectations, ethics and consent on screen' },
+    relationships: { name: 'Pornography in relationships', blurb: 'Communication, trust and shared decisions' },
   },
   'parent-newborn': {
     safety: { name: 'Health and safety', blurb: 'Safer sleep, illness and everyday risks in the first weeks' },
@@ -324,11 +314,6 @@ export const categories: Partial<Record<SetId, Record<string, { name: string; bl
     everyday: { name: 'Everyday racism', blurb: 'Public spaces, assumptions and casual remarks' },
     family: { name: 'Family, children and colourism', blurb: 'Prejudice close to home, and what children learn from it' },
     work: { name: 'Discrimination at work', blurb: 'Fair treatment of colleagues, customers and candidates' },
-  },
-  'adult-content': {
-    children: { name: 'Children and young people', blurb: 'Protection, early exposure and honest conversations' },
-    yourself: { name: 'Personal use and wellbeing', blurb: 'Habits, expectations, ethics and consent on screen' },
-    relationships: { name: 'Intimacy and relationships', blurb: 'Communication, trust and shared decisions' },
   },
 };
 

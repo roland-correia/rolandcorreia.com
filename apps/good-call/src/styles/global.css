@@ -214,17 +214,6 @@ a.tile:hover { border-color: var(--accent); }
 .pbar .meta { font-size: 0.85rem; }
 .tile .pbar { margin-top: 0.5rem; }
 
-/* "Chapter 1" above a chapter's name on a set's page. */
-.tile .chapter-no { color: var(--accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
-
-/* "Choose a topic": links that jump to each category on a set's page. */
-.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
-.jump a {
-  display: inline-flex; align-items: center; min-height: 3rem; padding: 0.3rem 1rem;
-  border: 2px solid var(--line); border-radius: 999px; background: var(--surface);
-  font-weight: 600; font-size: 0.85rem; line-height: 1.3; text-decoration: none;
-}
-.jump a:hover { border-color: var(--accent); }
 
 /* A plain list with a tick in front of each line: "how it works" and "the unwritten rules". */
 .ticks { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
@@ -266,12 +255,100 @@ a.tile:hover { border-color: var(--accent); }
    ========================================================================== */
 [data-scenario], [data-quiz], [data-after] { display: flex; flex-direction: column; gap: 1.4rem; }
 
-/* A module's page: chapters one after another, each holding its questions inline. */
-.chapter { display: flex; flex-direction: column; gap: 2rem; scroll-margin-top: 1rem; }
-.chapter-head { padding: 1.25rem 0 0.25rem; border-top: 3px solid var(--accent); }
-.quiz-inline { padding-top: 1.75rem; border-top: 1px solid var(--line); scroll-margin-top: 1rem; }
-.quiz-inline .quiz-title { font-size: 1.35rem; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
-.quiz-inline .principle h4 { font-size: 1.1rem; }
+/* ==========================================================================
+   TOPIC DECK: one question at a time, like flashcards (src/scripts/deck.ts)
+   ========================================================================== */
+.deck { display: flex; flex-direction: column; gap: 1.1rem; }
+.deck-head { display: flex; flex-direction: column; gap: 0.6rem; }
+.deck-head h1 { font-size: 1.9rem; }
+
+/* One segment per card. Answered cards take their verdict's colour; the count
+   underneath says the same in words, so colour is never the only signal. */
+.deck-dots { display: flex; gap: 0.35rem; list-style: none; padding: 0; margin-top: 0.25rem; }
+.deck:not(.js-deck) .deck-dots { display: none; }
+.deck-dots li {
+  flex: 1; height: 0.45rem; border-radius: 999px; background: var(--line);
+  transition: background-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.deck-dots li[data-call='best'] { background: var(--accent); }
+.deck-dots li[data-call='okay'] { background: var(--okay-line); }
+.deck-dots li[data-call='risky'] { background: var(--risky-line); }
+.deck-dots li.current { transform: scaleY(1.7); box-shadow: inset 0 0 0 2px var(--ink); }
+.deck-count { font-weight: 600; font-size: 0.85rem; color: var(--muted); }
+
+/* The cards. The page still scrolls vertically while a card is swiped sideways. */
+.deck-stage { display: flex; flex-direction: column; gap: 1.25rem; touch-action: pan-y; }
+.deck-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+  padding: 1.35rem 1.15rem 1.5rem; scroll-margin-top: 1rem;
+  box-shadow: 0 18px 40px -28px rgb(0 0 0 / 0.55), 0 2px 6px -4px rgb(0 0 0 / 0.25);
+  will-change: transform;
+}
+.deck-card .opt { background: var(--ground); }
+.deck-card .quiz-title { font-size: 1.5rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.01em; }
+.deck-card .quiz-title:focus { outline: none; }
+.deck-card .principle h3 { font-size: 1.1rem; }
+
+/* Next and Back stay within thumb reach at the bottom of the screen. */
+.deck-nav {
+  position: sticky; bottom: 0; z-index: 2; display: flex; gap: 0.6rem;
+  margin: 0 -1.25rem; padding: 0.9rem 1.25rem calc(0.9rem + env(safe-area-inset-bottom));
+  background: linear-gradient(to bottom, transparent, var(--ground) 35%);
+}
+.deck-nav .deck-next { flex: 1; }
+.deck-nav .deck-prev { flex: none; width: 3.4rem; padding: 0; background: var(--surface); }
+.deck-nav .deck-next.ghost { background: var(--surface); }
+.deck-prev svg { width: 1.4rem; height: 1.4rem; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.deck-nav button:disabled { opacity: 0.4; cursor: default; }
+.btn:active:not(:disabled) { transform: scale(0.97); }
+.btn { transition: transform 0.12s ease, filter 0.15s ease, background-color 0.2s ease, border-color 0.2s ease; }
+
+/* The summary at the end of a topic. Without JavaScript it is not shown: every card already is. */
+.deck:not(.js-deck) .deck-done { display: none; }
+.deck-done { display: flex; flex-direction: column; gap: 1rem; text-align: center; align-items: stretch; }
+.deck-done h2 { font-size: 1.6rem; }
+.deck-done h2:focus { outline: none; }
+.done-score { font-size: 1.15rem; font-weight: 600; }
+.done-badge {
+  position: relative; align-self: center; display: grid; place-items: center;
+  width: 4.5rem; height: 4.5rem; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+}
+.done-badge svg { width: 2.3rem; height: 2.3rem; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.deck-done:not([hidden]) .done-badge { animation: badge-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.deck-done:not([hidden]) .done-badge::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--accent);
+  animation: badge-ring 0.9s ease-out 0.15s both;
+}
+.done-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; text-align: left; }
+.done-list a {
+  display: flex; gap: 0.8rem; align-items: center; padding: 0.75rem 0.9rem; min-height: 3.4rem;
+  border: 2px solid var(--line); border-radius: 14px; background: var(--ground); text-decoration: none;
+}
+.done-list a:hover { border-color: var(--accent); }
+.done-list b { display: block; font-weight: 700; line-height: 1.3; }
+.done-list small { color: var(--muted); font-size: 0.8rem; }
+.done-mark {
+  flex: none; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%;
+  border: 2px dashed var(--line); font-weight: 800; font-size: 0.9rem;
+}
+.done-mark[data-call='best'] { border: 0; background: var(--best-bg); color: var(--best-ink); }
+.done-mark[data-call='okay'] { border: 0; background: var(--okay-bg); color: var(--okay-ink); }
+.done-mark[data-call='risky'] { border: 0; background: var(--risky-bg); color: var(--risky-ink); }
+
+/* Feedback appearing after an answer is locked in. */
+.js-quiz .why:not([hidden]) { animation: reveal 0.35s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.js-quiz [data-after]:not([hidden]) { animation: reveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
+.locked .opt.chosen { animation: chosen-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.js-quiz .opt { transition: border-color 0.2s ease, transform 0.15s ease; }
+.js-quiz:not(.locked) .opt:active { transform: scale(0.985); }
+
+@keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@keyframes chosen-pop { 50% { transform: scale(1.015); } }
+@keyframes badge-pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: none; } }
+@keyframes badge-ring { from { opacity: 0.8; transform: scale(1); } to { opacity: 0; transform: scale(1.8); } }
+
+/* Topic tiles on a module's page. */
+.topic-tile b { font-size: 1.15rem; }
 
 .situation { font-size: 1.1rem; }
 
@@ -338,3 +415,15 @@ legend { font-weight: 700; padding: 0; margin-bottom: 0.6rem; }
 .seg input:checked + span { border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
 .seg input:checked + span::before { content: '\2713\00a0'; }
 .seg input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ==========================================================================
+   PAGE ENTRANCE AND REDUCED MOTION
+   Each page's content fades and rises slightly into place as it loads.
+   ========================================================================== */
+main { animation: page-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes page-in { from { opacity: 0; transform: translateY(10px); } }
+
+/* People who ask their device for less motion get none: content simply appears. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

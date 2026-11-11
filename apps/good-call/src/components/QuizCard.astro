@@ -1,31 +1,30 @@
 ---
 // One scenario as a quiz: the situation, the answers, and the reason for each.
-// Used on a module's page, where every scenario sits inline under its chapter,
-// and on a scenario's own page. src/scripts/scenario.ts makes each one work.
+// Used as a card in a topic's deck, and on a scenario's own page.
+// src/scripts/scenario.ts makes each one work.
 import { slugOf, type Scenario } from '../lib/scenarios';
 import { calls } from '../lib/site';
 
 interface Props {
   entry: Scenario;
-  /** The line above the title, such as "Question 2 of 4. Touch". */
+  /** The small line above the title, such as the scenario's theme. */
   label: string;
   /** 'page' when the scenario has a page to itself, so its title is the page heading. */
-  as?: 'page' | 'inline';
+  as?: 'page' | 'card';
 }
 
-const { entry, label, as = 'inline' } = Astro.props;
+const { entry, label, as = 'card' } = Astro.props;
 const scenario = entry.data;
 const slug = slugOf(entry);
 const paragraphs = scenario.situation.trim().split(/\n\s*\n/);
-const Title = as === 'page' ? 'h1' : 'h3';
-const Principle = as === 'page' ? 'h2' : 'h4';
+const Title = as === 'page' ? 'h1' : 'h2';
+const Principle = as === 'page' ? 'h2' : 'h3';
 ---
 
-<article class:list={['quiz', { 'quiz-inline': as === 'inline' }]} id={`q-${slug}`} data-scenario data-id={entry.id}>
+<article class="quiz" data-scenario data-id={entry.id}>
   <header class="group">
     <p class="kicker">{label}</p>
-    <Title class="quiz-title">{scenario.title}</Title>
-    <slot name="header" />
+    <Title class="quiz-title" tabindex="-1">{scenario.title}</Title>
   </header>
 
   <div class="prose situation">
