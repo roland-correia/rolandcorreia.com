@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roland Correia — UI/UX Designer &amp; Front-End Developer</title>
-  <meta name="description" content="Roland Correia. Computer science background, building toward UI/UX design and front-end development. Self-directed projects and case studies." />
+  <title>Roland Correia — Email Design, Technology Consulting &amp; UI/UX</title>
+  <meta name="description" content="Roland Correia: email design, technology consulting and UI/UX, with a Computer Science background. Experience, skills, projects and how to get in touch." />
 
   <!-- Open Graph: controls how this page looks when shared on LinkedIn/Twitter/Slack -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Roland Correia — UI/UX Designer & Front-End Developer" />
-  <meta property="og:description" content="Computer science background, building toward UI/UX design and front-end development." />
+  <meta property="og:title" content="Roland Correia — Email Design, Technology Consulting & UI/UX" />
+  <meta property="og:description" content="Email design, technology consulting and UI/UX, with a Computer Science background." />
   <meta property="og:url" content="https://rolandcorreia.com" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <!-- ?v= bumped on every visual change to bust browser/CDN caching of
        this unhashed filename -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2" />
+  <link rel="stylesheet" href="assets/css/style.css?v=3" />
 </head>
 <body>
 
@@ -41,10 +41,11 @@
     <section class="hero">
       <div class="wrap">
         <p class="eyebrow">Computer Science background</p>
-        <h1>UI/UX Designer &amp; Front-End Developer</h1>
+        <h1><span class="role">Email Design</span><span class="role-sep" aria-hidden="true"> · </span><span class="role">Technology Consulting</span><span class="role-sep" aria-hidden="true"> · </span><span class="role">UI/UX</span></h1>
         <p class="hero-lede">
-          I design and build interfaces, then document the thinking behind them.
-          Currently developing self-directed projects into a portfolio worth showing.
+          I design and code emails, websites and interfaces, and help people
+          get more out of the technology they use, explaining the thinking
+          behind every decision.
         </p>
         <a class="btn btn-primary" href="#projects">See my work</a>
       </div>
@@ -57,28 +58,32 @@
           <div class="about-bio">
             <p>
               Hi, my name is Roland. I have a background in Computer Science and
-              hands-on expertise in front-end software development, with a strong
+              hands-on experience designing and coding for the web, from
+              responsive HTML emails to websites and interfaces, with a strong
               focus on UI/UX. I got into building interfaces at 17, teaching myself
               Figma, WordPress, SEO and other industry web development tools, then
               taking on small freelance projects prior to my degree.
             </p>
             <p>
-              Alongside my studies I've picked up real-world experience: a marketing
+              Alongside my studies I've picked up real-world experience across
+              marketing, technology and design: a marketing
               internship at the University of Kent, an administrative role supporting
               a staff training platform launch at an NHS surgery, front-end
               consulting for Giftease Solutions, and UX/prototyping work experience
               with Rufus Leonard (now part of Frog).
             </p>
             <p>
-              Right now, I'm building Diluted Stories, a self-directed editorial
-              project, to keep sharpening my design and coding skills while looking
-              for front-end development and UI/UX roles in the UK.
+              Through Diluted Stories, I explain research in plain language and
+              develop new products, currently Good Call and 5 Minute Mandarin.
+              I'm looking for email design, technology consulting and UI/UX roles
+              in the UK.
             </p>
           </div>
           <div class="about-skills">
             <h3 class="about-skills-heading">Skills</h3>
             <div class="skills-flow">
               <ul class="skills-list" aria-label="Skills">
+                <li>HTML Email</li>
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
@@ -103,38 +108,45 @@
       <div class="wrap">
         <h2 class="section-title">Projects</h2>
 
-        <div class="project-grid">
-
-          <article class="project-card">
-            <div class="project-card-body">
-              <span class="status-chip status-building">In development</span>
-              <h3>Diluted Stories</h3>
-              <p>Well-researched topics in tech and money, explained one card at a time with every source linked. Easy to read, with settings for text size, spacing and background.</p>
-              <div class="meta">Astro · TypeScript · Accessibility</div>
+        <!-- Diluted Stories is the umbrella: its research site, plus the
+             products being built under it, grouped as "Under development". -->
+        <article class="project-family" aria-labelledby="ds-title">
+          <div class="project-family-head">
+            <span class="status-chip status-building">In development</span>
+            <h3 id="ds-title">Diluted Stories</h3>
+            <p>Well-researched topics in tech and money, explained one card at a time with every source linked. Easy to read, with settings for text size, spacing and background. It is also where my new products are designed and built.</p>
+            <div class="meta">Astro · TypeScript · Accessibility</div>
+            <div class="project-links">
               <a href="projects/diluted-stories/">Open project →</a>
+              <a href="https://dilutedstories.com/" target="_blank" rel="noopener">dilutedstories.com ↗</a>
             </div>
-          </article>
+          </div>
 
-          <article class="project-card">
-            <div class="project-card-body">
-              <span class="status-chip status-building">In development</span>
-              <h3>Good Call</h3>
-              <p>Short scenarios about consent and judgement at work. Pick what you would do, then see why each choice helps or harms. No timer, no account.</p>
-              <div class="meta">Astro · TypeScript · Accessibility</div>
-              <a href="projects/good-call/">Open project →</a>
+          <h4 class="project-subgroup-title" id="ds-dev">Under development</h4>
+          <div class="project-grid" role="list" aria-labelledby="ds-dev">
+
+            <div class="project-card" role="listitem">
+              <div class="project-card-body">
+                <h5>Good Call</h5>
+                <p>Short, realistic scenarios about everyday life, parenting and work, as phone-friendly flashcards. Pick what you would do, then see why each choice helps or harms. No timer, no account.</p>
+                <div class="meta">Astro · TypeScript · Accessibility</div>
+                <a href="projects/good-call/">Open project →</a>
+              </div>
             </div>
-          </article>
 
-          <article class="project-card">
-            <div class="project-card-body">
-              <span class="status-chip status-building">In development</span>
-              <h3>5 Minute Mandarin</h3>
-              <p>A platform for Mandarin tutors and students: a lesson calendar, class group chats with voice notes, and credits for booking. Plus free five-minute lessons for beginners.</p>
-              <div class="meta">Astro · Preact · TypeScript</div>
-              <a href="projects/5-minute-mandarin/">Open project →</a>
+            <div class="project-card" role="listitem">
+              <div class="project-card-body">
+                <h5>5 Minute Mandarin</h5>
+                <p>A platform for Mandarin tutors and students: a lesson calendar, class group chats with voice notes, and credits for booking. Plus free five-minute lessons for beginners.</p>
+                <div class="meta">Astro · Preact · TypeScript</div>
+                <a href="projects/5-minute-mandarin/">Open project →</a>
+              </div>
             </div>
-          </article>
 
+          </div>
+        </article>
+
+        <div class="project-grid">
           <article class="project-card project-card-placeholder">
             <div class="project-card-body">
               <span class="status-chip status-planned">Planned</span>
@@ -142,7 +154,6 @@
               <p>The next project goes here. Each one gets a short write-up covering the problem, the process and the result.</p>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -186,7 +197,7 @@
 
         <div class="availability-card">
           <p class="connect-label">/* availability */</p>
-          <p>Open to front-end / UI-UX roles in the UK.</p>
+          <p>Open to email design, technology consulting, UI/UX and front-end roles in the UK.</p>
         </div>
       </div>
     </section>
