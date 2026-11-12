@@ -336,60 +336,6 @@ section + section { border-top: 1px solid var(--border); }
 
 .project-card-placeholder { border-style: dashed; opacity: 0.7; }
 
-/* A project with products built under it (Diluted Stories). The parent's
-   own details sit at the top; its products follow as smaller cards under
-   an "Under development" heading, inset on the page background so the
-   nesting reads at a glance. */
-.project-family {
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: var(--space-3);
-  margin-bottom: var(--space-3);
-}
-
-.project-family-head h3 { margin-block: var(--space-1) 0.5rem; }
-.project-family-head p { color: var(--muted); margin-bottom: var(--space-2); max-width: 70ch; }
-.project-family-head .meta {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-bottom: var(--space-2);
-}
-
-.project-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem var(--space-3);
-}
-.project-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.project-subgroup-title {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  font-weight: 600;
-  margin-block: var(--space-4) var(--space-2);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--border);
-}
-
-/* On phones the cards sit inside the family's padding, so trim it to
-   leave the card text a readable line length. */
-@media (max-width: 639.98px) {
-  .project-family { padding: var(--space-2); }
-}
-
-.project-family .project-card { background: var(--bg); }
-.project-family .project-card h5 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
 .status-chip {
   display: inline-block;
   font-size: 0.7rem;
