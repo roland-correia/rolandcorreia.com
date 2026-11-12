@@ -79,8 +79,8 @@ a:focus-visible, button:focus-visible {
   padding: clamp(4rem, 10vh, 7rem) var(--gutter) clamp(6rem, 14vh, 8rem);
 }
 
-.page-ink   { background: var(--ink);   color: var(--ink-text);   --muted: var(--ink-muted); }
-.page-paper { background: var(--paper); color: var(--paper-text); --muted: var(--paper-muted); }
+.page-ink   { background: var(--ink);   color: var(--ink-text);   --muted: var(--ink-muted);   --page: var(--ink); }
+.page-paper { background: var(--paper); color: var(--paper-text); --muted: var(--paper-muted); --page: var(--paper); }
 
 .page-inner {
   width: 100%;
@@ -92,7 +92,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Small mono labels: the running heads of the book. */
-.kicker, .mark, .hint, .org, .tools, .colophon {
+.kicker, .hint, .org, .tools, .colophon {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 0.8rem;
@@ -128,13 +128,14 @@ a:focus-visible, button:focus-visible {
 /* ==========================================================================
    COVER AND BACK COVER
    ========================================================================== */
+/* Stretch to the full height of the page (inside its padding) so the
+   heading, links and small print can spread out to its edges. */
 .page-cover .page-inner,
 .page-back .page-inner {
-  min-height: calc(100svh - 11rem);
+  align-self: stretch;
+  margin: 0;
   justify-content: space-between;
 }
-
-.mark { color: inherit; font-size: 0.95rem; letter-spacing: 0.01em; }
 
 .links {
   display: flex;
@@ -151,6 +152,46 @@ a:focus-visible, button:focus-visible {
   padding-bottom: 0.1em;
 }
 .links a:hover, .links a:focus-visible { background-size: 100% 1px; }
+
+/* ==========================================================================
+   HIGHLIGHTS
+   Text and a line drawing side by side on wide screens; on phones the
+   drawing sits under the words, sized so the page still fits one screen.
+   ========================================================================== */
+.page-work .page-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 4vh, 3rem);
+}
+@media (min-width: 900px) {
+  .page-work .page-inner { grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+}
+
+.work-text {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vh, 2rem);
+}
+
+.drawing svg {
+  display: block;
+  width: 100%;
+  max-height: 32svh;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (min-width: 900px) {
+  .drawing svg { max-height: 60svh; }
+}
+.drawing .thick { stroke-width: 6; }
+/* Shapes in front of others are filled with the page colour, so lines
+   behind them are hidden, like ink on paper. */
+.drawing .solid { fill: var(--page); }
 
 /* ==========================================================================
    WHAT I BRING
@@ -229,6 +270,35 @@ a:focus-visible, button:focus-visible {
 .js .page.is-open .page-inner > *:nth-child(3) { transition-delay: 0.16s; }
 .js .page.is-open .page-inner > *:nth-child(4) { transition-delay: 0.24s; }
 
+/* The drawings draw themselves: every stroke has pathLength="1", so a dash
+   of length 1 offset by 1 hides it, and sliding the offset to 0 draws it.
+   --i (set on each stroke) staggers them in order. */
+.js .drawing .d {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.js .page.is-open .drawing .d {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.6, 0, 0.3, 1);
+  transition-delay: calc(0.35s + var(--i) * 0.11s);
+}
+
+/* Once drawn, one small detail on each drawing keeps moving. */
+.drawing .loop { transform-box: fill-box; transform-origin: center; }
+.js .page.is-open .drawing .pulse   { animation: pulse 2.2s ease-in-out 2.4s infinite; }
+.js .page.is-open .drawing .swing   { transform-origin: top; animation: swing 2.6s ease-in-out 2.6s infinite; }
+.js .page.is-open .drawing .lift    { animation: lift 3s ease-in-out 2.6s infinite; }
+.js .page.is-open .drawing .flicker { transform-origin: top; animation: flicker 0.5s ease-in-out 2.6s infinite alternate; }
+.js .page.is-open .drawing .bounce  { transform-origin: bottom; animation: bounce 2s ease-in-out 2.6s infinite; }
+.js .page.is-open .drawing .nudge   { animation: nudge-cursor 2.8s ease-in-out 2.8s infinite; }
+
+@keyframes pulse   { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+@keyframes swing   { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+@keyframes lift    { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes flicker { from { transform: scaleY(0.8); } to { transform: scaleY(1.15); } }
+@keyframes bounce  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes nudge-cursor { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-8px, -6px); } }
+
 .hint::after {
   content: "↓";
   display: inline-block;
@@ -244,5 +314,7 @@ a:focus-visible, button:focus-visible {
   html { scroll-behavior: auto; }
   .js .page-inner > * { opacity: 1; transform: none; transition: none; }
   .hint::after { animation: none; }
+  .js .drawing .d { stroke-dashoffset: 0; transition: none; }
+  .js .page.is-open .drawing .loop { animation: none; }
   .turn, .turn svg { transition: none; }
 }
