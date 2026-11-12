@@ -2,16 +2,16 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "good-call",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "apps/good-call", "run", "dev", "--", "--port", "4322"],
-      "port": 4322
-    },
-    {
-      "name": "5-minute-mandarin",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "apps/5-minute-mandarin", "run", "dev", "--", "--port", "4323"],
-      "port": 4323
+      "name": "portfolio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "serve@14.2.4",
+        "-l",
+        "4330",
+        "."
+      ],
+      "port": 4330
     }
   ]
 }

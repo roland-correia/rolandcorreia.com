@@ -1,7 +1,7 @@
 name: Build and deploy
 
-# Every pull request builds the site (so a broken story, scenario or type error
-# shows up before merging). Only a push to main also deploys it to GitHub Pages.
+# Every pull request checks the site can be assembled. Only a push to main
+# also deploys it to GitHub Pages.
 on:
   push:
     branches: [main]
@@ -23,36 +23,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-          cache-dependency-path: apps/*/package-lock.json
-
-      # Each folder in apps/ is its own Astro project, built the same way.
-      - name: Install, type-check and build each app
-        run: |
-          for app in diluted-stories good-call 5-minute-mandarin; do
-            echo "::group::$app"
-            npm --prefix "apps/$app" ci
-            npm --prefix "apps/$app" run check
-            npm --prefix "apps/$app" run build
-            echo "::endgroup::"
-          done
-
-      # The portfolio at the repo root is plain HTML, so it is copied as it is.
-      # Each built app goes under /projects/<its name>/.
+      # The portfolio is plain HTML, CSS and JavaScript, so it is copied as it is.
       - name: Assemble the site
         run: |
           mkdir _site
           rsync -a \
-            --exclude='.git' --exclude='.github' --exclude='.claude' --exclude='apps' \
-            --exclude='node_modules' --exclude='_site' \
+            --exclude='.git' --exclude='.github' --exclude='.claude' \
+            --exclude='_site' \
             ./ _site/
-          for app in diluted-stories good-call 5-minute-mandarin; do
-            mkdir -p "_site/projects/$app"
-            cp -R "apps/$app/dist/." "_site/projects/$app/"
-          done
 
       - uses: actions/upload-pages-artifact@v3
         with:
