@@ -47,6 +47,25 @@ function pageNow() {
   return best;
 }
 
+// Safety net: also open whichever page is on screen shortly after load and
+// whenever scrolling settles, so content can never stay hidden if the
+// observer is slow or does not fire (for example in an embedded preview).
+function openCurrent() {
+  const i = pageNow();
+  pages[i].classList.add("is-open");
+  show(i);
+}
+setTimeout(openCurrent, 120);
+let settle;
+window.addEventListener(
+  "scroll",
+  () => {
+    clearTimeout(settle);
+    settle = setTimeout(openCurrent, 160);
+  },
+  { passive: true }
+);
+
 turn.hidden = false;
 turn.addEventListener("click", () => {
   const i = pageNow();
