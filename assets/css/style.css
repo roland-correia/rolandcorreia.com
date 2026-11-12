@@ -190,19 +190,30 @@ a:focus-visible, button:focus-visible {
    drawing sits under the words, sized so the page still fits one screen.
    ========================================================================== */
 .page-work .page-inner {
+  max-width: 82rem;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   gap: clamp(1.5rem, 4vh, 3rem);
 }
 @media (min-width: 900px) {
-  .page-work .page-inner { grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 5rem); }
+  .page-work .page-inner { grid-template-columns: 1.25fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); }
 }
 
 .work-text {
   display: flex;
   flex-direction: column;
   gap: clamp(1.25rem, 3vh, 2rem);
+}
+
+/* Highlight headlines are a step smaller than the other statements and
+   use the full width of their column, so even the longest settles into
+   about three balanced lines with room around it, and all four pages
+   look alike. */
+.page-work .statement {
+  font-size: clamp(2rem, 4.3vw, 4.1rem);
+  line-height: 1.08;
+  max-width: 20ch;
 }
 
 .drawing svg {
@@ -322,93 +333,36 @@ a:focus-visible, button:focus-visible {
 .js .page-cover.is-open .page-inner > .hint { transition-delay: 1s; }
 
 /* --------------------------------------------------------------------------
-   HIGHLIGHTS: A DIFFERENT ENTRANCE ON EVERY PAGE
-   The drawing and the words each arrive their own way, so turning the
-   pages never feels like the same trick four times.
-     turn-collage  pieces fly in from different sides and settle
-     turn-wipe     revealed left to right, then the progress bar fills
-     turn-ink      drawn stroke by stroke, then the rocket launches in
-     turn-pop      selection frame, the phone pops in, the cursor glides over
+   HIGHLIGHTS
+   One entrance, the same on every page, so turning through them feels
+   calm and consistent: the words slide in from the left, and the drawing
+   draws itself stroke by stroke. Every stroke has pathLength="1", so a
+   dash of length 1 offset by 1 hides it, and sliding the offset to 0
+   draws it. --i staggers the strokes in order.
    -------------------------------------------------------------------------- */
 .js .page-work .page-inner > .drawing { opacity: 1; transform: none; transition: none; }
 .drawing .part { transform-box: fill-box; transform-origin: center; }
 
-/* Words */
-.js .turn-collage .page-inner > .work-text { transform: translateX(-2.5rem); }
-.js .turn-wipe .page-inner > .work-text {
-  opacity: 1;
-  transform: none;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1.1s cubic-bezier(0.7, 0, 0.2, 1);
-}
-.js .turn-wipe.is-open .page-inner > .work-text { clip-path: inset(0 0 0 0); }
-.js .turn-pop .page-inner > .work-text {
-  transform: scale(0.97);
-  filter: blur(10px);
-  transition: opacity 0.9s ease, transform 1s ease, filter 0.9s ease;
-}
-.js .turn-pop.is-open .page-inner > .work-text { filter: blur(0); }
+.js .page-work .page-inner > .work-text { transform: translateX(-2.5rem); }
 .js .page-work.is-open .page-inner > .work-text { opacity: 1; transform: none; }
 
-/* 1. Collage */
-.js .turn-collage .part {
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 1.1s cubic-bezier(0.2, 1.3, 0.35, 1);
-}
-.js .turn-collage .part-browser  { transform: translate(-70px, 12px) rotate(-7deg); }
-.js .turn-collage .part-phone    { transform: translate(60px, -50px) rotate(9deg); transition-delay: 0.18s; }
-.js .turn-collage .part-envelope { transform: translate(24px, 80px) rotate(-6deg); transition-delay: 0.36s; }
-.js .turn-collage.is-open .part  { opacity: 1; transform: none; }
-.js .turn-collage.is-open .part-browser { transition-delay: 0.3s; }
-.js .turn-collage.is-open .part-phone { transition-delay: 0.5s; }
-.js .turn-collage.is-open .part-envelope { transition-delay: 0.7s; }
-
-/* 2. Wipe */
-.js .turn-wipe .drawing svg {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1.4s cubic-bezier(0.7, 0, 0.2, 1) 0.25s;
-}
-.js .turn-wipe.is-open .drawing svg { clip-path: inset(0 0 0 0); }
-.drawing .thick { transform-box: fill-box; transform-origin: left center; }
-.js .turn-wipe .drawing .thick {
-  transform: scaleX(0);
-  transition: transform 1.2s cubic-bezier(0.3, 0, 0.2, 1) 1.5s;
-}
-.js .turn-wipe.is-open .drawing .thick { transform: none; }
-
-/* 3. Ink: every stroke has pathLength="1", so a dash of length 1 offset
-   by 1 hides it, and sliding the offset to 0 draws it. --i staggers them. */
-.js .turn-ink .drawing .d {
+.js .page-work .drawing .d {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
-.js .turn-ink.is-open .drawing .d {
+.js .page-work.is-open .drawing .d {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.9s cubic-bezier(0.6, 0, 0.3, 1);
   transition-delay: calc(0.35s + var(--i) * 0.11s);
 }
-.js .turn-ink .part-rocket {
+
+/* The NHS rocket launches up into place as it draws. */
+.js .page-work .part-rocket {
   opacity: 0;
   transform: translateY(110px);
   transition: opacity 0.4s ease 1.6s, transform 1.2s cubic-bezier(0.2, 0.9, 0.3, 1.15) 1.6s;
 }
-.js .turn-ink.is-open .part-rocket { opacity: 1; transform: none; }
-
-/* 4. Pop */
-.js .turn-pop .part { opacity: 0; }
-.js .turn-pop .part-frame {
-  transform: scale(1.18);
-  transition: opacity 0.4s ease 0.3s, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s;
-}
-.js .turn-pop .part-phone {
-  transform: scale(0.45);
-  transition: opacity 0.3s ease 0.75s, transform 0.9s cubic-bezier(0.3, 1.6, 0.5, 1) 0.75s;
-}
-.js .turn-pop .part-cursor {
-  transform: translate(90px, 70px);
-  transition: opacity 0.4s ease 1.3s, transform 1.1s cubic-bezier(0.5, 0, 0.2, 1) 1.3s;
-}
-.js .turn-pop.is-open .part { opacity: 1; transform: none; }
+.js .page-work.is-open .part-rocket { opacity: 1; transform: none; }
 
 /* Once drawn, one small detail on each drawing keeps moving. */
 .drawing .loop { transform-box: fill-box; transform-origin: center; }
