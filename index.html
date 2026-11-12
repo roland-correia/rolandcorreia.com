@@ -4,213 +4,118 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Roland Correia</title>
-  <meta name="description" content="Roland Correia designs, builds and explains technology. Computer Science background, with experience in marketing, the NHS, client consulting and UX. See the work and get in touch." />
+  <meta name="description" content="Roland Correia. Design, build, communicate, advise. A few pages of work to flick through." />
 
   <!-- Open Graph: controls how this page looks when shared on LinkedIn/Twitter/Slack -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Roland Correia" />
-  <meta property="og:description" content="I design, build and explain technology, so it works for the people using it." />
+  <meta property="og:description" content="Hi, I'm Roland. A few pages of work to flick through." />
   <meta property="og:url" content="https://rolandcorreia.com" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <!-- ?v= bumped on every visual change to bust browser/CDN caching of
-       this unhashed filename -->
-  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+       these unhashed filenames -->
+  <link rel="stylesheet" href="assets/css/style.css?v=5" />
+  <!-- Marks that JavaScript is running before anything paints, so the
+       page-turn animations only hide content when they can also reveal it. -->
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <!-- Skip link: first focusable element, only visible on keyboard focus.
-       Lets keyboard/screen-reader users bypass the nav. WCAG 2.4.1. -->
-  <a class="skip-link" href="#main">Skip to content</a>
+       Lets keyboard/screen-reader users jump past the cover. WCAG 2.4.1. -->
+  <a class="skip-link" href="#bring">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap header-row">
-      <a class="logo" href="/">&lt;roland /&gt;</a>
-      <nav aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!--
+    The site is a book: every <section class="page"> fills the screen and the
+    scroll snaps one page at a time. Pages alternate between ink (dark) and
+    paper (light). The folio (page number) and the next-page button are
+    fixed, and blend against whichever page is underneath.
+    Kept deliberately short on words: the CV carries the detail.
+  -->
+  <main id="main" class="book">
 
-  <main id="main">
-
-    <!-- No job title on purpose: Roland applies across design, technology
-         and marketing roles, so the page leads with what he does and lets
-         the work below show it. -->
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Hi, I'm Roland Correia</p>
-        <h1>I design, build and explain technology, so it works for the people using it.</h1>
-        <p class="hero-lede">
-          A Computer Science background, with hands-on experience in marketing,
-          healthcare, client consulting and UX. Here is what I've done, and how
-          I can help.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#work">See my work</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-        </div>
+    <section class="page page-ink page-cover" id="cover" aria-label="Cover">
+      <div class="page-inner">
+        <p class="mark">&lt;roland /&gt;</p>
+        <h1 class="cover-title">Hi, I'm<br />Roland.</h1>
+        <p class="hint" aria-hidden="true">Turn the page</p>
       </div>
     </section>
 
-    <section id="strengths" class="strengths" aria-labelledby="strengths-title">
-      <div class="wrap">
-        <h2 class="section-title" id="strengths-title">What I bring</h2>
-        <p class="section-lede">Four things I do well, in whichever role I'm in.</p>
-        <ul class="strength-grid">
-          <li class="strength">
-            <h3>Design</h3>
-            <p>Interfaces, prototypes and campaign assets, designed around the people who will use them and accessible from the start.</p>
-            <ul class="tags" aria-label="Design tools and skills">
-              <li>Figma</li>
-              <li>Prototyping</li>
-              <li>Accessibility (WCAG 2.2)</li>
-              <li>Responsive design</li>
-            </ul>
-          </li>
-          <li class="strength">
-            <h3>Build</h3>
-            <p>Websites and HTML emails coded by hand, so they look right and work on every screen.</p>
-            <ul class="tags" aria-label="Build tools and skills">
-              <li>HTML email</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Git &amp; GitHub</li>
-              <li>WordPress</li>
-              <li>Wix</li>
-              <li>Weebly</li>
-            </ul>
-          </li>
-          <li class="strength">
-            <h3>Communicate</h3>
-            <p>Clear, consistent messages across web, email and social, and pages people can find on search.</p>
-            <ul class="tags" aria-label="Communication tools and skills">
-              <li>Campaign assets</li>
-              <li>Brand consistency</li>
-              <li>SEO</li>
-            </ul>
-          </li>
-          <li class="strength">
-            <h3>Support and advise</h3>
-            <p>Turning what people need into a plan, and helping teams adopt new tools, from launch day onwards.</p>
-            <ul class="tags" aria-label="Support and advice skills">
-              <li>Client requirements</li>
-              <li>Stakeholder liaison</li>
-              <li>Launch support</li>
-            </ul>
-          </li>
+    <section class="page page-paper" id="bring" aria-labelledby="bring-title">
+      <div class="page-inner">
+        <p class="kicker" id="bring-title">What I bring</p>
+        <ul class="verbs">
+          <li><span class="verb">Design</span><span class="tools">Figma · Prototyping · Accessibility</span></li>
+          <li><span class="verb">Build</span><span class="tools">HTML email · HTML · CSS · JavaScript</span></li>
+          <li><span class="verb">Communicate</span><span class="tools">Campaigns · Brand · SEO</span></li>
+          <li><span class="verb">Advise</span><span class="tools">Requirements · Stakeholders · Launches</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- Show and tell: each entry leads with what was done, then where and
-         when. Most recent first. -->
-    <section id="work" class="work" aria-labelledby="work-title">
-      <div class="wrap">
-        <h2 class="section-title" id="work-title">Work</h2>
-        <p class="section-lede">What I did, where, and what it involved.</p>
-        <ol class="work-list">
-
-          <li class="work-item">
-            <p class="work-meta"><span>NHS surgery</span><span>Mar – Jun 2026</span></p>
-            <h3>Helped launch a staff training platform</h3>
-            <p>Managed the administrative workflows behind the launch and liaised with stakeholders across the organisation, so staff could start using the platform.</p>
-            <p class="work-role">Learning &amp; Development Administrator · Hybrid</p>
-          </li>
-
-          <li class="work-item">
-            <p class="work-meta"><span>University of Kent, Careers &amp; Employability Services</span><span>Jul 2024 – Aug 2025</span></p>
-            <h3>Designed campaign assets for web, email and social</h3>
-            <p>Created branded campaign assets in Figma and kept the design consistent, accessible (WCAG 2.2) and aligned with GDS across every channel, alongside full-time Computer Science study.</p>
-            <p class="work-role">Marketing Intern · Hybrid</p>
-          </li>
-
-          <li class="work-item">
-            <p class="work-meta"><span>Giftease Solutions</span><span>Sep 2024 – Jan 2025</span></p>
-            <h3>Designed and built an e-learning website, end to end</h3>
-            <p>Turned the client's requirements into a finished, accessible site in HTML, CSS and JavaScript, working directly with their stakeholders and improving SEO and page performance.</p>
-            <p class="work-role">Front-End Consultant · Remote</p>
-          </li>
-
-          <li class="work-item">
-            <p class="work-meta"><span>Rufus Leonard (now part of Frog)</span><span>Jun – Jul 2021</span></p>
-            <h3>Prototyped a volunteering app in Figma</h3>
-            <p>Learned Figma from scratch and designed a high-fidelity prototype that helps people find local volunteering opportunities. A design exercise, not a shipped product.</p>
-            <p class="work-role">UX &amp; Prototyping work experience · Remote</p>
-          </li>
-
-        </ol>
+    <section class="page page-ink" id="start" aria-labelledby="start-title">
+      <div class="page-inner">
+        <p class="kicker">Where it started</p>
+        <h2 class="statement" id="start-title">Building for the web since I was&nbsp;17.</h2>
       </div>
     </section>
 
-    <section id="about" class="about" aria-labelledby="about-title">
-      <div class="wrap">
-        <h2 class="section-title" id="about-title">About</h2>
-        <div class="about-bio">
-          <p>
-            I got into building websites at 17, teaching myself Figma, WordPress,
-            SEO and other web tools, then taking on small freelance projects
-            before starting my degree in Computer Science.
-          </p>
-          <p>
-            Since then I've worked in marketing, healthcare, consulting and UX.
-            The common thread is making technology clear and easy to use, whether
-            that's an email campaign, a website, a prototype or a new system a
-            whole team has to adopt. I'm open to roles in the UK where I can do
-            that.
-          </p>
-        </div>
+    <section class="page page-paper" id="work" aria-labelledby="work-1">
+      <div class="page-inner">
+        <p class="kicker">Work <span class="count">01 / 04</span></p>
+        <p class="org">University of Kent</p>
+        <h2 class="statement" id="work-1">Designed campaign assets for web, email and&nbsp;social.</h2>
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <h2 class="section-title" id="contact-title">Get in touch</h2>
-        <p class="section-lede">The quickest way to reach me is a message on LinkedIn.</p>
+    <section class="page page-ink" aria-labelledby="work-2">
+      <div class="page-inner">
+        <p class="kicker">Work <span class="count">02 / 04</span></p>
+        <p class="org">Giftease Solutions</p>
+        <h2 class="statement" id="work-2">Designed and built an e-learning website, end to&nbsp;end.</h2>
+      </div>
+    </section>
 
-        <div class="connect-grid">
-          <a class="connect-card" href="https://github.com/roland-correia" target="_blank" rel="noopener">
-            <span class="connect-icon" aria-hidden="true">
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </span>
-            <span class="connect-text">
-              <span class="connect-name">GitHub</span>
-              <span class="connect-value">@roland-correia</span>
-            </span>
-          </a>
+    <section class="page page-paper" aria-labelledby="work-3">
+      <div class="page-inner">
+        <p class="kicker">Work <span class="count">03 / 04</span></p>
+        <p class="org">NHS</p>
+        <h2 class="statement" id="work-3">Helped launch a staff training&nbsp;platform.</h2>
+      </div>
+    </section>
 
-          <a class="connect-card" href="https://linkedin.com/in/roland-correia" target="_blank" rel="noopener">
-            <span class="connect-icon" aria-hidden="true">
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
-            </span>
-            <span class="connect-text">
-              <span class="connect-name">LinkedIn</span>
-              <span class="connect-value">/in/roland-correia</span>
-            </span>
-          </a>
-        </div>
+    <section class="page page-ink" aria-labelledby="work-4">
+      <div class="page-inner">
+        <p class="kicker">Work <span class="count">04 / 04</span></p>
+        <p class="org">Rufus Leonard</p>
+        <h2 class="statement" id="work-4">Prototyped a volunteering app in&nbsp;Figma.</h2>
+      </div>
+    </section>
 
-        <div class="availability-card">
-          <p class="connect-label">/* availability */</p>
-          <p>Open to roles in the UK across design, technology and marketing.</p>
-        </div>
+    <section class="page page-paper page-back" id="contact" aria-labelledby="contact-title">
+      <div class="page-inner">
+        <h2 class="cover-title" id="contact-title">Let's<br />talk.</h2>
+        <ul class="links">
+          <li><a href="https://linkedin.com/in/roland-correia" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/roland-correia" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        </ul>
+        <p class="colophon">© <span id="year">2026</span> Roland Correia</p>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-row">
-      <span>© <span id="year"></span> Roland Correia</span>
-      <a href="https://github.com/roland-correia" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </footer>
+  <!-- Fixed furniture. Hidden from assistive tech where it only repeats
+       what the page structure already says. -->
+  <p class="folio" aria-hidden="true"><span id="folio-current">01</span> / <span id="folio-total">08</span></p>
+  <button class="turn" id="turn" type="button" aria-label="Next page" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
