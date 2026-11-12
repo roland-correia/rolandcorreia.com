@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roland Correia — Email Design, Technology Consulting &amp; UI/UX</title>
-  <meta name="description" content="Roland Correia: email design, technology consulting and UI/UX, with a Computer Science background. Experience, skills, projects and how to get in touch." />
+  <title>Roland Correia</title>
+  <meta name="description" content="Roland Correia designs, builds and explains technology. Computer Science background, with experience in marketing, the NHS, client consulting and UX. See the work and get in touch." />
 
   <!-- Open Graph: controls how this page looks when shared on LinkedIn/Twitter/Slack -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Roland Correia — Email Design, Technology Consulting & UI/UX" />
-  <meta property="og:description" content="Email design, technology consulting and UI/UX, with a Computer Science background." />
+  <meta property="og:title" content="Roland Correia" />
+  <meta property="og:description" content="I design, build and explain technology, so it works for the people using it." />
   <meta property="og:url" content="https://rolandcorreia.com" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <!-- ?v= bumped on every visual change to bust browser/CDN caching of
        this unhashed filename -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3" />
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
 </head>
 <body>
 
@@ -29,8 +29,8 @@
     <div class="wrap header-row">
       <a class="logo" href="/">&lt;roland /&gt;</a>
       <nav aria-label="Primary">
+        <a href="#work">Work</a>
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -38,90 +38,140 @@
 
   <main id="main">
 
+    <!-- No job title on purpose: Roland applies across design, technology
+         and marketing roles, so the page leads with what he does and lets
+         the work below show it. -->
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow">Computer Science background</p>
-        <h1><span class="role">Email Design</span><span class="role-sep" aria-hidden="true"> · </span><span class="role">Technology Consulting</span><span class="role-sep" aria-hidden="true"> · </span><span class="role">UI/UX</span></h1>
+        <p class="eyebrow">Hi, I'm Roland Correia</p>
+        <h1>I design, build and explain technology, so it works for the people using it.</h1>
         <p class="hero-lede">
-          I design and code emails, websites and interfaces, and help people
-          get more out of the technology they use, explaining the thinking
-          behind every decision.
+          A Computer Science background, with hands-on experience in marketing,
+          healthcare, client consulting and UX. Here is what I've done, and how
+          I can help.
         </p>
-        <a class="btn btn-primary" href="#projects">See my work</a>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="wrap">
-        <h2 class="section-title">About</h2>
-        <div class="about-grid">
-          <div class="about-bio">
-            <p>
-              Hi, my name is Roland. I have a background in Computer Science and
-              hands-on experience designing and coding for the web, from
-              responsive HTML emails to websites and interfaces, with a strong
-              focus on UI/UX. I got into building interfaces at 17, teaching myself
-              Figma, WordPress, SEO and other industry web development tools, then
-              taking on small freelance projects prior to my degree.
-            </p>
-            <p>
-              Alongside my studies I've picked up real-world experience across
-              marketing, technology and design: a marketing
-              internship at the University of Kent, an administrative role supporting
-              a staff training platform launch at an NHS surgery, front-end
-              consulting for Giftease Solutions, and UX/prototyping work experience
-              with Rufus Leonard (now part of Frog).
-            </p>
-            <p>
-              I'm now looking for email design, technology consulting and UI/UX
-              roles in the UK.
-            </p>
-          </div>
-          <div class="about-skills">
-            <h3 class="about-skills-heading">Skills</h3>
-            <div class="skills-flow">
-              <ul class="skills-list" aria-label="Skills">
-                <li>HTML Email</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Accessibility (WCAG)</li>
-                <li>Responsive Design</li>
-                <li>Figma / Prototyping</li>
-                <li>Git &amp; GitHub</li>
-                <li>SEO Fundamentals</li>
-              </ul>
-              <ul class="skills-list skills-list-secondary" aria-label="Platform skills">
-                <li>WordPress</li>
-                <li>Wix</li>
-                <li>Weebly</li>
-              </ul>
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="strengths" class="strengths" aria-labelledby="strengths-title">
       <div class="wrap">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title" id="strengths-title">What I bring</h2>
+        <p class="section-lede">Four things I do well, in whichever role I'm in.</p>
+        <ul class="strength-grid">
+          <li class="strength">
+            <h3>Design</h3>
+            <p>Interfaces, prototypes and campaign assets, designed around the people who will use them and accessible from the start.</p>
+            <ul class="tags" aria-label="Design tools and skills">
+              <li>Figma</li>
+              <li>Prototyping</li>
+              <li>Accessibility (WCAG 2.2)</li>
+              <li>Responsive design</li>
+            </ul>
+          </li>
+          <li class="strength">
+            <h3>Build</h3>
+            <p>Websites and HTML emails coded by hand, so they look right and work on every screen.</p>
+            <ul class="tags" aria-label="Build tools and skills">
+              <li>HTML email</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Git &amp; GitHub</li>
+              <li>WordPress</li>
+              <li>Wix</li>
+              <li>Weebly</li>
+            </ul>
+          </li>
+          <li class="strength">
+            <h3>Communicate</h3>
+            <p>Clear, consistent messages across web, email and social, and pages people can find on search.</p>
+            <ul class="tags" aria-label="Communication tools and skills">
+              <li>Campaign assets</li>
+              <li>Brand consistency</li>
+              <li>SEO</li>
+            </ul>
+          </li>
+          <li class="strength">
+            <h3>Support and advise</h3>
+            <p>Turning what people need into a plan, and helping teams adopt new tools, from launch day onwards.</p>
+            <ul class="tags" aria-label="Support and advice skills">
+              <li>Client requirements</li>
+              <li>Stakeholder liaison</li>
+              <li>Launch support</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="project-grid">
-          <article class="project-card project-card-placeholder">
-            <div class="project-card-body">
-              <span class="status-chip status-planned">Planned</span>
-              <h3>Next case study</h3>
-              <p>The next project goes here. Each one gets a short write-up covering the problem, the process and the result.</p>
-            </div>
-          </article>
+    <!-- Show and tell: each entry leads with what was done, then where and
+         when. Most recent first. -->
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 class="section-title" id="work-title">Work</h2>
+        <p class="section-lede">What I did, where, and what it involved.</p>
+        <ol class="work-list">
+
+          <li class="work-item">
+            <p class="work-meta"><span>NHS surgery</span><span>Mar – Jun 2026</span></p>
+            <h3>Helped launch a staff training platform</h3>
+            <p>Managed the administrative workflows behind the launch and liaised with stakeholders across the organisation, so staff could start using the platform.</p>
+            <p class="work-role">Learning &amp; Development Administrator · Hybrid</p>
+          </li>
+
+          <li class="work-item">
+            <p class="work-meta"><span>University of Kent, Careers &amp; Employability Services</span><span>Jul 2024 – Aug 2025</span></p>
+            <h3>Designed campaign assets for web, email and social</h3>
+            <p>Created branded campaign assets in Figma and kept the design consistent, accessible (WCAG 2.2) and aligned with GDS across every channel, alongside full-time Computer Science study.</p>
+            <p class="work-role">Marketing Intern · Hybrid</p>
+          </li>
+
+          <li class="work-item">
+            <p class="work-meta"><span>Giftease Solutions</span><span>Sep 2024 – Jan 2025</span></p>
+            <h3>Designed and built an e-learning website, end to end</h3>
+            <p>Turned the client's requirements into a finished, accessible site in HTML, CSS and JavaScript, working directly with their stakeholders and improving SEO and page performance.</p>
+            <p class="work-role">Front-End Consultant · Remote</p>
+          </li>
+
+          <li class="work-item">
+            <p class="work-meta"><span>Rufus Leonard (now part of Frog)</span><span>Jun – Jul 2021</span></p>
+            <h3>Prototyped a volunteering app in Figma</h3>
+            <p>Learned Figma from scratch and designed a high-fidelity prototype that helps people find local volunteering opportunities. A design exercise, not a shipped product.</p>
+            <p class="work-role">UX &amp; Prototyping work experience · Remote</p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 class="section-title" id="about-title">About</h2>
+        <div class="about-bio">
+          <p>
+            I got into building websites at 17, teaching myself Figma, WordPress,
+            SEO and other web tools, then taking on small freelance projects
+            before starting my degree in Computer Science.
+          </p>
+          <p>
+            Since then I've worked in marketing, healthcare, consulting and UX.
+            The common thread is making technology clear and easy to use, whether
+            that's an email campaign, a website, a prototype or a new system a
+            whole team has to adopt. I'm open to roles in the UK where I can do
+            that.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" aria-labelledby="contact-title">
       <div class="wrap">
-        <h2 class="section-title">Get in touch</h2>
-        <p class="connect-label">// connect</p>
+        <h2 class="section-title" id="contact-title">Get in touch</h2>
+        <p class="section-lede">The quickest way to reach me is a message on LinkedIn.</p>
 
         <div class="connect-grid">
           <a class="connect-card" href="https://github.com/roland-correia" target="_blank" rel="noopener">
@@ -147,7 +197,7 @@
 
         <div class="availability-card">
           <p class="connect-label">/* availability */</p>
-          <p>Open to email design, technology consulting, UI/UX and front-end roles in the UK.</p>
+          <p>Open to roles in the UK across design, technology and marketing.</p>
         </div>
       </div>
     </section>
