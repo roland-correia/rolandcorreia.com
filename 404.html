@@ -1,22 +1,115 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Page Not Found — Roland Correia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/404.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found — Roland Correia</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <!-- Absolute paths on purpose: GitHub Pages serves this page at whatever
+       missing address was asked for (e.g. /work/old/), where a relative
+       path would point at /work/old/assets/... and fail. -->
+  <link rel="stylesheet" href="/assets/css/404.css?v=5" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-
 <body>
-<div class="container">
-  <h1 class="glitch">404</h1>
-  <p class="sub">This page doesn’t exist or has moved.</p>
 
-  <a class="btn" href="/">Return Home</a>
-</div>
+  <!--
+    The 404 page is a page torn out of the book. The book on the right is
+    drawn stroke by stroke like the highlights; the torn page drifts down
+    beside it, sways, and leans towards the pointer. Clicking it tucks it
+    back into the book and returns to the cover.
+  -->
+  <main class="page" id="main">
+    <div class="page-inner">
 
+      <div class="text">
+        <p class="kicker">Error 404</p>
+        <h1 class="title"><span class="line"><span>Page torn</span></span> <span class="line"><span>out.</span></span></h1>
+        <p class="lede">This page isn't in the book any&nbsp;more.</p>
+        <a class="back" href="/">Back to the cover <span aria-hidden="true">↑</span></a>
+      </div>
+
+      <figure class="scene">
+        <svg class="book" viewBox="0 0 420 300" role="img" aria-label="An open book with a page ripped out, leaving a torn stub.">
+          <!-- left page and its lines of text -->
+          <path class="d" style="--i:0" pathLength="1" d="M210 64c-40-14-100-18-150-8v176c50-10 110-6 150 8z"/>
+          <path class="d" style="--i:1" pathLength="1" d="M82 92c30-4 62-2 104 6"/>
+          <path class="d" style="--i:2" pathLength="1" d="M82 114c30-4 62-2 104 6"/>
+          <path class="d" style="--i:3" pathLength="1" d="M82 136c30-4 62-2 92 5"/>
+          <path class="d" style="--i:4" pathLength="1" d="M82 158c30-4 62-2 104 6"/>
+          <path class="d" style="--i:5" pathLength="1" d="M82 180c30-4 50-2 70 3"/>
+          <!-- the page underneath, on the right, left blank -->
+          <path class="d" style="--i:6" pathLength="1" d="M210 64c40-14 100-18 150-8v176c-50-10-110-6-150 8z"/>
+          <!-- the ragged stub where the page was ripped out -->
+          <path class="d solid" style="--i:7" pathLength="1" d="M210 64c10-4 20-6 30-8l-6 18 9 16-8 17 10 18-9 17 10 18-9 17 9 18-8 17 7 20c-12 2-24 5-35 8z"/>
+          <!-- spine and the covers beneath -->
+          <path class="d" style="--i:8" pathLength="1" d="M210 64v176"/>
+          <path class="d" style="--i:9" pathLength="1" d="M52 240c58-12 118-8 158 8 40-16 100-20 158-8"/>
+          <path class="d" style="--i:10" pathLength="1" d="M60 232l-8 8M360 232l8 8"/>
+        </svg>
+
+        <!-- The missing page: three wrappers so the pointer lean, the fall
+             and the sway can each move it without fighting each other. -->
+        <a class="loose" href="/" aria-label="Put the page back and return to the cover">
+          <span class="loose-fall">
+            <svg class="leaf" viewBox="0 0 170 210" aria-hidden="true">
+              <path class="leaf-edge" d="M24 10h132v190H28l-8-18 10-17-10-18 10-17-9-18 9-17-10-18 10-17-9-18 9-17-8-18z"/>
+              <path d="M44 42h92M44 62h80M44 82h92M44 102h60"/>
+              <text x="90" y="164" text-anchor="middle">404</text>
+            </svg>
+          </span>
+        </a>
+      </figure>
+
+    </div>
+  </main>
+
+  <p class="folio" aria-hidden="true">404 / 08</p>
+  <a class="turn" href="/" aria-label="Back to the cover">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <script>
+    // Leans the torn page towards the pointer, and tucks it back into the
+    // book when clicked. Nothing is stored; without this script the page
+    // and its links work as plain links.
+    (function () {
+      var loose = document.querySelector('.loose');
+      var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!loose) return;
+
+      // Open the page (start the drawing and the fall) on the next frame,
+      // so the starting state paints first and the transitions run.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { document.body.classList.add('is-open'); });
+      });
+      // Safety net if frames are paused (e.g. a background tab).
+      setTimeout(function () { document.body.classList.add('is-open'); }, 400);
+
+      if (!still) {
+        window.addEventListener('pointermove', function (e) {
+          var r = loose.getBoundingClientRect();
+          var dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+          var dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+          loose.style.setProperty('--px', (dx * 28).toFixed(1) + 'px');
+          loose.style.setProperty('--py', (dy * 20).toFixed(1) + 'px');
+          loose.style.setProperty('--pr', (dx * 10).toFixed(1) + 'deg');
+        }, { passive: true });
+      }
+
+      loose.addEventListener('click', function (e) {
+        if (still) return;
+        e.preventDefault();
+        loose.classList.add('tuck');
+        setTimeout(function () { window.location.href = '/'; }, 850);
+      });
+    })();
+  </script>
 </body>
 </html>
