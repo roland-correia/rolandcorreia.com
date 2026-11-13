@@ -1,0 +1,46 @@
+/* A plain, readable page for the Cookies policy, in the same paper-and-ink
+   colours as the book. It uses the visitor's own system fonts, so the page
+   itself loads nothing from other companies. */
+:root {
+  --paper: #efece4;
+  --paper-text: #121212;
+  --paper-muted: #5e5b54;
+  --ink: #0b0b0b;
+  --focus: #4b8df8;
+  --gutter: clamp(1.5rem, 7vw, 7rem);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--paper);
+  color: var(--paper-text);
+  line-height: 1.65;
+  font-size: 1.125rem;
+  padding: clamp(2rem, 8vh, 5rem) var(--gutter) 4rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-underline-offset: 4px; }
+a:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+
+main { max-width: 38rem; display: flex; flex-direction: column; gap: 1.75rem; }
+
+.back {
+  display: inline-flex; align-items: center; min-height: 2.75rem; align-self: flex-start;
+  font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.06em; text-decoration: none;
+  color: var(--paper-muted);
+}
+.back:hover, .back:focus-visible { color: var(--paper-text); text-decoration: underline; }
+
+h1 { font-size: clamp(2.4rem, 8vw, 4rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; }
+h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-top: 0.75rem; }
+section { display: flex; flex-direction: column; gap: 0.6rem; }
+.lead { font-size: 1.3rem; }
+.updated { font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.06em; color: var(--paper-muted); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
